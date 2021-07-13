@@ -1,6 +1,6 @@
-# SpaceLab Document Template
+# Catarina-A1 Document Template
 
-This a LaTeX template to use in the SpaceLab projects.
+This a LaTeX template to use in the documents of the Catarina-A1 project.
 
 ## Dependencies
 
