@@ -14,4 +14,4 @@ make
 
 ## License
 
-This document is licensed under Creative Commons Attribution-ShareAlike 4.0 International.
+This document is licensed under [Creative Commons Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-nc-nd/4.0/).
