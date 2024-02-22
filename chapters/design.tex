@@ -120,7 +120,7 @@ Figure \autoref{fig:tc-flowchart} shows the telecommand processing flow.
 
 \begin{figure}[!htb]
     \begin{center}
-        \includegraphics[width=0.8\textwidth]{figures/tc-flowchart.pdf}
+        \includegraphics[width=0.6\textwidth]{figures/tc-flowchart.pdf}
         \caption{Flowchart of telecommand processing.}
         \label{fig:tc-flowchart}
     \end{center}
@@ -162,7 +162,7 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
     \end{center}
 \end{figure}
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{cllll}
         \toprule[1.5pt]
@@ -200,7 +200,8 @@ Using the \autoref{fig:pc104-ref-diagram} as reference, all used positions and s
     \label{tab:pc104-pinout}
 \end{table}
 
-\begin{table}[!h]
+\begin{table}[!ht]
+    \small
     \centering
     \begin{tabular}{lL{0.18\textwidth}L{0.19\textwidth}L{0.33\textwidth}}
         \toprule[1.5pt]
@@ -275,7 +276,7 @@ The payload of all packets follows the same structure, with an ID number, the so
 The \autoref{tab:packets-struct} summarizes all types of packets transmitted or received by satellite, with the ID number, structure and length, and access type of each packet.
 
 \begin{landscape}
-    \begin{table}[ht]
+    \begin{table}[!ht]
         \centering
         \begin{tabular}{llccccc}
             \toprule[1.5pt]
@@ -317,7 +318,7 @@ The \autoref{tab:packets-struct} summarizes all types of packets transmitted or 
 
 The ID of the subsystems, modules, and payloads are available in \autoref{tab:system-ids}.
 
-\begin{table}[ht]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lcl}
         \toprule[1.5pt]
@@ -362,8 +363,8 @@ Regarding the non-amateur radios frequencies, Resolution 685, of October 9, 2017
 Art. 9. Assign to the Private Limited Service (SLP), for use by systems for capturing and transmitting scientific data related to space operation, on a secondary basis, the following sub-ranges (related to this project):
 
 \begin{itemize}
-\item 400.15 MHz to 401 MHz;
-\item 449.75 MHz to 450.25 MHz.
+    \item 400.15 MHz to 401 MHz;
+    \item 449.75 MHz to 450.25 MHz.
 \end{itemize}
 
 Art. 17. The allocation of all radio frequency bands dealt with in this Resolution follows the restrictions imposed by the respective allocation.

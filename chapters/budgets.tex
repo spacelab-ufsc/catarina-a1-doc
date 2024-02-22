@@ -61,7 +61,7 @@ To simulate the behavior of the satellite during its operation, the software Sim
 %the GMAT\nomenclature{\textbf{GMAT}}{\textit{General Mission Analysis Tool.}} software was used \cite{gmat}.
 The orbit parameters were based on the FloripaSat-1 TLE, but with a lower altitude. These parameters can be seen in \autoref{tab:orbit-parameters}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lcc}
         \toprule[1.5pt]
@@ -127,7 +127,7 @@ Considering the same parameters of FloripaSat-1, but with an initial altitude of
 
 Considering two ground stations, one at the SpaceLab installations in Florianópolis (27$^{\circ}$ 36' 00.9" S, 48$^{\circ}$ 31' 03.2" W) and other at the INPE/CRN installations in Natal (5$^{\circ}$ 50' 10.1" S, 35$^{\circ}$ 12' 27.5" W), both with a minimum elevation of 15$^{\circ}$, the results in \autoref{tab:grs-contacts-analysis}) were achieved. %during the simulations on GMAT .
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lccc}
         \toprule[1.5pt]
@@ -153,7 +153,7 @@ These values can be even more significant if a smaller minimum elevation is cons
 
 The mass budget of the satellite can be seen in \autoref{tab:mass-budget}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{llc}
         \toprule[1.5pt]
@@ -200,12 +200,11 @@ According to section 10.3 of \cite{larson2005}, the power budget of a satellite 
 
 Simulations of the energy input to the solar panels along some orbits can be seen in the \autoref{fig:sp_sim_power} graph. Two extreme orbit scenarios, without and with maximum eclipse, were tested. The figures show the power generated on each side of the CubeSat, as well the total and average values.
 
-\begin{figure}[!htb]
+\begin{figure}[!ht]
     \begin{center}
-        \subfigure[Maximum eclipse.\label{fig:max_eclipse}]
-        {\includegraphics[trim=4cm 8.5cm 4cm 8.5cm, clip, width=0.45\textwidth]{curves/GOLDS_com_eclipse.pdf}}
+        \subfloat[Maximum eclipse.]{\includegraphics[width=0.45\columnwidth]{curves/GOLDS_com_eclipse.pdf}}
         ~
-        \subfigure[Without eclipse.\label{fig:without_eclipse}]
+        \subfloat[Without eclipse.\label{fig:without_eclipse}]
         {\includegraphics[trim=4cm 8.5cm 4cm 8.5cm, clip, width=0.45\textwidth]{curves/GOLDS_sem_eclipse.pdf}}
         \caption{Simulated input power of the solar panels.}
         \label{fig:sp_sim_power}
@@ -214,7 +213,7 @@ Simulations of the energy input to the solar panels along some orbits can be see
 
 From these simulations, the results in \autoref{tab:power-simulations} were obtained:
 
-\begin{table}[!htb]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lcc}
         \toprule[1.5pt]
@@ -236,7 +235,7 @@ From these simulations, the results in \autoref{tab:power-simulations} were obta
 
 Typical operating voltages and current and power ranges consumed by each satellite subsystem are presented in \autoref{tab:power-requirements}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lccccc}
         \toprule[1.5pt]
@@ -259,7 +258,7 @@ Typical operating voltages and current and power ranges consumed by each satelli
 
 Using the information presented in \autoref{tab:power-requirements}, and the activation periods defined for each module (the duty cycle), we arrive at the average satellite consumption present in \autoref{tab:power-consumption}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lccccc}
         \toprule[1.5pt]
@@ -340,7 +339,7 @@ From the DoD calculation, the energy consumption during the eclipse is 1571 mWh.
 
 All results from the battery sizing are available in \autoref{tab:battery-sizing-results}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{lcc}
         \toprule[1.5pt]
@@ -378,7 +377,7 @@ From \cite{larson2005}, 5 \% per year is a usual number for the solar panels' de
 
 The link budget of all satellite radio links is available in \autoref{tab:link-budget-results}.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{L{0.3\textwidth}ccccc}
         \toprule[1.5pt]

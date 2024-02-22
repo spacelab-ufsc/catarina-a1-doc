@@ -11,7 +11,7 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{isise}[2019/12/05 Modelo LaTeX ISI-SE]
+\ProvidesClass{cat-ufsc}[2019/12/05 Modelo LaTeX ISI-SE]
 
 % Forwards language to babel package
 \DeclareOption{language}{\PassOptionsToClass{language}{babel}}
@@ -23,7 +23,7 @@
 \ProcessOptions\relax
 
 % Loads superclass
-\LoadClass[12pt]{article}
+\LoadClass[12pt]{book}
 
 % Requires common packets
 \RequirePackage[a4paper,left=2cm,right=2cm,top=3.8cm,bottom=3cm,headheight=14.5pt]{geometry} % Configures page format and margins

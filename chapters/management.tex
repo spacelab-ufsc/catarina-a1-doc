@@ -27,52 +27,67 @@ This chapter presents the main aspects of the general management of the project,
 
 \section{Schedule}
 
-The current schedule of the project is available in \autoref{tab:mission-schedule}.
+\subsection{Schedule Definition} \label{sec:sechedule_definition}
 
-%\begin{table}[!h]
-%    \centering
-%    \begin{tabular}{cC{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}C{1.2cm}}
-%        \toprule[1.5pt]
-%        \multirow{4}{*}{\textbf{Activity}} & \multicolumn{8}{c}{\textbf{Month}} \\
-%                & Nov & Dez & Jan & Feb & Mar & Apr & May & Jun \\
-%                & 22  & 22  & 23  & 23  & 23  & 23  & 23  & 23  \\
-%        \midrule
-%        1       & \fc & \fc &     &     &     &     &     &     \\
-%        2       & \fc & \fc & \fc & \fc &     &     &     &     \\
-%        3       & \fc & \fc & \fc &     &     &     &     &     \\
-%        4       &     &     &     & \fc & \fc &     &     &     \\
-%        5       &     &     &     &     & \fc &     &     &     \\
-%        6       &     &     & \fc & \fc &     &     &     &     \\
-%        7       &     &     &     &     & \fc &     &     &     \\
-%        8       &     &     &     &     & \fc & \fc &     &     \\
-%        9       &     &     &     &     &     & \fc & \fc &     \\
-%        10      &     &     &     &     &     &     & \fc & \fc \\
-%        11      &     & \fc &     &     &     &     &     &     \\
-%        12      &     &     & \fc &     &     &     &     &     \\
-%        % 13      &     &     &     &     &     &     &     &     &     &     & \fc & \fc & \fc & \fc \\
-%        % 14      &     &     &     &     &     &     &     &     &     &     &     &     & \fc & \fc \\
-%        \bottomrule[1.5pt]
-%    \end{tabular}
-%    \caption{Mission schedule (updated on 2022/10/24).}
-%    \label{tab:mission-schedule}
-%\end{table}
+\autoref{fig:gantt-mdr} illustrates the schedule stipulated at the Mission Design Review (\ac{MDR}) \cite{MDR}.
 
-Each activity of \autoref{tab:mission-schedule} is described below:
+\begin{figure}[!ht]
+    \includegraphics[width=16cm]{figures/cronogramaMDR.PNG}
+    \caption{A1 System's Schedule stipulated at MDR}
+    \label{fig:gantt-mdr}
+\end{figure}
 
-\begin{enumerate}
-    \item Integration of the engineering model in SpaceLab UFSC.
-    \item Preparation and suitability of the ground segment.
-    \item Verification and validation of the engineering model.
-    \item Integration and verification with data collection platforms.
-    \item Verification and validation tests of Engineering Model compatibility with EMMN in the INPE / CRN in Natal.
-    \item Verification and validation of the flight model.
-    \item Environmental tests at the Integration and Testing Laboratory (LIT/INPE).
-    \item Flight model acceptance and ground segment review.
-    \item Ground segment delivery.
-    \item Flight model delivery.
-    \item Purchase (flight model).
-    \item Delivery of purchased items (flight model).
-\end{enumerate}
+The updated schedule for \ac{SRR} is illustrated in \autoref{fig:general-macro}, in which the activities are divided into groups: management, product assurance, engineering, and sustainability.
+
+The schedule was redefined from the preparation of the deliverables stipulated by \ac{ECSS} \cite{ECSS-E-ST-10C}, and their crossing with the work packages defined in the document of \ac{WBS} \cite{UFSC-CAT-A1-MNG-WBS-0001_A}.
+
+It is possible to notice the reallocation of the SRR in the transition between the first and the second half of 2022, as well as the postponement of the following revisions. The launch is still estimated to take place in the first half of 2023, no later than the beginning of the second half of the same year.
+
+The decision to postpone the revisions was taken based on the delay in preparing the deliverable documents governed by standard \cite{ECSS-E-ST-10C}. Also, the deliveries were extended to better train the human resources involved in the project.
+
+\autoref{fig:schedule-macro} shows the allocation of work packages \cite{UFSC-CAT-A1-MNG-WBS-0001_A} related to the project management branch in the macro schedule for Catarina-A1.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=16cm]{figures/schedule_macro_RIDs.png}
+    \caption{A1 System's Schedule stipulated in SRR with a WBS view}
+    \label{fig:schedule-macro}
+\end{figure}
+
+This definition can be adjusted according to the project's progress since work packages 5 to 8 depend heavily on external suppliers. This timeline will be revisited, and new versions will be introduced in the following revisions.
+
+\subsection{Schedule Control} \label{sec:schedule_control}
+
+Time management tools such as the Gantt chart (applying activity dependency) and the critical path diagram ensure that the stipulated schedule is consistent with reality and will be accomplished.
+
+\autoref{fig:gantt-srr-dependencies-critical} shows the activity dependencies diagram for all activity groups. Highlighted in red is the schedule's critical path, which corresponds to the group of dependent activities that present greater criticality for the project since they do not allow margins for schedule flexibility.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=16cm]{figures/schedule_complete_criticpath.png}
+    \caption{Activities dependencies diagram and critical path for Catarina-A1's SRR.}
+    \label{fig:gantt-srr-dependencies-critical}
+\end{figure}
+
+As can be seen, two sets of activities generate criticality for the project: the mission and system definition activities and the final testing and integration activities (referring to the flight model).
+
+The first set of activities has already been circumvented since, to avoid a strong dependence on the tasks, they were developed in parallel and with feedback to keep their information up to date.
+
+The engineering group expected the second critical path, and its assessment will be done gradually, applying experiences from previous projects and flight heritage to make the development of tasks more efficient. 
+
+\subsubsection{General Schedule} \label{sec:general_schedule}
+
+\autoref{fig:general-macro} indicates the general schedule, based on the reviews, compiling the works for each of the space systems (Catarina-A1 and Catarina-A2).
+
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=18cm]{figures/general-schedule.png}
+    \caption{Fleet A's general schedule}
+    \label{fig:general-macro}
+\end{figure}
+
+Since the technical development teams are not entirely identical for both space systems, only the management team, there are date differences for reviews regarding the design, integration, and testing of each space system.
 
 \section{Product Tree}
 
@@ -107,7 +122,7 @@ The responsibility of each segment of the product tree is described next:
 
 \subsection{Work Breakdown Structure}
 
-The Work Breakdown Structure (WBS) is presented as a diagram in \autoref{fig:wbs}. The WBS is divided into work packages (WP\nomenclature{\textbf{WP}}{\textit{Work Package.}}) as can be seen in the diagram. The description of each WP is detailed below.
+The Work Breakdown Structure (WBS) is presented as a diagram in \autoref{fig:wbs}. The WBS is divided into work packages (WP) as can be seen in the diagram. The description of each WP is detailed below.
 
 \begin{figure}[!ht]
     \begin{center}

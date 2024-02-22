@@ -26,7 +26,7 @@
 
 The GOLDS-UFSC test plan is structured into four phases: Module tests, FlatSat, Engineering integration, and Flight integration. This plan is summarized in the \autoref{tab:test-plan} and includes the components under test for each phase. 
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \begin{center}
         \begin{tabular}{ll}
             \toprule[1.5pt]
@@ -68,17 +68,17 @@ The GOLDS-UFSC test plan is structured into four phases: Module tests, FlatSat, 
 
 This section provides an overview of the planned testing workflow and a description of the strategies to accomplish the mission objectives. The module tests focus on the individual module's operation and behavior, in which a general template is provided in this document, and each module applies it for its needs. The FlatSat phase is the first module integration in a debug platform to validate the system from a development perspective (described with more details in \cite{flatsat}). Finally, the engineering integration is the final development campaign aiming to validate the system from a mission perspective. The flight integration is the actual CubeSat assembly using the flight components and final assessments to prepare the satellite for launch. The integration details, procedures, and qualification process are described with more depth in the \autoref{ch:ait}. % maybe it will be splitted in a separated document
 
-
 \section{Module tests}
 
-The first phase is the foundation for the satellite, consolidating the base design for each subsystem and shaping their relations. Therefore, several techniques were employed to ensure a solid test strategy: several inspections of the boards' design and manufacturing quality; manual experimental assessments of various hardware, electrical, mechanical, and behavioral parameters; remotely automated tests using a continuous integration (CI)\nomenclature{\textbf{CI}}{\textit{Continuos Integration.}} approach; semi-automated tests using a hardware-in-the-loop (HIL)\nomenclature{\textbf{HIL}}{\textit{Hardware-In-the-Loop.}} strategy; simulations; and CAD models assessment.
+The first phase is the foundation for the satellite, consolidating the base design for each subsystem and shaping their relations. Therefore, several techniques were employed to ensure a solid test strategy: several inspections of the boards' design and manufacturing quality; manual experimental assessments of various hardware, electrical, mechanical, and behavioral parameters; remotely automated tests using a continuous integration (CI) approach; semi-automated tests using a hardware-in-the-loop (HIL) strategy; simulations; and CAD models assessment.
 
 \subsection{Workflow}
 
 The following topics list the template workflow used to create the procedures for each subsystem. Each module documentation has its test chapter describing the process in detail, from procedures to success criteria.
 
 % \item [\footnotesize{XX-00}] Text 
-\subsubsection{Visual Inspection} 
+\subsubsection{Visual Inspection}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Packaging quality assessment
     \item Board manufacturing and assembly quality
@@ -89,18 +89,21 @@ The following topics list the template workflow used to create the procedures fo
 \end{enumerate}
 
 \subsubsection{Mechanical Inspection}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Board dimensions and mounting holes positioning
     \item Board weight measurement
 \end{enumerate}
 
 \subsubsection{Integration Inspection}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Check connectors pinout against the documentation (not schematics)
     \item Check connectors positioning (if applicable)
 \end{enumerate}
 
 \subsubsection{Electrical Inspection}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Solder shorts
     \item Missing components
@@ -113,6 +116,7 @@ The following topics list the template workflow used to create the procedures fo
 \end{enumerate}
 
 \subsubsection{Electrical Testing}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Continuity test
     \item Power up procedures (check LEDs and test points)
@@ -123,6 +127,7 @@ The following topics list the template workflow used to create the procedures fo
 \end{enumerate}
 
 \subsubsection{Functional Testing}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Run a simple test code (if applicable) 
     \item Run the system code (if applicable and available) 
@@ -132,6 +137,7 @@ The following topics list the template workflow used to create the procedures fo
 \end{enumerate}
 
 \subsubsection{Module Testing}
+
 \begin{enumerate} \setlength\itemsep{-0.3em}
     \item Run simulations and review results (if applicable)
     \item Review operation behavior against the documentation (if applicable)
