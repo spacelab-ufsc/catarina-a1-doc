@@ -22,8 +22,7 @@
 
 \chapter{Mission Management} \label{ch:management}
 
-This chapter presents the main aspects of the general management of the project, like the mission schedule, product tree, and so on.
-
+This chapter presents the main aspects of the general management of the project, like the mission schedule, budget, product tree, and so on.
 
 \section{Schedule}
 
@@ -79,7 +78,6 @@ The engineering group expected the second critical path, and its assessment will
 
 \autoref{fig:general-macro} indicates the general schedule, based on the reviews, compiling the works for each of the space systems (Catarina-A1 and Catarina-A2).
 
-
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=18cm]{figures/general-schedule.png}
@@ -89,7 +87,193 @@ The engineering group expected the second critical path, and its assessment will
 
 Since the technical development teams are not entirely identical for both space systems, only the management team, there are date differences for reviews regarding the design, integration, and testing of each space system.
 
-\section{Product Tree}
+\section{Cost estimation}
+
+The ECSS-M-ST-60C standard \cite{ECSS-M-ST-60C} indicates that costs and schedule management are defined as a ``collective system of processes and actions in support of project management''. Specifically, the definition of cost encompasses resources beyond the financial, such as human resources, infrastructure, and consumables.
+
+This section covers the Cost Breakdown Structure (\ac{CBS}) for the Catarina-A1. It presents a graphical breakdown of all project costs separated into cost categories in order to facilitate the tracking of each category, and the Cost Estimate Report (\ac{CER}), which is the programmed estimate of such costs throughout the project.
+
+\subsection{Cost Breakdown Structure}
+
+The \ac{CBS} illustrated in \autoref{fig:cbs}, presented in the ECSS-M-ST-60C standard of July 31, 2008 \cite{ECSS-M-ST-60C}, defines five main cost categories for space projects, which can be broken down into subcategories of costs. The categories are: Direct human resources, Internal infrastructure, Supplies and other direct costs, Sub-contracts, and Expenses not linked to production. 
+
+Quantities such as margin and profit are not included in the CBS as they are not considered to be direct costs of interest to the system supplier at this project stage.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/cbs-general.png}
+    \caption{Cost Breakdown Structure (CBS) model.}
+    \label{fig:cbs}
+\end{figure}
+
+In \autoref{fig:cbs}, the boxes highlighted in blue indicate that such categories may undergo subsequent break-ups and the yellow boxes indicate categories and subcategories that potentially include indirect costs.
+
+The CBS defined for space system Catarina-A1 of Catarina Constellation is illustrated in \autoref{fig:cbs-a1}. In this CBS, references can be made to the organizational chart presented in the delta-Mission Design Review (D-MDR), and to the product tree (\autoref{sec:product-tree}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/cbs-cat-a1.png}
+    \caption{A1 System's Cost Breakdown Structure (CBS).}
+    \label{fig:cbs-a1}
+\end{figure}
+
+The Human Resources category includes the official collaborators: four professors and twelve students from the Federal University of Santa Catarina (\ac{UFSC}) and the team provided by the National Institute for Space Research in Natal (\ac{INPE-COENE}) for the mission, yet to be defined.
+
+Regarding the internal facilities, references are made to: (\textit{i}) the UFSC Spacelab laboratory that will be responsible for testing, manufacturing and integration of the Catarina-A1; (\textit{ii}) the laboratories of the Thermal Fluid Flow Group (\ac{T2F}) that will be used to perform vibration and vacuum tests; (\textit{iii}) to the ISI Embedded Systems laboratory that will be used for testing embedded systems; and (\textit{iv}) to the infrastructure of the Estação Multi-Missão de Natal at INPE-RN that will assist in mission control.
+
+In the category of supplies, the Product Tree itself stands out as a guide for costs with materials and parts (\autoref{fig:product-tree}), in addition to the testing and external purchases. Finally, as costs are not linked to production, general and administrative expenses stand out.
+
+\subsection{Cost estimate report} \label{sec:cer}
+
+\subsubsection{Hypothesis used} \label{sec:hypothesis-used}
+
+In the elaboration of the current version of this document, the following assumptions were used:
+
+\begin{itemize}
+    \item \textbf{Economic conditions:} the budget for the Catarina Constellation - Fleet A project was already outlined at the time of prospecting with the financiers, and its allocation made by the Brazilian Space Agency (\acs{AEB});
+    \item \textbf{Currency:} the dollar exchange rate is approximated to R\$6.00;
+    \item \textbf{Heritage/Technology Readiness Level:} see document of \ac{TRL} \cite{TRL_A1};
+    \item \textbf{Design Status}: see Schedule (\autoref{sec:schedule}) and \ac{WBS} (\autoref{sec:wbs}) sections;
+    \item \textbf{Identification of main cost drivers:} see Sections \ref{sec:cbs} and  \ref{sec:cost_sensitivity_analysis}.
+\end{itemize}
+
+\subsubsection{Method and Cost Model(s) Description} \label{sec:method_cost_models_description}
+
+The definition of system costs was based on the Activity Based Costing (\ac{ABC}) method, taking into account the activities performed in the project in order to be consumed by the products and services of this same project, as described in the literature \cite{Custeio_ABS}.
+
+\subsubsection{Cost Breakdown Tables} \label{sec:cost_breakdown_tables}
+
+In order to detail the categories shown in CBS (\autoref{CBS_A1}), the Cost Breakdown Tables (\acp{CBT}) contain the estimated costs of each item mentioned above, taking into account the hypothesis presented in \autoref{sec:hypothesis_used}.
+
+\autoref{tabela_cost1} lists the project costs as a whole, and \autoref{tabela_cost2} shows the Services category in detail. \autoref{tabela_cost3} shows the values of items taken from the Product Tree of System A1. The values are listed considering the launch of a possible protoflight. For this reason, all costs are doubled. 
+
+Operational cost are not accounted for due to the low estimated cost and the possibility to aggregate this cost into a future project. For clarification, the operational cost estimated are related only to human resources for the duration of 1 year responsible for the connection and download of data from the satellites during its passage over the EMMN.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule[1.5pt]
+        \textbf{Category} & \textbf{Value [R\$]} & \textbf{Percentage} \\
+        \midrule
+        Human Resources   & 392.280,00   & 23.1 \\
+        Consumables       & 807.240,00   & 47.5 \\
+        Services          & 185.536,88   & 10.9 \\
+        Tickets           & 7.000,00     & 0.4 \\
+        Hotel Rates       & 12.000,00    & 0.7 \\
+        Reimbursements    & 296.059,12   & 17,4 \\
+        Total             & 1.700.116,00 & 100 \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Estimated costs to the project - Catarina-A1.}
+    \label{tabela_cost1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule[1.5pt]
+        \textbf{Services} & \textbf{Total value [R\$]} & \textbf{Quantity} \\
+        \midrule
+        Satellite transport - São José dos Campos & 5.500,00  & 2 \\
+        LIT tests                                 & 60.000,00 & 2 \\
+        Launch                                    & 80.000,00 & 2 \\
+        Other                                     & 74.000,00 & - \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Estimated costs to the project - Services - Catarina-A1}
+    \label{tabela_cost2}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lc}
+        \toprule[1.5pt]
+        \textbf{Material} & \textbf{Total value [R\$]} \\
+        \midrule
+        Structure          & 24.000,00 \\
+        Solar panel        & 300.000,00 \\
+        Interface plates   & 10.440,00 \\     
+        Antenna module     & 72.360,00 \\ 
+        OBDH EM            & 30.000,00 \\ 
+        TTC EM             & 40.000,00 \\
+        EPS EM             & 35.000,00 \\
+        EM Battery module  & 15.000,00 \\
+        Payload EM         & 40.000,00 \\
+        OBDH FM            & 45.000,00 \\
+        TTC FM             & 55.000,00 \\
+        EPS FM             & 50.000,00 \\
+        FM Battery module  & 25.000,00 \\
+        Payload FM         & 55.000,00 \\
+        Cables             & 5.220,00 \\
+        Bolts, resins, etc & 5.220,00 \\
+        \bottomrule[1.5pt]
+    \end{tabular}
+    \caption{Estimated costs to the project - Catarina-A1}
+    \label{tabela_cost3}
+\end{table}
+
+Launch costs are currently underestimated and possibilities for cooperation between institutions, which would enable the launch, are being investigated. Nevertheless, a preliminary estimation of future cost for launch was evaluated based on some of the more active private companies that offer the service of launch of CubeSats (NanoRacks, ISISpace, RocketLab, EXO Launch services, NASA, SpaceX). The preliminary estimation of launch cost for one 2U CubeSat in LEO is in the range between 100,000 and 1,000,000 reais. As commented before, this cost is is not covered by the actual financial resources available and other possibilities are being investigated.
+
+\subsubsection{Cost Sensitivity Analysis} \label{sec:cost_sensitivity_analysis}
+
+Referring to \autoref{sec:cbs}, specifically \autoref{CBS_A1}, stand out the cost categories of:
+
+\begin{itemize}
+    \item \textbf{External Services:} the Launch is included in this category, and it has an extremely variable cost, depending on the launch location, the time of year, the number of items launched in the chosen launcher, and the economic and political conditions - both international and internal at the country where the launch will take place;
+    \item \textbf{Materials and Parts:} the variation of the dollar and the lack of components in the market generate insecurity regarding some specific components of the Product Tree and their respective parts;
+    \item \textbf{Transport and Insurance:} highly dependent on launch parameters, this category also suffers from the same restrictions as the first item.
+\end{itemize}
+
+Such categories generate risks linked to project cost and should be carefully evaluated and revisited whenever possible in future revisions of this document. Also, as seen in \autoref{sec:cost_risk_assessment}, the risk assessments related to the cost category are listed. It also suffers from the same restrictions as the first item.
+
+\subsubsection{Cost risk assessment} \label{sec:cost_risk_assessment}
+The project risk management documents \cite{RMP} and  \cite{Risk_Report} list risks linked to costs (or collaterally to purchases) up to the present stage:
+
+\begin{itemize}
+    \item RSK-1: Unable to obtain additional financial resources to complete the mission;
+    \item RSK-5: Significant rise in the dollar may cause the project to not have enough resources to acquire the systems;
+    \item RSK-17: Materials resources not sufficient for preliminary tests.
+\end{itemize}
+
+It is intended to evaluate more rigorously, until the following review, the risks involved in the launch (and consequently the cost categories that are affected by it) to develop the assessment and mitigation steps best.
+
+For more in-depth information on the risks already listed, see UFSC-CAT-A1-MNG-RMP-0001\_A \cite{RMP}.
+
+\subsubsection{Quality of Estimate} \label{sec:quality_estimate}
+
+Since the current project was conceived and is being developed from the flight legacy of the nanosatellite FloripaSat-1 \cite{FloripaSat-1}, the costs presented in the \autoref{sec:cost_breakdown_tables} refer to work packages (\acs{WP}) with a high level of maturity \cite{WBS_A1}.
+
+Applying the classification methodology of standard No 17R-97 of the International Association for the Advancement of Cost Engineering (\ac{AACE}) \cite{Norma_AACE}, which can be seen in the table illustrated by \autoref{AACEI_Figura1}, it is possible to define a classification of such cost estimate from the percentage of maturity of the WPs.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{figures/quadro_NormaAACEI_EN.pdf}
+    \caption{Generic classification matrix for costs estimative \cite{Norma_AACE}.}
+    \label{AACEI_Figura1}
+\end{figure}
+
+It is estimated that at the end of the \ac{SRR} the WP3 - Engineering Model and Flight Model preliminary definition \cite{WBS_A1} will be complete, describing a maturity level of the 10 to 40 \%.
+
+The secondary characteristics of the cost estimative are given by:
+
+\begin{itemize}
+    \item \textbf{Final usage:} proportional to the maturity level of the project deliverables, this characteristic identifies the specific purpose of the estimate. Within the framework of the SRR, the project will be in the Control or bidding/proposal phase;
+    \item \textbf{Methodology:} identifies the source of the cost estimates, ie, the nature of the variables used to create the CBTs. As these are definitive measurements, the methodology is said to be deterministic;
+    \item \textbf{Expected accuracy range:} depending on market variations and the pre-established budget, it is estimated that the accuracy range is, within the SRR framework, +1/+3 \%;
+    \item \textbf{Effort for elaboration:} defines the percentage concerning the total costs of the project consumed in the analyzed phase. For the SRR framework, it is estimated that 5 to 20 \% of the total cost has been consumed.
+\end{itemize}
+
+The main characteristic of the matrix is a previous indication that CBTs fit into Class 3 of the cost estimate; however, the secondary characteristics tend to increase this classification. Taking into account the predefined budget and the flight inheritance used, it is possible to classify the cost estimate as \textbf{Class 2}.
+
+\subsubsection{Recomendations} \label{sec:Recomendations}
+
+This document compiles the cost estimation process for the Catarina-A1 of the Catarina Constellation - Fleet A project, taking into account the time of the SRR report. CBS, estimation quality, sensitivity analysis, and primary cost risk assessments are defined and must be updated for each deliverable to ensure that the previously established budget is met.
+
+For future versions of this document, it is recommended that the costs listed in \autoref{sec:cost_sensitivity_analysis} be monitored and updated more frequently. Also, keep the methodology used in \autoref{sec:quality_estimate} updated to ensure that the evolution from Class 2 to Class 1 occurs as efficiently and quickly as possible.
+
+Specifically for the items described in \autoref{sec:cost_sensitivity_analysis}, it is recommended to increase budgets for the launch service and try to find alternative partnerships for it, always meeting the technical requirements to guarantee the system's useful life. As for the lack of supplies, it is necessary to insist on searching for alternative suppliers or technologies developed in-house.
+
+\section{Product Tree} \label{sec:product-tree}
 
 The product tree of the GOLDS-UFSC mission is the project breakdown into successive levels of hardware and software products (or elements). The product tree of the project can be seen in the diagram of \autoref{fig:product-tree}. As shown, the satellite was divided into eight segments.
 
@@ -109,18 +293,18 @@ The responsibility of each segment of the product tree is described next:
     \item \textbf{OBDH}: UFSC (developed in-house).
     \item \textbf{TTC}: UFSC (developed in-house).
     \item \textbf{ACS}: UFSC (developed in-house).
-    \item \textbf{Payload EDC}: INPE
-    \item \textbf{Radiation instrument}: UFSC (developed in-house).
+    \item \textbf{Payload EDC}: INPE.
+    \item \textbf{Payload ExpLoRa}: UFSC (developed in-house).
     \item \textbf{Interfaces}: UFSC (developed in-house).
     \item \textbf{Ground segment}:
     \begin{itemize}
-        \item \textbf{EMMN ground station}: INPE
-        \item \textbf{DCPs}: INPE/SINDA and other institutions
-        \item \textbf{UFSC ground station}: UFSC
+        \item \textbf{EMMN ground station}: INPE.
+        \item \textbf{DCPs}: INPE/SINDA and other institutions.
+        \item \textbf{UFSC ground station}: UFSC.
     \end{itemize}
 \end{itemize}
 
-\subsection{Work Breakdown Structure}
+\subsection{Work Breakdown Structure} \label{sec:wbs}
 
 The Work Breakdown Structure (WBS) is presented as a diagram in \autoref{fig:wbs}. The WBS is divided into work packages (WP) as can be seen in the diagram. The description of each WP is detailed below.
 

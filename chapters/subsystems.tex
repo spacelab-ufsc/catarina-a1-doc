@@ -359,4 +359,24 @@ The main features of this payload are listed below, a 3D model of the EDC board 
 \end{figure}
 
 % As seen in \autoref{fig:exploded-view}, 
-Two identical EDC boards will be used in a cold redundancy configuration for this mission. More information about this payload can be found in \cite{edc}.
+More information about this payload can be found in \cite{edc}.
+
+\subsection{ExpLoRa}
+
+\textcolor{red}{TODO: Adicionar uma breve descrição sobre o payload!!}
+
+This payload is composed of a PCB developed by Spacelab, with dimensions of 92.30 $\times$ 77.43 mm and is compatible with the CubeSat standard. It comprises several components, such as a power switch, which is controlled externally by a GPIO pin in the PC104 bus. This allows the payload to be enabled or disabled by the on-board computer (OBDH) of the satellite. For extra protection, the board has a latch-up protector in order to limit its current to 1 A, in case of a SEL (Single Event Latch-up).
+
+The board is powered by a 5 V bus in the PC104 connector, but only the LoRa concentrator module uses that voltage directly. The board has a 5 to 3V3 DC/DC Converter to power the other components with 3.3 V. In the power input there is also a current and voltage sensor that performs the monitoring of the input power. These measurements can be used as telemetry readings of the payload. 
+
+The main component controlling the overall operation of the module is the microcontroller, that is a ARM Cortex M3 model from STM32F103C8T6. The embedded firmware does all the data processing by using several serial buses like SPI, I2C, UART and CAN to communicate with the internal peripherals and external modules. There are two buses that can be used to communicate with the payload: CAN and UART. Both are available in the PC104 connector. A SPI bus is used to access a NOR flash memory and a FRAM memory. The first is used to store the telemetry and the received data from the LoRa concentrator. The second is used to store the configuration parameters and general essential information used for the correct operation of the board. The flash memory IC has the capacity of 16 MB and the FRAM memory 2 Mb.
+
+Most of the components are automotive grade components, to allow a better resilience during the operation in the space environment. A renderization of the PCB of the ExpLoRa payload can be seen in \autoref{fig:explora-board}.
+
+\begin{figure}[!ht]
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{figures/explora-pcb.png}
+        \caption{ExpLoRa board.}
+        \label{fig:explora-board}
+    \end{center}
+\end{figure}
