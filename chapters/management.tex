@@ -275,34 +275,46 @@ Specifically for the items described in \autoref{sec:cost_sensitivity_analysis},
 
 \section{Product Tree} \label{sec:product-tree}
 
-The product tree of the GOLDS-UFSC mission is the project breakdown into successive levels of hardware and software products (or elements). The product tree of the project can be seen in the diagram of \autoref{fig:product-tree}. As shown, the satellite was divided into eight segments.
+The product tree of the Catarina-A1 satellite is the project breakdown into successive levels of hardware and software products (or elements). The product tree of the project can be seen in the diagram of \autoref{fig:product-tree}. As shown, the satellite was divided into eight segments.
 
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/product-tree.pdf}
-        \caption{Product tree of the satellite.}
+        \caption{Product tree diagram of the satellite.}
         \label{fig:product-tree}
     \end{center}
 \end{figure}
 
-The responsibility of each segment of the product tree is described next:
+The supplier of each element of the product tree is avalilabe in \autoref{tab:product-tree-sup}.
 
-\begin{itemize}
-    \item \textbf{Structure}: UFSC (COTS).
-    \item \textbf{EPS}: UFSC (developed in-house, with COTS solar panels).
-    \item \textbf{OBDH}: UFSC (developed in-house).
-    \item \textbf{TTC}: UFSC (developed in-house).
-    \item \textbf{ACS}: UFSC (developed in-house).
-    \item \textbf{Payload EDC}: INPE.
-    \item \textbf{Payload ExpLoRa}: UFSC (developed in-house).
-    \item \textbf{Interfaces}: UFSC (developed in-house).
-    \item \textbf{Ground segment}:
-    \begin{itemize}
-        \item \textbf{EMMN ground station}: INPE.
-        \item \textbf{DCPs}: INPE/SINDA and other institutions.
-        \item \textbf{UFSC ground station}: UFSC.
-    \end{itemize}
-\end{itemize}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        \toprule[1.5pt]
+        \textbf{Item} & \textbf{ID Code} & \textbf{Name} & \textbf{Supplier} \\
+        \midrule
+        Satellite            & CAT-A1   & Catarina-A1             & UFSC \\
+        Mechanical Structure & MEC-STC  & 2U Mechanical Structure & Usiped \\
+        EPS Hardware         & EPS-HW   & EPS 2.0                 & SpaceLab \\
+        EPS Firmware         & EPS-HW   & -                       & SpaceLab \\
+        Battery Module       & BAT      & Bat 4C                  & SpaceLab \\
+        Solar Panels         & SP       & -                       & Orbital \\
+        OBDH Hardware        & OBDH-HW  & OBDH 2.0                & SpaceLab \\
+        TTC Hardware         & TTC-HW   & TTC 2.0                 & SpaceLab \\
+        TTC Firmware         & TTC-HW   & TTC 2.0                 & SpaceLab \\
+        Antenna              & ANT      & -                       & ISISpace \\
+        ACS                  & ACS      & ACS                     & SpaceLab \\
+        Harness              & -        & -                       & SpaceLab \\
+        Interface Boards     & CON-M    & -                       & SpaceLab \\
+        EDC                  & EDC      & EDC                     & INPE-RN \\
+        ExpLoRa              & EXP      & ExpLoRa                 & SpaceLab \\
+        GSE Software         & -        & -                       & SpaceLab \\
+        \bottomrule
+    \end{tabular}
+    \caption{Item tracking.}
+    \label{tab:product-tree-sup}
+\end{table}
 
 \subsection{Work Breakdown Structure} \label{sec:wbs}
 
