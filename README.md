@@ -1,5 +1,5 @@
 <h1 align="center">
-    <a href="https://github.com/spacelab-ufsc/catarina-a1-doc"><img src="https://github.com/spacelab-ufsc/catarina-a1-doc/blob/main/figures/catarina-logos.png" alt="Catarina-A1" width="50%"></a>
+    <a href="https://github.com/spacelab-ufsc/catarina-a1-doc"><img src="https://github.com/spacelab-ufsc/catarina-a1-doc/blob/main/figures/catarina-mission-patch.png" alt="Catarina-A1" width="50%"></a>
     <br>
     CATARINA-A1
     <br>
@@ -48,7 +48,7 @@ After installing the required dependencies, build the PDF with:
 make
 ```
 
-The generated document is saved as `slb-cat-a1-template-v0.0.pdf` in the repository root and in the `build/` directory.
+The generated document is saved in the `build/` directory.
 
 ## License
 
