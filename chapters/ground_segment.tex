@@ -22,18 +22,18 @@
 
 \chapter{Ground Segment} \label{ch:ground-segment}
 
-This chapter describes the ground segment of the mission. It is composed of two ground stations (one at the INPE-RN installations and the other at the SpaceLab installations) and many data collection platforms (PCD, or \textit{``Plataforma de Coleta de Dados''}), installed at a variety of locations on the Brazilian territory.
+This chapter describes the Ground Segment of the mission. It is composed of two ground stations (one at the INPE-RN installations and the other at the SpaceLab installations) and one data collection platforms (PCD, or \textit{``Plataforma de Coleta de Dados''}), installed at Santa Catarina state.
 
-The control of the mission and the reception of the collected data will be performed mainly at these two ground stations, but if necessary, other stations can execute this task. Any station in the world can use the amateur radio link since having the required equipment to it.
+The control of the mission and the reception of the collected data will be performed mainly at these two ground stations, but if necessary, other stations can execute this task. %Any station in the world can use the amateur radio link since having the required equipment to it.
 
 \section{UFSC Ground Station}
 
-The UFSC ground station is currently being developed and prepared for this mission. This section presents the project of this station. A general block diagram can be seen in \autoref{fig:grs-block-diagram}.
+The UFSC ground station is currently being developed and prepared to be used for several missions developdes by UFSC. This section presents the project of this station. A general block diagram can be seen in \autoref{fig:grs-block-diagram}.
 
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/grs-block-diagram.pdf}
-        \caption{Block diagram of the ground segment (UFSC ground station).}
+        \caption{Block diagram of the Ground Segment (UFSC ground station).}
         \label{fig:grs-block-diagram}
     \end{center}
 \end{figure}
@@ -66,7 +66,7 @@ There are two antennas in the ground station: One for VHF and one for the UHF ba
         Weight                  & 2.72                  & 2.55                  & kg \\
         \bottomrule[1.5pt]
     \end{tabular}
-    \caption{Main characteristics of the ground segment antennas.}
+    \caption{Main characteristics of the Ground Segment antennas.}
     \label{tab:grs-antennas}
 \end{table}
 
@@ -210,7 +210,7 @@ In addition to band-specific memory channels, the IC-9700 allows the band-specif
 
 \paragraph{Software Defined Radio}
 
-As presented in \autoref{fig:grs-block-diagram}, the ground segment also has an SDR as a transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, full support for the USRP Hardware Driver (UHD) software allows the use of the GNURadio framework. A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp-b210}.
+As presented in \autoref{fig:grs-block-diagram}, the Ground Segment also has an SDR as a transceiver. The used model is the USRP B210, from Ettus Research \cite{b210}, a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan6 FPGA, and USB 3.0 connectivity. Also, full support for the USRP Hardware Driver (UHD) software allows the use of the GNURadio framework. A picture of the USRP B210 SDR (with enclosure) can be seen in \autoref{fig:usrp-b210}.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -267,9 +267,9 @@ To track the satellite and for orbit prediction, the GPredict software \cite{gpr
 
 \subsection{Packet Transmission}
 
-The packet generation and transmission to GOLDS-UFSC satellite can be done with the SpaceLab-Transmitter software \cite{spacelab-transmitter}, which was written in Python with the interface developed using the GTK framework. It has a USRP Handler made with Ettus libraries to work with Ettus USRP B210 as shown in \autoref{fig:usrp-b210}. The supported modulation is the Gaussian Minimum Shift Keying (GMSK). Furthermore, the software also has unit tests for the main modules and a logging system to record events such as an initialization or a successfully transmitted telecommand.
+The packet generation and transmission to Catarina-A1 satellite can be done with the SpaceLab-Transmitter software \cite{spacelab-transmitter}, which was written in Python with the interface developed using the GTK framework. It has a USRP Handler made with Ettus libraries to work with Ettus USRP B210 as shown in \autoref{fig:usrp-b210}. The supported modulation is the Gaussian Minimum Shift Keying (GMSK). Furthermore, the software also has unit tests for the main modules and a logging system to record events such as an initialization or a successfully transmitted telecommand.
 
-In the \autoref{fig:transmitter-tree} is shown the product tree of the software, which contains its main elements of it, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
+In  \autoref{fig:transmitter-tree} is shown the product tree of the software, which contains its main elements of it, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
 
 \begin{figure}[!ht]
     \begin{center}
@@ -289,9 +289,9 @@ In the \autoref{fig:transmitter-tree} is shown the product tree of the software,
 
 \subsection{Packet Decoding}
 
-The packet decoding of GOLDS-UFSC satellites telemetry can be done using the SpaceLab-Decoder \cite{spacelab-decoder} software using a .wav file or through a real time reception. The decoded telemetry will appear in a dialog within the main window. The software was written in Python, and the interface was developed using GTK framework. Furthermore, the software also has unit tests for the main modules and a logging system to record events.
+The packet decoding of Catarina-A1 satellite telemetry can be done using the SpaceLab-Decoder \cite{spacelab-decoder} software using a .wav file or through a real time reception. The decoded telemetry will appear in a dialog within the main window. The software was written in Python, and the interface was developed using GTK framework. Furthermore, the software also has unit tests for the main modules and a logging system to record events.
 
-The \autoref{fig:decoder-tree} is showing the product tree of the software, which contains its main elements, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
+ \autoref{fig:decoder-tree} is showing the product tree of the software, which contains its main elements, and in the \autoref{fig:spacelab-transmitter} is shown the main window of it.
 
 \begin{figure}[!ht]
     \begin{center}

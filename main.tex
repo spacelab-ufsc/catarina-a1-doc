@@ -23,7 +23,10 @@
 \documentclass[english]{cat-ufsc}
 
 \usepackage{manual}
-
+\usepackage{array} %testing
+\newcolumntype{M}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{siunitx}
+\newcommand{\subfigureautorefname}{Figure}
 % Document parameter definitions
 \newcommand{\textprojectname}{Catarina-A1}
 \newcommand{\textprojectplainname}{Catarina-A1}
@@ -31,6 +34,7 @@
 \newcommand{\textdocumentname}{Critical Design Review}
 \newcommand{\textdocumentplainname}{Critical Design Review}
 \newcommand{\textdocumentrevision}{A}
+
 
 % File metadata
 \hypersetup
@@ -42,6 +46,10 @@
 }
 
 \begin{document}
+
+    \renewcommand{\chapterautorefname}{Chapter}
+    \renewcommand{\sectionautorefname}{Section}
+    \renewcommand{\subsectionautorefname}{Subsection}
 
     \pagenumbering{roman}
     \setcounter{page}{1}
@@ -67,7 +75,7 @@
             \thead[c]{\authorstext} & \thead[c]{\versiontext} & \thead[l]{\changestext} & \thead[c]{\datetext} \tabularnewline
             \midrule
             G. M. Marcelino, J. C. E. Barcellos & - & Document creation                   & 2024/02/21 \tabularnewline
-            TBD & A & CDR release               & TBD \tabularnewline 
+            D. Donati, G. M. Marcelino, J. C. E. Barcellos, T. S. Possamai & A & CDR release               & 2024/03/19 \tabularnewline
             \bottomrule[1.5pt]
         \end{tabular}
     \end{table}
@@ -83,7 +91,7 @@
             \toprule[1.5pt]
             \thead[c]{Verified by} & \thead[c]{\versiontext} & \thead[l]{Comment} & \thead[c]{\datetext} \tabularnewline
             \midrule
-            TBD & A & - & TBD \tabularnewline
+            E. A. Bezerra, T. S. Possamai & A & - & 2024/03/19 \tabularnewline
             \bottomrule[1.5pt]
         \end{tabular}
     \end{table}
@@ -96,7 +104,7 @@
             \toprule[1.5pt]
             \thead[c]{Approved by} & \thead[c]{\versiontext} & \thead[l]{Comment} & \thead[c]{\datetext} \tabularnewline
             \midrule
-            TBD & A & - & TBD \tabularnewline
+            E. A. Bezerra, T. S. Possamai & A & - & 2024/03/19 \tabularnewline
             \bottomrule[1.5pt]
         \end{tabular}
     \end{table}
@@ -136,6 +144,7 @@
     \setcounter{page}{1}
 
     % Inputs chapters
+    \input{chapters/attached-documents}
     \input{chapters/introduction}
     \input{chapters/management}
     \input{chapters/conops}
@@ -143,8 +152,8 @@
     \input{chapters/design}
     \input{chapters/subsystems}
     \input{chapters/ground_segment}
-    \input{chapters/tests}
-    \input{chapters/ait}
+    %\input{chapters/tests}
+    %\input{chapters/ait}
     \input{chapters/references}
     \input{appendices/appendices}
 

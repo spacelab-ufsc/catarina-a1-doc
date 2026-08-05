@@ -37,7 +37,7 @@ The GOLDS-UFSC test plan is structured into four phases: Module tests, FlatSat, 
                                      & TTC module \\
                                      & BATC4 board \\
                                      & IIP boards \\
-                                     & PC104-ADPT boards \\
+                                     & PC-104-ADPT boards \\
                                      & ACS components (simulation) \\
                                      & Mechanical (CAD assessment) \\
             \midrule
@@ -161,14 +161,14 @@ The unit tests follow a layered structure accordingly to the firmware layers. Th
 In the context of embedded systems, many errors are caused by hardware issues and limitations. Then, it is important to assess the system operating in the existing hardware platform. The hardware-in-the-loop strategy brings these elements into a more controlled and automated test environment. The idea is to execute the firmware in the board with an emphasis on evaluating the general behavior and operation flow since several log messages are used to report the system's current status or action across the execution.
 
 
-\section{Flatsat}
+\section{FlatSat}
 
-To test all modules during the development of the projet, a flatsat platform was developed. The FlatSat Platform is a testbed for CubeSat PCB modules. FlatSats enable a more straightforward, faster, and secure method for independently testing subsystems while being integrated in a flat design before integrating on a CubeSat form factor. The PCB can support up to 7 modules; all PC-104 pins are interconnected to flexibilize its use; only the particularity connection between modules needs to be taken into account. One PC-104 has an inverted pinout; the board also makes it possible to have two separate power supplies, a UART to USB converter for 4 modules, kill-switches activation though SPDTs, Remove Before Flight (RBF) pin header, a connector for charging batteries and SMA connectors for antennas. A picture of the flatsat board can be seen in \autoref{fig:flatsat-top}. In \autoref{fig:flatsat-fsat2} there is a picture of the flatsat, including the core modules and the payloads.
+To test all modules during the development of the projet, a FlatSat platform was developed. The FlatSat Platform is a testbed for CubeSat PCB modules. FlatSats enable a more straightforward, faster, and secure method for independently testing subsystems while being integrated in a flat design before integrating on a CubeSat form factor. The PCB can support up to 7 modules; all PC-104 pins are interconnected to flexibilize its use; only the particularity connection between modules needs to be taken into account. One PC-104 has an inverted pinout; the board also makes it possible to have two separate power supplies, a UART to USB converter for 4 modules, kill-switches activation though SPDTs, \ac{RBF} pin header, a connector for charging batteries and SMA connectors for antennas. A picture of the FlatSat board can be seen in \autoref{fig:flatsat-top}. In \autoref{fig:flatsat-fsat2} there is a picture of the FlatSat, including the core modules and the payloads.
 
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/flatsat-top}
-        \caption{Top view of the flatsat board.}
+        \caption{Top view of the FlatSat board.}
         \label{fig:flatsat-top}
     \end{center}
 \end{figure}
@@ -176,12 +176,12 @@ To test all modules during the development of the projet, a flatsat platform was
 \begin{figure}[!ht]
     \begin{center}
         \includegraphics[width=\textwidth]{figures/flatsat}
-        \caption{Flatsat of the GOLDS-UFSC.}
+        \caption{FlatSat of the GOLDS-UFSC.}
         \label{fig:flatsat-fsat2}
     \end{center}
 \end{figure}
 
-Besides the hardware platform itself, during the FlatSat phase, a setup is used with the same structure as the hardware-in-the-loop strategy herein mentioned. Instead of using logs of one board, the analysis is performed from the perspective of all modules under test, which provides an evaluation of a complete system (satellite). More information about the Flatsat hardware platform and procedure details can be found in \cite{flatsat}.
+Besides the hardware platform itself, during the FlatSat phase, a setup is used with the same structure as the hardware-in-the-loop strategy herein mentioned. Instead of using logs of one board, the analysis is performed from the perspective of all modules under test, which provides an evaluation of a complete system (satellite). More information about the FlatSat hardware platform and procedure details can be found in \cite{flatsat}.
 
 
 \section{Engineering integration}

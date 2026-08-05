@@ -26,6 +26,7 @@
 \usepackage{subfig}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{ltablex}
 \usepackage{multirow}
 \usepackage{pdflscape}
 \usepackage{xcolor}
@@ -42,6 +43,11 @@
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% For listing variables
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}\hspace{1cm}{}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
 
 % Note environment
 \newtheorem{theorem}{Note}
