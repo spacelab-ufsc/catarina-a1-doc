@@ -1,6 +1,6 @@
 SRC=main
-DOC_VERSION=v0.0
-TARGET=slb-cat-a1-template-$(DOC_VERSION)
+DOC_VERSION=A
+TARGET=UFSC-CAT-A1-CDR-0001_$(DOC_VERSION)
 
 ifndef BUILD_DIR
 	BUILD_DIR=build
@@ -11,8 +11,6 @@ PDF_READER=evince
 all:
 	mkdir -p $(BUILD_DIR)
 	latexmk -pdf -jobname=$(BUILD_DIR)/$(TARGET) $(SRC).tex
-	rm -f $(TARGET).pdf
-	cp $(BUILD_DIR)/$(TARGET).pdf .
 
 index:
 	makeindex $(BUILD_DIR)/$(TARGET).nlo -s nomencl.ist -o $(BUILD_DIR)/$(TARGET).nls
