@@ -1,4 +1,4 @@
-.. glossay.rst
+.. glossary.rst
 
     Copyright The Catarina-A1 Contributors.
 
@@ -199,3 +199,9 @@
 
    AIT
       Assembly, Integration, and Testing.
+
+   SSO
+      Sun-Synchronous Orbit.
+
+   EM
+      Engineering Model.

@@ -124,6 +124,8 @@ The :numref:`tab:goals-objectives` describes the goals and objectives related to
      - O.3.1
      - Using ECSS as a basis for Space Systems Engineering
 
+.. _sec:project_members:
+
 Project members
 ===============
 
