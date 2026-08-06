@@ -1,6 +1,6 @@
 .. introduction.rst
 
-    Copyright The GOLDS-UFSC Contributors.
+    Copyright The Catarina-A1 Contributors.
 
     Catarina-A1 Documentation
 
@@ -12,6 +12,8 @@
 Introduction
 ************
 
+The Catarina Constellation's Fleet A project adheres to the ECSS-E-ST-10C, a standard that specifies the system engineering implementation for the development of space systems and space products :cite:`ECSS-E-ST-10C`. Both space systems within the project, namely Catarina-A1 and Catarina-A2, follow the standard's prescribed life cycle model. The culmination of phase C of the project is marked by the :term:`CDR` event, depicted in :numref:`fig:life_cycle`. This event signifies the project's maturity and the incorporation of initial engineering concepts, rooted in the system and technical requirements defined up to this point.
+
 .. _fig:life_cycle:
 
 .. figure:: figures/life_cycle_CDR.png
@@ -21,9 +23,7 @@ Introduction
 
    Project life cycle. Adapted from :cite:`ECSS-E-ST-10C`.
 
-The Catarina Constellation's Fleet A project adheres to the ECSS-E-ST-10C, a standard that specifies the system engineering implementation for the development of space systems and space products :cite:`ECSS-E-ST-10C`. Both space systems within the project, namely Catarina-A1 and Catarina-A2, follow the standard's prescribed life cycle model. The culmination of phase C of the project is marked by the \ac{CDR} event, depicted in \autoref{fig:life_cycle}. This event signifies the project's maturity and the incorporation of initial engineering concepts, rooted in the system and technical requirements defined up to this point.
-
-The purpose of \ac{CDR} is to relate the product's technical requirements to the engineering solutions proposed by the design team. Thus, the objective of this documentation (as well as updating the data presented in previous reviews) is to present: information to confirm compatibility with the external interfaces, the final design of the space system and Ground Segment, the final AIV plan, and the verification of the space system and Ground Segment requirements state of verification. The conceptual design of the Catarina-A1's nanosatellite, the main object of this review, can be seen in :numref:`fig:cat-a1-render`.
+The purpose of :term:`CDR` is to relate the product's technical requirements to the engineering solutions proposed by the design team. Thus, the objective of this documentation (as well as updating the data presented in previous reviews) is to present: information to confirm compatibility with the external interfaces, the final design of the space system and Ground Segment, the final AIV plan, and the verification of the space system and Ground Segment requirements state of verification. The conceptual design of the Catarina-A1's nanosatellite, the main object of this review, can be seen in :numref:`fig:cat-a1-render`.
 
 .. information confirming compatibility with external interfaces, the final design of both the space system and Ground Segment, the final AIV plan, and the state of verification for the space system and Ground Segment requirements.
 
@@ -42,130 +42,237 @@ Mission description
 About the Catarina Constellation
 ********************************
 
-Catarina Constellation is a nanosatellite-based constellation focused on encouraging technological development in the space sector in Brazil and its application in several fields to contribute to society. Created through Ordinance n. 590, of May 6, 2021 \cite{Ordinance}, published by \ac{AEB}, the constellation is divided into fleets, each with a different mission, outlined from the survey of the needs among the stakeholders of each fleet. At least three fleets are initially estimated, and their missions are indicated below:
+Catarina Constellation is a nanosatellite-based constellation focused on encouraging technological development in the space sector in Brazil and its application in several fields to contribute to society. Created through Ordinance n. 590, of May 6, 2021 \cite{Ordinance}, published by :term:`AEB`, the constellation is divided into fleets, each with a different mission, outlined from the survey of the needs among the stakeholders of each fleet. At least three fleets are initially estimated, and their missions are indicated below:
 
 * **Fleet A**: Environmental data collection;
 * **Fleet B**: Imaging;
 * **Fleet C**: Radio occultation.
 
-The constellation idea is changeable so that fleets have as many nanosatellites as needed in their configuration. For Fleet A, \ac{UFSC} and \ac{ISI-SE} enter as suppliers of space systems, assuming the roles of representatives of academia and industry in Santa Catarina, respectively, forming the triple helix of industry, academia, and government.
+The constellation idea is changeable so that fleets have as many nanosatellites as needed in their configuration. For Fleet A, :term:`UFSC` and :term:`ISI-SE` enter as suppliers of space systems, assuming the roles of representatives of academia and industry in Santa Catarina, respectively, forming the triple helix of industry, academia, and government.
 
-The \ac{UFSC} has experience with nanosatellite missions such as FloripaSat-1 and Serpens, while the \ac{ISI-SE} has experience with the VCUB mission. The union of academia and industry transforms knowledge, and academic research into economic activity, and promotes practical knowledge. With that, both institutions can help each other with the development of the CubeSats using their strengths, contributing to the training of human resources in space technology in the state.
+The :term:`UFSC` has experience with nanosatellite missions such as FloripaSat-1 and Serpens, while the :term:`ISI-SE` has experience with the VCUB mission. The union of academia and industry transforms knowledge, and academic research into economic activity, and promotes practical knowledge. With that, both institutions can help each other with the development of the CubeSats using their strengths, contributing to the training of human resources in space technology in the state.
 
 Fleet A's Mission Declaration
 *****************************
 
-Approved in the event of \ac{MDR}, the mission statement for Fleet A of the Catarina Constellation is as follows:
+Approved in the event of :term:`MDR`, the mission statement for Fleet A of the Catarina Constellation is as follows:
 
-    "*National services, such as Civil Defense and the agricultural sector, which use hydrometeorological data measured \textbf{in loco}, need the means to collect data from measurement platforms, preferably national, which stimulates the articulation of the triple helix of industry, academia, and government. In this way, the Catarina Constellation must promote the Brazilian space sector, with a focus on the industry of Santa Catarina, according to Ordinance n. 590, of May 6, 2021, published by the Brazilian Space Agency, which creates the Catarina Constellation Program and the Catarina Consortium.*
+    "*National services, such as Civil Defense and the agricultural sector, which use hydrometeorological data measured in loco, need the means to collect data from measurement platforms, preferably national, which stimulates the articulation of the triple helix of industry, academia, and government. In this way, the Catarina Constellation must promote the Brazilian space sector, with a focus on the industry of Santa Catarina, according to Ordinance n. 590, of May 6, 2021, published by the Brazilian Space Agency, which creates the Catarina Constellation Program and the Catarina Consortium.*
 
     *In this way, it is necessary to demonstrate the integration of data collection nanosatellites with existing systems, the Brazilian Data Collection System (SBCD) and the Integrated Environmental Data System (SINDA), with a measurement platform installed in the territory of the state of Santa Catarina. In the demonstration process, human resources should be trained for the following fleets of the Catarina Constellation program*" :cite:`MDR`.
 
 Fleet A's Mission Definition
 ****************************
 
-The mission of Fleet A of the Catarina Constellation consists of launching two CubeSats as technological demonstrators for data collection and transmission. Catarina-A1 will be a 2U CubeSat designed by the team at \ac{UFSC}, while Catarina-A2 will be designed as a 3U CubeSat by \ac{ISI-SE}.
+The mission of Fleet A of the Catarina Constellation consists of launching two CubeSats as technological demonstrators for data collection and transmission. Catarina-A1 will be a 2U CubeSat designed by the team at :term:`UFSC`, while Catarina-A2 will be designed as a 3U CubeSat by :term:`ISI-SE`.
 
-The \autoref{arq_FleetA} shows the official functional architecture of Fleet A. Its concepts of operation and further details on how the mission works can be found in \autoref{ch:conops}.
+The :numref:`fig:arq_FleetA` shows the official functional architecture of Fleet A. Its concepts of operation and further details on how the mission works can be found in :numref:`ch:conops`.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.8]{figures/arq_func_eng.png}
-    \caption{Fleet A's functional architecture \cite{MDR}.}
-    \label{arq_FleetA}
-\end{figure}
+.. _fig:arq_FleetA:
 
-The satellites must pass through Santa Catarina, capture data from a \ac{DCP} based in Florianópolis and relay such data to \ac{EMMN}, which in turn will add this data packet to \ac{SINDA}, which will be available to all registered users. In this way, Fleet A will aggregate to \ac{SBCD}.
+.. figure:: figures/arq_func_eng.png
+   :width: 70%
+   :align: center
+   :alt: Functional architecture
 
-For the development of the mission, one of the needs raised was the preference for national technology. For this reason, the main payload of the two space systems will be the \ac{EDC}, developed by the \ac{INPE}.
+   Fleet A's functional architecture :cite:`MDR`.
 
-As a technological demonstrator, Fleet A works at the same time as a case study of both the functioning of the nanosatellite-based constellation and the data collection with national technology, adding to the \ac{EDC} flight inheritance.
+The satellites must pass through Santa Catarina, capture data from a :term:`DCP` based in Florianópolis and relay such data to :term:`EMMN`, which in turn will add this data packet to :term:`SINDA`, which will be available to all registered users. In this way, Fleet A will aggregate to :term:`SBCD`.
 
-\subsection{Mission objectives} \label{sec:mission_objectives}
+For the development of the mission, one of the needs raised was the preference for national technology. For this reason, the main payload of the two space systems will be the :term:`EDC`, developed by the :term:`INPE`.
 
-The \autoref{tab:goals-objectives} describes the goals and objectives related to the Catarina Constellation's Fleet A mission.
+As a technological demonstrator, Fleet A works at the same time as a case study of both the functioning of the nanosatellite-based constellation and the data collection with national technology, adding to the :term:`EDC` flight inheritance.
 
-\begin{table}[H]
-    \centering
-    \begin{tabular}{lC{6.2cm}C{1cm}C{6cm}}
-    \toprule[1.5pt]
-    \textbf{\acs{ID}} & \textbf{Goal} & \textbf{\acs{ID}} & \textbf{Objective} \\
-    \midrule
-    G.1 & \multirow{3}{6.2cm}{\centering Collect data with national systems} & O.1.1 & Collect data from a platform provided by the Civil Defense and adapted by the national industry \\
-    & & O.1.2 & Route data through systems developed/adapted by the national industry, which allows the satellite data link between platforms and data distribution centers \\
-    & & O.1.3 & Use a nanosatellite platform to perform the satellite link \\
-    \midrule
-    G.2 & \multirow{2}{6cm}{\centering Distribute data across legacy systems} & O.2.1 & Integrate the data with the \ac{SBCD} \\
-    & & O.2.2 & Perform data distribution using \ac{SINDA} \\
-    \midrule
-    G.3 & Empower future fleets & O.3.1 & Using \ac{ECSS} as a basis for Space Systems Engineering \\
-    \bottomrule[1.5pt]
-    \end{tabular}
-    \caption{Goals and objectives of the Catarina Constellation’s Fleet A mission.}
-    \label{tab:goals-objectives}
-\end{table}
+Mission objectives
+******************
 
-\section{Project members} \label{sec:project_members}
+The :numref:`tab:goals-objectives` describes the goals and objectives related to the Catarina Constellation's Fleet A mission.
 
-The project involves students, professors, and researchers from \ac{UFSC} and \ac{INPE}. Additionally, the team responsible for conducting the activities of this phase within the Catarina Constellation's Fleet A comprised the members described in \autoref{tab:members}.
+.. _tab:goals-objectives:
 
-\begin{table}[H] \footnotesize
-    \centering
-    \begin{tabular}{lC{4.5cm}cc}
-        \toprule[1.5pt]
-        \textbf{Name} & \textbf{Contribution} & \textbf{Institution} & \textbf{Position} \\
-        \midrule
-        \multicolumn{4}{c}{\textbf{Mission}} \\
-        \midrule
-        Talita Sauter Possamai             & Mission management and risk management & \acs{UFSC}   & Professor \\
-        Damylle Cristina Xavier Donati     & Systems engineering                    & \acs{UFSC}   & Doctoral student \\
-        Augusto Marasca de Conto           & Risks management                       & \acs{ISI-SE} & Manager \\
-        Rodrigo da Silva Cardozo           & Orbit analysis                         & \acs{UFSC}   & Master student \\
-        Monike Corleone                    & Administration                         & SC2C.Aero    & Employee \\
-        \midrule
-        \multicolumn{4}{c}{\textbf{Catarina-A1 Space System}} \\
-        \midrule
-        Talita Sauter Possamai             & Project management                     & \acs{UFSC}   & Professor \\
-        Eduardo Augusto Bezerra            & Technical management                   & \acs{UFSC}   & Professor \\
-        Xisto Lucas Travassos              & Frequency license coordination         & \acs{UFSC}   & Professor \\
-        Laio Oriel Seman                   & Technical management                   & \acs{UFSC}   & Professor \\
-        Kleber Vieira de Paiva             & Testing                                & \acs{UFSC}   & Professor \\
-        Manoel Jozeane Mafra de Carvalho   & Payload                                & \acs{INPE}   & Researcher \\
-        Damylle Cristina Xavier Donati     & Systems engineering                    & \acs{UFSC}   & Doctoral student \\
-        Ludmila Kopko                      & Systems engineering                    & \acs{UFSC}   & Student \\
-        Rodrigo da Silva Cardozo           & Thermal experimental analysis          & \acs{UFSC}   & Master student \\
-        Gabriel Mariano Marcelino          & Technical development                  & \acs{UFSC}   & Researcher \\
-        João Cláudio Elsen Barcellos       & \acs{EPS}                              & \acs{UFSC}   & Master student \\
-        Caique Sales de Miranda Gomes      & Mechanical subsystem                   & \acs{UFSC}   & Student \\
-        Ramon de Araujo Borba              & \acs{EPS}                              & \acs{UFSC}   & Student \\
-        Vitória Beatriz Bianchin           & Groundstation/Payload                  & \acs{UFSC}   & Student \\
-        Miguel Boing                       & \acs{TTC}                              & \acs{UFSC}   & Student \\
-        Carlos Porto                       & \acs{OBDH}                             & \acs{UFSC}   & Student \\
-        Gabriel Cabral Marcílio            & Scientific divulgation                 & \acs{UFSC}   & Student \\
-        Maria Eduarda Rezende              & Mechanical subsystem                   & \acs{UFSC}   & Student \\
-        Matheus Wagner                     & \acs{ACS}                             & \acs{UFSC}   & Student \\
-        Rebecca Quintino do O              & Systems engineering/Testing            & \acs{UFSC}   & Student \\
-        Sheila Costa                       & Procurement                            & \acs{UFSC}   & Student \\
-        \midrule
-        \multicolumn{4}{c}{\textbf{EMMN Ground System}} \\
-        \midrule
-        Marcos Aurelio Ferreira Dos Santos & Coordination                           & \acs{INPE-COENE} & Researcher \\
-        \bottomrule[1.5pt]
-    \end{tabular}
-    \caption{Project members of the Catarina Constellation's Fleet A (2024/03/18).}
-    \label{tab:members}
-\end{table}
+.. list-table:: Goals and objectives of the Catarina Constellation's Fleet A mission.
+   :name: tab:goals-objectives
+   :header-rows: 1
+   :widths: 8 35 8 49
 
-Most of the modules and methods used in this project are based on past works, mainly the FloripaSat-1 and the \ac{EDC} projects. The list of the indirectly involved people is much bigger but not indicated in this document.
+   * - **ID**
+     - **Goal**
+     - **ID**
+     - **Objective**
+   * - G.1
+     - Collect data with national systems
+     - O.1.1
+     - Collect data from a platform provided by the Civil Defense and adapted by the national industry
+   * - 
+     - 
+     - O.1.2
+     - Route data through systems developed/adapted by the national industry, which allows the satellite data link between platforms and data distribution centers
+   * - 
+     - 
+     - O.1.3
+     - Use a nanosatellite platform to perform the satellite link
+   * - G.2
+     - Distribute data across legacy systems
+     - O.2.1
+     - Integrate the data with the SBCD
+   * - 
+     - 
+     - O.2.2
+     - Perform data distribution using SINDA
+   * - G.3
+     - Empower future fleets
+     - O.3.1
+     - Using ECSS as a basis for Space Systems Engineering
 
-\section{Mission patch}
+Project members
+===============
+
+The project involves students, professors, and researchers from :term:`UFSC` and :term:`INPE`. Additionally, the team responsible for conducting the activities of this phase within the Catarina Constellation's Fleet A comprised the members described in :numref:`tab:members`.
+
+.. _tab:members:
+
+.. list-table:: Project members of the Catarina Constellation's Fleet A (2024/03/18).
+   :name: tab:members
+   :header-rows: 1
+   :widths: 20 35 15 30
+
+   * - Name
+     - Contribution
+     - Institution
+     - Position
+   * - **Mission**
+     - 
+     - 
+     - 
+   * - Talita Sauter Possamai
+     - Mission and risk management
+     - UFSC
+     - Professor
+   * - Damylle Cristina Xavier Donati
+     - Systems engineering
+     - UFSC
+     - Doctoral student
+   * - Augusto Marasca de Conto
+     - Risks management
+     - ISI-SE
+     - Manager
+   * - Rodrigo da Silva Cardozo
+     - Orbit analysis
+     - UFSC
+     - Master student
+   * - Monike Corleone
+     - Administration
+     - SC2C.Aero
+     - Employee
+   * - **Catarina-A1 Space System**
+     - 
+     - 
+     - 
+   * - Talita Sauter Possamai
+     - Project management
+     - UFSC
+     - Professor
+   * - Eduardo Augusto Bezerra
+     - Technical management
+     - UFSC
+     - Professor
+   * - Xisto Lucas Travassos
+     - Frequency license coordination
+     - UFSC
+     - Professor
+   * - Laio Oriel Seman
+     - Technical management
+     - UFSC
+     - Professor
+   * - Kleber Vieira de Paiva
+     - Testing
+     - UFSC
+     - Professor
+   * - Manoel Jozeane Mafra de Carvalho
+     - Payload
+     - INPE
+     - Researcher
+   * - Damylle Cristina Xavier Donati
+     - Systems engineering
+     - UFSC
+     - Doctoral student
+   * - Ludmila Kopko
+     - Systems engineering
+     - UFSC
+     - Student
+   * - Rodrigo da Silva Cardozo
+     - Thermal experimental analysis
+     - UFSC
+     - Master student
+   * - Gabriel Mariano Marcelino
+     - Technical development
+     - UFSC
+     - Researcher
+   * - João Cláudio Elsen Barcellos
+     - EPS
+     - UFSC
+     - Master student
+   * - Caique Sales de Miranda Gomes
+     - Mechanical subsystem
+     - UFSC
+     - Student
+   * - Ramon de Araujo Borba
+     - EPS
+     - UFSC
+     - Student
+   * - Vitória Beatriz Bianchin
+     - Groundstation/Payload
+     - UFSC
+     - Student
+   * - Miguel Boing
+     - TTC
+     - UFSC
+     - Student
+   * - Carlos Porto
+     - OBDH
+     - UFSC
+     - Student
+   * - Gabriel Cabral Marcílio
+     - Scientific divulgation
+     - UFSC
+     - Student
+   * - Maria Eduarda Rezende
+     - Mechanical subsystem
+     - UFSC
+     - Student
+   * - Matheus Wagner
+     - ACS
+     - UFSC
+     - Student
+   * - Rebecca Quintino do O
+     - Systems engineering/Testing
+     - UFSC
+     - Student
+   * - Sheila Costa
+     - Procurement
+     - UFSC
+     - Student
+   * - **EMMN Ground System**
+     - 
+     - 
+     - 
+   * - Marcos Aurelio Ferreira Dos Santos
+     - Coordination
+     - INPE-COENE
+     - Researcher
+
+Most of the modules and methods used in this project are based on past works, mainly the FloripaSat-1 and the :term:`EDC` projects. The list of the indirectly involved people is much bigger but not indicated in this document.
+
+Mission patch
+=============
 
 The mission patch of the Catarina Constellation can be seen in \autoref{fig:mission-patch}.
 
-\begin{figure}[!htb]
-    \begin{center}
-        \includegraphics[width=0.7\textwidth]{figures/catarina-mission-patch.png}
-        \caption{Catarina Constellation mission patch.}
-        \label{fig:mission-patch}
-    \end{center}
-\end{figure}
+.. _fig:mission-patch:
+
+.. figure:: figures/catarina-mission-patch.png
+   :width: 70%
+   :align: center
+   :alt: Functional architecture
+
+   Catarina Constellation mission patch.

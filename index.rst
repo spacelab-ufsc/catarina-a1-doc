@@ -25,5 +25,5 @@ Welcome to the official documentation of the Catarina-A1 mission.
    design
    subsystems
    ground_segment
+   glossary
    references
-   appendices
