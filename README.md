@@ -1,8 +1,5 @@
 <h1 align="center">
     <a href="https://github.com/spacelab-ufsc/catarina-a1-doc"><img src="https://github.com/spacelab-ufsc/catarina-a1-doc/blob/main/figures/catarina-mission-patch.png" alt="Catarina-A1" width="50%"></a>
-    <br>
-    CATARINA-A1
-    <br>
 </h1>
 
 <h4 align="center">Critical Design Review documentation for SpaceLab's Catarina-A1 2U CubeSat.</h4>
