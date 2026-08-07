@@ -11,7 +11,6 @@
 .. toctree::
    :maxdepth: 3
 
-   attached-documents
    introduction
    management
    conops
@@ -20,4 +19,3 @@
    subsystems
    ground_segment
    references
-   appendices

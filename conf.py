@@ -80,7 +80,7 @@ with open(latex_elements_file, "rt") as file:
       latex_elements = ast.literal_eval(latex_config)
 
 latex_additional_files = [
-    'latex/manual.sty',
+    'latex/spacelab_book.sty',
     'figures/by-sa.pdf',
     'figures/spacelab-logo-full-color-rgb-1000px@72ppi.png',
 ]

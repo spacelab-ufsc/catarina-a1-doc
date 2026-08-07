@@ -24,7 +24,7 @@
 \thispagestyle{empty}
 
 \begin{flushleft}
-SLB-CAM-DOC-v0.3
+UFSC-CAT-A1-CDR-0001\_A
 \end{flushleft}
 
 \vspace{1cm}
@@ -51,7 +51,7 @@ SLB-CAM-DOC-v0.3
 \vfill
 
 \begin{flushright}
-June 2026
+March 2024
 \end{flushright}
 
 \end{titlepage}
@@ -64,23 +64,23 @@ June 2026
 
 \textbf{\thetitle}
 
-\textit{June, 2026}
+\textit{March, 2024}
 
 \vspace{1cm}
 
 \textbf{Project Chief:}
 
-Eduardo Augusto Bezerra <\href{mailto:Eduardo.Bezerra@ufsc.br}{Eduardo.Bezerra@ufsc.br}>
+Eduardo Augusto Bezerra <\href{mailto:Eduardo.Bezerra@ufsc.br}{Eduardo.Bezerra@ufsc.br}> \\
+Talita Sauter Possamai <\href{mailto:talita.possamai@ufsc.br }{talita.possamai@ufsc.br }>
 
 \vspace{1cm}
 
 \textbf{Authors:}
 
-Caique Sales de Miranda Gomes <\href{mailto:kiqsmg@gmail.com}{kiqsmg@gmail.com}> \\
-Carlos Augusto Porto Freitas <\href{mailto:carlos.freitas@spacelab.ufsc.br}{carlos.freitas@spacelab.ufsc.br}> \\
+Damylle Donati <\href{mailto:damylledonati@gmail.com}{damylledonati@gmail.com}> \\
 Gabriel Mariano Marcelino <\href{mailto:gabriel.mm8@gmail.com}{gabriel.marcelino@spacelab.ufsc.br}> \\
-Miguel Boing <\href{mailto:miguelboing13@gmail.com}{miguelboing13@gmail.com}> \\
-Vitória Beatriz Bianchin <\href{mailto:vitoria.bianchin@spacelab.ufsc.br}{vitoria.bianchin@spacelab.ufsc.br}> \\
+João Cláudio Elsen Barcellos <\href{mailto:joao.claudio.barcellos@spacelab.ufsc.br}{joao.claudio.barcellos@spacelab.ufsc.br}> \\
+Talita Sauter Possamai <\href{mailto:talita.possamai@ufsc.br }{talita.possamai@ufsc.br }>
 
 \vspace{1cm}
 
@@ -101,10 +101,10 @@ Vitória Beatriz Bianchin <\href{mailto:vitoria.bianchin@spacelab.ufsc.br}{vitor
             \toprule[1.5pt]
             \textbf{Version} & \textbf{Author}  & \textbf{Changes}    & \textbf{Date} \\
             \midrule
-            0.2     & G. M. Marcelino           & Document creation   & 2023/02/09 \\
-            0.3     & TBD                       & TBD                 & TBD        \\
-                    &                           &                     &            \\
-                    &                           &                     &            \\
+            - & G. M. Marcelino, J. C. E. Barcellos & Document creation   & 2024/02/21 \\
+            A & D. Donati, G. M. Marcelino, J. C. E. Barcellos, T. S. Possamai & CDR release         & 2024/03/19 \\
+              &                           &                     &            \\
+              &                           &                     &            \\
             \bottomrule[1.5pt]
         \end{tabular}
     \end{center}
@@ -118,7 +118,7 @@ Vitória Beatriz Bianchin <\href{mailto:vitoria.bianchin@spacelab.ufsc.br}{vitor
 	\end{center}
 \end{figure}
 
-\textcopyright\ by The Catarina-A1 Contributors. \thetitle. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{http://creativecommons.org/licenses/by-sa/4.0/}.
+Copyright\textcopyright\ by The Catarina-A1 Contributors. \thetitle. This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit \href{http://creativecommons.org/licenses/by-sa/4.0/}{http://creativecommons.org/licenses/by-sa/4.0/}.
 
 \cleardoublepage
     """,
