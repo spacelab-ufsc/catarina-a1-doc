@@ -48,6 +48,10 @@ if builder in ['html', 'dirhtml']:
 # Options for HTML output
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+html_logo = "_static/catarina-mission-patch.png"
+html_theme_options = {
+    'logo_only': True,
+}
 
 # Navigation bar title
 html_title = "Catarina-A1 Documentation"
