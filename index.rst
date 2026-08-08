@@ -17,6 +17,7 @@ Welcome to the official documentation of the Catarina-A1 mission.
 
 .. toctree::
    :maxdepth: 3
+   :caption: Documentation
 
    introduction
    management
@@ -27,3 +28,9 @@ Welcome to the official documentation of the Catarina-A1 mission.
    ground_segment
    glossary
    references
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Appendix
+
+   link_budget
