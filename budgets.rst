@@ -37,6 +37,7 @@ The Mission Requirements are displayed in :numref:`tab:mission-requirements`, wh
    :name: tab:mission-requirements
    :header-rows: 1
    :widths: 15 65 20
+   :align: center
 
    * - **ID**
      - **Description**
@@ -100,6 +101,7 @@ The requirements described in the :term:`CDS` :cite:`cds`, applicable to a 2U Cu
    :name: tab:cubesat_requirements
    :header-rows: 1
    :widths: 15 65 20
+   :align: center
 
    * - **ID**
      - **Description**
@@ -388,6 +390,7 @@ The Primary Payload System Requirements for the Catarina-A1 are described in :nu
    :name: tab:primary_payload
    :header-rows: 1
    :widths: 15 65 20
+   :align: center
 
    * - **ID**
      - **Description**
@@ -413,6 +416,7 @@ The Service System Requirements for the Catarina-A1 are described in :numref:`ta
    :name: tab:service_system
    :header-rows: 1
    :widths: 15 15 55 15
+   :align: center
 
    * - **ID**
      - **Type**
@@ -719,6 +723,7 @@ Orbital and thermal parameters analyzed
    :name: tab:Thermal_parameters
    :header-rows: 1
    :widths: 20 15 15 20 15 15
+   :align: center
 
    * - **Component**
      - :math:`\boldsymbol{\epsilon}`
@@ -755,6 +760,7 @@ Orbital and thermal parameters analyzed
    :name: tab:Thermal_parameters_2
    :header-rows: 1
    :widths: 20 12 12 15 15 15 11
+   :align: center
 
    * - **Component**
      - :math:`\boldsymbol{\epsilon}`
@@ -826,6 +832,7 @@ For results of incident radiation and temperature per orbit two, fixed orbits we
    :name: tab:orbital_parameters
    :header-rows: 1
    :widths: 30 25 25 20
+   :align: center
 
    * - **Date**
      - :math:`\boldsymbol{a}`
@@ -936,6 +943,7 @@ Based on the data provided by the manufacturers of the subsystems used in the de
    :name: tab:minmax_temps
    :header-rows: 1
    :widths: 35 32 33
+   :align: center
 
    * - **Component**
      - **Min. Temp [°C]**
@@ -981,6 +989,7 @@ However, in-orbit temperature measurements from other CubeSat missions in simila
    :name: tab:referencias_temperaturas
    :header-rows: 1
    :widths: 35 40 25
+   :align: center
 
    * - **Component**
      - **Temperature range measured in orbit [°C]**
@@ -1046,6 +1055,7 @@ Then, considering the individual weights of each subsystem and incorporating mas
    :name: tab:mass-budget
    :header-rows: 1
    :widths: 18 12 20 15 15 20
+   :align: center
 
    * - **Subsystem**
      - **Supplier**
@@ -1215,6 +1225,7 @@ Input Power
    :name: tab:power-simulations
    :header-rows: 1
    :widths: 40 20 20 20
+   :align: center
 
    * - **Parameter**
      - **Variable**
@@ -1280,6 +1291,7 @@ To begin with, it is essential to compile a list of typical operating voltages, 
    :name: tab:power-requirements
    :header-rows: 1
    :widths: 35 22 22 21
+   :align: center
 
    * - **Subsystem**
      - **Typ. voltage operation [V]**
@@ -1375,6 +1387,7 @@ Where:
    :name: tab:power-budget
    :header-rows: 1
    :widths: 25 15 25 15 20
+   :align: center
 
    * - **Subsystem**
      - **Duty cycle [%]**
@@ -1575,6 +1588,7 @@ Where:
    :name: tab:pv-aging
    :header-rows: 1
    :widths: 22 13 13 13 13 13 13
+   :align: center
 
    * - **Parameter**
      - **BOL**
@@ -1632,6 +1646,7 @@ The link budget of all satellite radio links is available in :numref:`tab:link-b
    :name: tab:link-budget-results
    :header-rows: 1
    :widths: 30 17 17 18 18
+   :align: center
 
    * - **Variable**
      - **Downlink**
