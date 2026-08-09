@@ -14,6 +14,11 @@ Catarina-A1 Mission
 
 Welcome to the official documentation of the Catarina-A1 mission.
 
+This documentation presents the Critical Design Review for Catarina-A1, a 2U
+CubeSat developed by SpaceLab at the Federal University of Santa Catarina
+(UFSC). It describes the mission objectives, system design, subsystems, ground
+segment, technical budgets, and project management.
+
 
 .. toctree::
    :maxdepth: 3
