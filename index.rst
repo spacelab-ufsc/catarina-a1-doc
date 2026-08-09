@@ -34,3 +34,4 @@ Welcome to the official documentation of the Catarina-A1 mission.
    :caption: Appendix
 
    link_budget
+   edc_report
