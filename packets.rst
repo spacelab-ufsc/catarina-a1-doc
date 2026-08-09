@@ -1,0 +1,916 @@
+.. packets.rst
+
+    Copyright The Catarina-A1 Contributors.
+
+    Catarina-A1 Documentation
+
+    This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+    International License. To view a copy of this license,
+    visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+.. _anx:packets
+
+*************************
+Telecommunication Packets
+*************************
+
+This appendix lists all the packets used by the RF links of the satellite: Beacon, downlink, and uplink. The fields and length of each type of packet is also presented.
+
+Beacon
+======
+
+The :numref:`tab:beacon-packets` presents the content of the beacon packets.
+
+.. _tab:beacon-packets
+
+.. list-table:: Beacon packets.
+   :name: tab:beacon-packets
+   :header-rows: 1
+   :widths: 15 10 55 20
+
+   * - **Packet**
+     - **Position**
+     - **Content**
+     - **Length [bytes]**
+   * - EPS data
+     - 0
+     - Packet ID (00h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Timestamp in ms
+     - 4
+   * - 
+     - 12
+     - Battery cell 1 voltage in mV
+     - 2
+   * - 
+     - 14
+     - Battery cell 2 voltage in mV
+     - 2
+   * - 
+     - 16
+     - Battery current in mA
+     - 2
+   * - 
+     - 18
+     - Battery charge in mAh
+     - 2
+   * - 
+     - 20
+     - Battery cell 1 temperature in K
+     - 2
+   * - 
+     - 22
+     - Battery cell 2 temperature in K
+     - 2
+   * - 
+     - 24
+     - Battery monitor temperature in K
+     - 2
+   * - 
+     - 26
+     - Solar panel voltage in mV (-Y and +X)
+     - 2
+   * - 
+     - 28
+     - Solar panel voltage in mV (-X and +Z)
+     - 2
+   * - 
+     - 30
+     - Solar panel voltage in mV (-Z and +Y)
+     - 2
+   * - 
+     - 32
+     - Solar panel current in mA (-Y)
+     - 2
+   * - 
+     - 34
+     - Solar panel current in mA (+Y)
+     - 2
+   * - 
+     - 36
+     - Solar panel current in mA (-X)
+     - 2
+   * - 
+     - 38
+     - Solar panel current in mA (+X)
+     - 2
+   * - 
+     - 40
+     - Solar panel current in mA (-Z)
+     - 2
+   * - 
+     - 42
+     - Solar panel current in mA (+Z)
+     - 2
+   * - 
+     - 44
+     - Temperature of the EPS MCU in K
+     - 2
+   * - 
+     - 
+     - 
+     - 46
+   * - TTC data
+     - 0
+     - Packet ID (01h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Timestamp in ms
+     - 4
+   * - 
+     - 12
+     - Temperature of the TTC MCU in K
+     - 2
+   * - 
+     - 14
+     - Reset counter
+     - 2
+   * - 
+     - 16
+     - Last reset cause
+     - 1
+   * - 
+     - 15
+     - Temperature of the beacon radio in K
+     - 2
+   * - 
+     - 
+     - 
+     - 19
+
+Downlink
+========
+
+In :numref:`tab:downlink-packets` the content of the downlink packets is available.
+
+.. _tab:downlink-packets
+
+.. list-table:: Downlink packets.
+   :name: tab:downlink-packets
+   :header-rows: 1
+   :widths: 18 8 52 22
+
+   * - **Packet**
+     - **Position**
+     - **Content**
+     - **Length [bytes]**
+   * - General telemetry
+     - 0
+     - Packet ID (20h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Time counter in milliseconds
+     - 4
+   * - 
+     - 12
+     - Temperature of the OBDH MCU in Kelvin
+     - 2
+   * - 
+     - 14
+     - Input current of the OBDH in mA
+     - 2
+   * - 
+     - 16
+     - Input voltage of the OBDH in mV
+     - 2
+   * - 
+     - 18
+     - Last reset cause of the OBDH
+     - 1
+   * - 
+     - 19
+     - Reset counter of the OBDH
+     - 2
+   * - 
+     - 21
+     - Last valid telecommand (uplink packet ID)
+     - 1
+   * - 
+     - 22
+     - Temperature of the radio in Kelvin
+     - 2
+   * - 
+     - 24
+     - RSSI of the last valid telecommand
+     - 2
+   * - 
+     - 26
+     - Temperature of the antenna in Kelvin
+     - 2
+   * - 
+     - 28
+     - Antenna status
+     - 2
+   * - 
+     - 30
+     - Payloads status
+     - 1
+   * - 
+     - 31
+     - Temperature of the EPS MCU in K
+     - 2
+   * - 
+     - 33
+     - EPS circuitry and Beacon MCU current in mA
+     - 2
+   * - 
+     - 35
+     - Last reset cause of the EPS
+     - 1
+   * - 
+     - 36
+     - Reset counter (EPS)
+     - 2
+   * - 
+     - 38
+     - -Y and +X sides solar panel voltage in mV
+     - 2
+   * - 
+     - 40
+     - -X and +Z sides solar panel voltage in mV
+     - 2
+   * - 
+     - 42
+     - -Z and +Y sides solar panel voltage in mV
+     - 2
+   * - 
+     - 44
+     - -Y side solar panel current in mA
+     - 2
+   * - 
+     - 46
+     - +Y side solar panel current in mA
+     - 2
+   * - 
+     - 48
+     - -X side solar panel current in mA
+     - 2
+   * - 
+     - 50
+     - +X side solar panel current in mA
+     - 2
+   * - 
+     - 52
+     - -Z side solar panel current in mA
+     - 2
+   * - 
+     - 54
+     - +Z side solar panel current in mA
+     - 2
+   * - 
+     - 55
+     - MPPT 1 duty cycle in %
+     - 1
+   * - 
+     - 56
+     - MPPT 2 duty cycle in %
+     - 1
+   * - 
+     - 57
+     - MPPT 3 duty cycle in %
+     - 1
+   * - 
+     - 59
+     - Main power bus voltage in mV
+     - 2
+   * - 
+     - 61
+     - Batteries voltage in mV
+     - 2
+   * - 
+     - 63
+     - Batteries current in mA
+     - 2
+   * - 
+     - 65
+     - Batteries average current in mA
+     - 2
+   * - 
+     - 67
+     - Batteries accumulated current in mA
+     - 2
+   * - 
+     - 69
+     - Batteries charge in mAh
+     - 2
+   * - 
+     - 71
+     - Battery monitor IC temperature in K
+     - 2
+   * - 
+     - 73
+     - Battery heater 1 duty cycle in %
+     - 1
+   * - 
+     - 74
+     - Battery heater 2 duty cycle in %
+     - 1
+   * - 
+     - 75
+     - Payload EDC status (00h=none, 01h=EDC_1, 02h=EDC_2, 03h=Both)
+     - 1
+   * - 
+     - 76
+     - Radiation instrument status (00h=OFF,01h=ON)
+     - 1
+   * - 
+     - 77
+     - Radiation monitor status (00h=OFF,01h=ON)
+     - 1
+   * - 
+     - 
+     - 
+     - 78
+   * - Ping answer
+     - 0
+     - Packet ID (21h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Requester callsign
+     - 7
+   * - 
+     - 
+     - 
+     - 15
+   * - Data request answer
+     - 0
+     - Packet ID (22h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Requester callsign
+     - 7
+   * - 
+     - 15
+     - Data type ID
+     - 1
+   * - 
+     - 16
+     - Timestamp
+     - 4
+   * - 
+     - 20
+     - Data
+     - Var.
+   * - 
+     - 
+     - 
+     - 20 (min.)
+   * - Message broadcast
+     - 0
+     - Packet ID (23h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Requester callsign
+     - 7
+   * - 
+     - 15
+     - Destination callsign
+     - 7
+   * - 
+     - 22
+     - Message
+     - up to 38
+   * - 
+     - 
+     - 
+     - 22 to 60
+   * - Payload data (EDC info)
+     - 0
+     - Packet ID (24h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Payload ID (01h or 02h)
+     - 1
+   * - 
+     - 9
+     - PTT signal receiving time
+     - 4
+   * - 
+     - 13
+     - Error code
+     - 1
+   * - 
+     - 14
+     - Carrier frequency
+     - 2
+   * - 
+     - 16
+     - Carrier amplitude at ADC interface output
+     - 2
+   * - 
+     - 18
+     - User message length in bytes
+     - 1
+   * - 
+     - 19
+     - ARGOS-2 PTT-A2 user message
+     - 35
+   * - 
+     - 54
+     - Current time since J2000 epoch
+     - 4
+   * - 
+     - 58
+     - Elapsed time since last reset
+     - 4
+   * - 
+     - 62
+     - System current supply in mA
+     - 2
+   * - 
+     - 64
+     - System voltage supply in mV
+     - 2
+   * - 
+     - 65
+     - EDC board temperature
+     - 1
+   * - 
+     - 66
+     - RF front end LO
+     - 1
+   * - 
+     - 67
+     - RMS level at front-end output
+     - 2
+   * - 
+     - 69
+     - Generated PTT packages since last initialization
+     - 1
+   * - 
+     - 70
+     - Max
+     - 1
+   * - 
+     - 71
+     - Memory error count
+     - 1
+   * - 
+     - 72
+     - Current time
+     - 4
+   * - 
+     - 76
+     - Number of PTT package available for reading
+     - 1
+   * - 
+     - 77
+     - PTT decoder task status
+     - 1
+   * - 
+     - 78
+     - ADC sampler state
+     - 1
+   * - 
+     - 
+     - 
+     - 79
+   * - Payload data (EDC samples)
+     - 0
+     - Packet ID (24h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Payload ID (01h or 02h)
+     - 1
+   * - 
+     - 9
+     - Elapsed time since J2000 epoch
+     - 4
+   * - 
+     - 13
+     - ADC sample packet number
+     - 1
+   * - 
+     - 14
+     - First ADC I-sample
+     - 2
+   * - 
+     - 16
+     - First ADC Q-sample
+     - 2
+   * - 
+     - ...
+     - ...
+     - ...
+   * - 
+     - 214
+     - N ADC I-sample
+     - 2
+   * - 
+     - 216
+     - N ADC Q-sample
+     - 2
+   * - 
+     - 
+     - 
+     - 218
+   * - TC feedback
+     - 0
+     - Packet ID (25h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Requester callsign
+     - 7
+   * - 
+     - 15
+     - TC packet ID
+     - 1
+   * - 
+     - 16
+     - Timestamp
+     - 4
+   * - 
+     - 
+     - 
+     - 20
+   * - Parameter value
+     - 0
+     - Packet ID (26h)
+     - 1
+   * - 
+     - 1
+     - Source callsign ("PY0EFS")
+     - 7
+   * - 
+     - 8
+     - Requester callsign
+     - 7
+   * - 
+     - 15
+     - Subsystem ID
+     - 1
+   * - 
+     - 16
+     - Parameter ID
+     - 1
+   * - 
+     - 17
+     - Parameter value
+     - 4
+   * - 
+     - 
+     - 
+     - 21
+
+Uplink
+======
+
+As shown in :numref:`tab:packets-struct`, there are 14 supported telecommands. Below there is a description of each one.
+
+* **Ping Request**: It is a simple command to test the communication with the satellite. When the satellite receives a ping packet, it will respond with another ping packet (with another packet ID, as defined in the downlink packets list). There are no additional parameters in the ping packet, just the packet ID and the source callsign (or address). It is also a public telecommand, anyone can send a ping request telecommand to a satellite.
+* **Data Request**: It is a command to download data from the satellite. This command allows a ground station to get specific parameters from a given period (stored in the non-volatile memory of the onboard computer of the satellite). The list of possible parameters varies according to the satellite. The required fields of this telecommand are the parameter ID (1 byte), the start period in milliseconds (epoch, 4 bytes), and the end period in milliseconds (epoch, 4 bytes). This is a private telecommand, and a key is required to send it.
+* **Bloadcast Message**: The "broadcast message" is another public telecommand, no authentication or key is required to send this telecommand to a satellite. This command has the purpose of making a satellite transmit a custom message back to Earth. This can be useful for communication tasks, like a station sending data to another. There are two parameters in this telecommand: the destination callsign (or address), and the content of the message, which can be any sequence of ASCII characters or any byte value. There is a limit of 38 characters in the message field.
+* **Enter Hibernation**: This telecommand activates the hibernation mode in a satellite. During the hibernation mode, no transmissions are made by the satellite; it keeps just listening for new incoming packets (reception). The satellite will stay in hibernation mode for a custom period (1 to 65536 minutes), or until a "Leave Hibernation" mode is received. This is a private telecommand, a key is required to send it. Beyond the packet ID and the source callsign (or address), the number o minutes (2 bytes long) is also transmitted.
+* **Leave Hibernation**: This telecommand complements the "enter hibernation" telecommand by deactivating the hibernation mode in the satellite. When a satellite receives this telecommand, it enables the transmission again immediately. This is also a private telecommand; a specific key is required to send it. There is no additional content to this telecommand packet, just the packet ID and the source callsign (or address).
+* **Activate Module**: It activates an internal module of the satellite. Each module has a unique ID that is passed as an argument of this telecommand's packet. The module Battery heater's ID is 1, Beacon's ID is 2 and Periodic telemetry has ID number 3. 
+* **Activate Payload**: This one is similar to the telecommand "Activate Module", but in this case is used for activating payloads of the satellite. Each satellite will have a list of IDs of the set of payloads. This is also a private telecommand, and a key is required to transmit it.
+* **Deactivate Payload**: It is the same as the "Deactivate Module" telecommand, but for payloads.
+* **Erase Memory**: It erases all the content presented in the non-volatile memories of the onboard computer of a satellite. This is a private command, and a key is required to send it. No additional content is required in a erase memory telecommand packet, just the packet ID and the source callsign (or address).
+* **Force Reset**: It performs a general reset of the satellite. When received, the satellite reset all subsystems. This is a private telecommand, and a key is required to send this command to a satellite. There is no additional content in this packet, just the packet ID and the source callsign (or address).
+* **Get Payload Data**: It allows a ground station to download data from a specific payload of the satellite. The required fields are the payload ID, and optionally, arguments to be passed to the payload. The IDs and arguments vary according to the satellite. This is a private telecommand, and a key is required to send it.
+* **Set Parameter**: It allows the configuration of specific parameters of a given subsystem of the satellite. The required fields are the ID of the subsystem to set (1 byte), the ID of the parameter to set (1 byte), and the new value of the parameter (4 bytes long). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
+* **Get Parameter**: This telecommand complements the "Set Parameter" telecommand. It has the purpose of reading specific parameters of a given subsystem. The required fields are the subsystem's ID (1 byte) and the parameter ID (1 byte). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
+
+The :numref:`tab:uplink-packets` presents the content of the uplink packets.
+
+.. _tab:uplink-packets
+
+.. list-table:: Uplink packets.
+   :name: tab:uplink-packets
+   :header-rows: 1
+   :widths: 20 10 50 20
+
+   * - **Packet**
+     - **Position**
+     - **Content**
+     - **Length [bytes]**
+   * - Ping request
+     - 0
+     - Packet ID (40h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 
+     - 
+     - 8
+   * - Data request
+     - 0
+     - Packet ID (41h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Data type ID
+     - 1
+   * - 
+     - 9
+     - Start timestamp
+     - 4
+   * - 
+     - 13
+     - End timestamp
+     - 4
+   * - 
+     - 17
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 37
+   * - Broadcast message
+     - 0
+     - Packet ID (42h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Destination callsign
+     - 7
+   * - 
+     - 15
+     - Message
+     - up to 38
+   * - 
+     - 
+     - 
+     - up to 53
+   * - Enter hibernation
+     - 0
+     - Packet ID (43h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Hibernation in hours
+     - 2
+   * - 
+     - 10
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 30
+   * - Leave hibernation
+     - 0
+     - Packet ID (44h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 28
+   * - Activate module
+     - 0
+     - Packet ID (45h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Module ID
+     - 1
+   * - 
+     - 9
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 29
+   * - Deactivate module
+     - 0
+     - Packet ID (46h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Module ID
+     - 1
+   * - 
+     - 9
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 29
+   * - Activate payload
+     - 0
+     - Packet ID (47h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Payload ID
+     - 1
+   * - 
+     - 9
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 29
+   * - Deactivate payload
+     - 0
+     - Packet ID (48h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Payload ID
+     - 1
+   * - 
+     - 9
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 29
+   * - Erase memory
+     - 0
+     - Packet ID (49h)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 28
+   * - Force reset
+     - 0
+     - Packet ID (4Ah)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 28
+   * - Get payload data
+     - 0
+     - Packet ID (4Bh)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Payload ID
+     - 1
+   * - 
+     - 9
+     - Payload arguments
+     - 12
+   * - 
+     - 21
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 41
+   * - Set parameter
+     - 0
+     - Packet ID (4Ch)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Subsystem ID
+     - 1
+   * - 
+     - 9
+     - Parameter ID
+     - 1
+   * - 
+     - 10
+     - Parameter value
+     - 4
+   * - 
+     - 14
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 34
+   * - Get parameter
+     - 0
+     - Packet ID (4Dh)
+     - 1
+   * - 
+     - 1
+     - Ground station callsign
+     - 7
+   * - 
+     - 8
+     - Subsystem ID
+     - 1
+   * - 
+     - 9
+     - Parameter ID
+     - 1
+   * - 
+     - 10
+     - HMAC hash
+     - 20
+   * - 
+     - 
+     - 
+     - 30
