@@ -1,0 +1,1741 @@
+.. budgets.rst
+
+    Copyright The Catarina-A1 Contributors.
+
+    Catarina-A1 Documentation
+
+    This work is licensed under the Creative Commons Attribution-ShareAlike 4.0
+    International License. To view a copy of this license,
+    visit http://creativecommons.org/licenses/by-sa/4.0/.
+
+.. _ch:budgets:
+
+**************************************
+Technical Budgets and Mission Analysis
+**************************************
+
+This chapter provides an in-depth examination of the Catarina-A1 mission, focusing on both its requirements and a detailed analysis. We examine some key mission-related elements such as: satellite's orbit, estimated lifetime, and data exchange rate during satellite's operation and more. Additionally, the chapter delves into the technical budgets that govern key engineering parameters, such as mass, power, and communication links. The overarching goal is to demonstrate the project's alignment with mission objectives and its capacity to meet specified requirements effectively.
+
+Requirements
+============
+
+This section describes the operational and functional technical requirements for the Catarina-A1. The applicable documents that justify the requirements presented in this document are :cite:`mdd` and :cite:`ma`. The Mission Requirements and the System Requirements are presented according to the following nomenclature:
+
+* REQ-MIS: Mission Requirements;
+* REQ-CDS: CubeSat Design Specification Requirements;
+* REQ-PAY: Primary Payload System Requirements;
+* REQ-SER: Service System Requirement.
+
+Information about the user’s needs, mission goals and objectives, and mission conception are presented in :cite:`mdd`. A color code is applied to the requirements tables to indicate the current status of compliance based on the verification method indicated: green - compliant; red - not compliant; yellow - partial compliant; no color - verification method not yet applied. The justification for each status can be checked in each subsection related to the topic in this document.
+
+Mission requirements
+********************
+
+The Mission Requirements are displayed in :numref:`tab:mission-requirements`, which presents its :term:`ID`, description and verification method. The respective rationale, traceability, and verification method can be found in the Requirement Justification File :cite:`RJF_A1`.
+
+.. list-table:: Mission Requirements for Catarina Constellation's Fleet A.
+   :name: tab:mission-requirements
+   :header-rows: 1
+   :widths: 15 65 20
+
+   * - **ID**
+     - **Description**
+     - **Verification Method**
+   * - REQ-MIS-1
+     - Catarina Constellation's Fleet A must collect data transmitted by DCPs
+     - Demonstaration
+   * - REQ-MIS-2
+     - The Space Segment from Catarina Constellation's Fleet A must send the collected data to the EMMN
+     - Testing
+   * - REQ-MIS-3
+     - The EMMN must control the Space Segment of Catarina Constellation's Fleet A
+     - Testing
+   * - REQ-MIS-4
+     - SINDA must be used to distribute the collected data by the Space Segment
+     - Demonstration
+   * - REQ-MIS-5
+     - The linkage DCP-Space Segment must be able to receive not less than 32 bytes per access
+     - Analysis
+   * - REQ-MIS-6
+     - The linkage of data collection must be compatible with ARGOS protocol
+     - Demonstration
+   * - REQ-MIS-8
+     - The linkage EMMN-Space Segment must be able to transport not less than 32 bytes per access
+     - Demonstration
+   * - REQ-MIS-9
+     - The mission data must be compatible with the data structure defined by the SBCD
+     - Inspection
+   * - REQ-MIS-10
+     - Two CubeSats must be successfully designed and integrated by the team
+     - Demonstration
+   * - REQ-MIS-11
+     - The CubeSats must be able of operating in LEO at an altitude between 500 and 650 km and inclination between 20 to 100 degrees
+     - Demonstration
+
+System Requirements
+*******************
+
+The System Requirements applicable to the Catarina-A1 and the Ground Segment are described herein. The System Requirements defined are indicated in the subsections below, divided into three sections: CubeSat Design Specification Requirements, Primary Payload System Requirements, and Service System Requirements. The respective rationale, traceability, and verification method can be found in the Requirement Justification File :cite:`RJF_A1`.
+
+.. _sec:cubesat_requirements:
+
+CubeSat Design Specification Requirements
+.........................................
+
+The requirements described in the :term:`CDS` :cite:`cds`, applicable to a 2U CubeSat, are indicated in :numref:`tab:cubesat_requirements`. All references in :numref:`tab:cubesat_requirements` are related to :cite:`cds`.
+
+..
+    \begin{table}[H] \footnotesize
+        \centering
+        \begin{tabular}{p{2cm}p{8.5cm}p{3cm}}
+            \toprule[1.5pt]
+            \textbf{ID} & \textbf{Description} & \textbf{Initial Approval Date} \\
+            \midrule
+    \begin{table}[!ht]
+    \label{cubesat_requirements}
+        \caption{CubeSat Design Specification Requirements for Catarina-A1}
+        \centering
+
+.. list-table:: CubeSat Design Specification Requirements for Catarina-A1.
+   :name: tab:cubesat_requirements
+   :header-rows: 1
+   :widths: 15 65 20
+
+   * - **ID**
+     - **Description**
+     - **Verification Method**
+   * - REQ-CDS-1
+     - All parts shall remain attached to the CubeSats during launch, ejection and operation
+     - Testing
+   * - REQ-CDS-2
+     - Pyrotechnics shall conform to AFSPCMAN 91-710, Volume 3.
+     - Inspection
+   * - REQ-CDS-3
+     - Any propulsion systems shall be designed, integrated, and tested in accordance with AFSPCMAN 91-710 Volume 3.
+     - Inspection
+   * - REQ-CDS-4
+     - Propulsion systems shall have at least 3 inhibits to activation
+     - Inspection
+   * - REQ-CDS-5
+     - CubeSat hazardous materials shall conform to AFSPCMAN 91-710, Volume 3.
+     - Inspection
+   * - REQ-CDS-6
+     - CubeSat materials shall satisfy low out-gassing criteria, as defined in 2.1.7.1 and 2.1.7.2, to prevent contamination of other spacecraft during integration, testing, and launch. A list of NASA approved low out-gassing materials can be found at: http://outgassing.nasa.gov
+     - Inspection
+   * - REQ-CDS-7
+     - CubeSats materials shall have a TML of less than or equal to 1.0 %
+     - Testing
+   * - REQ-CDS-8
+     - CubeSat materials shall have a CVCM of less than or equal to 0.1%
+     - Demonstration
+   * - REQ-CDS-9
+     - The magnetic field of any passive magnets shall be limited to 0.5 Gauss above Earth's magnetic field, outside the CubeSat static envelope
+     - Testing
+   * - REQ-CDS-10
+     - The CubeSat shall be designed to accommodate ascent venting per ventable volume/area of less than 50.8 meters (2000 inches)
+     - Demonstration
+   * - REQ-CDS-11
+     - The CubeSat shall use the coordinate system as defined in Appendix B. The origin of the CubeSat coordinate system is located at the geometric center of the CubeSat
+     - Inspection
+   * - REQ-CDS-12
+     - The CubeSat configuration and physical dimensions shall conform to the appropriate section of Appendix B
+     - Testing
+   * - REQ-CDS-13
+     - The –Z face of the CubeSat will be inserted first into the dispenser
+     - Inspection
+   * - REQ-CDS-14
+     - No components on the yellow shaded sides (see Appendix B CDS drawings) shall protrude farther than 6.5 mm normal to the surface from the plane of the rail
+     - Inspection
+   * - REQ-CDS-15
+     - Deployables shall be constrained by the CubeSat, not the dispenser. This requirement originates from requirements of most launch providers
+     - Inspection
+   * - REQ-CDS-16
+     - Rails should have a surface roughness less than 1.6 µm
+     - Testing
+   * - REQ-CDS-17
+     - The 1U, 1.5U, and 2U CubeSat separation spring must be centered on the end of the standoff on the CubeSat's –Z face as per Figure 7
+     - Inspection
+   * - REQ-CDS-18
+     - At least 75% of the rail should be in contact with the dispenser rails. 25% of the rails may be recessed
+     - Inspection
+   * - REQ-CDS-19
+     - The CubeSat center of gravity shall fall within the ranges specified in Table 2
+     - Testing
+   * - REQ-CDS-20
+     - The CubeSat structure should be made from aluminum alloy. Note: Typically, Aluminum 7075, 6061, 6082, 5005, and/or 5052 are used for both the main CubeSat structure and the rails. If materials other than aluminum are used, the CubeSat developer should contact the launch provider or dispenser manufacturer
+     - Inspection
+   * - REQ-CDS-21
+     - Any aluminum CubeSat external surfaces, such as rails and standoffs that are in contact with the dispenser rails, shall be hard anodized to prevent any cold welding within the dispenser
+     - Inspection
+   * - REQ-CDS-22
+     - If a CubeSat shares a dispenser with another CubeSat(s), each CubeSat shall employ a mechanism to encourage separation from neighboring CubeSats within the dispenser
+     - Inspection
+   * - REQ-CDS-23
+     - The separation mechanism shall not extend beyond the level of the standoff in a stowed configuration
+     - Testing
+   * - REQ-CDS-24
+     - To prevent CubeSat from activating any powered functions, the CubeSat power system shall be at a power-off state from the time of delivery to the LV through on-orbit deployment
+     - Inspection
+   * - REQ-CDS-25
+     - The CubeSat shall have, at a minimum, one deployment switch, which is actuated while integrated in the dispenser
+     - Inspection
+   * - REQ-CDS-26
+     - In the actuated state, the CubeSat deployment switch shall electrically disconnect the power system from the powered functions
+     - Testing
+   * - REQ-CDS-27
+     - The deployment switch shall be in the actuated state at all times while integrated in the dispenser
+     - Inspection
+   * - REQ-CDS-28
+     - In the actuated state, the CubeSat deployment switch should be at or below the level of any external surface that interfaces with the dispenser or neighboring CubeSat. This ensures that the switch will not damage or interfere with the contacting surface
+     - Testing
+   * - REQ-CDS-29
+     - If the CubeSat deployment switch toggles from the actuated state and back, the satellite shall reset to a pre-launch state, including reset of transmission and deployable timers
+     - Inspection
+   * - REQ-CDS-30
+     - RTC may be permitted, if they satisfy requirements REQ-CDS-29 through REQ-CDS-31
+     - Inspection
+   * - REQ-CDS-31
+     - RTC circuits shall be isolated from the CubeSat's main power system
+     - Testing
+   * - REQ-CDS-32
+     - RTC frequencies shall be less than 320 kHz
+     - Testing
+   * - REQ-CDS-33
+     - RTC circuits shall be current limited to less than 10 mA
+     - Testing
+   * - REQ-CDS-34
+     - The RBF pin and all CubeSat umbilical connectors shall be within the designated access port locations if available on the CubeSat's dispenser. Please contact the manufacturer for specific charging and diagnostic port locations and procedures
+     - Inspection
+   * - REQ-CDS-35
+     - The CubeSat shall include an RBF pin, which cuts all power to the satellite once it is inserted into the satellite
+     - Inspection
+   * - REQ-CDS-36
+     - Access to the CubeSat is not guaranteed during or after integration. The RBF pin shall be removed from the CubeSat before integration into the dispenser, if the dispenser does not have access ports
+     - Inspection
+   * - REQ-CDS-37
+     - The RBF pin shall protrude no more than 6.5 mm from the CubeSat rail surface when it is fully inserted into the satellite
+     - Inspection
+   * - REQ-CDS-38
+     - CubeSats shall incorporate battery circuit protection for charging/discharging to avoid unbalanced cell conditions. Additional manufacturer documentation and/or testing will be required for modified, customized, or non-UL-listed cells
+     - Inspection
+   * - REQ-CDS-39
+     - The CubeSat shall have at least three independent RF inhibits to prohibit inadvertent RF transmission
+     - Inspection
+   * - REQ-CDS-40
+     - The CubeSat shall have at least three independent inhibits to prohibit the inadvertent release of any deployable structures such as antennas or solar panels
+     - Inspection
+   * - REQ-CDS-41
+     - The CubeSat shall have at least three independent RF inhibits to prohibit inadvertent RF transmission
+     - Inspection
+   * - REQ-CDS-42
+     - CubeSats shall comply with their country's radio license agreements and restrictions
+     - Inspection
+   * - REQ-CDS-43
+     - CubeSat mission design and hardware shall be in accordance with NPR 8715.6 to limit orbital debris
+     - Analysis
+   * - REQ-CDS-44
+     - Any CubeSat component shall re-enter with energy less than 15 Joules
+     - Analysis
+   * - REQ-CDS-45
+     - Developers should be ready to provide orbital debris mitigation data if requested by the licensing agency or launch provider
+     - Analysis
+   * - REQ-CDS-46
+     - All deployables such as booms, antennas, and solar panels shall wait to deploy a minimum of 30 minutes after the CubeSat's deployment switch(es) are activated during dispenser ejection
+     - Demonstration
+   * - REQ-CDS-47
+     - CubeSats shall not generate or transmit a signal earlier than 45 minutes after on-orbit deployment
+     - Demonstration
+   * - REQ-CDS-48
+     - The dispenser developer will conduct a minimum of one fit check in which the CubeSat flight unit will be inspected and integrated into the dispenser or engineering dispenser to verify the fit. A final fit check will be conducted just prior to integration of the CubeSat flight unit to the dispenser
+     - Demonstration
+   * - REQ-CDS-49
+     - Random vibration testing shall be performed to the levels and duration as defined by the launch provider
+     - Testing
+   * - REQ-CDS-50
+     - Thermal vacuum bakeout shall be performed to ensure proper outgassing of components
+     - Testing
+   * - REQ-CDS-51
+     - Shock testing must be performed as defined by the launch provider
+     - Testing
+   * - REQ-CDS-52
+     - Visual inspection of the CubeSat and measurement of critical areas will be performed per the CIFP (cubesat.org) or as defined by the launch provider
+     - Inspection
+   * - REQ-CDS-53
+     - Qualification testing is performed on an engineering unit that is identical to the flight model CubeSat. Qualification levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining test levels and durations. The flight model will then be tested to acceptance levels on its own. The launch provider may also require a final acceptance/workmanship random vibration test on the CubeSat and flight dispenser after integration
+     - Testing
+   * - REQ-CDS-54
+     - Protoflight testing is performed on the flight model CubeSat. Protoflight levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining test levels and durations. The flight model will be tested to protoflight levels on its own. The launch provider may also require a final acceptance/workmanship random vibration test on the CubeSat and flight dispenser after integration. The flight CubeSat shall not be disassembled or modified after protoflight testing. Disassembly of hardware after protoflight testing will require the developer to adhere to the waiver process prior to disassembly
+     - Testing
+   * - REQ-CDS-55
+     - After delivery and integration of the CubeSat into the dispenser, additional testing may be performed on the integrated system. This test ensures proper integration of the CubeSat into the dispenser. Acceptance test levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining testing levels. The CubeSat shall not be deintegrated at this point. If a CubeSat failure is discovered, a decision to deintegrate the dispenser will be made by the launch provider based on mission safety concerns
+     - Testing
+
+..
+    \begin{table}[H] \footnotesize
+        \centering
+        \begin{tabular}{p{2cm}p{8.5cm}p{3cm}}
+            \toprule[1.5pt]
+            \textbf{ID} & \textbf{Description} & \textbf{Initial Approval Date} \\
+            \midrule
+            REQ-CDS-17 & The 1U, 1.5U, and 2U CubeSat separation spring must be centered on the end of the standoff on the CubeSat’s –Z face as per Figure 7. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-18 & At least 75\% of the rail should be in contact with the dispenser rails. 25\% of the rails may be recessed. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-19 & The CubeSat center of gravity shall fall within the ranges specified in Table 2 & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-20 & The CubeSat structure should be made from aluminum alloy. Note: Typically, Aluminum 7075, 6061, 6082, 5005, and/or 5052 are used for both the main CubeSat structure and the rails. If materials other than aluminum are used, the CubeSat developer should contact the launch provider or dispenser manufacturer. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-21 & Any aluminum CubeSat external surfaces, such as rails and standoffs that are in contact with the dispenser rails, shall be hard anodized to prevent any cold welding within the dispenser. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-22 & If a CubeSat shares a dispenser with another CubeSat(s), each CubeSat shall employ a mechanism to encourage separation from neighboring CubeSats within the dispenser. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-23 &  The separation mechanism shall not extend beyond the level of the standoff in a
+            stowed configuration. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-24 &  To prevent CubeSat from activating any powered functions, the CubeSat power system shall be at a power-off state from the time of delivery to the LV through on-orbit deployment & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-25 &  The CubeSat shall have, at a minimum, one deployment switch, which is actuated while integrated in the dispenser. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-26 & In the actuated state, the CubeSat deployment switch shall electrically disconnect the power system from the powered functions. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-27 &  The deployment switch shall be in the actuated state at all times while integrated in the dispenser. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-28 &  In the actuated state, the CubeSat deployment switch should be at or below the level of any external surface that interfaces with the dispenser or neighboring CubeSat. This ensures that the switch will not damage or interfere with the contacting surface. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-29 &  If the CubeSat deployment switch toggles from the actuated state and back, the satellite shall reset to a pre-launch state, including reset of transmission and deployable timers. & 10/03/2023 - \acs{SRR} RID \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{CubeSat Design Specification Requirements for Catarina-A1 (Part B).}
+        \label{cubesat_requirementsB}
+    \end{table}
+
+..
+    \begin{table}[H] \footnotesize
+        \centering
+        \begin{tabular}{p{2cm}p{8.5cm}p{3cm}}
+            \toprule[1.5pt]
+            \textbf{ID} & \textbf{Description} & \textbf{Initial Approval Date} \\
+            \midrule
+            REQ-CDS-30 &  Real Time Clocks (RTC) may be permitted, if they satisfy requirements REQ-CDS-29 through REQ-CDS-31. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-31 &  RTC circuits shall be isolated from the CubeSat’s main power system. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-32 &  RTC frequencies shall be less than 320 kHz. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-33 &  RTC circuits shall be current limited to less than 10 mA. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-34 &  The RBF pin and all CubeSat umbilical connectors shall be within the designated access port locations if available on the CubeSat’s dispenser. Please contact the manufacturer for specific charging and diagnostic port locations and procedures. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-35 &  The CubeSat shall include an RBF pin, which cuts all power to the satellite once it is inserted into the satellite. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-36 &  Access to the CubeSat is not guaranteed during or after integration. The RBF pin shall be removed from the CubeSat before integration into the dispenser, if the dispenser does not have access ports. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-37 &  The RBF pin shall protrude no more than 6.5 mm from the CubeSat rail surface when it is fully inserted into the satellite & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-38 &  CubeSats shall incorporate battery circuit protection for charging/discharging to avoid unbalanced cell conditions. Additional manufacturer documentation and/or testing will be required for modified, customized, or non-UL-listed cells. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-39 &  The CubeSat shall have at least three independent RF inhibits to prohibit inadvertent RF transmission. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-40 &  The CubeSat shall have at least three independent inhibits to prohibit the inadvertent release of any deployable structures such as antennas or solar panels. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-41 &  The CubeSat shall have at least three independent RF inhibits to prohibit inadvertent RF transmission. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-42 &  CubeSats shall comply with their country’s radio license agreements and restrictions. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-43 &  CubeSat mission design and hardware shall be in accordance with NPR 8715.6 to limit orbital debris & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-44 &  Any CubeSat component shall re-enter with energy less than 15 Joules & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-45 &  Developers should be ready to provide orbital debris mitigation data if requested by the licensing agency or launch provider. & 10/03/2023 - \acs{SRR} RID \\
+        \end{tabular}
+        \caption{CubeSat Design Specification Requirements for Catarina-A1 (Part C).}
+        \label{cubesat_requirementsC}
+    \end{table}
+
+..
+    \begin{table}[H] \footnotesize
+        \centering
+        \begin{tabular}{p{2cm}p{8.5cm}p{3cm}}
+            \toprule[1.5pt]
+            \textbf{ID} & \textbf{Description} & \textbf{Initial Approval Date} \\
+            \midrule
+            REQ-CDS-46 &  All deployables such as booms, antennas, and solar panels shall wait to deploy a minimum of 30 minutes after the CubeSat's deployment switch(es) are activated during dispenser ejection & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-47 &  CubeSats shall not generate or transmit a signal earlier than 45 minutes after on-orbit deployment. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-48 &  The dispenser developer will conduct a minimum of one fit check in which the CubeSat flight unit will be inspected and integrated into the dispenser or engineering dispenser to verify the fit. A final fit check will be conducted just prior to integration of the CubeSat flight unit to the dispenser. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-49 &  Random vibration testing shall be performed to the levels and duration as defined by the launch provider. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-50 &  Thermal vacuum bakeout shall be performed to ensure proper outgassing of components. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-51 &  Shock testing must be performed as defined by the launch provider. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-52 &  Visual inspection of the CubeSat and measurement of critical areas will be performed per the CIFP (cubesat.org) or as defined by the launch provider. & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-53 & Qualification testing is performed on an engineering unit that is identical to the flight model CubeSat. Qualification levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining test levels and durations. The flight model will then be tested to acceptance levels on its own. The launch provider may also require a final acceptance/workmanship random vibration test on the CubeSat and flight dispenser after integration & 10/03/2023 - \acs{SRR} RID \\
+            REQ-CDS-54 & Protoflight testing is performed on the flight model CubeSat. Protoflight levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining test levels and durations. The flight model will be tested to protoflight levels on its own. The launch provider may also require a final acceptance/workmanship random vibration test on the CubeSat and flight dispenser after integration. The flight CubeSat shall not be disassembled or modified after protoflight testing. Disassembly of hardware after protoflight testing will require the developer to adhere to the waiver process prior to disassembly & 10/03/2023 - \acs{SRR} RID \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{CubeSat Design Specification Requirements for Catarina-A1 (Part D).}
+        \label{cubesat_requirementsD}
+    \end{table}
+
+..
+    \begin{table}[H] \footnotesize
+        \centering
+        \begin{tabular}{p{2cm}p{8.5cm}p{3cm}}
+            \toprule[1.5pt]
+            \textbf{ID} & \textbf{Description} & \textbf{Initial Approval Date} \\
+            \midrule
+            REQ-CDS-55 & After delivery and integration of the CubeSat into the dispenser, additional testing may be performed on the integrated system. This test ensures proper integration of the CubeSat into the dispenser. Acceptance test levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining testing levels. The CubeSat shall not be deintegrated at this point. If a CubeSat failure is discovered, a decision to deintegrate the dispenser will be made by the launch provider based on mission safety concerns. & 10/03/2023 - \acs{SRR} RID \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{CubeSat Design Specification Requirements for Catarina-A1 (Part E).}
+        \label{cubesat_requirementsE}
+    \end{table}
+
+.. _sec:primary_payload_system_requirements:
+
+Primary payload system requirements
+...................................
+
+The Primary Payload System Requirements for the Catarina-A1 are described in :numref:`tab:primary_payload`.
+
+..
+    \begin{table}[H] %\footnotesize
+        \centering
+        \begin{tabular}{p{2cm}p{8cm}p{3cm}}
+            \toprule[1.5pt]
+            \textbf{ID} & \textbf{Description} & \textbf{Initial Approval Date} \\
+            \midrule
+            REQ-PAY-01 & The primary payload shall be a communications system compatible with the \ac{DCP} & 04/08/2022 - \acs{SRR} \\
+            REQ-PAY-02 & All data shall be capable of being traced to the date and time the data was taken & 04/08/2022 - \acs{SRR} \\
+            REQ-PAY-03 & The primary payload shall be compatible with \ac{ARGOS}-2 protocol & 04/08/2022 - \acs{SRR} \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Primary Payload System Requirements for Catarina-A1.}
+        \label{primary_payload}
+    \end{table}
+
+.. list-table:: Primary Payload System Requirements for Catarina-A1.
+   :name: tab:primary_payload
+   :header-rows: 1
+   :widths: 15 65 20
+
+   * - **ID**
+     - **Description**
+     - **Verification Method**
+   * - REQ-PAY-01
+     - The primary payload shall be a communications system compatible with the DCP
+     - Demonstration
+   * - REQ-PAY-02
+     - All data shall be capable of being traced to the date and time the data was taken
+     - Testing
+   * - REQ-PAY-03
+     - The primary payload shall be compatible with ARGOS-2 protocol
+     - Inspection
+
+.. sec:service_system_requirements
+
+Service System Requirements
+...........................
+
+The Service System Requirements for the Catarina-A1 are described in :numref:`tab:service_system` and sub-divided into types, namely: functional, operational, interface, environmental, and design.
+
+.. list-table:: Service System Requirements for Catarina-A1.
+   :name: tab:service_system
+   :header-rows: 1
+   :widths: 15 15 55 15
+
+   * - **ID**
+     - **Type**
+     - **Description**
+     - **Verification Method**
+   * - REQ-SER-01
+     - Functional
+     - The Catarina-A1 must receive, store and transmit collected data from data collection plataforms
+     - Testing
+   * - REQ-SER-02
+     - Operational
+     - The target minimum operational service of the space system shall be 1 year, subjected to confirmation at CDR
+     - Demonstration
+   * - REQ-SER-03
+     - Interface
+     - The Catarina-A1 satellite shall dialogue with the Ground Segment using telemetry and telecommands
+     - Testing
+   * - REQ-SER-04
+     - Environmental
+     - The antenna systems of the Catarina-A1 shall operate within the temperature range of -20 to 60 ºC
+     - Demonstration
+   * - REQ-SER-05
+     - Environmental
+     - The solar panels module of the Catarina-A1 shall operate within the temperature range of -40 to 125 ºC
+     - Demonstration
+   * - REQ-SER-06
+     - Environmental
+     - The EPS module of the Catarina-A1 shall operate within the temperature range of -20 to 70 ºC
+     - Demonstration
+   * - REQ-SER-07
+     - Environmental
+     - The OBDH module of the Catarina-A1 shall operate within the temperature range of -25 to 65 ºC
+     - Demonstration
+   * - REQ-SER-08
+     - Environmental
+     - The communication systems of the Catarina-A1 shall operate within the temperature range of -20 to 60 ºC
+     - Demonstration
+   * - REQ-SER-09
+     - Environmental
+     - The structure of the Catarina-A1 shall operate within the temperature range of -40 to 80 ºC
+     - Demonstration
+   * - REQ-SER-10
+     - Operational
+     - The satellite shall comply with the Brazil's, ITU and IARU (for radioamateur, if applicable) radio license agreements and restrictions
+     - Inspection
+   * - REQ-SER-11
+     - Operational
+     - The antenna systems of the Catarina-A1 shall be able to send signal at the frequency of 468 MHz
+     - Inspection
+   * - REQ-SER-12
+     - Operational
+     - The antenna systems of the Catarina-A1 shall be able to receive signal at the frequency of 401-403 and 401,635 MHz
+     - Inspection
+   * - REQ-SER-13
+     - Operational
+     - The CubeSat shall be able to transmit not less than 32 bytes per access with the Ground Station
+     - Analysis
+   * - REQ-SER-14
+     - Operational
+     - The Catarina-A1 shall be able to store not less than 32 MB
+     - Testing
+   * - REQ-SER-15
+     - Design - electrical
+     - The Catarina-A1 shall have an external interface to charge its batteries
+     - Testing
+   * - REQ-SER-16
+     - Design - electrical
+     - Following flight assembly, engineers should be able to examine the status of the Catarina-A1 via bus
+     - Testing
+
+Orbit parameters and analysis
+=============================
+
+The following analyses were carried out using the GMAT tools, as well as orbit analysis software developed in-house.
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/decay_540km2U3U.png}
+        \caption{Fleet A's space systems decay for an orbit of 540 km of altitude.}
+        \label{orbitA1}
+    \end{figure}
+
+.. \autoref{orbitA1} illustrates the space systems in an average orbit altitude of 540km to show the life cycle behavior in orbit of the satellite. It is possible to verify that as the CubeSat approaches the Earth, it decays at an increasing speed.
+
+:numref:`fig:graphDecOrbit` shows the decay data resulting from simulations developed for different initial orbit altitudes and an inclination of :math:`30^{\circ}`.
+
+.. _fig:graphDecOrbit:
+
+.. figure:: figures/decay_orbits2U3U.png
+   :width: 100%
+   :align: center
+   :alt: Orbit decay analisys
+
+   Fleet A's space systems orbit decay analysis.
+
+It is verified that once the chosen orbit is smaller than 650 km, the maximum possible lifetime requirement from the standard :cite:`SpaceDebrisStandard` will be met. For an orbit of 500 km a lifetime in orbit estimated for a 2U is 1.02 years while for a 3U is 1.3 years. Thus the lifetime of the Catarina-A1 for a 500 km orbit is estimated in 1.02 years.
+
+.. sec:orbital_needs
+
+Orbital needs for communication with DCP and ground station
+***********************************************************
+
+.. sec:operation_altitude:
+
+Operation altitude
+..................
+
+Operating altitude is set to occur in :term:`LEO`. Within this scenario, the maximum and minimum operating altitudes of the Catarina-A1 estimated herein are 600 km and 500 km. The 600 km limit is to respect the Space Debris Mitigation Guidelines standard :cite:`SpaceDebrisStandard` to ensure the space system stays in orbit for less than 25 years while the 500 km limit is the expected orbit altitude for the possible launch being analized for Catarina-A1.
+
+.. sec:orbit_inclination:
+
+Orbit inclination
+.................
+
+The inclination of the orbit has the limitation of allowing the Catarina-A1 nanosatellite to communicate with both the :term:`DCP` installed in SC and the :term:`EMMN` on a recurring basis during its operation. In this sense, the orbit range was limited between :math:`20^{\circ}` and approximately :math:`97^{\circ}` (Sun Syncronous Orbit). For orbit inclinations lower than :math:`20^{\circ}` the communication between the space system and the :term:`DCP` at Santa Catarina is not viable as can be seen in later sections of this document.
+
+.. _sec:communication_perDay_pcd:
+
+Number of communication per day: SS - DCP
+.........................................
+
+The number of times the Catarina-A1 has contact with the :term:`DCP` at Santa Catarina is indicated below for the orbit inclination of :math:`20^{\circ}`, :math:`51^{\circ}` and :math:`97^{\circ}`, for the altitudes of 500 and 600 km. Data is presented in different graphs for the minimum number of contacts per day in the month, average number of contacts per day in the month, and maximum number of contacts per day in the month. The average period of each contact is 312 seconds, with a minimum of 30 seconds and a maximum of 410 seconds for all cases analyzed here. Simulations were conducted for the period of 01/06/2023 to 31/05/2024. Since the estimated date for the launch is March 2025, simulations will be updated for the expected date however no significant variations in the presented data is expected.
+
+.. _fig:Communication_perday_PCD:
+
+.. figure:: figures/Communication_perday_PCD.png
+   :width: 100%
+   :align: center
+   :alt: DCP simulation results
+
+   :term:`DCP`-SS communication number of times per day per month from 01/06/2023 to 31/05/2024 for altitudes of 500 km (left) and 600 km (right). From top to bottom: Minimum number, average number, and maximum number.
+
+As can be noted, the minimum number of contacts per day for all configurations is 1. As an example, for an altitude of 500 km and inclination of :math:`97^{\circ}`, in May 2024 at least one day will have only one contact point between :term:`DCP` and the space system. For the same inclinations, all other months will have at least 2 contacts per day. The average contact number is between 2 to 3 (for :math:`97^{\circ}`), 3 to 4 (for :math:`51^{\circ}`), and 3 to 4 (for :math:`20^{\circ}`). All simulations were carried out with a contact angle of :math:`10^{\circ}`.
+
+.. _sec:communication_perDay_emmn:
+
+Number of communication per day: SS - EMMN
+..........................................
+
+The same analysis is presented below for the contact point between the space system and the ground station at Natal. Here we can see that the inclination of :math:`20^{\circ}` has a much higher number of contact points per day than the other inclinations. However, the minimum contact number for all inclinations and altitudes considered herein is still 1, at least one day in May 2024 and June 2023.
+
+.. _fig:Communication_perday_EMMN:
+
+.. figure:: figures/Communication_perday_EMMN.png
+   :width: 100%
+   :align: center
+   :alt: EMMN simulation results
+
+   EMMN-SS communication number of times per day per month from 01/06/2023 to 31/05/2024 for altitudes of 500 km (left) and 600 km (right). From top to bottom: Minimum number, average number, and maximum number.
+
+.. _sec:transmission_time:
+
+Transmission time
+.................
+
+To evaluate the duration of the communication at each contact point between the space system and the ground station or space system and :term:`DCP` the duration of the communication in each contact is presented below.
+
+.. _sec:communication_time:
+
+Communication time
+..................
+
+The figure below plots the occurrence of each contact point for the altitudes of 500 km and 600 km for the three inclinations analyzed versus the duration of the contact point. On the top-left plot, we can see the duration and the total number of contact points for 500 km for each inclination between :term:`DCP` and the space system. For example, for the inclination of :math:`20^{\circ}`, a total of approximately 1440 contact points were estimated through the period of  02/06/2023 to 30/05/2024. Of these 1440 contacts, only 12 contacts had a duration under 50 seconds. Most contacts for all inclinations and altitudes analyzed are concentrated over 200 seconds.
+
+.. _fig:Communication_TIME:
+
+.. figure:: figures/CommunicationTime.png
+   :width: 100%
+   :align: center
+   :alt: Communication time
+
+   Communication time from 02/06/2023 to 30/05/2024  for altitudes of 500 km (left) and 600 km (right).
+
+.. The ground track for the orbit inclinations is shown below for an altitude of 500 km. Notice how the ground track for the inclination of 20$^{\circ}$ does not pass directly above the DCP at Santa Catarina but still has contact due to the simulation condition of 10$^{\circ}$ of contact opening.
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/soil_20.jpeg}
+        \caption{Ground track for an elevation of 20$^{\circ}$.}
+        \label{soil_20}
+    \end{figure}
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/soil_50.jpeg}
+        \caption{Ground track for an elevation of 51$^{\circ}$.}
+        \label{soil_50}
+    \end{figure}
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/soil_90.jpeg}
+        \caption{Ground track for an elevation of 97$^{\circ}$.}
+        \label{soil_90}
+    \end{figure}
+
+Results indicate that all three orbits analyzed herein can guarantee a minimum contact point between the space system and :term:`DCP` and ground station of at least 1  per day in the worst-case scenario, indicating that the orbit of :math:`20^{\circ}`, :math:`51^{\circ}`, and :math:`97^{\circ}` can be used to complete the mission.
+
+However, it is interesting to notice that the orbit inclination of :math:`20^{\circ}` has a much higher number of average contact points for both configurations (space system-:term:`DCP` and space system-GS) and would be a possible good choice for the baseline orbit, based on the parameters analyzed up to this point. Notice that the possible launch for Catarina-A1 is expected to be in a Sun Synchronous Orbit or :math:`43^{\circ}`, both at 500 km. For this launch condition, communication contacts and time for the Ground Station-SS and SS-:term:`DCP` are expected to be similar to the ones presented for the :math:`97^{\circ}` and the :math:`51^{\circ}`.
+
+For the altitude, similar results for contact points and duration of contact were encountered except for the configuration of :math:`20^{\circ}` and 600 km which resulted in an elevated number of total contact points for the space system and the ground station.
+
+.. _sec:thermal-analysis:
+
+Thermal analysis
+================
+
+:cite:`COBEM-Cardozo` and :cite:`gomes2022` developed a thermal analysis numerical model to estimate the Catarina-A1 in-orbit temperatures for :term:`LEO`. The analyses were developed using an open-source thermal lumped model coupled to an orbital and incident radiation algorithm and commercial software, independently.
+
+Data presented in this section was estimated before the definition of the possible launch for Catarina-A1 and will be updated. However, similar altitudes and attitudes were considered for cold and hot cases for the idle condition of the space system.
+
+.. \subsection{Orbit propagation model and dynamic of the satellite}
+
+.. The incident radiation on each face of the CubeSat is related to the orbital position of the satellite through the beta angle ($\beta$), defined as the angle between the orbit plane of the satellite and the position of the Sun.
+
+.. This relation is presented in the left of \autoref{fig:orbital-parameters} and mathematically calculated by equation \autoref{eq:beta-angle}:
+
+..
+    \begin{equation} \label{eq:beta-angle}
+    \beta = \arcsin{{([\cos{(\Gamma)}\sin{(\Omega)}\sin{(i)}] - %[\sin{(\Gamma)}\cos{(\epsilon)}\cos{(\Omega)}\sin{(i)}] + [\sin{(\Lambda)}\sin{(\epsilon)}\cos{(i)}])}}
+    \end{equation}
+
+.. where $\Gamma$ is the eclipse's true solar longitude, $\Omega$ is the ascending node length, $i$ is the orbit inclination, and $\epsilon$ is the axial inclination of the Earth. The last one varies little with time and currently, its value is approximately 23,45$^\circ$.
+
+.. The propagation of the orbit model applies the Gaussian variational equations \cite{curtis}. The six parameters considered in the integration of the second law of Newton are the specific angular momentum ($h$), the inclination ($i$), the ascending node length ($\Omega$), the eccentricity ($e$), the perigee argument ($\omega$) and the true anomaly ($\Theta$). Each parameter is indicated in the right of \autoref{fig:orbital-parameters}.
+
+.. The perturbations related to the gravitational force of Earth (J2) and atmosphere drag were considered as perturbations based in \cite{capderou} which indicates that for altitudes below 2000 km, these two perturbations are the most significant. The drag coefficient of 2.2 was applied \cite{curtis} while the NRLMSISE-00 atmosphere model developed by the US Naval Research Laboratory and presented by \cite{picone} was employed for the data of the atmospheric density.
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{figures/Thermal1.png}
+        \caption{Left: Definition of Beta angle; Right: Kepler Orbital Parameters. \cite{curtis}}
+        \label{fig:orbital-parameters}
+    \end{figure}
+
+.. The gravitational force of the Earth model (J2) considers the effect of the flattening of the polos and the widening at the equator. A movement model for the satellite based on quaternions is integrated into the orbit propagation model to estimate the dynamic of the CubeSat.
+
+.. \subsection{Incident Radiation Model}
+
+.. The data generated by the orbit propagation model and by the dynamic model of the satellite is applied to calculate the irradiative heat flux related to each face of the CubeSat. Three radiative heat fluxes are considered: direct solar radiation, albedo radiation, and infrared radiation from Earth. Due to the geometric configuration of a CubeSat being always composed of a cube with external faces comprised of solar panels (except for the face occupied by the payload) or a combination of cubes, each face of the CubeSat can receive a combination of the irradiative heat flux indicated depending on its position and movement of the satellite. A radiative form factor is calculated for each face about the sun vector (for direct sun irradiation) and about the Earth (for albedo irradiation and infrared irradiation) by applying the equations presented in \cite{nogueira2017}.
+
+.. The direct sun irradiation is estimated by equation \autoref{eq:direct-sun-irradiation}
+
+..
+    \begin{equation} \label{eq:direct-sun-irradiation}
+        Q_S = \alpha_S A_i \cos{(b_i)} I_S B_S
+    \end{equation}
+
+.. where $I_S$ is the direct sun irradiation flux (prescribed here as 1367 $W/{m^2}$), $\alpha_S$ is the absorptivity of the surface in the solar radiation spectrum, $b_i$ is the angle between the surface and the solar radiative vector, and $B_S$ is a nondimensional parameter that assumes the value of 1 when the face is being illuminated by the sun and the value of zero when the face is located in the shadow of the Earth. The angle $b_i$ is calculated by equation \autoref{eq:angle_bi}:
+
+..
+    \begin{equation} \label{eq:angle_bi}
+        \cos{(b_i)} = \frac{\overrightarrow{H}_S \cdot \overrightarrow{N}_i}{|\overrightarrow{H}_S|},
+    \end{equation}
+
+.. where $\overrightarrow{H}_S$ is the solar radiation vector and $\overrightarrow{N}_i$ is the unitary area vector from the face of the satellite.
+
+.. The albedo radiation is dependent on the radiation form factor between the Earth and the selected face of the satellite, $F_{S-E}$, the satellite surface absorptivity in the solar radiation spectrum, $\alpha_S$, and a factor of reflected radiation by the Earth, $\gamma_i$, and is calculated by equation \autoref{eq:q_albedo}:
+
+..
+    \begin{equation} \label{eq:q_albedo}
+        Q_{alb} = \alpha_S A_i \gamma_i I_S F_{S-E},
+    \end{equation}
+
+.. where the Earth's surface is considered a gray surface for the sun's radiation spectrum. For the infrared radiation emitted by the Earth's surface, the Earth is then considered a blackbody in the infrared radiation spectrum, and its emitted radiation is given by equation \autoref{eq:emitted_rad}:
+
+..
+    \begin{equation} \label{eq:emitted_rad}
+        Q_{IR} = \alpha_{IR} A_i I_E F_{S-E},
+    \end{equation}
+
+.. where $\alpha_{IR}$ is now the absorptivity coefficient of the satellite face in the infrared radiation spectrum. The total incident radiation in each face of the satellite is then given by the sum of each radiation portion at each selected orbital position \autoref{eq:total_incRad}:
+
+..
+    \begin{equation} \label{eq:total_incRad}
+        Q_{tot} = Q_S + Q_alb + Q_IR.
+    \end{equation}
+
+Thermal numerical models
+************************
+
+The first model applied a classical lumped model based on the finite differences numerical approach with an explicit method for temporal discretization. The model accounts for thermal contact resistances between each surface of the satellite and the internal radiation heat exchanger. The second model applied the finite volume numerical method through the ANSYS CFX software. Both applied boundary conditions for the thermal irradiation from an orbital simulation code developed in-house. Details about the orbital and thermal models can be found in :cite:`COBEM-Cardozo` and :cite:`gomes2022`. The simplified geometric model is presented in :numref:`fig:exploded_view_1U`, composed of a 2U CubeSat with solar panels in all external faces, structures, and PCBs. Although :numref:`fig:exploded_view_1U` indicates two heat pipes and a battery, these components were not applied to the thermal simulation shown in this section.
+
+.. _fig:exploded_view_1U:
+
+.. figure:: figures/modelo_termico.png
+   :width: 90%
+   :align: center
+   :alt: Geometrical model for thermal analysis
+
+   Geometrical model for thermal analysis
+
+Orbital and thermal parameters analyzed
+***************************************
+
+:numref:`tab:Thermal_parameters_2` lists the thermal properties of the materials, such as emissivity (:math:`\epsilon`), absorptivity (:math:`\alpha`), thermal conductivity (:math:`k`), density (:math:`\rho`), and specific heat (:math:`c_p`) for the model proposed by Cardozo et al. :cite:`COBEM-Cardozo` while :numref:`tab:Thermal_parameters` lists the thermal properties for the model in :cite:`gomes2022`.
+
+.. list-table:: Thermal properties of the materials applied to the thermal lumped model of the CubeSat :cite:`gomes2022`.
+   :name: tab:Thermal_parameters
+   :header-rows: 1
+   :widths: 20 15 15 20 15 15
+
+   * - **Component**
+     - :math:`\boldsymbol{\epsilon}`
+     - :math:`\boldsymbol{\alpha}`
+     - :math:`\boldsymbol{k}` [W/m.K]
+     - :math:`\boldsymbol{\rho}` [kg/m³]
+     - :math:`\boldsymbol{c_p}` [W/kg.K]
+   * - Solar panel
+     - 0.6
+     - 0.68
+     - 1.03
+     - 1840
+     - 712
+   * - Structure
+     - 0.08
+     - 0.37
+     - 130
+     - 2810
+     - 1100
+   * - PCB
+     - 0.22
+     - 0.07
+     - 0.82
+     - 0.25
+     - 1840
+   * - Battery
+     - 0.7
+     - 
+     - 121.2
+     - 12.5
+     - 2122
+
+.. list-table:: Thermal properties of the materials applied to the thermal lumped model of the CubeSat :cite:`COBEM-Cardozo`.
+   :name: tab:Thermal_parameters_2
+   :header-rows: 1
+   :widths: 20 12 12 15 15 15 11
+
+   * - **Component**
+     - :math:`\boldsymbol{\epsilon}`
+     - :math:`\boldsymbol{\alpha}`
+     - :math:`\boldsymbol{k}` [W/m.K]
+     - :math:`\boldsymbol{\rho}` [kg/m³]
+     - :math:`\boldsymbol{c_p}` [W/kg.K]
+     - **Material**
+   * - Substrate
+     - 0.557
+     - 0.578
+     - 148.9
+     - 2330
+     - 712
+     - Silicon
+   * - Panel Base
+     - 0.76
+     - 0.70
+     - 0.81
+     - 1850
+     - 1100
+     - FR-4.0
+   * - Panel Base 2
+     - 0.3
+     - 0.13
+     - 121.2
+     - 2770
+     - 961
+     - Aluminium 7075
+   * - Upper/Bottom
+     - 0.3
+     - 0.13
+     - 121.2
+     - 2770
+     - 961
+     - Aluminium 7075
+   * - PCB
+     - 0.76
+     - 0.07
+     - 0.81
+     - 1850
+     - 1100
+     - FR-4.0
+   * - Vertical Structure
+     - 0.3
+     - 0.13
+     - 121.2
+     - 2770
+     - 961
+     - Aluminium 7075
+   * - Horizontal Structure
+     - 0.3
+     - 0.13
+     - 121.2
+     - 2770
+     - 961
+     - Aluminium 7075
+   * - Bolts
+     - 0.3
+     - 0.13
+     - 121.2
+     - 2770
+     - 961
+     - Aluminium 7075
+
+For results of incident radiation and temperature per orbit two, fixed orbits were considered. One with a Beta angle of :math:`0^\circ` (cold case) and :math:`72^\circ` (hot case). :numref:`tab:orbital_parameters` presents the orbital characteristics of each orbit. The thermal model is prescribed for an attitude of Nadir and altitudes of 500 km and 430 km.
+
+.. list-table:: Orbital parameters of the analyzed orbit for a beta angle of :math:`0^{\circ}` and :math:`72^{\circ}`.
+   :name: tab:orbital_parameters
+   :header-rows: 1
+   :widths: 30 25 25 20
+
+   * - **Date**
+     - :math:`\boldsymbol{a}`
+     - **i**
+     - :math:`\boldsymbol{\beta}`
+   * - :cite:`COBEM-Cardozo`
+     - 500 [km]
+     - 51.36°
+     - 0.0° and 72.0°
+   * - :cite:`gomes2022`
+     - 430 [km]
+     - 51.63°
+     - 0.0° and 72.0°
+
+Results: Total incident radiation on each face
+**********************************************
+
+The total radiation incident on each face for beta :math:`0.0^{\circ}` is presented in :numref:`fig:total-radiation_0-eachFace`. The line colors are equivalent to the face color presented in the schematic of the position of the satellite in orbit for each case. Here again, the eclipse region is visible on the value of the incident radiation on each face.
+
+For this Nadir attitude behavior, face 3 (Total 3) is the face always facing the Earth. As expected, faces 1, 2, and 4 (Total 1, Total 2, and Total 4) receive more radiation due to the direct solar radiation incident on these faces. The beta angle variation from :math:`0.0^{\circ}` to :math:`72.0^{\circ}` will impact the amount of total radiation incident on the satellite, characterizing here the cold and hot cases based on the incident radiation.
+
+For beta :math:`72^{\circ}` (:numref:`fig:total-radiation_72-eachFace`), a sun-synchronous orbit, there is no eclipse region, and all faces, except face 6, have lower incident radiation variation when compared to the beta :math:`0^{\circ}` case. However, Face 6 has a greater incidence of radiation due to always facing the sun, which could cause elevated temperatures in this face.
+
+.. _fig:total-radiation_0-eachFace:
+
+.. figure:: figures/Thermal7_03.png
+   :width: 80%
+   :align: center
+   :alt: Total incident radiation
+
+   Total incident radiation on each face of the satellite for a beta angle of :math:`0.0^{\circ}`.
+
+.. _fig:total-radiation_72-eachFace:
+
+.. figure:: figures/Thermal8_2.png
+   :width: 80%
+   :align: center
+   :alt: Total incident radiation
+
+   Total incident radiation on each face of the satellite for a beta angle of :math:`72.0^{\circ}`.
+
+In :numref:`fig:total-radiation_72-eachFace`, the values marked 1 and 2 represent the satellite behind Earth, and in front of it. As there is no eclipse, the amount of radiation on the upper face is constant, increasing slightly when it passes by 1, as solar radiation adds to the albedo.
+
+Results: Temperature distribution
+*********************************
+
+Temperature profiles for on-orbit for both models are presented in :numref:`fig:temp_0` and :numref:`fig:PCBtemp_0` for the cold idle case where can be seen that both models, overall have a good agreement. Since the models for in-orbit irradiance estimations and thermal models were developed independently and based on different models, these results indicate that both in-house developed models have consistent results.
+
+.. pplying finite element theory to solve the global resistance model, using data from radiation found after propagating the two orbits of choice, one can find the distribution of temperatures in each component of the 1U CubeSat.
+
+.. The first model presented will be the beta equal to 0.0$^{\circ}$. For this angle, the satellite will pass through the planet's shadow, causing the amount of radiation to oscillate as shown previously. Applying the solution model for finite elements,
+.. the following temperature ranges were found for the inner and outer parts of the satellite.
+.. It can be noted that in \autoref{fig:temp_0} the temperature distribution follows the same behavior as the radiation shown previously. It is also possible to note that for faces 1, 2, and 4 the maximum temperature increases between the peaks of each face, reaching a maximum of 313 K on face 4. This occurs because the satellite as a whole receives radiation from the 3 main sources, causing the temperature of all components to increase. For faces 3, 5, and 6 the temperatures are lower, as the radiation flux in them is considerably lower (up to 1000 W/m² lower).
+
+.. _fig:temp_0:
+
+.. figure:: figures/Thermal9.png
+   :width: 90%
+   :align: center
+   :alt: Solar panels temperatures
+
+   Solar panels temperatures for a beta angle of :math:`0.0^{\circ}` - model from :cite:`COBEM-Cardozo`.
+
+.. \autoref{fig:PCBtemp_0} shows the behavior of the satellite PCB temperatures. It can be noticed that the temperatures of PCBs 1 and 4 fluctuate more than 2 and 3. This is because PCBs 1 and 4 are in contact with the upper part, called the Top, and the lower part, called the Bottom, exchanging heat for each other. radiation and conduction. As the incident radiation on these two faces, Bottom and Top, are close in magnitude, the temperature behaves similarly, even so it is possible to notice a difference, resulting from the heat exchange by conduction of the other components of the satellite. For PCBs 2 and 3, the temperature variation is mainly due to the emission of radiation from the inside of the solar panels, and from the PCBs themselves, as well as the conduction of heat between the screws that hold the structure, making the temperature fluctuate less. It can also be seen that the internal temperatures follow the external temperatures, which in turn follow the incident radiation previously shown.
+
+.. _fig:PCBtemp_0:
+
+.. figure:: figures/Temperatura_caique.png
+   :width: 90%
+   :align: center
+   :alt: Solar panels temperatures 2
+
+   Solar panels temperatures for beta angle of :math:`0.0^{\circ}` - model from :cite:`gomes2022`.
+
+.. Considering the radiation distribution found for the orbit with a beta angle of 72.0$^{\circ}$, the following distribution of temperatures was obtained, shown in \autoref{fig:temp_72} and \autoref{fig:PCBtemp_72}. \autoref{fig:temp_72} shows the temperature variation for the internal and external faces of the CubeSat, while \autoref{fig:PCBtemp_72} are the temperatures of the PCBs.
+
+.. The temperature behavior for a beta angle of 72$^{\circ}$ is notably different from that presented for a beta angle of 0.0$^{\circ}$. The main difference is that there is not a large temperature oscillation, reaching a maximum of 12$^{\circ}$C on face 2. It is also noted that the temperatures in the upper and lower parts almost do not oscillate, and have a similar behavior, however, the temperature at the top is larger than at the bottom. This occurs because, in the incident radiation model, the upper part is in direct contact with solar radiation, while the lower part receives only a small portion of albedo and infrared radiation.
+
+.. Although the amount of radiation is so different between both faces, the emissivity, and absorptivity considered in the model are small ($\epsilon$ of 0.3 and $\alpha$ of 0.13), making the temperature not so high at the top and not so low at the bottom. The distribution of temperatures varies according to the incident radiation at the top and bottom, mainly. Note that the temperature range is greater in PCB 1 and reduces to PCB 4, as the radiation incident on the upper part is greater, and the heat is conducted by the screws and emitted between the PCBs. The inner part of the panels also emits radiation, causing the temperature to fluctuate.
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=14cm]{figures/Thermal11.png}
+        \caption{Temperatures for a beta angle of 72$^{\circ}$}
+        \label{fig:temp_72}
+    \end{figure}
+
+..
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=14cm]{figures/Thermal12.png}
+        \caption{PCBs Temperatures for beta angle of 72.0$^{\circ}$}
+        \label{fig:PCBtemp_72}
+    \end{figure}
+
+.. \subsection{Conclusions of the thermal analysis}
+
+.. The findings reveal that eclipses exert a profound influence on temperature distribution, amplifying the contrast between maximum and minimum temperatures on the lateral faces by as much as 50$^{\circ}$C. Conversely, in a sun-synchronous orbit, this disparity narrows significantly, reducing it to a mere 12$^{\circ}$C. Internal temperatures similarly underwent substantial alterations: whereas at a beta angle of 0.0$^{\circ}$, temperatures exhibited substantial fluctuations, at a beta angle of 72$^{\circ}$, the behavior remained consistent across the PCBs, with variations limited to the temperature range.
+
+Based on the data provided by the manufacturers of the subsystems used in the design of the Catarina-A1 nanosatellite, :numref:`tab:minmax_temps` indicates the maximum and minimum values for the operating temperature of these components.
+
+.. It can therefore be seen that the estimated temperatures for operating the space system do not exceed the values provided in the table by an excessive margin, complying with the system requirements presented in previous reviews (see section \ref{sec:service_system_requirements}).
+
+:numref:`fig:temperaturas_maximas_minimas` indicates in gray the operational temperature range for the solar panels and for the most critical case of internal components and in green the maximum and minimum temperature predicted for the cold and hot cases by both thermal models.
+
+.. list-table:: Minimum and maximum values of operation temperatures for the Catarina-A1 components.
+   :name: tab:minmax_temps
+   :header-rows: 1
+   :widths: 35 32 33
+
+   * - **Component**
+     - **Min. Temp [°C]**
+     - **Max. Temp [°C]**
+   * - Solar Panels
+     - -80
+     - +80
+   * - Antennas
+     - -20
+     - +60
+   * - Structure
+     - -40
+     - +40
+   * - OBDH
+     - -25
+     - +65
+   * - TTC
+     - -20
+     - +60
+   * - EPS
+     - -20
+     - +70
+   * - ExpLoRa
+     - -20
+     - +85
+
+The temperature security margins for the solar panels are more than :math:`30\ ^{\circ}C` while for the PCBs are very small for low temperatures. Based on this the assessment chosen by the project team is the addition of heaters near the batteries for thermal control.
+
+It is important to remember that the analyses were carried out for a geometric simplified model and an orbit different from the expected launch. New analyses will be carried out with the correct orbit and critical architecture of Catarina-A1 to confirm these conclusions. Also, TVAC tests at UFSC will be carried out for thermal model validation in the project's next steps.
+
+However, in-orbit temperature measurements from other CubeSat missions in similar orbits and configurations indicate maximum and minimum temperatures consistent with the ones estimated by the thermal models. The comparison was made with the SwissCube, a 1U CubeSat (orbit inclination of :math:`98^{\circ}` and 700 km) and MinXSS 3U Cubesat equipped with battery heaters, a small radiator, and a camera (ISS orbit parameters).
+
+.. _fig:temperaturas_maximas_minimas:
+
+.. figure:: figures/temperaturas_max_min_CDR.png
+   :width: 100%
+   :align: center
+   :alt: Predicted temperatures
+
+   Predicted temperatures range for preliminary cold and hot cases.
+
+.. list-table:: Minimum and maximum values of in-orbit measured temperatures for CubeSat missions.
+   :name: tab:referencias_temperaturas
+   :header-rows: 1
+   :widths: 35 40 25
+
+   * - **Component**
+     - **Temperature range measured in orbit [°C]**
+     - **reference**
+   * - Solar Panels
+     - -42 to +65
+     - MinXSS
+   * - Solar Panels
+     - -40 to +50
+     - SwissCube
+   * - Internal components
+     - -4 to +58
+     - MinXSS
+   * - Internal components
+     - -20 to +30
+     - SwissCube
+
+.. _sec:mass-budget:
+
+Mass budget
+===========
+
+As per the CubeSat standard :cite:`cds`, a 1U CubeSat's weight limit is 2 kg. Since Catarina-A1 is a 2U CubeSat, its maximum allowable mass is 4 kg, based on the current :term:`CDS`. However, not all launchers promptly adhere to the :term:`CDS` standards. Therefore, considering the worst-case scenario where the previous regulations apply (stipulating a 1U CubeSat should not exceed 1.33 kg, and consequently, a 2U CubeSat should not surpass 2.66 kg) becomes imperative.
+
+Then, considering the individual weights of each subsystem and incorporating mass margins, the mass budget is detailed in :numref:`tab:mass-budget` for a comprehensive assessment. With the current total mass of the satellite (whether or not mass margins are considered), Catarina-A1 falls within the permissible limits, exhibiting a margin ranging from 4 to 15 %.
+
+..
+    \begin{table}[!ht]
+        \caption{Mass budget of the Catarina-A1.}
+        \centering
+        \footnotesize
+        \begin{tabular}{lllccc}
+            \toprule[1.5pt]
+            \textbf{Subsystem} & \textbf{Supplier} & \textbf{Model} & \textbf{Mass [g]} & \textbf{Margin [\%]} & \textbf{Final mass [g]$^{1}$} \\
+            \midrule
+            \ac{OBDH}                & SpaceLab      & \ac{OBDH} 2.0          & 53        & 5         & 55.65 \\
+            \ac{TTC}                 & SpaceLab      & \ac{TTC} 2.0           & 73        & 5         & 76.65 \\
+            \ac{EPS}                 & SpaceLab      & \ac{EPS} 2.0           & 90        & 5         & 94.5 \\
+            Battery board       & SpaceLab      & BAT4C             & 235       & 5         & 246.75 \\
+            \ac{TTC}'s antenna       & ISISpace      & AntS              & 89        & 5         & 93.45 \\
+            ACS                 & SpaceLab      & Passive ACS       & 100 (TBC) & 5 (TBC)   & 105 (TBC) \\
+            1$^{st}$ Payload    & INPE          & \ac{EDC}               & 75        & 15        & 86.25 \\
+            2$^{nd}$ Payload    & SpaceLab      & ExpLoRa           & 90 (TBD)  & 15        & 104 \\
+            Payloads' antenna   & ISISpace      & AntS              & 89        & 5         & 93.45 \\
+            Interface boards    & SpaceLab      & Interface boards  & 40        & 5         & 42 \\
+            PC-104 adapter      & SpaceLab      & Adapter board     & 50 (TBC)  & 5         & 53 \\
+            Solar panels        & Orbital       & Solar panels      & 266       & 5         & 279.3 \\
+            Shields             & Usiped (TBC)  & Aluminum sheets   & 590 (TBC) & 5         & 620 \\
+            Structure           & Usiped        & Structure         & 206       & 5         & 216.3 \\
+            Cables              & -             & -                 & 200       & 5         & 210 \\
+            Others              & -             & -                 & 100       & 5         & 105 \\
+            \midrule
+            \textbf{Total}      &               &                   & 2277      &           & 2481.3 \\
+            \textbf{Maximum}    &               &                   & 2666      &           & 2666 \\
+            \textbf{Margin}     &               &                   & 389       &           & 184.7 \\
+            \bottomrule[1.5pt]
+            \multicolumn{6}{l}{$^{1}$ values obtained after considering the mass margins.}
+        \end{tabular}
+        \label{tab:mass-budget}
+    \end{table}
+
+.. list-table:: Mass budget of the Catarina-A1.
+   :name: tab:mass-budget
+   :header-rows: 1
+   :widths: 18 12 20 15 15 20
+
+   * - **Subsystem**
+     - **Supplier**
+     - **Model**
+     - **Mass [g]**
+     - **Margin [%]**
+     - **Final mass [g]** [1]_
+   * - OBDH
+     - SpaceLab
+     - OBDH 2.0
+     - 53
+     - 5
+     - 55.65
+   * - TTC
+     - SpaceLab
+     - TTC 2.0
+     - 73
+     - 5
+     - 76.65
+   * - EPS
+     - SpaceLab
+     - EPS 2.0
+     - 90
+     - 5
+     - 94.5
+   * - Battery board
+     - SpaceLab
+     - BAT4C
+     - 235
+     - 15
+     - 270.25
+   * - TTC's antenna
+     - ISISpace
+     - AntS
+     - 89
+     - 5
+     - 93.45
+   * - ACS
+     - SpaceLab
+     - Passive ACS
+     - 52
+     - 15
+     - 59.8
+   * - 1st Payload
+     - INPE
+     - EDC
+     - 75
+     - 15
+     - 86.25
+   * - 2nd Payload
+     - SpaceLab
+     - ExpLoRa
+     - 90
+     - 15
+     - 103.5
+   * - Payloads' antenna
+     - ISISpace
+     - AntS
+     - 89
+     - 5
+     - 93.45
+   * - Interface boards
+     - SpaceLab
+     - Interface boards
+     - 40
+     - 5
+     - 42
+   * - PC-104 adapters
+     - SpaceLab
+     - Adapter boards
+     - 62
+     - 5
+     - 65.1
+   * - Solar panels
+     - Orbital
+     - Solar panels
+     - 266
+     - 15
+     - 305.9
+   * - Shields
+     - Usiped
+     - Aluminum sheets
+     - 503
+     - 15
+     - 578.45
+   * - Structure
+     - Usiped
+     - Structure
+     - 206
+     - 15
+     - 236.9
+   * - Cables
+     - -
+     - -
+     - 200
+     - 15
+     - 230
+   * - Others
+     - -
+     - -
+     - 100
+     - 15
+     - 115
+   * - **Total**
+     - 
+     - 
+     - **2277**
+     - 
+     - **2552.05**
+   * - **Maximum**
+     - 
+     - 
+     - **2666**
+     - 
+     - **2666**
+   * - **Margin**
+     - 
+     - 
+     - **389**
+     - 
+     - **113.95**
+
+.. [1] Values obtained after considering the mass margins.
+
+.. _sec:power-budget:
+
+Power Budget
+============
+
+Following Section 10.3 of :cite:`larson2005`, determining the power budget for a satellite involves three key steps:
+
+1. Estimate the satellite's power generation capacity and consumption;
+2. Size the battery;
+3. Estimate the power degradation and performance of PV modules over the mission's lifetime.
+
+Step 1) involves evaluating the power generation capacity and power consumption of the satellite. This assessment aims to ensure a technical surplus, confirming that the satellite generates more energy than it consumes. In step 2), the focus shifts to determining whether the selected battery has sufficient capacity for the application. If a battery has not been chosen yet, this is the stage where it is appropriately sized. Finally, in step 3), the satellite's behavior as its lifetime approaches the end is analyzed. A comprehensive study, similar to the initial assessment, is conducted to anticipate any required adjustments or adaptations.
+
+Input Power
+***********
+
+.. _fig:sp_sim_power:
+
+.. subfigure:: A|B
+    :layout-sm: A|B
+    :gap: 8px
+    :subcaptions: below
+    :name: edc_board
+    :class-grid: outline
+    :align: center
+
+    .. image:: curves/GOLDS_com_eclipse.png
+        :width: 70%
+        :align: center
+        :alt: Maximum eclipse.
+
+    .. image:: curves/GOLDS_sem_eclipse.png
+        :width: 70%
+        :align: center
+        :alt: Without eclipse.
+
+    Simulated input power of the solar panels.
+
+.. \subfloat[.\label{fig:without_eclipse}]{\includegraphics[trim=4cm 8.5cm 4cm 8.5cm, clip, width=0.49\textwidth]{}}
+.. \subfloat[.\label{fig:with_eclipse}]{\includegraphics[trim=4cm 8.5cm 4cm 8.5cm, clip, width=0.49\textwidth]{}}
+
+.. list-table:: Results for the power input.
+   :name: tab:power-simulations
+   :header-rows: 1
+   :widths: 40 20 20 20
+
+   * - **Parameter**
+     - **Variable**
+     - **Maximum eclipse**
+     - **Without eclipse**
+   * - Peak power [mW]
+     - :math:`P_{peak}`
+     - 12282.7
+     - 10217.2
+   * - Orbit Average Power [mW]
+     - :math:`P_{OAP}`
+     - 6306.9
+     - 8519.6
+   * - Sun-exposure Average Power [mW]
+     - :math:`P_{SAP}`
+     - 10051.8
+     - 8519.6
+   * - Orbit period [s]
+     - :math:`T`
+     - 5720
+     - 5720
+   * - Sun-exposure period [s]
+     - :math:`T_{S}`
+     - 3590
+     - 5720
+   * - Eclipse period [s]
+     - :math:`T_{E}`
+     - 2130
+     - 0
+
+The simulation results in :numref:`fig:sp_sim_power` depict solar panel power generation in two distinct orbits: one with a maximum eclipse and the other without eclipse. Refer to :numref:`fig:sp_sim_power` for a detailed breakdown of energy production on each side of the CubeSat, including total and average values.
+
+The simulation results provide average power values for the entire orbit and the orbit period, as well as the periods of sun exposure and eclipse. These values are instrumental in building the power budget, and you can find a comprehensive compilation in :numref:`tab:power-simulations`. It is essential to highlight that this study takes into account the worst-case scenario illustrated in :numref:`fig:sp_sim_power`.
+
+Satellite's power consumption
+*****************************
+
+..
+    \begin{table}[!ht]
+        \centering
+        \begin{tabular}{lccccc}
+            \toprule[1.5pt]
+            \multirow{2}{*}{\textbf{Module}} & \multirow{2}{*}{\textbf{Voltage [V]}} & \multicolumn{2}{c}{\textbf{Current [mA]}} & \multicolumn{2}{c}{\textbf{Power [mW]}} \\
+            & & \textbf{Typ.} & \textbf{Max.} & \textbf{Typ.} & \textbf{Max.} \\
+            \midrule
+            OBDH                & 3.3   & 35    & 200   & 115   & 660 \\
+            TTC ($\mu$C)        & 3.3   & 40    & 40    & 132   & 132 \\
+            TTC (radio module)  & 5     & 10    & 650   & 33    & 3250 \\
+            EPS (digital part)  & 7.4   & 50    & 260   & 165   & 858 \\
+            EPS (heater)        & 7.4   & 675   & 675   & 5000  & 5000 \\
+            Antenna module      & 3.3   & 60    & 550   & 200   & 1800 \\
+            Payload EDC         & 5     & 250   & 250   & 1250  & 1250 \\
+            Payload ExpLoRa     & 5     & 250 (TBD)   & 250 (TBD)   & 1250 (TBD)   & 1250 (TBD) \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Power requirements of the subsystems and payloads of the satellite.}
+        \label{tab:power-requirements}
+    \end{table}
+
+To begin with, it is essential to compile a list of typical operating voltages, currents, and power consumptions for each satellite's subsystem, as presented in :numref:`tab:power-requirements`. With this information, :numref:`tab:power-budget` can be created, considering the operational period of each subsystem and payload, margins, and the maximum acceptable power consumption for each subsystem.
+
+.. list-table:: Typical operation of Catarina-A1's subsystems and payloads.
+   :name: tab:power-requirements
+   :header-rows: 1
+   :widths: 35 22 22 21
+
+   * - **Subsystem**
+     - **Typ. voltage operation [V]**
+     - **Typ. current operation [mA]**
+     - **Typ. power consumption [mW]**
+   * - OBDH 2.0
+     - 3.3
+     - 35
+     - 115.5
+   * - TTC 2.0 (while not transmiting)
+     - 3.3
+     - :math:`50 \cdot 2`
+     - :math:`165 \cdot 2`
+   * - TTC 2.0 (while transmiting)
+     - 5
+     - :math:`650 \cdot 2`
+     - :math:`3250 \cdot 2`
+   * - EPS 2.0
+     - 7.4
+     - 50
+     - 370
+   * - BAT4C (idle)
+     - 0
+     - 0
+     - 0
+   * - BAT4C (heater operating)
+     - 7.4
+     - 676
+     - 5002.4
+   * - AntS (during deployment)
+     - 3.3
+     - 550
+     - 1815
+   * - AntS (after deployment)
+     - 3.3
+     - 60
+     - 200
+   * - EDC
+     - 5
+     - 250
+     - 1250
+   * - ExpLoRa
+     - 5
+     - 250 (TBD)
+     - 1250 (TBD)
+
+..
+    \begin{table}[!ht]
+        \centering
+        \begin{tabular}{lccccc}
+            \toprule[1.5pt]
+            \textbf{Module} & \textbf{Duty Cycle [\%]}    & \textbf{Power [mW]} \\
+            \midrule
+            OBDH                    & 100   & 115 \\
+            TTC (radio 1 RX)        & 95    & 65 \\
+            TTC (radio 1 TX)        & 5     & 3250 \\
+            TTC (radio 2 RX)        & 95    & 65 \\
+            TTC (radio 2 TX)        & 5     & 3250 \\
+            EPS                     & 100   & 320 \\
+            BAT (idle)              & 90    & 0 \\
+            BAT (heater full)       & 10    & 5000 \\
+            Antenna (deployment)    & 0     & 1800 \\
+            Antenna (deployed)      & 100   & 35 \\
+            Payload EDC             & 100   & 1250 \\
+            Payload ExpLoRa         & 100   & 1250 \\
+            \cmidrule{2-3}
+            Satellite               & \multicolumn{2}{c}{$\cong$ TBD} \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Power consumption of the subsystems and payloads of the satellite.}
+        \label{tab:power-consumption}
+    \end{table}
+
+Moreover, as presented in :numref:`tab:power-budget`, to ascertain the worst-case scenario certain assumptions were made:
+
+* The :term:`EDC` is assumed to be always on, despite its actual operation only occurring when the satellite passes over Brazil;
+* ExpLoRa is assumed to be active 30 % of the time, even though its actual operational duration may be even less.
+
+To estimate the satellite's maximum power consumption, each subsystem's usage, accounting for operating time and margins, was calculated. The cumulative result, denoted as :math:`P_{sat}`, was found to be **3784.2 mW**.
+
+.. math::
+    :label: eq:satellite-energy-consumption
+
+    E_{sat} = P_{sat} \cdot T
+
+Where:
+
+* :math:`E_{sat}` is the required energy by the satellite over a specific period of time.
+* :math:`P_{sat}` is the estimated power required by the satellite.
+* :math:`T` is the time frame of interest.
+
+.. list-table:: Power budget of the Catarina-A1.
+   :name: tab:power-budget
+   :header-rows: 1
+   :widths: 25 15 25 15 20
+
+   * - **Subsystem**
+     - **Duty cycle [%]**
+     - **Typ. power consumption [mW]**
+     - **Margin [%]**
+     - **Max. power consumption [mW]** [2]_
+   * - OBDH 2.0
+     - 100
+     - 115.5
+     - 5
+     - 121.28
+   * - TTC 2.0 (while not transmiting)
+     - 95
+     - 330
+     - 5
+     - 329.18
+   * - TTC 2.0 (while transmiting)
+     - 5
+     - 6500
+     - 5
+     - 341.25
+   * - EPS 2.0
+     - 100
+     - 370
+     - 5
+     - 388.5
+   * - BAT4C (idle)
+     - 90
+     - 0
+     - 5
+     - 0.00
+   * - BAT4C (heater operating)
+     - 10
+     - 5002.4
+     - 5
+     - 525.25
+   * - AntS (during deployment)
+     - 0
+     - 1815
+     - 5
+     - 0.00
+   * - AntS (after deployment)
+     - 100
+     - 200
+     - 5
+     - 210
+   * - EDC
+     - 100
+     - 1250
+     - 15
+     - 1437.50
+   * - ExpLoRa
+     - 30
+     - 1250
+     - 15
+     - 431.25
+   * - **Total**
+     - 
+     - 
+     - 
+     - **3784.2**
+   * - **Total [mWh]** [3]_
+     - 
+     - 
+     - 
+     - **6013.1**
+   * - **Maximum [mWh]** [4]_
+     - 
+     - 
+     - 
+     - **6743.35**
+   * - **Margin [mWh]**
+     - 
+     - 
+     - 
+     - **730.25**
+
+.. [2] Values obtained after considering the margins (:math:`m`) and duty cycle (:math:`D`), through :math:`P_{\text{max}} = (P_{\text{typ}} \cdot (1 + m)) \cdot D`.
+.. [3] Value obtained after considering the Equation :eq:`eq:satellite-energy-consumption`.
+.. [4] Value obtained after considering the Equation :eq:`eq:oap-energy`.
+
+Subsequently, the energy consumed by the satellite over an entire orbit (:math:`E_{sat}`) was calculated using Equation :eq:`eq:satellite-energy-consumption`, resulting in **6013.1 mWh**, as presented below:
+
+.. math::
+
+    E_{sat} = 3784.2 \cdot (T_{E}+T_{S}) = 3784.2 \cdot (0.592+0.997)
+
+.. math::
+
+    E_{sat} = 6013.1\ mWh
+
+The energy generated by the PV panels, over the entire orbit, was also calculated, considering the value of :math:`P_{OAP}` obtained from the simulations.
+
+.. math::
+    :label: eq:oap-energy
+
+    E_{OAP} = (P_{OAP} \cdot \eta) \cdot (T_{E}+T_{S})
+
+Where:
+
+* :math:`E_{OAP}` is the energy generated by the PV panels over the entire orbit.
+* :math:`P_{OAP}` is the average power generated by the PV panels.
+* :math:`\eta` is the efficiency of the EPS' energy harvesting system.
+* :math:`T_{E}` is the eclipse period.
+* :math:`T_{S}` is the sun-exposure period.
+
+The :eq:`eq:oap-energy` was used, obtaining **8017.33 mWh**. An efficiency of 80 \% was considered, which is a worst-case scenario for the efficiency of the :term:`EPS`' energy harvesting system. Finally, it is possible to see that there is a margin of 25 % in this first analysis (**2004.23 mWh**).
+
+.. math::
+
+    E_{OAP} = (6306.9 \cdot 0.8) \cdot (0.592+0.997) = 8017.33\ mWh
+
+Battery Sizing
+**************
+
+As described in :cite:`larson2005`, the battery sizing of a satellite can be made by following the steps below:
+
+1. Estimate the power required from the satellite;
+2. Define the discharge and charge cycles duration, as well as the numbers of charge-discharge cycles;
+3. Define a maximum \ac{DoD};
+4. Define the charge rate;
+5. Compute battery recharge power.
+
+Then, first, the power required from the satellite was already calculated, which is :math:`P_{sat}`. The discharge and charge cycles duration can be obtained from :numref:`fig:sp_sim_power`. The discharge period corresponds to the time the satellite is eclipsed (:math:`T_{E}`), just as the charge period corresponds to the time when the satellite is exposed to sunlight (:math:`T_{S}`). This is done by considering a single complete orbit.
+
+Now, for the :term:`DoD`, it is possible to calculate considering the :term:`BAT4C`, the battery board that was considered to be used in this mission. It is important to emphasize that it supports 4 batteries in a 2P-2S configuration, in which each individual battery has 3.6 V and 2500 mWh of capacity. Furthermore, considering Equation :eq:`eq:dod-equation`, it is important to define :math:`D_{i}` (discharge rate) and :math:`D_{t}` (discharge period), which are, respectively, equal to :math:`P_{sat}` and :math:`T_{E}`.
+
+.. math::
+    :label: eq:dod-equation
+
+    DoD = \frac{D_{i} \cdot D_{t}}{C} \cdot 100
+
+Where:
+
+* :math:`DoD` is the calculated depth of discharge for the battery under specific conditions.
+* :math:`D_{i}` is the discharge rate.
+* :math:`D_{t}` is the discharge period.
+* :math:`C` is the battery capacity in mWh.
+
+As the battery cells are already selected, as well as their configuration, its capacity is equal to 36000 mWh, and the current :term:`DoD` is computed as **6.22 %**. Considering that it is quite common to consider a :term:`DoD` of no more than 30 %, it can be seen that, for now, the battery is oversized, which is not a problem, as this excess capacity provides a safety margin, ensuring that even under heavy usage scenarios, the battery will not exceed the commonly accepted :term:`DoD` limit of 30 %.
+
+.. math::
+
+    DoD = \frac{3784.2 \cdot 0.592}{(2 \cdot 3.6) \cdot (2 \cdot 2500)} \cdot 100 = 6.22\ \%
+
+The charge rate can be estimated from the power generated by the PV panels when the satellite is exposed to sunlight. As presented before, the simulation shows that an :math:`P_{SAP}` equals 10051.8 mW. Considering the charge cycle duration as 0.997 h and an efficienfy of 80 % of the satellite's energy harvesting system, there is a generation of 8017.33 mWh. From :numref:`tab:power-budget`, the power consumption of the satellite in sunlight is 3784.2 mW (or 3772.85 mWh considering the sunlight period). This way, energy input at sunlight is obtained in Equation :eq:`eq:energy-input-sun-light`.
+
+.. math::
+    :label: eq:energy-input-sun-light
+
+    8017.33 - 3772.85 = 4244.48\ mWh
+
+From the :term:`DoD` calculation, the energy consumption during the eclipse is 2240.25 mWh. In this way, the energy margin of the battery becomes positive (:math:`4244.48 - 2240.25 = 2004.23\ mWh`), as expected from the previous power budget results. From the results, the battery sizing is well suited for the current satellite configuration and the planned behavior.
+
+..
+    \begin{table}[!ht]
+        \centering
+        \begin{tabular}{lcc}
+            \toprule[1.5pt]
+            \textbf{Parameter} & \textbf{Value}    & \textbf{Unit} \\
+            \midrule
+            Battery capacity                & 18500  & mWh \\
+            Energy consumption on sunlight & 2169   & mWh \\
+            Energy consumption on eclipse   & 1571   & mWh \\
+            Sunlight duration              & 1.031  & h \\
+            Eclipse duration                & 0.5889 & h \\
+            Depth of Discharge (DoD)        & 8.5    & \% \\
+            Total battery energy margin     & 643    & mWh \\
+            \bottomrule[1.5pt]
+        \end{tabular}
+        \caption{Battery sizing results.}
+        \label{tab:battery-sizing-results}
+    \end{table}
+
+Power Degradation Over Mission Life
+***********************************
+
+Two major events along the satellite operation should be considered in the power degradation analysis:
+
+1. Solar panels degradation
+2. Battery degradation
+
+From :cite:`larson2005`, 5 % per year is a usual number for the solar panels' degradation, in other words, the general efficiency of the solar panels decays at a rate of 5 % per year of operation. The Equation :eq:`eq:pv-aging` can be used to define the PV panels' efficiency (:math:`\eta_{EOL}`) after :math:`N` years. Furthermore, it is possible to create the :numref:`tab:pv-aging` to visualize the energy dependence of the satellite over the years.
+
+.. math::
+    :label: eq:pv-aging
+
+    \eta_{EOL} = \eta_{BOL} \cdot (1 - \eta_{degradation})^{N}
+
+Where:
+
+* :math:`\eta_{EOL}` is the PV panels' efficiency at the satellite's end of life.
+* :math:`\eta_{BOL}` is the PV panels' efficiency at the satellite's begining of life.
+* :math:`N` is the number of years passed.
+* :math:`\eta_{degradation}` is the estimated efficiency degradation over the years.
+
+.. list-table:: Degradation of the Catarina-A1.
+   :name: tab:pv-aging
+   :header-rows: 1
+   :widths: 22 13 13 13 13 13 13
+
+   * - **Parameter**
+     - **BOL**
+     - **1 year**
+     - **2 years**
+     - **3 years**
+     - **4 years**
+     - **5 years**
+   * - :math:`\eta_{EOL}` [%]
+     - 30
+     - 28.5
+     - 25.72
+     - 22.05
+     - 17.96
+     - 13.9
+   * - :math:`P_{OAP}` [mW]
+     - 6306.90
+     - 5991.55
+     - 5407.38
+     - 4636.15
+     - 3776.17
+     - 2921.94
+   * - :math:`E_{OAP}` [mWh]
+     - 8017.33
+     - 7616.46
+     - 6873.86
+     - 5893.48
+     - 4800.27
+     - 3714.36
+   * - :math:`E_{sat}` [mWh]
+     - 6013.1
+     - 6013.1
+     - 6013.1
+     - 6013.1
+     - 6013.1
+     - 6013.1
+   * - Margin [mWh]
+     - 2004.23
+     - 1602.36
+     - 858.76
+     - -122.62
+     - -1216.83
+     - -2303.74
+
+Until the :math:`3^{rd}` year, the satellite will generate more power than it consumes. From there, the satellite will start consuming more energy than it can generate, and eventually, it will cease to function. It is worth noting that some considerations have been taken into account, creating a rather pessimistic scenario.
+
+.. A partial discharge reduces stress and prolongs battery life, so does a partial charge. Elevated temperature and high currents also affect cycle life
+
+Link Budget
+===========
+
+The link budget of all satellite radio links is available in :numref:`tab:link-budget-results`.
+
+.. list-table:: Link budget results.
+   :name: tab:link-budget-results
+   :header-rows: 1
+   :widths: 30 17 17 18 18
+
+   * - **Variable**
+     - **Downlink**
+     - **Uplink**
+     - **Uplink (Payload)**
+     - **Unit**
+   * - Altitude
+     - 500
+     - 500
+     - 500
+     - km
+   * - Elevation
+     - 0
+     - 0
+     - 0
+     - º
+   * - Frequency
+     - 468
+     - 401
+     - 401.635
+     - MHz
+   * - Modulation
+     - GMSK
+     - GMSK
+     - BPSK
+     - -
+   * - Protocol
+     - NGHam
+     - NGHam
+     - SBCD
+     - -
+   * - Transmit power
+     - 30
+     - 44
+     - 30
+     - dBm
+   * - Transmitter antenna gain
+     - 0
+     - 12
+     - 3
+     - dBi
+   * - Receiver antenna gain
+     - 12
+     - 0
+     - 0
+     - dBi
+   * - FSPL
+     - 154.1
+     - 138.5
+     - 152.7
+     - dB
+   * - Power at receiver
+     - -117.1
+     - -101.7
+     - -124.7
+     - dBm
+   * - Receiver sensibility
+     - -134
+     - -126
+     - -128
+     - dBm
+   * - System losses
+     - 5
+     - 5
+     - 5
+     - dB
+   * - Receiver noise temp.
+     - 361.7
+     - 361.7
+     - 361.7
+     - K
+   * - Antenna noise temp.
+     - 300
+     - 300
+     - 300
+     - K
+   * - System noise temp.
+     - 661.7
+     - 661.7
+     - 661.7
+     - K
+   * - Data rate
+     - 4800
+     - 4800
+     - 400
+     - bps
+   * - Received SNR
+     - 16.48
+     - 31.88
+     - 19.67
+     - dB
+   * - SNR required for :math:`10^{-5}` BER [5]_
+     - 9.6
+     - 9.6
+     - 9.6
+     - dB
+   * - Link margin
+     - :math:`\geq` 6.88
+     - :math:`\geq` 22.28
+     - :math:`\geq` 10.07
+     - dB
+
+.. [5] Without :term:`FEC`.
+
+As can be seen, considering the worst case for the estimated orbit, that is, with the satellite on the horizon and with an elevation of zero degrees, the margin of all links is positive with a considerable balance.
+
+All equations and steps used to obtain the results of :numref:`tab:link-budget-results` are available in :doc:`link_budget`.
