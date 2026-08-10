@@ -19,7 +19,7 @@ This appendix shows the link budget calculation of all the satellite links (incl
 Distance to Satellite at Horizon
 ================================
 
-The distance to the satellite at the horizon (the maximum theoretical distance between the satellite and a ground station) can be calculated using Equatio :eq:`eq:horizon-distance`.
+The distance to the satellite at the horizon (the maximum theoretical distance between the satellite and a ground station) can be calculated using Equation :eq:`eq:horizon-distance`.
 
 .. math::
     :label: eq:horizon-distance

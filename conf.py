@@ -88,3 +88,4 @@ latex_additional_files = [
     'figures/by-sa.pdf',
     'figures/spacelab-logo-full-color-rgb-1000px@72ppi.png',
 ]
+latex_appendices = ['link_budget', 'packets', 'edc_report']

@@ -8,7 +8,7 @@
     International License. To view a copy of this license,
     visit http://creativecommons.org/licenses/by-sa/4.0/.
 
-.. _anx:packets
+.. _anx:packets:
 
 *************************
 Telecommunication Packets
@@ -21,12 +21,11 @@ Beacon
 
 The :numref:`tab:beacon-packets` presents the content of the beacon packets.
 
-.. _tab:beacon-packets
-
 .. list-table:: Beacon packets.
    :name: tab:beacon-packets
    :header-rows: 1
    :widths: 15 10 55 20
+   :align: center
 
    * - **Packet**
      - **Position**
@@ -153,8 +152,6 @@ Downlink
 ========
 
 In :numref:`tab:downlink-packets` the content of the downlink packets is available.
-
-.. _tab:downlink-packets
 
 .. list-table:: Downlink packets.
    :name: tab:downlink-packets
@@ -618,8 +615,6 @@ As shown in :numref:`tab:packets-struct`, there are 14 supported telecommands. B
 * **Get Parameter**: This telecommand complements the "Set Parameter" telecommand. It has the purpose of reading specific parameters of a given subsystem. The required fields are the subsystem's ID (1 byte) and the parameter ID (1 byte). The possible IDs (subsystem and parameter) vary according to the satellite. This is a private telecommand, and a key is required to send it.
 
 The :numref:`tab:uplink-packets` presents the content of the uplink packets.
-
-.. _tab:uplink-packets
 
 .. list-table:: Uplink packets.
    :name: tab:uplink-packets

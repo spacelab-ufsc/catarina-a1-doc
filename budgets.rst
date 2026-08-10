@@ -1196,13 +1196,11 @@ Step 1) involves evaluating the power generation capacity and power consumption 
 Input Power
 ***********
 
-.. _fig:sp_sim_power:
-
 .. subfigure:: A|B
     :layout-sm: A|B
     :gap: 8px
     :subcaptions: below
-    :name: edc_board
+    :name: fig:sp_sim_power
     :class-grid: outline
     :align: center
 

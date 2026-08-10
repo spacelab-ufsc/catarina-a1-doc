@@ -449,9 +449,8 @@ Data Collection Platforms
 
 Data Collection Platforms (DCPs) are part of the Integrated System of Environmental Data (*Sistema Integrado de Dados Ambientais*, SINDA, in Portuguese) :cite:`sinda`. The system collects data that satellites retransmit for reception at the ground station, after which it is sent to SINDA for processing. The data is shown online some time after reception. Examples of DCPs are shown in :numref:`fig:dcp_examples`.
 
-.. _fig:dcp_examples:
-
 .. subfigure:: AB|CC
+    :name: fig:dcp_examples
     :gap: 8px
     :subcaptions: below
     :class-grid: outline

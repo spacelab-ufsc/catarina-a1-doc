@@ -21,13 +21,11 @@ This appendix is a test report of the EDC board. The purpose of this test is to 
 
 A picture of the boards used during the tests can be seen in :numref:`fig:edc-boards-test`.
 
-.. _fig:edc-boards-test:
-
 .. subfigure:: A|B
     :layout-sm: A|B
     :gap: 8px
     :subcaptions: below
-    :name: edc_board
+    :name: fig:edc-boards-test
     :class-grid: outline
     :align: center
 
