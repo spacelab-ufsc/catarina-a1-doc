@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="budgets.html" />
+    <link rel="next" title="Technical Budgets and Mission Analysis" href="budgets.html" />
     <link rel="prev" title="Mission management" href="management.html" /> 
 </head>
 
@@ -31,8 +31,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            catarina-a1
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,7 +43,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Concept of Operations</a><ul>
@@ -88,8 +90,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#operational-phase-schedule">Operational phase schedule</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -131,7 +143,7 @@
 </section>
 <section id="operational-mission-objectives">
 <h3>Operational mission objectives<a class="headerlink" href="#operational-mission-objectives" title="Permalink to this heading"></a></h3>
-<p>The main mission objectives outlined in <span class="xref std std-ref">sec:mission_objectives</span> revolve around the reception and transmission of data from <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a>. Additionally, a secondary objective emerged following the definition of the post-SRR payload, aimed at showcasing CubeSats’ utility in an <a class="reference internal" href="glossary.html#term-IoT"><span class="xref std std-term">IoT</span></a> application. In summary, the mission objectives can be succinctly summarized as follows:</p>
+<p>The main mission objectives outlined in <a class="reference internal" href="introduction.html#sec-mission-objectives"><span class="std std-ref">Mission objectives</span></a> revolve around the reception and transmission of data from <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a>. Additionally, a secondary objective emerged following the definition of the post-SRR payload, aimed at showcasing CubeSats’ utility in an <a class="reference internal" href="glossary.html#term-IoT"><span class="xref std std-term">IoT</span></a> application. In summary, the mission objectives can be succinctly summarized as follows:</p>
 <ul class="simple">
 <li><p>Receive data from one <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> station installed in Santa Catarina;</p></li>
 <li><p>Transmit the received data to the Ground Segment through the satellite’s main communication link;</p></li>
@@ -165,7 +177,7 @@
 <section id="mission-control">
 <h3>Mission control<a class="headerlink" href="#mission-control" title="Permalink to this heading"></a></h3>
 <p>The <a class="reference internal" href="glossary.html#term-EMMN"><span class="xref std std-term">EMMN</span></a>’s <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> ground stations are responsible for tracking and controlling the satellite. In the baseline design, the <a class="reference internal" href="glossary.html#term-EMMN"><span class="xref std std-term">EMMN</span></a> is used as the main tracking station. <a class="reference internal" href="glossary.html#term-EMMN"><span class="xref std std-term">EMMN</span></a> was designed to operate in the <a class="reference internal" href="glossary.html#term-VHF"><span class="xref std std-term">VHF</span></a>, <a class="reference internal" href="glossary.html#term-UHF"><span class="xref std std-term">UHF</span></a> and S-Band, receiving payload-generated data and telemetry, as well as transmitting telecommands for satellites operating in low orbits.</p>
-<p>The station performs autonomous tracking of several satellites according to a previous schedule and a scale of priorities. A ClientServer network design allows users to input and receive data remotely. Technical characteristics of the station can be found in <span id="id1">[<a class="reference internal" href="references.html#id15" title="Lúcio dos Santos Jotha. Estação multimissão de Natal - Manual técnico. INPE - CRN, Natal, RN, July 2020. Available at &lt;https://ccsl.ifrn.edu.br/wp-content/uploads/2020/07/EMMN-MT-001-V01-Manual-Técnico-da-EMMN.pdf&gt;.">3</a>]</span>.</p>
+<p>The station performs autonomous tracking of several satellites according to a previous schedule and a scale of priorities. A ClientServer network design allows users to input and receive data remotely. Technical characteristics of the station can be found in <span id="id1">[<a class="reference internal" href="references.html#id15" title="Lúcio dos Santos Jotha. Estação multimissão de Natal - Manual técnico. INPE - CRN, Natal, RN, July 2020. Available at &lt;https://ccsl.ifrn.edu.br/wp-content/uploads/2020/07/EMMN-MT-001-V01-Manual-Técnico-da-EMMN.pdf&gt;.">29</a>]</span>.</p>
 </section>
 </section>
 <section id="mission-operation-modes">
@@ -266,7 +278,7 @@
 </section>
 <section id="operational-phase-schedule">
 <h2>Operational phase schedule<a class="headerlink" href="#operational-phase-schedule" title="Permalink to this heading"></a></h2>
-<span id="tab-conops-schedule"></span><table class="docutils align-default" id="id7">
+<span id="tab-conops-schedule"></span><table class="docutils align-center" id="id7">
 <caption><span class="caption-number">Table 11 </span><span class="caption-text">Steps of operation.</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 25.0%" />
@@ -302,7 +314,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="management.html" class="btn btn-neutral float-left" title="Mission management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="budgets.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="budgets.html" class="btn btn-neutral float-right" title="Technical Budgets and Mission Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

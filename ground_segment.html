@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Catarina-A1 Documentation</title>
+  <title>Ground Segment &mdash; Catarina-A1 Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -16,11 +16,12 @@
       <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=4ec8a6bb"></script>
       <script src="_static/doctools.js?v=888ff710"></script>
       <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Nomenclature" href="glossary.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="subsystems.html" /> 
+    <link rel="prev" title="Subsystems" href="subsystems.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,8 +32,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            catarina-a1
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,12 +44,41 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ground Segment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ufsc-ground-station">UFSC Ground Station</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#antennas">Antennas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rotators">Rotators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#amplifiers">Amplifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#radios">Radios</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing-and-control">Processing and Control</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#satellite-tracking">Satellite Tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packet-transmission">Packet Transmission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packet-decoding">Packet Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#emmn-ground-station">EMMN Ground Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-collection-platforms">Data Collection Platforms</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -64,7 +95,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Ground Segment</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/ground_segment.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -75,11 +106,525 @@
            <div itemprop="articleBody">
              
   
+<style>
+  .ss-layout-default-AB_CC { grid-template-areas: 'A B' 'C C'; }
+</style>
+<section id="ground-segment">
+<span id="ch-ground-segment"></span><h1>Ground Segment<a class="headerlink" href="#ground-segment" title="Permalink to this heading"></a></h1>
+<p>This chapter describes the Ground Segment of the mission. It is composed of two ground stations (one at the INPE-RN installations and the other at the SpaceLab installations) and one data collection platform (DCP, or <em>Plataforma de Coleta de Dados</em>) installed in Santa Catarina state.</p>
+<p>The control of the mission and the reception of the collected data will be performed mainly at these two ground stations, but if necessary, other stations can execute this task.</p>
+<section id="ufsc-ground-station">
+<h2>UFSC Ground Station<a class="headerlink" href="#ufsc-ground-station" title="Permalink to this heading"></a></h2>
+<p>The UFSC ground station is currently being developed and prepared to be used for several missions developed by UFSC. This section presents the project of this station. A general block diagram can be seen in <a class="reference internal" href="#fig-grs-block-diagram"><span class="std std-numref">Fig. 63</span></a>.</p>
+<figure class="align-center" id="fig-grs-block-diagram">
+<a class="reference internal image-reference" href="_images/grs-block-diagram.png"><img alt="Block diagram of the Ground Segment at the UFSC ground station." src="_images/grs-block-diagram.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">Block diagram of the Ground Segment (UFSC ground station).</span><a class="headerlink" href="#fig-grs-block-diagram" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the following sections, a description of the main components of the station will be presented.</p>
+<section id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h3>
+<p>This part describes the hardware side of the UFSC ground station and details the main peripherals that will be used in this project. Most of the components described here are represented in <a class="reference internal" href="#fig-grs-block-diagram"><span class="std std-numref">Fig. 63</span></a>.</p>
+<section id="antennas">
+<h4>Antennas<a class="headerlink" href="#antennas" title="Permalink to this heading"></a></h4>
+<p>There are two antennas in the ground station: one for VHF and one for the UHF band. The main characteristics of these antennas can be seen in <a class="reference internal" href="#tab-grs-antennas"><span class="std std-numref">Table 34</span></a>.</p>
+<table class="docutils align-center" id="tab-grs-antennas">
+<caption><span class="caption-number">Table 34 </span><span class="caption-text">Main characteristics of the Ground Segment antennas.</span><a class="headerlink" href="#tab-grs-antennas" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 31.8%" />
+<col style="width: 27.3%" />
+<col style="width: 27.3%" />
+<col style="width: 13.6%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Characteristic</strong></p></th>
+<th class="head"><p><strong>VHF Antenna</strong></p></th>
+<th class="head"><p><strong>UHF Antenna</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brand</p></td>
+<td><p>M<sup>2</sup></p></td>
+<td><p>Cushcraft</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Model</p></td>
+<td><p>2MCP14</p></td>
+<td><p>A719B</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Type</p></td>
+<td><p>Yagi</p></td>
+<td><p>Yagi</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Number of elements</p></td>
+<td><p>14</p></td>
+<td><p>19</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Frequency range</p></td>
+<td><p>143–148</p></td>
+<td><p>430–450</p></td>
+<td><p>MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain</p></td>
+<td><p>12.34</p></td>
+<td><p>15.5</p></td>
+<td><p>dBi</p></td>
+</tr>
+<tr class="row-even"><td><p>Power rating</p></td>
+<td><p>1500</p></td>
+<td><p>2000</p></td>
+<td><p>W</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boom length</p></td>
+<td><p>3.2</p></td>
+<td><p>4.1</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-even"><td><p>Longest element</p></td>
+<td><p>1.02</p></td>
+<td><p>0.34</p></td>
+<td><p>m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>2.72</p></td>
+<td><p>2.55</p></td>
+<td><p>kg</p></td>
+</tr>
+</tbody>
+</table>
+<p>More information about the VHF and UHF antennas can be found in <span id="id1">[<a class="reference internal" href="references.html#id2" title="2MCP14, 143-148 MHz. M2 Antenna Systems, Inc., 4402 N. Selland Ave., Fresno, USA, CA 93722, 2021. Available at &lt;https://www.m2inc.com/FG2MCP14&gt;.">8</a>, <a class="reference internal" href="references.html#id3" title="719B - 70 cm Broadband Boomer SSB/CW/FM Yagi 430-450 MHz. Cushcraft Corp., 48 Perimeter Road, Manchester, NH 03106 USA, 2024. Available at &lt;https://mfjenterprises.com/collections/cushcraft/products/a719b&gt;.">23</a>]</span>, respectively.</p>
+<section id="surge-protector">
+<h5>Surge Protector<a class="headerlink" href="#surge-protector" title="Permalink to this heading"></a></h5>
+<p>Two surge protectors will be used to protect the ground station electronics from possible atmospheric discharges in the outside components (one for each antenna). The gas surge protectors safely discharge or deflect up to 5000 A of peak current to earth without causing damage to an independent ground. This device is installed near the antennas, in cascade with the RF cables.</p>
+<p>For this project, the MFJ-270N model will be used; a picture of it can be seen in <a class="reference internal" href="#fig-mfj-270n"><span class="std std-numref">Fig. 64</span></a>.</p>
+<figure class="align-center" id="fig-mfj-270n">
+<a class="reference internal image-reference" href="_images/mfj-270n.jpeg"><img alt="MFJ-270N surge protector." src="_images/mfj-270n.jpeg" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">MFJ-270N surge protector.</span><a class="headerlink" href="#fig-mfj-270n" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="rotators">
+<h4>Rotators<a class="headerlink" href="#rotators" title="Permalink to this heading"></a></h4>
+<p>Both antennas (VHF and UHF) track the satellite through a two-axis rotator (azimuth and elevation). The model used is the Yaesu G-5500, which provides 450<span class="math notranslate nohighlight">\(^{\circ}\)</span> azimuth and 180<span class="math notranslate nohighlight">\(^{\circ}\)</span> elevation control of medium and large unidirectional satellite antenna arrays under remote control from the station operation position.</p>
+<p>A picture of the G-5500 rotator (and controller) can be seen in <a class="reference internal" href="#fig-g5500"><span class="std std-numref">Fig. 65</span></a>; the main characteristics can be found in <a class="reference internal" href="#tab-grs-rotor"><span class="std std-numref">Table 35</span></a>.</p>
+<figure class="align-center" id="fig-g5500">
+<a class="reference internal image-reference" href="_images/g5500.jpg"><img alt="Yaesu G-5500 rotator and controller." src="_images/g5500.jpg" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Yaesu G-5500 rotator and controller.</span><a class="headerlink" href="#fig-g5500" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-grs-rotor">
+<caption><span class="caption-number">Table 35 </span><span class="caption-text">Main characteristics of the antennas’ rotators.</span><a class="headerlink" href="#tab-grs-rotor" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 56.0%" />
+<col style="width: 25.0%" />
+<col style="width: 19.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Characteristic</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brand</p></td>
+<td><p>Yaesu</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Model</p></td>
+<td><p>G-5500</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Voltage requirement</p></td>
+<td><p>110–120 or 200–240</p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{AC}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Motor voltage</p></td>
+<td><p>24</p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{AC}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Rotation time (elevation, <span class="math notranslate nohighlight">\(180^{\circ}\)</span>)</p></td>
+<td><p>67</p></td>
+<td><p>s</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rotation time (azimuth, <span class="math notranslate nohighlight">\(360^{\circ}\)</span>)</p></td>
+<td><p>58</p></td>
+<td><p>s</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum continuous operation</p></td>
+<td><p>5</p></td>
+<td><p>min</p></td>
+</tr>
+<tr class="row-odd"><td><p>Rotation torque (elevation)</p></td>
+<td><p>14</p></td>
+<td><p>kg-m</p></td>
+</tr>
+<tr class="row-even"><td><p>Rotation torque (azimuth)</p></td>
+<td><p>6</p></td>
+<td><p>kg-m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Braking torque (elevation and azimuth)</p></td>
+<td><p>40</p></td>
+<td><p>kg-m</p></td>
+</tr>
+<tr class="row-even"><td><p>Vertical load</p></td>
+<td><p>200</p></td>
+<td><p>kg</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pointing accuracy</p></td>
+<td><p>±4</p></td>
+<td><p>%</p></td>
+</tr>
+<tr class="row-even"><td><p>Wind surface area</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(m^2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Weight (rotator)</p></td>
+<td><p>9</p></td>
+<td><p>kg</p></td>
+</tr>
+<tr class="row-even"><td><p>Weight (controller)</p></td>
+<td><p>3</p></td>
+<td><p>kg</p></td>
+</tr>
+</tbody>
+</table>
+<p>More information about the ground station rotator can be found in <span id="id2">[<a class="reference internal" href="references.html#id22" title="Yaesu G-5500 Antenna Azimuth-Elevation Rotators and Controller. Yaesu Musen Co. Ltd., Tennozu Parkside Building, 2-5-8 Higashi-Shinagawa, Shinagawa-ku, Tokyo 140-0002, Japan, 2024.">26</a>]</span>.</p>
+</section>
+<section id="amplifiers">
+<h4>Amplifiers<a class="headerlink" href="#amplifiers" title="Permalink to this heading"></a></h4>
+<p>There are two dedicated amplifiers in the UFSC ground station: one power amplifier (PA) for transmitting telecommands with a high-power signal, and a low-noise amplifier (LNA) for amplifying the signals received from the satellite. Both are presented next.</p>
+<section id="power-amplifier">
+<h5>Power Amplifier<a class="headerlink" href="#power-amplifier" title="Permalink to this heading"></a></h5>
+<p>The power amplifier is used to add gain to the signals generated by the transmitter. The model used is the Mini-Circuits ZHL-50W-52-S+ <span id="id3">[<a class="reference internal" href="references.html#id56" title="Coaxial High Power Amplifier - ZHL-50W-52-S+. Mini-Circuits, 2022. Available at &lt;\href https://www.minicircuits.com/pdfs/ZHL-50W-52-S+.pdf&gt;.">20</a>]</span>. A picture of this power amplifier can be seen in <a class="reference internal" href="#fig-zhl-50w"><span class="std std-numref">Fig. 66</span></a>; the main characteristics are available in <a class="reference internal" href="#tab-zhl-50w-specs"><span class="std std-numref">Table 36</span></a>.</p>
+<figure class="align-center" id="fig-zhl-50w">
+<a class="reference internal image-reference" href="_images/zhl-50w.png"><img alt="Mini-Circuits ZHL-50W-52-S+ power amplifier." src="_images/zhl-50w.png" style="width: 30%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">Mini-Circuits ZHL-50W-52-S+ power amplifier.</span><a class="headerlink" href="#fig-zhl-50w" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-zhl-50w-specs">
+<caption><span class="caption-number">Table 36 </span><span class="caption-text">Main characteristics of the ZHL-50W-52-S+ power amplifier.</span><a class="headerlink" href="#tab-zhl-50w-specs" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 30.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Characteristic</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brand</p></td>
+<td><p>Mini-Circuits</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Model</p></td>
+<td><p>ZHL-50W-52-S+</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Frequency range</p></td>
+<td><p>50–500</p></td>
+<td><p>MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain</p></td>
+<td><p>47–52</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-even"><td><p>Noise figure</p></td>
+<td><p>4.5–7.0</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-odd"><td><p>DC supply voltage</p></td>
+<td><p>24–25</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum supply current</p></td>
+<td><p>9.3</p></td>
+<td><p>A</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="low-noise-amplifiers">
+<h5>Low-Noise Amplifiers<a class="headerlink" href="#low-noise-amplifiers" title="Permalink to this heading"></a></h5>
+<p>The ZFL-500LN+ model from Mini-Circuits <span id="id4">[<a class="reference internal" href="references.html#id55" title="Coaxial Low Noise Amplifier - ZFL-500LN+. Mini-Circuits, 2022. Available at &lt;\href https://www.minicircuits.com/pdfs/ZFL-500LN+.pdf&gt;.">21</a>]</span> is used as the LNA. This amplifier will be used immediately after the antennas to add gain to incoming telemetry signals transmitted by the satellite. A picture of the low-noise amplifier can be seen in <a class="reference internal" href="#fig-lna"><span class="std std-numref">Fig. 67</span></a>; the main characteristics are available in <a class="reference internal" href="#tab-lna-specs"><span class="std std-numref">Table 37</span></a>.</p>
+<figure class="align-center" id="fig-lna">
+<a class="reference internal image-reference" href="_images/lna.png"><img alt="Mini-Circuits ZFL-500LN+ low-noise amplifier." src="_images/lna.png" style="width: 42%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">Mini-Circuits ZFL-500LN+ low-noise amplifier.</span><a class="headerlink" href="#fig-lna" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-lna-specs">
+<caption><span class="caption-number">Table 37 </span><span class="caption-text">Main characteristics of the ZFL-500LN+ low-noise amplifier.</span><a class="headerlink" href="#tab-lna-specs" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 30.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Characteristic</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brand</p></td>
+<td><p>Mini-Circuits</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Model</p></td>
+<td><p>ZFL-500LN+</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Frequency range</p></td>
+<td><p>0.1–500</p></td>
+<td><p>MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gain</p></td>
+<td><p>24–28</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-even"><td><p>DC supply voltage</p></td>
+<td><p>15</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-odd"><td><p>Maximum supply current</p></td>
+<td><p>60</p></td>
+<td><p>mA</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="radios">
+<h4>Radios<a class="headerlink" href="#radios" title="Permalink to this heading"></a></h4>
+<p>Besides the SDR solution presented in <a class="reference internal" href="#fig-grs-block-diagram"><span class="std std-numref">Fig. 63</span></a>, there is also an amateur radio transceiver with a standalone solution for the amateur radio link with the satellite. The model used is the Icom IC-9700 <span id="id5">[<a class="reference internal" href="references.html#id29" title="IC-9700 VHF/UHF Transceiver. Icom America Inc., 2021. Available at &lt;http://www.icomamerica.com/en/products/amateur/hf/9700/default.aspx&gt;.">13</a>]</span>, an RF direct-sampling receiver for 2 m and 70 cm. The IF receiver consists of a single down-conversion for 23 cm, between 311 and 371 MHz. The PA provides 100 W on 2 m, 75 W on 70 cm, and 10 W on 23 cm.</p>
+<p>In addition to band-specific memory channels, the IC-9700 allows band-specific receiver and transmitter settings. For transmission, users can adjust RF power, TX power limit, limit power, and TX delay by band. Basic receiver settings, such as the noise blanker and noise reduction, can be tweaked by band with a dynamic notch and filter setup by band and mode. A picture of the IC-9700 radio can be seen in <a class="reference internal" href="#fig-ic9700"><span class="std std-numref">Fig. 68</span></a>.</p>
+<figure class="align-center" id="fig-ic9700">
+<a class="reference internal image-reference" href="_images/ic-9700.jpg"><img alt="Icom IC-9700 radio transceiver." src="_images/ic-9700.jpg" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">Icom IC-9700 radio transceiver.</span><a class="headerlink" href="#fig-ic9700" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="software-defined-radio">
+<h5>Software Defined Radio<a class="headerlink" href="#software-defined-radio" title="Permalink to this heading"></a></h5>
+<p>As presented in <a class="reference internal" href="#fig-grs-block-diagram"><span class="std std-numref">Fig. 63</span></a>, the Ground Segment also has an SDR as a transceiver. The model used is the USRP B210, from Ettus Research <span id="id6">[<a class="reference internal" href="references.html#id4" title="USRP B210. Ettus Research, 11500 North Mopac Expressway, Austin, Tx 78759, USA, 2024. Available at &lt;https://www.ettus.com/all-products/ub210-kit/&gt;.">25</a>]</span>, a fully integrated, single-board SDR with continuous frequency coverage from 70 MHz to 6 GHz. It combines the AD9361 RFIC direct-conversion transceiver, providing up to 56 MHz of real-time bandwidth, an open and reprogrammable Spartan-6 FPGA, and USB 3.0 connectivity. Full support for the USRP Hardware Driver (UHD) software also allows the use of the GNU Radio framework. A picture of the USRP B210 SDR (with enclosure) can be seen in <a class="reference internal" href="#fig-usrp-b210"><span class="std std-numref">Fig. 69</span></a>.</p>
+<figure class="align-center" id="fig-usrp-b210">
+<a class="reference internal image-reference" href="_images/usrp-b210.jpg"><img alt="Ettus USRP B210 software-defined radio." src="_images/usrp-b210.jpg" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 69 </span><span class="caption-text">Ettus USRP B210 SDR.</span><a class="headerlink" href="#fig-usrp-b210" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="processing-and-control">
+<h4>Processing and Control<a class="headerlink" href="#processing-and-control" title="Permalink to this heading"></a></h4>
+<p>The ground station control room shall have two monitors and a dedicated computer alongside most of the previously presented hardware. It will work as a monitoring room with an uninterruptible power supply to protect the equipment from power-grid fluctuations.</p>
+<p>The antennas and rotator will also be monitored with outside cameras. The room will contain a server so that transmission and decoding can be done remotely and at any time.</p>
+<p><a class="reference internal" href="#fig-server"><span class="std std-numref">Fig. 70</span></a> shows the server used, and <a class="reference internal" href="#tab-server"><span class="std std-numref">Table 38</span></a> presents its main characteristics.</p>
+<table class="docutils align-center" id="tab-server">
+<caption><span class="caption-number">Table 38 </span><span class="caption-text">Main characteristics of the Dell PowerEdge R240 server.</span><a class="headerlink" href="#tab-server" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Characteristic</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brand</p></td>
+<td><p>Dell</p></td>
+</tr>
+<tr class="row-odd"><td><p>Model</p></td>
+<td><p>PowerEdge R240</p></td>
+</tr>
+<tr class="row-even"><td><p>Processor</p></td>
+<td><p>Intel Xeon E-2244G 3.8 GHz 4C/8T</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM memory</p></td>
+<td><p>16 GB DDR4 ECC</p></td>
+</tr>
+<tr class="row-even"><td><p>Storage</p></td>
+<td><p>1 TB HD</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="fig-server">
+<a class="reference internal image-reference" href="_images/server.jpg"><img alt="Dell PowerEdge R240 server." src="_images/server.jpg" style="width: 63%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 70 </span><span class="caption-text">Dell PowerEdge R240 server.</span><a class="headerlink" href="#fig-server" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="satellite-tracking">
+<h3>Satellite Tracking<a class="headerlink" href="#satellite-tracking" title="Permalink to this heading"></a></h3>
+<p>To track the satellite and for orbit prediction, the GPredict software <span id="id7">[<a class="reference internal" href="references.html#id28" title="Alexandru Csete. Gpredict. 2021. Available at &lt;http://gpredict.oz9aec.net/&gt;.">27</a>]</span> will be used. GPredict is a real-time satellite-tracking and orbit-prediction application. It can track many satellites and display their position and other data in lists, tables, maps, and polar plots (radar view). GPredict can also predict the time of future passes for a satellite and provide detailed information about each pass. GPredict is free software licensed under the GNU General Public License. A picture of the main window of GPredict can be seen in <a class="reference internal" href="#fig-gpredict"><span class="std std-numref">Fig. 71</span></a>.</p>
+<figure class="align-center" id="fig-gpredict">
+<a class="reference internal image-reference" href="_images/gpredict.png"><img alt="Main window of GPredict." src="_images/gpredict.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 71 </span><span class="caption-text">Main window of GPredict.</span><a class="headerlink" href="#fig-gpredict" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="packet-transmission">
+<h3>Packet Transmission<a class="headerlink" href="#packet-transmission" title="Permalink to this heading"></a></h3>
+<p>Packet generation and transmission to the Catarina-A1 satellite can be done with the SpaceLab-Transmitter software <span id="id8">[<a class="reference internal" href="references.html#id50" title="SpaceLab Packet Transmitter. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/spacelab-transmitter&gt;.">17</a>]</span>, which was written in Python with its interface developed using the GTK framework. It has a USRP handler made with Ettus libraries to work with the Ettus USRP B210, as shown in <a class="reference internal" href="#fig-usrp-b210"><span class="std std-numref">Fig. 69</span></a>. The supported modulation is Gaussian minimum shift keying (GMSK). Furthermore, the software has unit tests for the main modules and a logging system to record events, such as initialization or a successfully transmitted telecommand.</p>
+<p><a class="reference internal" href="#fig-transmitter-tree"><span class="std std-numref">Fig. 72</span></a> shows the product tree of the software, which contains its main elements, and <a class="reference internal" href="#fig-spacelab-transmitter"><span class="std std-numref">Fig. 73</span></a> shows its main window.</p>
+<figure class="align-center" id="fig-transmitter-tree">
+<a class="reference internal image-reference" href="_images/transmitter_tree.png"><img alt="SpaceLab-Transmitter product tree." src="_images/transmitter_tree.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 72 </span><span class="caption-text">SpaceLab-Transmitter product tree.</span><a class="headerlink" href="#fig-transmitter-tree" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-spacelab-transmitter">
+<a class="reference internal image-reference" href="_images/spacelab-transmitter-window.png"><img alt="Main window of the SpaceLab-Transmitter application." src="_images/spacelab-transmitter-window.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 73 </span><span class="caption-text">Main window of the SpaceLab-Transmitter application.</span><a class="headerlink" href="#fig-spacelab-transmitter" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="packet-decoding">
+<h3>Packet Decoding<a class="headerlink" href="#packet-decoding" title="Permalink to this heading"></a></h3>
+<p>The packet decoding of Catarina-A1 telemetry can be done using the SpaceLab-Decoder software <span id="id9">[<a class="reference internal" href="references.html#id49" title="SpaceLab Packet Decoder. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/spacelab-decoder&gt;.">16</a>]</span>, using a WAV file or through real-time reception. The decoded telemetry will appear in a dialog within the main window. The software was written in Python, and its interface was developed using the GTK framework. Furthermore, the software has unit tests for the main modules and a logging system to record events.</p>
+<p><a class="reference internal" href="#fig-decoder-tree"><span class="std std-numref">Fig. 74</span></a> shows the product tree of the software, which contains its main elements, and <a class="reference internal" href="#fig-spacelab-decoder"><span class="std std-numref">Fig. 75</span></a> shows its main window.</p>
+<figure class="align-center" id="fig-decoder-tree">
+<a class="reference internal image-reference" href="_images/decoder_tree.png"><img alt="SpaceLab-Decoder product tree." src="_images/decoder_tree.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 74 </span><span class="caption-text">SpaceLab-Decoder product tree.</span><a class="headerlink" href="#fig-decoder-tree" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-spacelab-decoder">
+<a class="reference internal image-reference" href="_images/spacelab-decoder.png"><img alt="Main window of the SpaceLab-Decoder application." src="_images/spacelab-decoder.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 75 </span><span class="caption-text">Main window of the SpaceLab-Decoder application.</span><a class="headerlink" href="#fig-spacelab-decoder" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="emmn-ground-station">
+<h2>EMMN Ground Station<a class="headerlink" href="#emmn-ground-station" title="Permalink to this heading"></a></h2>
+<p>The EMMN (<em>Estação Multimissão de Natal</em>, in Portuguese) ground station <span id="id10">[<a class="reference internal" href="references.html#id15" title="Lúcio dos Santos Jotha. Estação multimissão de Natal - Manual técnico. INPE - CRN, Natal, RN, July 2020. Available at &lt;https://ccsl.ifrn.edu.br/wp-content/uploads/2020/07/EMMN-MT-001-V01-Manual-Técnico-da-EMMN.pdf&gt;.">29</a>]</span> was designed to operate in VHF, UHF, and S-Band frequency bands, receiving payload and telemetry data and transmitting telecommands from and to satellites operating in low orbits.</p>
+<p>The station’s radio-frequency systems use software-defined radios (SDRs), which offer the flexibility to quickly reconfigure parameters such as modulation type, encoding, and data rate. Most commonly used modulation schemes and encoding methods are already implemented, and customization can be requested.</p>
+<p>The station performs autonomous tracking of several satellites according to a previous schedule and a scale of priorities. A client-server network design allows station users to send and receive data remotely.</p>
+<p>A general block diagram of the EMMN hardware is available in <a class="reference internal" href="#fig-emmn-bd"><span class="std std-numref">Fig. 76</span></a>.</p>
+<figure class="align-center" id="fig-emmn-bd">
+<a class="reference internal image-reference" href="_images/emmn-bd.png"><img alt="General block diagram of the EMMN." src="_images/emmn-bd.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 76 </span><span class="caption-text">General block diagram of the EMMN.</span><a class="headerlink" href="#fig-emmn-bd" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-emmn-info">
+<caption><span class="caption-number">Table 39 </span><span class="caption-text">EMMN specifications.</span><a class="headerlink" href="#tab-emmn-info" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Value</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Grid locator</p></td>
+<td><p>HI24JD59CI</p></td>
+</tr>
+<tr class="row-odd"><td><p>Coordinates</p></td>
+<td><p>-5.835238, -35.209285</p></td>
+</tr>
+<tr class="row-even"><td><p>Altitude</p></td>
+<td><p>51 m</p></td>
+</tr>
+<tr class="row-odd"><td><p>Antennas</p></td>
+<td><p>Yagi and parabolic</p></td>
+</tr>
+<tr class="row-even"><td><p>Bands</p></td>
+<td><p>VHF, UHF, and S-Band</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequencies</p></td>
+<td><p>144–146 MHz (VHF), 395–405 and 432–440 MHz (UHF), 2200–3300 MHz (S-Band)</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="fig-emmn">
+<a class="reference internal image-reference" href="_images/inpe-emmn.jpg"><img alt="Multimission station of Natal, Rio Grande do Norte." src="_images/inpe-emmn.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 77 </span><span class="caption-text">Multimission station of Natal-RN.</span><a class="headerlink" href="#fig-emmn" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="data-collection-platforms">
+<h2>Data Collection Platforms<a class="headerlink" href="#data-collection-platforms" title="Permalink to this heading"></a></h2>
+<p>Data Collection Platforms (DCPs) are part of the Integrated System of Environmental Data (<em>Sistema Integrado de Dados Ambientais</em>, SINDA, in Portuguese) <span id="id11">[<a class="reference internal" href="references.html#id48" title="INPE. Sistema Integrado de Dados Ambientais - SINDA. 2022. Available at &lt;http://sinda.crn.inpe.br/&gt;.">31</a>]</span>. The system collects data that satellites retransmit for reception at the ground station, after which it is sent to SINDA for processing. The data is shown online some time after reception. Examples of DCPs are shown in <a class="reference internal" href="#fig-dcp-examples"><span class="std std-numref">Fig. 78</span></a>.</p>
+<figure class="sphinx-subfigure align-center" id="fig-dcp-examples">
+<div class="sphinx-subfigure-grid ss-layout-default-AB_CC outline" style="display: grid; gap: 8px; grid-gap: 8px;">
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: A;">
+<a class="reference internal image-reference" href="_images/pcd-1.jpg"><img alt="Example 1." class="align-center" src="_images/pcd-1.jpg" style="width: 100%;" /></a>
+<span class="caption">Example 1.</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: B;">
+<a class="reference internal image-reference" href="_images/pcd-2.jpg"><img alt="Example 2." class="align-center" src="_images/pcd-2.jpg" style="width: 100%;" /></a>
+<span class="caption">Example 2.</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: C;">
+<a class="reference internal image-reference" href="_images/pcd-3.jpg"><img alt="Example 3." class="align-center" src="_images/pcd-3.jpg" style="width: 53%;" /></a>
+<span class="caption">Example 3.</span>
+</div>
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Example of a data collection platform (DCP).</span><a class="headerlink" href="#fig-dcp-examples" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="subsystems.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="subsystems.html" class="btn btn-neutral float-left" title="Subsystems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="glossary.html" class="btn btn-neutral float-right" title="Nomenclature" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Catarina-A1 Documentation</title>
+  <title>Service Module Overview &mdash; Catarina-A1 Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="subsystems.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="budgets.html" /> 
+    <link rel="next" title="Subsystems" href="subsystems.html" />
+    <link rel="prev" title="Technical Budgets and Mission Analysis" href="budgets.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,8 +31,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            catarina-a1
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,12 +43,47 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Service Module Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-diagrams">General Diagrams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#power-diagram">Power Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-path-diagram">Data Path Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deployment-sequence">Deployment Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beacon-operation">Beacon Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obdh-operation">OBDH Operation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#telecommand-processing">Telecommand Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eps-operation">EPS Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#interface-datasheet-ids">Interface Datasheet (IDS)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#form-factor">Form Factor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#telecommunication">Telecommunication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#authentication">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operation-licenses">Operation Licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -64,7 +100,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Service Module Overview</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/design.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -74,13 +110,863 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
+  <section id="service-module-overview">
+<span id="ch-design"></span><h1>Service Module Overview<a class="headerlink" href="#service-module-overview" title="Permalink to this heading"></a></h1>
+<p>This chapter presents the service module that will be used in Catarina-A1. The aim is to show the positioning of the boards in the 2U CubeSat, as well as the communication and power interfaces related to the satellite’s service module.</p>
+<section id="general-diagrams">
+<h2>General Diagrams<a class="headerlink" href="#general-diagrams" title="Permalink to this heading"></a></h2>
+<p>The subsystems of the CubeSat are arranged within the 2U-based physical structure, as illustrated in <a class="reference internal" href="#fig-subsystems-positioning"><span class="std std-numref">Fig. 30</span></a>.</p>
+<figure class="align-center" id="fig-subsystems-positioning">
+<a class="reference internal image-reference" href="_images/General_display_diagram_Catarina-A1.png"><img alt="Subsystems positioning in the CubeSat." src="_images/General_display_diagram_Catarina-A1.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">Subsystems positioning.</span><a class="headerlink" href="#fig-subsystems-positioning" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="power-diagram">
+<h3>Power Diagram<a class="headerlink" href="#power-diagram" title="Permalink to this heading"></a></h3>
+<p>The block diagram depicted in <a class="reference internal" href="#fig-power-diagram"><span class="std std-numref">Fig. 31</span></a> provides an overview of the satellite’s power distribution system. In particular, several <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> output converters, with the exception of those dedicated to powering the service module subsystems, can be deactivated via EN pins. The <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> is in charge of this control, activating or deactivating certain subsystems and/or payloads.</p>
+<p>It is crucial to emphasize that the bus designated for the antenna module remains active solely during its deployment phase. In addition, the current values presented in the diagram represent the maximum capacity rather than the nominal operating values. Actual operational values depend upon the variable power output of the solar panels and the varying loads experienced during the satellite’s mission.</p>
+<figure class="align-center" id="fig-power-diagram">
+<a class="reference internal image-reference" href="_images/power_diagram.png"><img alt="Satellite power distribution diagram." src="_images/power_diagram.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Power diagram.</span><a class="headerlink" href="#fig-power-diagram" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="data-path-diagram">
+<h3>Data Path Diagram<a class="headerlink" href="#data-path-diagram" title="Permalink to this heading"></a></h3>
+<p>The data path diagram is shown in <a class="reference internal" href="#fig-data-path"><span class="std std-numref">Fig. 32</span></a>.</p>
+<figure class="align-center" id="fig-data-path">
+<a class="reference internal image-reference" href="_images/data-path-diagram.png"><img alt="Satellite data path diagram." src="_images/data-path-diagram.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Data path diagram.</span><a class="headerlink" href="#fig-data-path" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="deployment-sequence">
+<h3>Deployment Sequence<a class="headerlink" href="#deployment-sequence" title="Permalink to this heading"></a></h3>
+<p>The deployment sequence of the satellite is the routine to be executed just after the launch. The main objective of this operation is to deploy the antennas and prepare the satellite to start its normal operation.</p>
+<p>After the satellite is ejected from the deployer, the kill switches enable the electric power and the three core modules to execute the boot sequence (<a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> and <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a>). The <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> module is ready to operate when the boot finishes. The <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> and the <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> modules wait for a determined period before starting normal execution.</p>
+<p>As the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> and the <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> have access to the antenna module, both subsystems can control the deployment of the antennas. Following the CDS specifications <span id="id1">[<a class="reference internal" href="references.html#id7" title="The CubeSat Program. CubeSat Design Specification. California Polytechnic State University, San Luis Obispo, CA - EUA, rev 14 edition, July 2020. Available at: &lt;http://www.cubesat.org/&gt;.">39</a>]</span>, all CubeSats must wait 30 minutes to deploy the antennas and 45 minutes to transmit any RF signal. This way, the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> waits 45 minutes to send the deployment command to the antenna module. As redundancy, the <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> waits 55 minutes to execute the same operation.</p>
+<p><a class="reference internal" href="#fig-deployment-flowchart"><span class="std std-numref">Fig. 33</span></a> illustrates the deployment sequence of the service modules.</p>
+<figure class="align-center" id="fig-deployment-flowchart">
+<a class="reference internal image-reference" href="_images/deployment-flowchart.png"><img alt="Flowchart of the deployment sequence." src="_images/deployment-flowchart.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">Flowchart of the deployment sequence.</span><a class="headerlink" href="#fig-deployment-flowchart" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="beacon-operation">
+<h3>Beacon Operation<a class="headerlink" href="#beacon-operation" title="Permalink to this heading"></a></h3>
+<p>After the beacon microcontroller’s boot sequence, the beacon’s operation starts. The normal operation consists of reading the data from the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> and the <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> modules, transmitting the valid data (<a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> or <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> packet, in this order of priority), waiting 60 seconds, and repeating this sequence. <a class="reference internal" href="#fig-beacon-flowchart"><span class="std std-numref">Fig. 34</span></a> shows this behavior.</p>
+<figure class="align-center" id="fig-beacon-flowchart">
+<a class="reference internal image-reference" href="_images/beacon-flowchart.png"><img alt="Flowchart of normal beacon operation." src="_images/beacon-flowchart.png" style="width: 55%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">Flowchart of the normal beacon operation.</span><a class="headerlink" href="#fig-beacon-flowchart" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="obdh-operation">
+<h3>OBDH Operation<a class="headerlink" href="#obdh-operation" title="Permalink to this heading"></a></h3>
+<p>After the boot sequence of the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> microcontroller, the operation of the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> starts. The regular operation consists of reading the housekeeping data from the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a>, payloads, antenna module, and the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> (its own housekeeping data), saving the read data on non-volatile memory, and transmitting the housekeeping data of the satellite as a beacon. After that, it waits 60 seconds and checks if a new telecommand was received; if true, it processes the telecommand; if not, it does nothing. After this sequence, these steps start again. <a class="reference internal" href="#fig-obdh-flowchart"><span class="std std-numref">Fig. 35</span></a> shows this behavior.</p>
+<figure class="align-center" id="fig-obdh-flowchart">
+<a class="reference internal image-reference" href="_images/obdh-flowchart.png"><img alt="Flowchart of normal OBDH operation." src="_images/obdh-flowchart.png" style="width: 63%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Flowchart of the normal <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> operation.</span><a class="headerlink" href="#fig-obdh-flowchart" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="telecommand-processing">
+<h4>Telecommand Processing<a class="headerlink" href="#telecommand-processing" title="Permalink to this heading"></a></h4>
+<p><a class="reference internal" href="#fig-tc-flowchart"><span class="std std-numref">Fig. 36</span></a> shows the telecommand processing flow.</p>
+<figure class="align-center" id="fig-tc-flowchart">
+<a class="reference internal image-reference" href="_images/tc-flowchart.png"><img alt="Flowchart of telecommand processing." src="_images/tc-flowchart.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Flowchart of telecommand processing.</span><a class="headerlink" href="#fig-tc-flowchart" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="eps-operation">
+<h3>EPS Operation<a class="headerlink" href="#eps-operation" title="Permalink to this heading"></a></h3>
+<p>The operation of the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> microcontroller starts shortly after the release of the CubeSat in its orbit by the deployer. In the first 60 minutes, the module operation consists of reading the housekeeping data from its sensors and managing the duty cycles of the MPPT and heaters. When operational, the <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> and <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> modules send separate periodic requests to the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> for forwarding the housekeeping data acquired. The <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> receives a simplified version, while the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> receives a complete version of the data. <a class="reference internal" href="#fig-eps-flowchart"><span class="std std-numref">Fig. 37</span></a> shows this behavior.</p>
+<figure class="align-center" id="fig-eps-flowchart">
+<a class="reference internal image-reference" href="_images/eps_flowchart.png"><img alt="Flowchart of normal EPS operation." src="_images/eps_flowchart.png" style="width: 45%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Flowchart of the normal <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> operation.</span><a class="headerlink" href="#fig-eps-flowchart" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="interface-datasheet-ids">
+<h2>Interface Datasheet (IDS)<a class="headerlink" href="#interface-datasheet-ids" title="Permalink to this heading"></a></h2>
+<section id="interface">
+<h3>Interface<a class="headerlink" href="#interface" title="Permalink to this heading"></a></h3>
+<p>To electrically connect all the satellite modules, a PC-104 bus standard is being used. This bus is composed of 104 lines disposed by four rows of 26 pins each, with a vertical and horizontal pitch of 2.54 mm.</p>
+<p>Using <a class="reference internal" href="#fig-pc104-ref-diagram"><span class="std std-numref">Fig. 38</span></a> as reference, all used positions and signals of the PC-104 bus are presented in <a class="reference internal" href="#tab-pc104-pinout"><span class="std std-numref">Table 27</span></a>. <a class="reference internal" href="#tab-pc104-signals"><span class="std std-numref">Table 28</span></a> describes each signal and the modules connected to them.</p>
+<figure class="align-center" id="fig-pc104-ref-diagram">
+<a class="reference internal image-reference" href="_images/pc104-diagram.png"><img alt="PC-104 bus reference diagram." src="_images/pc104-diagram.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Reference diagram of the PC-104 bus (top view of a generic module).</span><a class="headerlink" href="#fig-pc104-ref-diagram" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-pc104-pinout">
+<caption><span class="caption-number">Table 27 </span><span class="caption-text">PC-104 bus pinout.</span><a class="headerlink" href="#tab-pc104-pinout" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 12.0%" />
+<col style="width: 22.0%" />
+<col style="width: 22.0%" />
+<col style="width: 22.0%" />
+<col style="width: 22.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Pin Row</strong></p></th>
+<th class="head"><p><strong>H1 Odd</strong></p></th>
+<th class="head"><p><strong>H1 Even</strong></p></th>
+<th class="head"><p><strong>H2 Odd</strong></p></th>
+<th class="head"><p><strong>H2 Even</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-2</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>3-4</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>EDC_EN</p></td>
+<td><p>EPL_EN</p></td>
+</tr>
+<tr class="row-even"><td><p>5-6</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>BE_UART_RX</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>7-8</p></td>
+<td><p>RA_GPIO_0</p></td>
+<td><p>RA_GPIO_1</p></td>
+<td><p>BE_UART_TX</p></td>
+<td><p>GPIO_0</p></td>
+</tr>
+<tr class="row-even"><td><p>9-10</p></td>
+<td><p>RA_GPIO_2</p></td>
+<td><p>BE_EN</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>11-12</p></td>
+<td><p>RA_RESET</p></td>
+<td><p>RA_EN</p></td>
+<td><p>BE_SPI_MOSI</p></td>
+<td><p>BE_SPI_CLK</p></td>
+</tr>
+<tr class="row-even"><td><p>13-14</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>BE_SPI_CS</p></td>
+<td><p>BE_SPI_MISO</p></td>
+</tr>
+<tr class="row-odd"><td><p>15-16</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>17-18</p></td>
+<td><p>EPL_UART_RX/TX</p></td>
+<td><p>GPIO_6</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>GPIO_1</p></td>
+</tr>
+<tr class="row-odd"><td><p>19-20</p></td>
+<td><p>EPL_UART_TX/RX</p></td>
+<td><p>GPIO_2</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>GPIO_3</p></td>
+</tr>
+<tr class="row-even"><td><p>21-22</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>GPIO_4</p></td>
+</tr>
+<tr class="row-odd"><td><p>23-24</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>25-26</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>PL_VCC</p></td>
+<td><p>PL_VCC</p></td>
+</tr>
+<tr class="row-odd"><td><p>27-28</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>TTC_VCC</p></td>
+<td><p>TTC_VCC</p></td>
+</tr>
+<tr class="row-even"><td><p>29-30</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-odd"><td><p>31-32</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+<td><p>GND</p></td>
+</tr>
+<tr class="row-even"><td><p>33-34</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>35-36</p></td>
+<td><p>RA_SPI_CLK</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>ANT_VCC</p></td>
+<td><p>ANT_VCC</p></td>
+</tr>
+<tr class="row-even"><td><p>37-38</p></td>
+<td><p>RA_SPI_MISO</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>39-40</p></td>
+<td><p>RA_SPI_MOSI</p></td>
+<td><p>RA_SPI_CS</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>41-42</p></td>
+<td><p>EDC_I2C_SDA</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>GPIO_5</p></td>
+</tr>
+<tr class="row-odd"><td><p>43-44</p></td>
+<td><p>EDC_I2C_SCL</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>45-46</p></td>
+<td><p>OBDH_VCC</p></td>
+<td><p>OBDH_VCC</p></td>
+<td><p>BAT_VCC</p></td>
+<td><p>BAT_VCC</p></td>
+</tr>
+<tr class="row-odd"><td><p>47-48</p></td>
+<td><p>PL_VCC</p></td>
+<td><p>PL_VCC</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>49-50</p></td>
+<td><p>RA_VCC</p></td>
+<td><p>RA_VCC</p></td>
+<td><p>EPS_I2C_SDA</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>51-52</p></td>
+<td><p>BE_VCC</p></td>
+<td><p>BE_VCC</p></td>
+<td><p>EPS_I2C_SCL</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="tab-pc104-signals">
+<caption><span class="caption-number">Table 28 </span><span class="caption-text">PC-104 bus signal description.</span><a class="headerlink" href="#tab-pc104-signals" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 20.0%" />
+<col style="width: 24.0%" />
+<col style="width: 38.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Signal</strong></p></th>
+<th class="head"><p><strong>Pin(s)</strong></p></th>
+<th class="head"><p><strong>Used By</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GND</p></td>
+<td><p>H1-29/30/31/32, H2-29/30/31/32</p></td>
+<td><p>All</p></td>
+<td><p>Ground reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>BAT_VCC</p></td>
+<td><p>H2-45, H2-46</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a></p></td>
+<td><p>Battery terminals (+)</p></td>
+</tr>
+<tr class="row-even"><td><p>ANT_VCC</p></td>
+<td><p>H2-35, H2-36</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, ANT</p></td>
+<td><p>Antennas power supply (3.3 V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBDH_VCC</p></td>
+<td><p>H1-45, H1-46</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> power supply (3.3 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>TTC_VCC</p></td>
+<td><p>H2-27, H2-28</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> power supply (3.3 V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PL_VCC</p></td>
+<td><p>H1-47/48, H2-25/26</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a>, ExpLoRa</p></td>
+<td><p>Payloads power supply (5 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>RA_VCC</p></td>
+<td><p>H1-49, H1-50</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>Main radio power supply (5 V)</p></td>
+</tr>
+<tr class="row-odd"><td><p>BE_VCC</p></td>
+<td><p>H1-51, H1-52</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>Beacon power supply (6 V)</p></td>
+</tr>
+<tr class="row-even"><td><p>RA_SPI_CLK</p></td>
+<td><p>H1-35</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>CLK signal of the main radio SPI bus</p></td>
+</tr>
+<tr class="row-odd"><td><p>RA_SPI_MISO</p></td>
+<td><p>H1-37</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>MISO signal of the main radio SPI bus</p></td>
+</tr>
+<tr class="row-even"><td><p>RA_SPI_MOSI</p></td>
+<td><p>H1-39</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>MOSI signal of the main radio SPI bus</p></td>
+</tr>
+<tr class="row-odd"><td><p>RA_SPI_CS</p></td>
+<td><p>H1-40</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>CS signal of the main radio SPI bus</p></td>
+</tr>
+<tr class="row-even"><td><p>EPS_I2C_SDA</p></td>
+<td><p>H2-49</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a></p></td>
+<td><p>SDA signal of the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> I2C bus</p></td>
+</tr>
+<tr class="row-odd"><td><p>EPS_I2C_SCL</p></td>
+<td><p>H2-51</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a></p></td>
+<td><p>SCL signal of the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> I2C bus</p></td>
+</tr>
+<tr class="row-even"><td><p>BE_UART_RX</p></td>
+<td><p>H2-5</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> TX, Beacon RX (UART bus)</p></td>
+</tr>
+<tr class="row-odd"><td><p>BE_UART_TX</p></td>
+<td><p>H2-7</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> RX, Beacon TX (UART bus)</p></td>
+</tr>
+<tr class="row-even"><td><p>EPL_UART_TX/RX</p></td>
+<td><p>H1-25</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, ExpLoRa</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> TX, ExpLoRa RX (UART bus)</p></td>
+</tr>
+<tr class="row-odd"><td><p>EPL_UART_RX/TX</p></td>
+<td><p>H1-27</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, ExpLoRa</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> RX, ExpLoRa TX (UART bus)</p></td>
+</tr>
+<tr class="row-even"><td><p>BE_EN</p></td>
+<td><p>H1-10</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a></p></td>
+<td><p>Beacon radio power enable</p></td>
+</tr>
+<tr class="row-odd"><td><p>RA_EN</p></td>
+<td><p>H1-12</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a></p></td>
+<td><p>Main radio power enable</p></td>
+</tr>
+<tr class="row-even"><td><p>EDC_EN</p></td>
+<td><p>H2-3</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> enable signal</p></td>
+</tr>
+<tr class="row-odd"><td><p>EPL_EN</p></td>
+<td><p>H2-4</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, ExpLoRa</p></td>
+<td><p>ExpLoRa enable signal</p></td>
+</tr>
+<tr class="row-even"><td><p>EDC_I2C_SDA</p></td>
+<td><p>H1-41</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a></p></td>
+<td><p>SDA signal of the payload I2C bus</p></td>
+</tr>
+<tr class="row-odd"><td><p>EDC_I2C_SCL</p></td>
+<td><p>H1-43</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a></p></td>
+<td><p>SCL signal of the payload I2C bus</p></td>
+</tr>
+<tr class="row-even"><td><p>GPIO_N</p></td>
+<td><p>H1-20, H2-8/18/20/22/42</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a></p></td>
+<td><p>GPIO pin (not used)</p></td>
+</tr>
+</tbody>
+</table>
+<p>This project’s distribution pattern of pins is a mix of multiple patterns from CubeSat module manufacturers, such as GomSpace, ISIS, and Endurosat. Some pins are positioned to meet specific project requirements, and the adopted pattern may only be partially compatible with some commercial modules.</p>
+<p>Beyond the PC-104 bus, some signals are connected directly by wires and cables, such as the control and power pins of the antenna module, the battery charger, and the programming ports.</p>
+</section>
+<section id="form-factor">
+<h3>Form Factor<a class="headerlink" href="#form-factor" title="Permalink to this heading"></a></h3>
+<p>The form factor follows a similar specification to the PC-104 standard <span id="id2">[<a class="reference internal" href="references.html#id41" title="PC/104 Specification Version 2.6. PC/104 Consortium, 2008. Available at &lt;https://pc104.org/wp-content/uploads/2015/02/PC104_Spec_v2_6.pdf&gt;.">1</a>]</span>. The connector used for the interface differs by module; the isolation height and presence of a pin or receptacle are defined from the overall stack-up of the subsystems inside the CubeSat 2U structure. The core modules have smoothed edges, and some linear mounting-hole distances differ from the standard in order to fit a CubeSat form factor. The PC-104 form factor used can be seen in <a class="reference internal" href="#fig-pc104-form-factor"><span class="std std-numref">Fig. 39</span></a>.</p>
+<figure class="align-center" id="fig-pc104-form-factor">
+<a class="reference internal image-reference" href="_images/pc104-form-factor.png"><img alt="PC-104 form factor." src="_images/pc104-form-factor.png" style="width: 75%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">PC-104 form factor.</span><a class="headerlink" href="#fig-pc104-form-factor" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="telecommunication">
+<h2>Telecommunication<a class="headerlink" href="#telecommunication" title="Permalink to this heading"></a></h2>
+<p>This section describes the configuration and behavior of the telecommunication subsystems of the satellite. There are three types of links available in the CubeSat: beacon, downlink, and uplink. The beacon link is a periodic transmission of packets with basic telemetry data of the satellite (containing data from the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> or <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> subsystems). The downlink is used to receive all data from the satellite, including the results of all experiments, telemetry data, and telecommand feedback. Moreover, the uplink sends telecommands from a ground station to the satellite.</p>
+<p>The payload of all packets follows the same structure, with an <a class="reference internal" href="glossary.html#term-ID"><span class="xref std std-term">ID</span></a> number, the source address (callsign), and the packet’s content (variable according to each type of packet). Following the NGHam protocol characteristics, the maximum packet length, including the <a class="reference internal" href="glossary.html#term-ID"><span class="xref std std-term">ID</span></a> and the source address, is 220 bytes. <a class="reference internal" href="#fig-fsat-pkt-structure"><span class="std std-numref">Fig. 40</span></a> illustrates this packet structure.</p>
+<figure class="align-center" id="fig-fsat-pkt-structure">
+<a class="reference internal image-reference" href="_images/floripasat-packet-structure.png"><img alt="Catarina-A1 packet payload structure." src="_images/floripasat-packet-structure.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Payload structure of the Catarina-A1 packets.</span><a class="headerlink" href="#fig-fsat-pkt-structure" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#tab-packets-struct"><span class="std std-numref">Table 29</span></a> summarizes all types of packets transmitted or received by the satellite, with the <a class="reference internal" href="glossary.html#term-ID"><span class="xref std std-term">ID</span></a> number, structure and length, and access type of each packet.</p>
+<table class="docutils align-center" id="tab-packets-struct">
+<caption><span class="caption-number">Table 29 </span><span class="caption-text">Telecommunication packets and their content.</span><a class="headerlink" href="#tab-packets-struct" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 11.0%" />
+<col style="width: 18.0%" />
+<col style="width: 8.0%" />
+<col style="width: 20.0%" />
+<col style="width: 31.0%" />
+<col style="width: 12.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Link</strong></p></th>
+<th class="head"><p><strong>Packet Name</strong></p></th>
+<th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Source Callsign</strong></p></th>
+<th class="head"><p><strong>Data (up to 220 bytes)</strong></p></th>
+<th class="head"><p><strong>Size / Access</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Beacon</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> data</p></td>
+<td><p>00h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> data</p></td>
+<td><p>46 / Public</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beacon</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> data</p></td>
+<td><p>01h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> data</p></td>
+<td><p>19 / Public</p></td>
+</tr>
+<tr class="row-even"><td><p>Downlink</p></td>
+<td><p>General telemetry</p></td>
+<td><p>20h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>/<a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> data</p></td>
+<td><p>78 / Public</p></td>
+</tr>
+<tr class="row-odd"><td><p>Downlink</p></td>
+<td><p>Ping answer</p></td>
+<td><p>21h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p>Requester callsign</p></td>
+<td><p>15 / Public</p></td>
+</tr>
+<tr class="row-even"><td><p>Downlink</p></td>
+<td><p>Data request answer</p></td>
+<td><p>22h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p>Requester callsign + data ID + timestamp + data</p></td>
+<td><p>20 to 220 / Public</p></td>
+</tr>
+<tr class="row-odd"><td><p>Downlink</p></td>
+<td><p>Message broadcast</p></td>
+<td><p>23h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p>Requester + destination callsign + message</p></td>
+<td><p>22 to 60 / Public</p></td>
+</tr>
+<tr class="row-even"><td><p>Downlink</p></td>
+<td><p>Payload data</p></td>
+<td><p>24h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p>Payload ID + payload data</p></td>
+<td><p>9 to 220 / Public</p></td>
+</tr>
+<tr class="row-odd"><td><p>Downlink</p></td>
+<td><p>TC feedback</p></td>
+<td><p>25h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p>Requester callsign + TC packet ID + timestamp</p></td>
+<td><p>20 / Public</p></td>
+</tr>
+<tr class="row-even"><td><p>Downlink</p></td>
+<td><p>Parameter value</p></td>
+<td><p>26h</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span> <span class="pre">+</span> <span class="pre">&quot;PY0EFS&quot;</span></code></p></td>
+<td><p>Requester callsign + subsystem ID + parameter ID + parameter value</p></td>
+<td><p>21 / Public</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Ping request</p></td>
+<td><p>40h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>None</p></td>
+<td><p>8 / Public</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Data request</p></td>
+<td><p>41h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Data ID + start timestamp + end timestamp + hash</p></td>
+<td><p>37 / Private</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Broadcast message</p></td>
+<td><p>42h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Destination callsign + message</p></td>
+<td><p>15 to 53 / Public</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Enter hibernation</p></td>
+<td><p>43h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Hibernation in hours + hash</p></td>
+<td><p>30 / Private</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Leave hibernation</p></td>
+<td><p>44h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Hash</p></td>
+<td><p>28 / Private</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Activate module</p></td>
+<td><p>45h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Module ID + hash</p></td>
+<td><p>29 / Private</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Deactivate module</p></td>
+<td><p>46h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Module ID + hash</p></td>
+<td><p>29 / Private</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Activate payload</p></td>
+<td><p>47h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Payload ID + hash</p></td>
+<td><p>29 / Private</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Deactivate payload</p></td>
+<td><p>48h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Payload ID + hash</p></td>
+<td><p>29 / Private</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Erase memory</p></td>
+<td><p>49h</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Hash</p></td>
+<td><p>28 / Private</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Force reset</p></td>
+<td><p>4Ah</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Hash</p></td>
+<td><p>28 / Private</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Get payload data</p></td>
+<td><p>4Bh</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Payload ID + arguments + hash</p></td>
+<td><p>41 / Private</p></td>
+</tr>
+<tr class="row-odd"><td><p>Uplink</p></td>
+<td><p>Set parameter</p></td>
+<td><p>4Ch</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Subsystem ID + parameter ID + parameter value + hash</p></td>
+<td><p>34 / Private</p></td>
+</tr>
+<tr class="row-even"><td><p>Uplink</p></td>
+<td><p>Get parameter</p></td>
+<td><p>4Dh</p></td>
+<td><p>Any callsign</p></td>
+<td><p>Subsystem ID + parameter ID + hash</p></td>
+<td><p>30 / Private</p></td>
+</tr>
+</tbody>
+</table>
+<p>The IDs of the subsystems, modules, and payloads are available in <a class="reference internal" href="#tab-system-ids"><span class="std std-numref">Table 30</span></a>.</p>
+<table class="docutils align-center" id="tab-system-ids">
+<caption><span class="caption-number">Table 30 </span><span class="caption-text">IDs of the satellite.</span><a class="headerlink" href="#tab-system-ids" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Type</strong></p></th>
+<th class="head"><p><strong>ID Number</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Subsystem</p></td>
+<td><p>0</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Subsystem</p></td>
+<td><p>1</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> 1</p></td>
+</tr>
+<tr class="row-even"><td><p>Subsystem</p></td>
+<td><p>2</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Subsystem</p></td>
+<td><p>3</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Module</p></td>
+<td><p>1</p></td>
+<td><p>Battery heater</p></td>
+</tr>
+<tr class="row-odd"><td><p>Module</p></td>
+<td><p>2</p></td>
+<td><p>Beacon</p></td>
+</tr>
+<tr class="row-even"><td><p>Module</p></td>
+<td><p>3</p></td>
+<td><p>Periodic telemetry</p></td>
+</tr>
+<tr class="row-odd"><td><p>Payload</p></td>
+<td><p>1</p></td>
+<td><p><a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Payload</p></td>
+<td><p>2</p></td>
+<td><p>ExpLoRa</p></td>
+</tr>
+</tbody>
+</table>
+<section id="authentication">
+<h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading"></a></h3>
+<p>All telecommands classified as private use an HMAC authentication scheme. Every type of private telecommand has a unique 16-digit ASCII character key that, together with the telecommand sequence (or message), generates a 160-bit (20-byte) hash sequence to be transmitted with the packet payload. The hash algorithm used is SHA-1. <a class="reference internal" href="#fig-hmac-diagram"><span class="std std-numref">Fig. 41</span></a> illustrates this authentication method.</p>
+<figure class="align-center" id="fig-hmac-diagram">
+<a class="reference internal image-reference" href="_images/hmac-diagram.png"><img alt="Diagram of the HMAC scheme." src="_images/hmac-diagram.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Diagram of the used HMAC scheme.</span><a class="headerlink" href="#fig-hmac-diagram" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="operation-licenses">
+<h3>Operation Licenses<a class="headerlink" href="#operation-licenses" title="Permalink to this heading"></a></h3>
+<p>Regarding non-amateur radio frequencies, Resolution 685, of October 9, 2017, from ANATEL establishes the following.</p>
+<p>Art. 9. Assign to the Private Limited Service (SLP), for use by systems for capturing and transmitting scientific data related to space operation, on a secondary basis, the following sub-ranges related to this project:</p>
+<ul class="simple">
+<li><p>400.15 to 401 MHz;</p></li>
+<li><p>401 to 403 MHz;</p></li>
+<li><p>468 to 469 MHz.</p></li>
+</ul>
+<p>Art. 17. The allocation of all radio frequency bands dealt with in this Resolution follows the restrictions imposed by the respective allocation.</p>
+<p>Single paragraph. Those interested in the use of the radio frequency bands object of this Resolution must provide in their projects, until specific regulations are issued on the conditions of use of these bands, criteria for harmonious coexistence with the existing systems in these bands, maintaining specific coordination, when necessary, so that incoming systems do not cause harmful interference to existing systems.</p>
+</section>
+</section>
+</section>
+
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="budgets.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="subsystems.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="budgets.html" class="btn btn-neutral float-left" title="Technical Budgets and Mission Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="subsystems.html" class="btn btn-neutral float-right" title="Subsystems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

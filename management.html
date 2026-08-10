@@ -32,8 +32,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            catarina-a1
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -43,7 +44,8 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Mission management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#schedule">Schedule</a><ul>
@@ -74,8 +76,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -110,12 +122,12 @@
 <p>This section comprises the updated schedule control of the Catarina-A1 space system.</p>
 <section id="schedule-definition">
 <h3>Schedule definition<a class="headerlink" href="#schedule-definition" title="Permalink to this heading"></a></h3>
-<p><a class="reference internal" href="#fig-gantt-mdr"><span class="std std-numref">Fig. 5</span></a> illustrates the mission schedule at this date. The schedule has been continuously updated since its first draft presented at the Mission Design Review (<a class="reference internal" href="glossary.html#term-MDR"><span class="xref std std-term">MDR</span></a>) <span id="id1">[<a class="reference internal" href="references.html#id58" title="Mission Definition Review - Constelação Catarina. Universidade Federal de Santa Catarina (UFSC) ; Instituto SENAI de Inovação em Sistemas Embarcados (ISI-SENAI-SE), February 2022.">2</a>]</span>.</p>
+<p><a class="reference internal" href="#fig-gantt-mdr"><span class="std std-numref">Fig. 5</span></a> illustrates the mission schedule at this date. The schedule has been continuously updated since its first draft presented at the Mission Design Review (<a class="reference internal" href="glossary.html#term-MDR"><span class="xref std std-term">MDR</span></a>) <span id="id1">[<a class="reference internal" href="references.html#id58" title="Mission Definition Review - Constelação Catarina. Universidade Federal de Santa Catarina (UFSC) ; Instituto SENAI de Inovação em Sistemas Embarcados (ISI-SENAI-SE), February 2022.">22</a>]</span>.</p>
 <p>Since the technical development teams are not entirely identical for both space systems, only the management team, there are date differences for reviews regarding the design, integration, and testing of each space system. The present general schedule is related to the deliverables from the space system Catarina-A1, the object of this revision.</p>
-<figure class="align-center" id="id2">
-<span id="fig-gantt-mdr"></span><a class="reference internal image-reference" href="_images/Cronograma_macro_CDR.png"><img alt="Schedule" src="_images/Cronograma_macro_CDR.png" style="width: 100%;" /></a>
+<figure class="align-center" id="fig-gantt-mdr">
+<a class="reference internal image-reference" href="_images/Cronograma_macro_CDR.png"><img alt="Schedule" src="_images/Cronograma_macro_CDR.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Catarina-A1 space system’s schedule.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Catarina-A1 space system’s schedule.</span><a class="headerlink" href="#fig-gantt-mdr" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The launch is currently scheduled for March 2025. More information on the potential launch can be found in <a class="reference internal" href="#sec-launch"><span class="std std-ref">Launch</span></a>.</p>
@@ -123,10 +135,10 @@
 <section id="schedule-control">
 <span id="sec-schedule-control"></span><h3>Schedule control<a class="headerlink" href="#schedule-control" title="Permalink to this heading"></a></h3>
 <p><a class="reference internal" href="#fig-gantt-srr-dependencies-critical"><span class="std std-numref">Fig. 6</span></a> shows the dependency diagram for critical packages. The red arrows indicate the critical path, which corresponds to the group of dependent items that present greater criticality for the project since they do not allow for much margin for scheduling flexibility.</p>
-<figure class="align-center" id="id3">
-<span id="fig-gantt-srr-dependencies-critical"></span><a class="reference internal image-reference" href="_images/Critical_items_CDR.png"><img alt="Schedule" src="_images/Critical_items_CDR.png" style="width: 100%;" /></a>
+<figure class="align-center" id="fig-gantt-srr-dependencies-critical">
+<a class="reference internal image-reference" href="_images/Critical_items_CDR.png"><img alt="Schedule" src="_images/Critical_items_CDR.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Dependency diagram and critical path for Catarina-A1’s.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Dependency diagram and critical path for Catarina-A1’s.</span><a class="headerlink" href="#fig-gantt-srr-dependencies-critical" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>As can be seen, four sets of packages generate criticality at the current stage of the project: the frequency license coordination, the acquisition/purchase of critical items for the space system, the acquisition/purchase of the deployer, and the <a class="reference internal" href="glossary.html#term-AIT"><span class="xref std std-term">AIT</span></a> tests at LIT/INPE.</p>
@@ -137,7 +149,7 @@
 <section id="procurement-status">
 <span id="sec-procurement-status"></span><h3>Procurement status<a class="headerlink" href="#procurement-status" title="Permalink to this heading"></a></h3>
 <p><a class="reference internal" href="#tabela-procurement-status"><span class="std std-numref">Table 3</span></a> indicates the current status of the purchase of major items necessary to carry out the mission for the Catarina-A1 space system. Solar panels are already available at Florianópolis - SC for flight model integration. Other items listed are scheduled to initiate the procurement process in May 2024, except for the deployer which is scheduled to initiate its process at Juin or July 2024.</p>
-<span id="tab-tabela-procurement-status"></span><table class="docutils align-default" id="tabela-procurement-status">
+<table class="docutils align-center" id="tabela-procurement-status">
 <caption><span class="caption-number">Table 3 </span><span class="caption-text">Procurement Status.</span><a class="headerlink" href="#tabela-procurement-status" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 40.0%" />
@@ -193,7 +205,7 @@
 <section id="frequency-license-coordination">
 <span id="sec-frequency-license-coordination"></span><h3>Frequency license coordination<a class="headerlink" href="#frequency-license-coordination" title="Permalink to this heading"></a></h3>
 <p><a class="reference internal" href="#tabela-status-frequencia"><span class="std std-numref">Table 4</span></a> indicates the current status of frequency license coordination for the Catarina-A1 space system. The process is currently in progress and is estimated to be complete by September 2024.</p>
-<span id="tab-tabela-status-frequencia"></span><table class="docutils align-default" id="tabela-status-frequencia">
+<table class="docutils align-center" id="tabela-status-frequencia">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text">Frequency license coordination status.</span><a class="headerlink" href="#tabela-status-frequencia" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 60.0%" />
@@ -239,10 +251,10 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 <p>The CBS defined for space system Catarina-A1 of Catarina Constellation is illustrated in <a class="reference internal" href="#fig-cbs-a1"><span class="std std-numref">Fig. 7</span></a>. In this CBS, references can be made to the organizational chart presented in <a class="reference internal" href="introduction.html#sec-project-members"><span class="std std-ref">Project members</span></a>.</p>
 <p>The categories indicated are: Direct human resources, Internal infrastructure, Supplies and other direct costs, Sub-contracts, and Expenses not linked to production. Quantities such as margin and profit are not included in the CBS.</p>
 <p>In <a class="reference internal" href="#fig-cbs-a1"><span class="std std-numref">Fig. 7</span></a>, the boxes highlighted in blue indicate that such categories may undergo subsequent break-ups and the yellow boxes indicate categories and subcategories that potentially include indirect costs.</p>
-<figure class="align-center" id="id4">
-<span id="fig-cbs-a1"></span><a class="reference internal image-reference" href="_images/cbs-cat-a1.png"><img alt="CBS" src="_images/cbs-cat-a1.png" style="width: 90%;" /></a>
+<figure class="align-center" id="fig-cbs-a1">
+<a class="reference internal image-reference" href="_images/cbs-cat-a1.png"><img alt="CBS" src="_images/cbs-cat-a1.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Catarina-A1 System’s Cost Breakdown Structure (<a class="reference internal" href="glossary.html#term-CBS"><span class="xref std std-term">CBS</span></a>).</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Catarina-A1 System’s Cost Breakdown Structure (<a class="reference internal" href="glossary.html#term-CBS"><span class="xref std std-term">CBS</span></a>).</span><a class="headerlink" href="#fig-cbs-a1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The Human Resources category includes the official collaborators indicated in <a class="reference internal" href="introduction.html#sec-project-members"><span class="std std-ref">Project members</span></a> from the Federal University of Santa Catarina (<a class="reference internal" href="glossary.html#term-UFSC"><span class="xref std std-term">UFSC</span></a>) and the team provided by the National Institute for Space Research in Natal (<a class="reference internal" href="glossary.html#term-INPE-COENE"><span class="xref std std-term">INPE-COENE</span></a>) for the mission, yet to be defined.</p>
@@ -266,7 +278,7 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 <p>To detail the categories shown in CBS (<a class="reference internal" href="#sec-cbs"><span class="std std-ref">Cost breakdown structure</span></a>), the <a class="reference internal" href="glossary.html#term-CBT"><span class="xref std std-term">CBT</span></a> contains the estimated costs of each item mentioned above, taking into account the hypothesis presented in <a class="reference internal" href="#sec-hypothesis-used"><span class="std std-ref">Hypothesis used</span></a>.</p>
 <p><a class="reference internal" href="#tabela-cost1"><span class="std std-numref">Table 5</span></a> lists the project costs as a whole, and <a class="reference internal" href="#tabela-cost2"><span class="std std-numref">Table 6</span></a> shows the Services category in detail. <a class="reference internal" href="#tabela-cost3"><span class="std std-numref">Table 7</span></a> shows the values of consumable items taken from the Product Tree of System Catarina-A1.</p>
 <p>Operational costs are not accounted for due to the possibility of aggregating this cost into a future project. For clarification, the operational costs estimated are related only to human resources for 1 year responsible for the connection and download of data from the satellites during its passage over the EMMN.</p>
-<span id="tab-tabela-cost1"></span><table class="docutils align-default" id="tabela-cost1">
+<table class="docutils align-center" id="tabela-cost1">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">Estimated costs to the project - Catarina-A1.</span><a class="headerlink" href="#tabela-cost1" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 40.0%" />
@@ -310,7 +322,7 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 </tr>
 </tbody>
 </table>
-<span id="tab-tabela-cost2"></span><table class="docutils align-default" id="tabela-cost2">
+<table class="docutils align-center" id="tabela-cost2">
 <caption><span class="caption-number">Table 6 </span><span class="caption-text">Estimated costs to the project - Services - Catarina-A1.</span><a class="headerlink" href="#tabela-cost2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 40.0%" />
@@ -338,7 +350,7 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 </tr>
 </tbody>
 </table>
-<span id="tab-tabela-cost3"></span><table class="docutils align-default" id="tabela-cost3">
+<table class="docutils align-center" id="tabela-cost3">
 <caption><span class="caption-number">Table 7 </span><span class="caption-text">Estimated costs to the project - consumable items.</span><a class="headerlink" href="#tabela-cost3" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 30.0%" />
@@ -474,22 +486,22 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 <span id="sec-product-tree"></span><h2>Product tree<a class="headerlink" href="#product-tree" title="Permalink to this heading"></a></h2>
 <p><a class="reference internal" href="#fig-pt-geral"><span class="std std-numref">Fig. 8</span></a> illustrates the Product Tree of the mission of Fleet A of Catarina Constellation. In it, the space system and ground system branches are present. Fleet A’s mission is managed from <a class="reference internal" href="glossary.html#term-UFSC"><span class="xref std std-term">UFSC</span></a> and <a class="reference internal" href="glossary.html#term-ISI-SE"><span class="xref std std-term">ISI-SE</span></a> and operated from <a class="reference internal" href="glossary.html#term-EMMN"><span class="xref std std-term">EMMN</span></a> throughout the operational phase – Launch and Initial Orbit Phase and Routine Operation Phase – and shares existing resources (infrastructure, equipment, personnel, etc.) with other missions like Global Open Collecting Data System (GOLDS-UFSC).</p>
 <p>Since the two space systems in the fleet are architecturally distinct, each has its own Product Tree.</p>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id2">
 <span id="fig-pt-geral"></span><a class="reference internal image-reference" href="_images/PT_Geral2.png"><img alt="Product tree" src="_images/PT_Geral2.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Fleet A’s Product Tree.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Fleet A’s Product Tree.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The product tree of the Catarina-A1 satellite is the project breakdown into successive levels of hardware and software products (or elements). The product tree of the project can be seen in the diagram of <a class="reference internal" href="#fig-product-tree"><span class="std std-numref">Fig. 9</span></a>. As shown, the satellite was divided into eight segments.</p>
-<figure class="align-center" id="id6">
-<span id="fig-product-tree"></span><a class="reference internal image-reference" href="_images/productTree_CatarinaA1.png"><img alt="Product tree" src="_images/productTree_CatarinaA1.png" style="width: 100%;" /></a>
+<figure class="align-center" id="fig-product-tree">
+<a class="reference internal image-reference" href="_images/productTree_CatarinaA1.png"><img alt="Product tree" src="_images/productTree_CatarinaA1.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Product tree diagram of the satellite.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Product tree diagram of the satellite.</span><a class="headerlink" href="#fig-product-tree" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The supplier of each element of the product tree is available in <a class="reference internal" href="#tab-product-tree-sup"><span class="std std-numref">Table 8</span></a>.</p>
-<span id="tab-product-tree-sup"></span><table class="docutils align-default" id="id7">
-<caption><span class="caption-number">Table 8 </span><span class="caption-text">Suppliers of the product tree’s elements.</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
+<table class="docutils align-center" id="tab-product-tree-sup">
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">Suppliers of the product tree’s elements.</span><a class="headerlink" href="#tab-product-tree-sup" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 50.0%" />
 <col style="width: 50.0%" />
@@ -554,13 +566,13 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 <section id="work-breakdown-structure">
 <span id="sec-wbs"></span><h2>Work breakdown structure<a class="headerlink" href="#work-breakdown-structure" title="Permalink to this heading"></a></h2>
 <p>The Work Breakdown Structure (<a class="reference internal" href="glossary.html#term-WBS"><span class="xref std std-term">WBS</span></a>) is presented as a diagram in <a class="reference internal" href="#fig-wbs"><span class="std std-numref">Fig. 10</span></a>. The <a class="reference internal" href="glossary.html#term-WBS"><span class="xref std std-term">WBS</span></a> is divided into work packages (<a class="reference internal" href="glossary.html#term-WP"><span class="xref std std-term">WP</span></a>) as can be seen in the diagram. The description of each <a class="reference internal" href="glossary.html#term-WP"><span class="xref std std-term">WP</span></a> is detailed in <a class="reference internal" href="#wpd-table"><span class="std std-numref">Table 9</span></a>. In this table, the completed packages are highlighted in red and the ongoing packages are highlighted in blue.</p>
-<figure class="align-center" id="id8">
-<span id="fig-wbs"></span><a class="reference internal image-reference" href="_images/WBS_A1_montagem.png"><img alt="WBS" src="_images/WBS_A1_montagem.png" style="width: 100%;" /></a>
+<figure class="align-center" id="fig-wbs">
+<a class="reference internal image-reference" href="_images/WBS_A1_montagem.png"><img alt="WBS" src="_images/WBS_A1_montagem.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Catarina-A1’s WBS diagram.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Catarina-A1’s WBS diagram.</span><a class="headerlink" href="#fig-wbs" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<span id="tab-wpd-table"></span><table class="docutils align-default" id="wpd-table">
+<table class="docutils align-center" id="wpd-table">
 <caption><span class="caption-number">Table 9 </span><span class="caption-text">Work packages definition.</span><a class="headerlink" href="#wpd-table" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 35.0%" />
@@ -708,34 +720,34 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 <span id="sec-risks"></span><h3>Risks identification<a class="headerlink" href="#risks-identification" title="Permalink to this heading"></a></h3>
 <p>The identified risks are displayed below, classified by source (programmatic, technical, or extern), likelihood (Very Rare-Expected), and consequences (1-5). The trends from the last review to this one are also displayed. The risk <a class="reference internal" href="glossary.html#term-ID"><span class="xref std std-term">ID</span></a> is related to the Fleet A of Catarina Constellation and also comprises risks belonging to the space system A2 and now closed risk, not addressed in this document.</p>
 <p>A total of five risks are indicated as high, all identified as technical ones. They are related to the commissioning of the satellite and the development in-house of the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> and <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> systems. No risk worsened in the period between the <a class="reference internal" href="glossary.html#term-SRR"><span class="xref std std-term">SRR</span></a> and this <a class="reference internal" href="glossary.html#term-CDR"><span class="xref std std-term">CDR</span></a>, where some improved and most were unchanged.</p>
-<figure class="align-center" id="id9">
-<span id="fig-riscos-programaticos"></span><a class="reference internal image-reference" href="_images/Riscos_programaticos_CDR.png"><img alt="Programatic risks" src="_images/Riscos_programaticos_CDR.png" style="width: 90%;" /></a>
+<figure class="align-center" id="fig-riscos-programaticos">
+<a class="reference internal image-reference" href="_images/Riscos_programaticos_CDR.png"><img alt="Programatic risks" src="_images/Riscos_programaticos_CDR.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Programatic risks - Catarina-A1.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Programatic risks - Catarina-A1.</span><a class="headerlink" href="#fig-riscos-programaticos" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id10">
-<span id="fig-riscos-tecnicos-grafico1"></span><a class="reference internal image-reference" href="_images/Riscos_tecnicos_CDR_grafico.png"><img alt="Technical risks analysis" src="_images/Riscos_tecnicos_CDR_grafico.png" style="width: 90%;" /></a>
+<figure class="align-center" id="fig-riscos-tecnicos-grafico1">
+<a class="reference internal image-reference" href="_images/Riscos_tecnicos_CDR_grafico.png"><img alt="Technical risks analysis" src="_images/Riscos_tecnicos_CDR_grafico.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Technical risks analysis - Catarina-A1.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Technical risks analysis - Catarina-A1.</span><a class="headerlink" href="#fig-riscos-tecnicos-grafico1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id11">
-<span id="fig-riscos-tecnicos-tabela1"></span><a class="reference internal image-reference" href="_images/Riscos_tecnicos_CDR_tabela.png"><img alt="Technical risks trends" src="_images/Riscos_tecnicos_CDR_tabela.png" style="width: 90%;" /></a>
+<figure class="align-center" id="fig-riscos-tecnicos-tabela1">
+<a class="reference internal image-reference" href="_images/Riscos_tecnicos_CDR_tabela.png"><img alt="Technical risks trends" src="_images/Riscos_tecnicos_CDR_tabela.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Technical risks trends - Catarina-A1.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Technical risks trends - Catarina-A1.</span><a class="headerlink" href="#fig-riscos-tecnicos-tabela1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id12">
-<span id="fig-riscos-tecnicos-grafico2"></span><a class="reference internal image-reference" href="_images/Riscos_externos_CDR_grafico.png"><img alt="External risks analysis" src="_images/Riscos_externos_CDR_grafico.png" style="width: 90%;" /></a>
+<figure class="align-center" id="fig-riscos-tecnicos-grafico2">
+<a class="reference internal image-reference" href="_images/Riscos_externos_CDR_grafico.png"><img alt="External risks analysis" src="_images/Riscos_externos_CDR_grafico.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">External risks analysis - Catarina-A1.</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">External risks analysis - Catarina-A1.</span><a class="headerlink" href="#fig-riscos-tecnicos-grafico2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id13">
-<span id="fig-riscos-tecnicos-tabela2"></span><a class="reference internal image-reference" href="_images/Riscos_externos_CDR_tabela.png"><img alt="External risks trends" src="_images/Riscos_externos_CDR_tabela.png" style="width: 90%;" /></a>
+<figure class="align-center" id="fig-riscos-tecnicos-tabela2">
+<a class="reference internal image-reference" href="_images/Riscos_externos_CDR_tabela.png"><img alt="External risks trends" src="_images/Riscos_externos_CDR_tabela.png" style="width: 90%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">External risks trends - Catarina-A1.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">External risks trends - Catarina-A1.</span><a class="headerlink" href="#fig-riscos-tecnicos-tabela2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -745,8 +757,8 @@ This section introduces the <a class="reference internal" href="glossary.html#te
 <p>A cooperation agreement is being discussed between a private launcher company and <a class="reference internal" href="glossary.html#term-AEB"><span class="xref std std-term">AEB</span></a> to provide the launch of the Space System Catarina-A1 from Catarina Constellation. As indicated in <a class="reference internal" href="#fig-gantt-mdr"><span class="std std-numref">Fig. 5</span></a> the launch is scheduled for March 2025, from Alcântara Space Center - Brazil.</p>
 <p>The cooperation agreement provides a payload of 15 kg for <a class="reference internal" href="glossary.html#term-AEB"><span class="xref std std-term">AEB</span></a> to be used for nanosatellites launch. The agreement does not include the CubeSat deployer and this cost was added to the current mission. Preliminary estimates indicate that for a 15 kg payload, it is possible to carry the space system Catarina-A1 (2U with 2.6 kg), the space system A2 (3U with 2.3 kg) and a third 2U space system with a total mass maximum of 2.6 kg. The other 7.5 kg accounts for three 3U deployer masses and two 1U dummies masses. Values for mass estimates are based on the ISIS 3U deployer. More details can be seen in <a class="reference internal" href="#tab-tabela-mass-lancamento"><span class="std std-numref">Table 10</span></a>.</p>
 <p>Two possible launch orbits are being analyzed: <a class="reference internal" href="glossary.html#term-SSO"><span class="xref std std-term">SSO</span></a> orbit with 500 km altitude and a <span class="math notranslate nohighlight">\(43^{\circ}\)</span> inclination orbit with 500 km altitude. Calculations for communication time and decay are presented in a later section.</p>
-<span id="tab-tabela-mass-lancamento"></span><table class="docutils align-default" id="id14">
-<caption><span class="caption-number">Table 10 </span><span class="caption-text">Estimated mass and composition of the proposed launch.</span><a class="headerlink" href="#id14" title="Permalink to this table"></a></caption>
+<table class="docutils align-center" id="tab-tabela-mass-lancamento">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Estimated mass and composition of the proposed launch.</span><a class="headerlink" href="#tab-tabela-mass-lancamento" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 45.0%" />
 <col style="width: 30.0%" />

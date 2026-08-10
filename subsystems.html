@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Catarina-A1 Documentation</title>
+  <title>Subsystems &mdash; Catarina-A1 Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -16,11 +16,12 @@
       <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=4ec8a6bb"></script>
       <script src="_static/doctools.js?v=888ff710"></script>
       <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="ground_segment.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="design.html" /> 
+    <link rel="next" title="Ground Segment" href="ground_segment.html" />
+    <link rel="prev" title="Service Module Overview" href="design.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -31,8 +32,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            catarina-a1
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,12 +44,52 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Subsystems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#on-boarding-data-handling">On-Boarding Data Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#telemetry-tracking-and-command-module">Telemetry, Tracking and Command Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#antenna-module">Antenna Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rf-splitter">RF Splitter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#electrical-power-system">Electrical Power System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#battery-module">Battery Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solar-panels">Solar Panels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kill-switches-and-rbf">Kill-Switches and RBF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#attitude-control-system">Attitude Control System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#thermal-control">Thermal Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mechanical-structure">Mechanical Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interconnection-modules">Interconnection Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pc-104-interconnection-boards">PC-104 Interconnection Boards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-connection-boards">External Connection Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#payloads">Payloads</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environmental-data-collection">Environmental Data Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#explora">ExpLoRa</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -64,7 +106,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Subsystems</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/subsystems.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -74,13 +116,351 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
+  <section id="subsystems">
+<h1>Subsystems<a class="headerlink" href="#subsystems" title="Permalink to this heading"></a></h1>
+<p>This chapter describes all subsystems of the Space Segment of the mission. Most of the subsystems presented here have their own technical documentation with a more comprehensive description. When available, there is a reference to the respective document. The aim of this chapter is to provide a high-level view of each subsystem within the wider scope of the mission.</p>
+<section id="on-boarding-data-handling">
+<h2>On-Boarding Data Handling<a class="headerlink" href="#on-boarding-data-handling" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> 2.0 is an <a class="reference internal" href="glossary.html#term-OBC"><span class="xref std std-term">OBC</span></a> module designed for nanosatellites. The module is responsible for synchronizing actions and the data flow between other modules (i.e., power module, communication module, payloads) and the Earth segment. It packs the generated data into data frames and transmits back to Earth through a communication module or stores it on non-volatile memory for later retrieval. Commands sent from Earth segment to CubeSat are received by radio transceivers in the communication module and redirected to the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a>, which takes the appropriate action or forwards the commands to the target module.</p>
+<p>The module is a direct upgrade from the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> of FloripaSat-1 <span id="id1">[<a class="reference internal" href="references.html#id19" title="FloripaSat-I Documentation. Space Technology Research Laboratory (SpaceLab), 2019. Available at &lt;https://github.com/spacelab-ufsc/floripasat-doc&gt;.">5</a>]</span>, which grants a flight heritage rating. The improvements focus on providing a cleaner and more generic implementation than the previous version, more reliability in software and hardware implementations, and adaptations for the new mission requirements. The module board can be seen in <a class="reference internal" href="#fig-obdh2"><span class="std std-numref">Fig. 42</span></a>.</p>
+<figure class="align-center" id="fig-obdh2">
+<a class="reference internal image-reference" href="_images/obdh2-small.png"><img alt="OBDH module" src="_images/obdh2-small.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> module.</span><a class="headerlink" href="#fig-obdh2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>More information about this module can be found in <span id="id2">[<a class="reference internal" href="references.html#id38" title="OBDH 2.0 Documentation. Space Technology Research Laboratory (SpaceLab), 2020. Available at &lt;\href https://github.com/spacelab-ufsc/obdh2https://github.com/spacelab-ufsc/obdh2&gt;.">7</a>]</span>.</p>
+</section>
+<section id="telemetry-tracking-and-command-module">
+<h2>Telemetry, Tracking and Command Module<a class="headerlink" href="#telemetry-tracking-and-command-module" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> (or TT&amp;C) is responsible for making the communication between Earth (a ground station) and the satellite and is divided into two sub-modules: Beacon and downlink/uplink. The beacon is an independent sub-module that transmits a periodic signal containing satellite <a class="reference internal" href="glossary.html#term-ID"><span class="xref std std-term">ID</span></a> and some basic telemetry data. The downlink/uplink sub-module is the primary communication device. It has a bidirectional data link to receive telecommands from the Earth and transmit all available data back to Earth. The module board can be seen in <a class="reference internal" href="#fig-ttc"><span class="std std-numref">Fig. 43</span></a>. More information about this module can be found in <span id="id3">[<a class="reference internal" href="references.html#id53" title="TTC Documentation. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/ttc&gt;.">18</a>]</span>.</p>
+<figure class="align-center" id="fig-ttc">
+<a class="reference internal image-reference" href="_images/ttc2-small.png"><img alt="TTC module" src="_images/ttc2-small.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a> module.</span><a class="headerlink" href="#fig-ttc" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="antenna-module">
+<h3>Antenna Module<a class="headerlink" href="#antenna-module" title="Permalink to this heading"></a></h3>
+<p>The antenna module used is the CubeSat deployable <a class="reference internal" href="glossary.html#term-VHF"><span class="xref std std-term">VHF</span></a> and <a class="reference internal" href="glossary.html#term-UHF"><span class="xref std std-term">UHF</span></a> antenna from ISISpace <span id="id4">[<a class="reference internal" href="references.html#id32" title="Deployable Antenna System. ISISPACE Group, Motorenweg 23, 2623CR, Delft, The Netherlands, 2020. Available at &lt;https://www.isispace.nl/wp-content/uploads/2021/01/ISIS-ANTS-DSH-0001-Antenna_System_Datasheet-04_00.pdf&gt;.">6</a>]</span>. It is a four-monopole antenna built with tape strings (up to 55 cm) and compliant with the CubeSat standard. It can be also configured as dipole or turnstile type antenna. The deployment method is the burn wire, which can be controlled digitally through a <span class="math notranslate nohighlight">\(I^{2}C\)</span> interface. To allow redundancy, two independent deployment controllers can be activated separately. Furthermore, the construction of this module allows the installation of a solar panel on the top side. The RF gain is about 0 dBi. A picture of the antenna module (with all the antennas released) can be seen in <a class="reference internal" href="#fig-isis-antenna"><span class="std std-numref">Fig. 44</span></a>.</p>
+<figure class="align-center" id="fig-isis-antenna">
+<a class="reference internal image-reference" href="_images/isis-antenna.png"><img alt="Antenna module" src="_images/isis-antenna.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Antenna module from ISISpace.</span><a class="headerlink" href="#fig-isis-antenna" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For this mission, two antenna modules will be used. The chosen can be seen in <a class="reference internal" href="#tab-antennae-config"><span class="std std-numref">Table 31</span></a> (using <a class="reference internal" href="#fig-isis-antenna-ref"><span class="std std-numref">Fig. 45</span></a> as reference):</p>
+<table class="docutils align-center" id="tab-antennae-config">
+<caption><span class="caption-number">Table 31 </span><span class="caption-text">Antennae configuration.</span><a class="headerlink" href="#tab-antennae-config" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 30.0%" />
+<col style="width: 30.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Antenna 1</strong></p></th>
+<th class="head"><p><strong>Antenna 2</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Configuration</p></td>
+<td><p>Turnstile</p></td>
+<td><p>Turnstile</p></td>
+</tr>
+<tr class="row-odd"><td><p>Frequency</p></td>
+<td><p>468 MHz</p></td>
+<td><p>401 MHz</p></td>
+</tr>
+<tr class="row-even"><td><p>Tunning structure size</p></td>
+<td><p>2U</p></td>
+<td><p>2U</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mounting position</p></td>
+<td><p>Top</p></td>
+<td><p>Bottom</p></td>
+</tr>
+<tr class="row-even"><td><p>Supply voltage</p></td>
+<td><p>3.3 V</p></td>
+<td><p>3.3 V</p></td>
+</tr>
+<tr class="row-odd"><td><p>I2C control type</p></td>
+<td><p>Dual bus</p></td>
+<td><p>Dual bus</p></td>
+</tr>
+<tr class="row-even"><td><p>I2C watchdog</p></td>
+<td><p>Enabled (60 sec timeout)</p></td>
+<td><p>Enabled (60 sec timeout)</p></td>
+</tr>
+</tbody>
+</table>
+<figure class="align-center" id="fig-isis-antenna-ref">
+<a class="reference internal image-reference" href="_images/isis-antenna-ref.png"><img alt="Antenna configuration" src="_images/isis-antenna-ref.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">Configuration reference of the antenna module.</span><a class="headerlink" href="#fig-isis-antenna-ref" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>A temperature sensor and the state of four deployment switches (1 per monopole) are also available in the digital interface. These switches indicate if a monopole is released or not, and can be used as feedback of the deployment process.</p>
+<section id="rf-splitter">
+<h4>RF Splitter<a class="headerlink" href="#rf-splitter" title="Permalink to this heading"></a></h4>
+<p>As the satellite shares the 400 MHz band antenna with three modules (<a class="reference internal" href="glossary.html#term-TTC"><span class="xref std std-term">TTC</span></a>, <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> and ExpLoRa), a three channel RF splitter is used. In this way, the signal received from a single antenna can be received by three receivers at the same time. For this, two Z99SC-62-S+ RF splitters from Mini-Circuits <span id="id5">[<a class="reference internal" href="references.html#id54" title="Coaxial Power Splitter/Combiner Z99SC-62-S+. Mini-Circuits, Brooklyn, NY - USA, 2024. Available at &lt;https://www.minicircuits.com/pdfs/Z99SC-62-S+.pdf&gt;.">24</a>]</span> are used in cascade. The diagram of <a class="reference internal" href="#fig-rf-splitter-diagram"><span class="std std-numref">Fig. 46</span></a> illustrate the connection between the splitter and the antenna/receiver. A picture of this Z99SC-62-S+ is also available in <a class="reference internal" href="#fig-rf-splitter"><span class="std std-numref">Fig. 47</span></a>.</p>
+<figure class="align-center" id="fig-rf-splitter-diagram">
+<a class="reference internal image-reference" href="_images/cat-a1_rf-splitter_scheme.png"><img alt="RF splitter connection" src="_images/cat-a1_rf-splitter_scheme.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 46 </span><span class="caption-text">RF splitter connection diagram.</span><a class="headerlink" href="#fig-rf-splitter-diagram" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="fig-rf-splitter">
+<a class="reference internal image-reference" href="_images/z99sc-62-s.png"><img alt="RF splitter" src="_images/z99sc-62-s.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Mini-Circuits Z99SC-62-S+ RF splitter.</span><a class="headerlink" href="#fig-rf-splitter" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To mechanically install the two Z99SC-62-S+ devices in the satellite, a board in the PC-104 form factor is used, as can be seen in <a class="reference internal" href="#fig-rf-splitter-module"><span class="std std-numref">Fig. 48</span></a>. More information about the RF splitter module is available in <span id="id6">[<a class="reference internal" href="references.html#id43" title="RF Splitter Documentation. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;\href https://github.com/spacelab-ufsc/rf-splitter&gt;.">15</a>]</span>.</p>
+<figure class="align-center" id="fig-rf-splitter-module">
+<a class="reference internal image-reference" href="_images/rf-splitter.png"><img alt="RF splitter module" src="_images/rf-splitter.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">RF splitter module.</span><a class="headerlink" href="#fig-rf-splitter-module" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="electrical-power-system">
+<h2>Electrical Power System<a class="headerlink" href="#electrical-power-system" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> is the module designed to harvest, store and distribute energy for the satellite. The energy harvesting system is based on solar energy conversion through the solar panels attached to the CubeSat structure. The <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> is designed to operate the solar panels at their <a class="reference internal" href="glossary.html#term-MPP"><span class="xref std std-term">MPP</span></a>. The board also measures the solar panels current, voltage and temperature of the batteries. The solar energy harvested is stored in a battery module connected to the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>. Several integrated buck DC-DC converters do the energy distribution. The full <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> system is composed of the solar panels, the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> PCB and the battery module. A general view of the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> board can be seen in <a class="reference internal" href="#fig-eps2"><span class="std std-numref">Fig. 49</span></a>.</p>
+<figure class="align-center" id="fig-eps2">
+<a class="reference internal image-reference" href="_images/eps2-small.png"><img alt="Battery module" src="_images/eps2-small.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 49 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> module.</span><a class="headerlink" href="#fig-eps2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The module is a direct upgrade from the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> of FloripaSat-1 <span id="id7">[<a class="reference internal" href="references.html#id19" title="FloripaSat-I Documentation. Space Technology Research Laboratory (SpaceLab), 2019. Available at &lt;https://github.com/spacelab-ufsc/floripasat-doc&gt;.">5</a>]</span>, which grants a flight heritage rating. The improvements focus on providing a cleaner and more generic implementation compared to the previous version, more reliability in software, and adaptations for the new mission requirements. More information about this module can be found in <span id="id8">[<a class="reference internal" href="references.html#id17" title="EPS 2.0 Documentation. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/eps2&gt;.">11</a>]</span>.</p>
+<section id="battery-module">
+<span id="sec-battery-module"></span><h3>Battery Module<a class="headerlink" href="#battery-module" title="Permalink to this heading"></a></h3>
+<p>The battery module used is the <a class="reference internal" href="glossary.html#term-BAT4C"><span class="xref std std-term">BAT4C</span></a>, which is a separate battery module from the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> board and composed by four lithium-ion 18650 cells. Besides the cells, the board has connectors for interfacing signals and power lines with the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a> module, 2 power resistors to operate as heaters to maintain the cell’s temperature during eclipse periods, and 4 temperature sensors. The batteries used are the ICR18650-30B lithium-ion cells from Samsung <span id="id9">[<a class="reference internal" href="references.html#id30" title="Specification of Product for Lithium-ion Rechargeable Cell - Model: ICR18650-30B. Samsung SDI, 428-5, Gongse-dong, Giheung-gu, Yongin-si, Gyeonggi-do, 446-577, Korea, 2010.">2</a>]</span>, which are connected in series and parallel (two sets of two parallel cells in series) to supply the required voltage and current. Each cell is fixed with 18650 metal holders, and between the pairs, the power resistor is attached with a thermal element in the middle. A mechanical mount is placed over the batteries and screwed to the board, providing better stress resistance. Also, PC-104 through-hole pads are present on the board for a connector that could be used for mechanical integration with the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>, or, with future improvements, an interface for power, data or control signals. The board is a direct improvement from the first battery board used in the FloripaSat-1 mission <span id="id10">[<a class="reference internal" href="references.html#id19" title="FloripaSat-I Documentation. Space Technology Research Laboratory (SpaceLab), 2019. Available at &lt;https://github.com/spacelab-ufsc/floripasat-doc&gt;.">5</a>]</span>. More information about the battery module can be found in <span id="id11">[<a class="reference internal" href="references.html#id5" title="Battery Module 4C Documentation. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/battery-module-4c&gt;.">9</a>]</span>.</p>
+<figure class="align-center" id="fig-battery-module-board">
+<a class="reference internal image-reference" href="_images/bat-4c-small.png"><img alt="Battery module" src="_images/bat-4c-small.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 50 </span><span class="caption-text">Battery module board.</span><a class="headerlink" href="#fig-battery-module-board" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="solar-panels">
+<h3>Solar Panels<a class="headerlink" href="#solar-panels" title="Permalink to this heading"></a></h3>
+<p>The solar panels are a set of 10 custom-made panels manufactured by Orbital Engenharia, a Brazilian company. The panels feature protection diodes and high-efficiency solar cells, which are the CESI’s CTJ-30 <span id="id12">[<a class="reference internal" href="references.html#id10" title="Triple-Junction Solar Cell for Space Applications (CTJ30). CESI S.p.A, Via Rubattino, 54 I-20134, Milan, Italy, 2021. Available at &lt;https://www.cesi.it/app/uploads/2020/03/Datasheet-CTJ30-1.pdf&gt;.">19</a>]</span> with dimensions <span class="math notranslate nohighlight">\(6.9 \times 3.9\)</span> cm (area <span class="math notranslate nohighlight">\(26.5\ cm^{2}\)</span>). This cell is qualified for space use by ESA with an efficiency of 29.5 % (AM0, BOL). The panels do not include magnetometers, sensors, and other devices. A picture of the complete set solar panels can be seen in <a class="reference internal" href="#fig-solar-panel-orbital"><span class="std std-numref">Fig. 51</span></a>.</p>
+<figure class="align-center" id="fig-solar-panel-orbital">
+<a class="reference internal image-reference" href="_images/solar-panels.jpg"><img alt="Solar panels" src="_images/solar-panels.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 51 </span><span class="caption-text">Solar panels.</span><a class="headerlink" href="#fig-solar-panel-orbital" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="kill-switches-and-rbf">
+<h3>Kill-Switches and RBF<a class="headerlink" href="#kill-switches-and-rbf" title="Permalink to this heading"></a></h3>
+<p>Two electronic switches have been implemented into the design to allow for the (redundant) deployment detection of the CubeSat when deployed from the POD. This electronic micro switch can be used to prevent the satellite from starting up during launch, as is required for all CubeSat launches and hence acts as a Kill-Switch. The Kill-Switch is the Panasonic AV4 microswitch (AV402461), as seen in <a class="reference internal" href="#fig-av402461"><span class="std std-numref">Fig. 52</span></a>.</p>
+<figure class="align-center" id="fig-av402461">
+<a class="reference internal image-reference" href="_images/av402461.jpg"><img alt="AV402461 microswitch" src="_images/av402461.jpg" style="width: 25%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text">Panasonic AV402461 Microswitch.</span><a class="headerlink" href="#fig-av402461" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Kill-Switch mechanism in the mechanical structure has combined the function of providing deployment and detection (<a class="reference internal" href="#fig-kill-switch-installed"><span class="std std-numref">Fig. 53</span></a>). The travel of the actual switch of the Kill-Switch itself is so short that the Kill-Switch could “detect deployment” of the CubeSat from the launch adapter simply due to launch vibrations. To overcome this issue the Kill-Switch has been rotated so that there is a positive obstruction in front of the switch which needs 8 mm of deployment before deployment can be detected with the Kill-Switch. In <a class="reference internal" href="#fig-kill-switch-installed"><span class="std std-numref">Fig. 53</span></a> the Kill-Switch parts are highlighted, and the stowed and deployed configuration is shown.</p>
+<figure class="align-center" id="fig-kill-switch-installed">
+<a class="reference internal image-reference" href="_images/kill-switch-installed.png"><img alt="Kill-switches installed" src="_images/kill-switch-installed.png" style="width: 85%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 53 </span><span class="caption-text">Kill-Switches installed in the mechanical structure.</span><a class="headerlink" href="#fig-kill-switch-installed" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The contact arrangement of the microswitch and the current rating are detailed in <a class="reference internal" href="#fig-circuit-kill-switch"><span class="std std-numref">Fig. 54</span></a> and <a class="reference internal" href="#tab-kill-switch-specs"><span class="std std-numref">Table 32</span></a>.</p>
+<figure class="align-center" id="fig-circuit-kill-switch">
+<a class="reference internal image-reference" href="_images/circuit-kill-switch.png"><img alt="Kill-switches contact" src="_images/circuit-kill-switch.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">The contact arrangement of the microswitch.</span><a class="headerlink" href="#fig-circuit-kill-switch" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-kill-switch-specs">
+<caption><span class="caption-number">Table 32 </span><span class="caption-text">Kill-Switch current rating and voltage range.</span><a class="headerlink" href="#tab-kill-switch-specs" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Characteristic</strong></p></th>
+<th class="head"><p><strong>Minimum</strong></p></th>
+<th class="head"><p><strong>Typical</strong></p></th>
+<th class="head"><p><strong>Maximum</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Switch Current</p></td>
+<td><p>2</p></td>
+<td><p>50</p></td>
+<td><p>100</p></td>
+<td><p>mA</p></td>
+</tr>
+<tr class="row-odd"><td><p>DC Voltage across switch contacts</p></td>
+<td><p>n/a</p></td>
+<td><p>n/a</p></td>
+<td><p>30</p></td>
+<td><p>V</p></td>
+</tr>
+<tr class="row-even"><td><p>Contact resistance microswitch</p></td>
+<td><p>n/a</p></td>
+<td><p>n/a</p></td>
+<td><p>200</p></td>
+<td><p><span class="math notranslate nohighlight">\(m\Omega\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="attitude-control-system">
+<h2>Attitude Control System<a class="headerlink" href="#attitude-control-system" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference internal" href="glossary.html#term-ACS"><span class="xref std std-term">ACS</span></a> is a passive attitude control system, which depends on the Earth’s magnetic field to rotate and stabilize the satellite <span id="id13">[<a class="reference internal" href="references.html#id47" title="Santoni, Fabio; Zelli, Mauro. Passive magnetic attitude stabilization of the UNISAT-4 microsatellite. In 57th International Astronautical Congress. 2012. doi:10.2514/6.IAC-06-C1.1.05.">38</a>]</span>, <span id="id14">[<a class="reference internal" href="references.html#id23" title="Gerhardt, David T.; Palo, Scott E. Passive Magnetic Attitude Control for CubeSat Spacecraft. In 24th Annual AIAA/USU Conference on Small Satellites. 2010.">37</a>]</span>. The system is composed of one permanent magnet to create a force to align the magnet with the Earth’s magnetic field and four hysteresis bars to dampen the cube oscillations and achieve stabilization.</p>
+<p>When equilibrium is achieved, the permanent magnet aligns with the Earth’s field lines. The hysteresis bars convert oscillation and rotation energy into heat, maintaining the alignment through the magnetic moment. The components are placed in positions to minimize the magnet’s interaction with the hysteresis bars, which limits the magnetic moment of the magnet <span id="id15">[<a class="reference internal" href="references.html#id20" title="Francois-Lavet, Vincent. Study of passive and active attitude control systems for the OUFTI nanosatellites. Master's thesis, University of Liège, Faculty of Applied Sciences, Belgium, 2010.">36</a>]</span>. <a class="reference internal" href="#fig-adcs"><span class="std std-numref">Fig. 55</span></a> shows the mounting of the hysteresis bars (green) and the permanent magnet (red) on the mechanical structure. The whole passive <a class="reference internal" href="glossary.html#term-ACS"><span class="xref std std-term">ACS</span></a> was implemented according to <span id="id16">[<a class="reference internal" href="references.html#id20" title="Francois-Lavet, Vincent. Study of passive and active attitude control systems for the OUFTI nanosatellites. Master's thesis, University of Liège, Faculty of Applied Sciences, Belgium, 2010.">36</a>]</span>.</p>
+<figure class="align-center" id="fig-adcs">
+<a class="reference internal image-reference" href="_images/adcs.png"><img alt="ACS subsystem" src="_images/adcs.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-ACS"><span class="xref std std-term">ACS</span></a> subsytem. Rare earth magnet (pink) and hysteresis bars (red) installed in the structure.</span><a class="headerlink" href="#fig-adcs" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As a passive magnetic attitude control system is used, it is possible to stabilize only one axis. So, the CubeSat will still slowly (due to hysteresis bars) rotate around this axis, even after stabilized. A N45 neodymium magnet and 4 hysteresis bars of Permanorm 5000 H2 are used (courtesy of Vacuumschmelze GmbH &amp; Co. KG). The hysteresis bar’s material is shaped to maximize stabilization, which is the most critical part of attitude control.</p>
+<p>Many conditions impact the detumbling time, which is the time required for the satellite to stabilize. Magnetic passive attitude stabilization systems such as the one developed for this mission achieve the equilibrium state within a few weeks of operation <span id="id17">[<a class="reference internal" href="references.html#id47" title="Santoni, Fabio; Zelli, Mauro. Passive magnetic attitude stabilization of the UNISAT-4 microsatellite. In 57th International Astronautical Congress. 2012. doi:10.2514/6.IAC-06-C1.1.05.">38</a>]</span>.</p>
+<p>The Catarina-A1 satellite does not feature an orbit control subsystem.</p>
+</section>
+<section id="thermal-control">
+<h2>Thermal Control<a class="headerlink" href="#thermal-control" title="Permalink to this heading"></a></h2>
+<p>To ensure optimal thermal regulation, an active control system has been implemented, comprising two 24 <span class="math notranslate nohighlight">\(\Omega\)</span> resistors to safeguard the batteries against low temperatures, along with four <a class="reference internal" href="glossary.html#term-RTD"><span class="xref std std-term">RTD</span></a> for precise temperature monitoring, as depicted in <a class="reference internal" href="#fig-heaters"><span class="std std-numref">Fig. 56</span></a>. The control mechanism operates on an ON/OFF basis.</p>
+<figure class="align-center" id="fig-heaters">
+<a class="reference internal image-reference" href="_images/heater.PNG"><img alt="Mechanical structure" src="_images/heater.PNG" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">Representation of the positioning of the heaters on the battery plate.</span><a class="headerlink" href="#fig-heaters" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="mechanical-structure">
+<h2>Mechanical Structure<a class="headerlink" href="#mechanical-structure" title="Permalink to this heading"></a></h2>
+<p>The USIPED 2-Unit CubeSat structure is developed as a generic, modular satellite structure based on the CubeSat standard. The modular chassis allows up to two 1-Unit stack of PCBs, or other modules, to be mounted inside the chassis, using the PC-104 standard and spacers attached to the structure. In addition, there are 4 slots in the middle section, providing space for the interface boards and the <a class="reference internal" href="glossary.html#term-ACS"><span class="xref std std-term">ACS</span></a>. The solar panels and antennas are externally mounted, providing a complete mechanical solution. A picture of this structure can be seen in <a class="reference internal" href="#fig-usiped-structure"><span class="std std-numref">Fig. 57</span></a>.</p>
+<figure class="align-center" id="fig-usiped-structure">
+<a class="reference internal image-reference" href="_images/usiped-2u-structure.jpg"><img alt="Mechanical structure" src="_images/usiped-2u-structure.jpg" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 57 </span><span class="caption-text">2U CubeSat structure from Usiped.</span><a class="headerlink" href="#fig-usiped-structure" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The structure will support the loads and vibration along the entire life cycle of the satellite, which includes every phase prior to the launch, the launch itself, and the operation of the CubeSat in space. In addition, the structure must keep all the parts of the CubeSat fastened at the proper position during the launch and operation, provide a conductive thermal path for heat transfer, and provide access for assembly, integration, and verification.</p>
+<p>The material of all its parts is aluminum T6065, except for the bolts and thread. This material presents good mechanical properties for space application, such as weight, strength, fracture and fatigue resistance, thermal expansion, and ease of manufacturing. The surfaces of the CubeSat in contact with the deployer are anodized and grounded for proper and smooth ejection. The main views of the assembled structure is presented in <a class="reference internal" href="#fig-structure-views"><span class="std std-numref">Fig. 58</span></a>, as well as its main dimensions.</p>
+<figure class="align-center" id="fig-structure-views">
+<a class="reference internal image-reference" href="_images/Structure_2U.png"><img alt="Structure dimensions" src="_images/Structure_2U.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Views and main dimension of the structure.</span><a class="headerlink" href="#fig-structure-views" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="interconnection-modules">
+<h2>Interconnection Modules<a class="headerlink" href="#interconnection-modules" title="Permalink to this heading"></a></h2>
+<section id="pc-104-interconnection-boards">
+<h3>PC-104 Interconnection Boards<a class="headerlink" href="#pc-104-interconnection-boards" title="Permalink to this heading"></a></h3>
+<p>The PC-104 interconnection boards are intended to be used as an interconnection of the two PC-104 bus segments of the 2U structure (top and bottom units). This interconnection is made with a set of PicoBlade cables between the top and bottom boards. The set of two boards can be seen in <a class="reference internal" href="#fig-pc104-adapter"><span class="std std-numref">Fig. 59</span></a>.</p>
+<figure class="align-center" id="fig-pc104-adapter">
+<a class="reference internal image-reference" href="_images/pc104-adapter.png"><img alt="PC-104 adapter" src="_images/pc104-adapter.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">PC-104 adapter boards (top and bottom).</span><a class="headerlink" href="#fig-pc104-adapter" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>More information about these boards can be found in <span id="id18">[<a class="reference internal" href="references.html#id40" title="PC-104 Adapter Documentation. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/pc104-adapter&gt;.">14</a>]</span>.</p>
+</section>
+<section id="external-connection-boards">
+<h3>External Connection Boards<a class="headerlink" href="#external-connection-boards" title="Permalink to this heading"></a></h3>
+<p>The <a class="reference internal" href="glossary.html#term-IIP"><span class="xref std std-term">IIP</span></a> are three vertical internally mounted PCBs designed to give external access to up to four modules inside of a 2U CubeSat during final <a class="reference internal" href="glossary.html#term-AIT"><span class="xref std std-term">AIT</span></a> before launch. The complete set of boards allows the nanosatellite to be charged, programmed, and debugged. The usage of this hardware platform takes into account the use of a MSP-FET: MSP430 Flash Emulation Tool from Texas Instruments for JTAG programming and debugging, UART debugging through a mini USB type B port interfacing the FT4232H USB bridge IC from FTDI, a JST XH header for charging internal batteries and a <a class="reference internal" href="glossary.html#term-RBF"><span class="xref std std-term">RBF</span></a> pin header. The boards can be seen in <a class="reference internal" href="#fig-iip-boards"><span class="std std-numref">Fig. 60</span></a>.</p>
+<figure class="align-center" id="fig-iip-boards">
+<a class="reference internal image-reference" href="_images/iip_fullset.png"><img alt="IIP boards" src="_images/iip_fullset.png" style="width: 70%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">Set of external connection boards.</span><a class="headerlink" href="#fig-iip-boards" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For this mission, the four JTAG connectors are being used as described in <a class="reference internal" href="#tab-iip-jtag-usage"><span class="std std-numref">Table 33</span></a>.</p>
+<table class="docutils align-center" id="tab-iip-jtag-usage">
+<caption><span class="caption-number">Table 33 </span><span class="caption-text">IIP JTAG connectors usage.</span><a class="headerlink" href="#tab-iip-jtag-usage" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>JTAG Connector</strong></p></th>
+<th class="head"><p><strong>Connected Module</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JTAG/UART N1</p></td>
+<td><p>OBDH</p></td>
+</tr>
+<tr class="row-odd"><td><p>JTAG/UART N2</p></td>
+<td><p>EPS</p></td>
+</tr>
+<tr class="row-even"><td><p>JTAG/UART N3</p></td>
+<td><p>TTC</p></td>
+</tr>
+<tr class="row-odd"><td><p>JTAG/UART N4</p></td>
+<td><p>None</p></td>
+</tr>
+</tbody>
+</table>
+<p>More information about these boards can be found in <span id="id19">[<a class="reference internal" href="references.html#id31" title="Documentation of Interstage Interface Panels. Space Technology Research Laboratory (SpaceLab), 2021. Available at &lt;https://github.com/spacelab-ufsc/interface-board&gt;.">10</a>]</span>.</p>
+</section>
+</section>
+<section id="payloads">
+<h2>Payloads<a class="headerlink" href="#payloads" title="Permalink to this heading"></a></h2>
+<p>The Catarina-A1 mission is designed to incorporate the <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> as its primary payload. Additionally, an second payload, the ExpLoRa, will be utilized to conduct a specific experiment within SpaceLab, focusing on the satellite’s application in <a class="reference internal" href="glossary.html#term-IoT"><span class="xref std std-term">IoT</span></a> contexts.</p>
+<section id="environmental-data-collection">
+<h3>Environmental Data Collection<a class="headerlink" href="#environmental-data-collection" title="Permalink to this heading"></a></h3>
+<p>The <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> is a CubeSat-compatible payload that decodes signals from Platform Transmitter Terminals (PTTs) belonging to the <a class="reference internal" href="glossary.html#term-SBCD"><span class="xref std std-term">SBCD</span></a> and the Argos-2 System. It is the main payload of the Catarina-A1 mission.</p>
+<p>The main features of this payload are listed below, a 3D model of the <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> board can be seen in <a class="reference internal" href="#fig-edc-board"><span class="std std-numref">Fig. 61</span></a>.</p>
+<ul class="simple">
+<li><p>Reception/decoding of <a class="reference internal" href="glossary.html#term-SBCD"><span class="xref std std-term">SBCD</span></a> and Argos-2 signals on the 401.635 MHz <span class="math notranslate nohighlight">\(\pm\)</span> 30 kHz frequency range.</p></li>
+<li><p>Can decode up to 12 PTT signals simultaneously.</p></li>
+<li><p>Attaches a header to decoded messages with frequency, time, and signal strength information.</p></li>
+<li><p>Full speed <span class="math notranslate nohighlight">\(I^{2}C\)</span> interface (400 kbit/s) for the OBC communication.</p></li>
+<li><p>Full-duplex RS-485 interface with fail-safe for the OBC communication.</p></li>
+<li><p>5 V power supply.</p></li>
+<li><p>Memory capable of storing up to 64 decoded user messages.</p></li>
+<li><p>Generates housekeeping information, including current supply, board temperature, digitized signal RMS level, front-end PLL synchronism state, and overcurrent events.</p></li>
+<li><p>Can capture a 2048 sample sequence (16 ms window) from the received signal upon request.</p></li>
+</ul>
+<figure class="align-center" id="fig-edc-board">
+<a class="reference internal image-reference" href="_images/edc-pcb-top.png"><img alt="EDC module" src="_images/edc-pcb-top.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> board.</span><a class="headerlink" href="#fig-edc-board" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>More information about this payload can be found in <span id="id20">[<a class="reference internal" href="references.html#id13" title="Environmental Data Collector User Guide. Instituto Nacional de Pesquisas Espaciais (INPE), October 2019. CNS-MNL-PY-00-002-V01.">4</a>]</span>.</p>
+</section>
+<section id="explora">
+<h3>ExpLoRa<a class="headerlink" href="#explora" title="Permalink to this heading"></a></h3>
+<p>This payload is composed of a PCB developed by Spacelab, with dimensions of <span class="math notranslate nohighlight">\(92.30 \times 77.43\)</span> mm and is compatible with the CubeSat standard. It comprises several components, such as a power switch, which is controlled externally by a GPIO pin in the PC-104 bus. This allows the payload to be enabled or disabled by the <a class="reference internal" href="glossary.html#term-OBDH"><span class="xref std std-term">OBDH</span></a> of the satellite. For extra protection, the board has a latch-up protector in order to limit its current to 1 A, in case of a SEL (Single Event Latch-up).</p>
+<p>The board is powered by a 5 V bus in the PC-104 connector, but only the LoRa concentrator module uses that voltage directly. The board has a 5 to 3V3 DC/DC Converter to power the other components with 3.3 V. In the power input there is also a current and voltage sensor that performs the monitoring of the input power. These measurements can be used as telemetry readings of the payload.</p>
+<p>The main component controlling the overall operation of the module is the microcontroller, that is a ARM Cortex M3 model from STM32F103C8T6. The embedded firmware does all the data processing by using several serial buses like SPI, <span class="math notranslate nohighlight">\(I^{2}C\)</span>, UART and CAN to communicate with the internal peripherals and external modules. There are two buses that can be used to communicate with the payload: CAN and UART. Both are available in the PC-104 connector. A SPI bus is used to access a NOR flash memory and a FRAM memory. The first is used to store the telemetry and the received data from the LoRa concentrator. The second is used to store the configuration parameters and general essential information used for the correct operation of the board. The flash memory IC has the capacity of 16 MB and the FRAM memory 2 Mb.</p>
+<p>Most of the components are automotive grade components, to allow a better resilience during the operation in the space environment. A renderization of the PCB of the ExpLoRa payload can be seen in <a class="reference internal" href="#fig-explora-board"><span class="std std-numref">Fig. 62</span></a>.</p>
+<figure class="align-center" id="fig-explora-board">
+<a class="reference internal image-reference" href="_images/explora-pcb.png"><img alt="ExpLoRa module" src="_images/explora-pcb.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 62 </span><span class="caption-text">ExpLoRa board.</span><a class="headerlink" href="#fig-explora-board" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="design.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ground_segment.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="design.html" class="btn btn-neutral float-left" title="Service Module Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ground_segment.html" class="btn btn-neutral float-right" title="Ground Segment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

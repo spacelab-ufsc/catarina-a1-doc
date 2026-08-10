@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDC Test Report &mdash; Catarina-A1 Documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=4ec8a6bb"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Telecommunication Packets" href="packets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">EDC Test Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#command-interface-test">Command interface test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#used-material">Used material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rf-chain-test">RF chain test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Used material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">catarina-a1</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">EDC Test Report</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/edc_report.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+  .ss-layout-default-A_B { grid-template-areas: 'A' 'B'; }
+@media (max-width: 576px) {
+  .ss-layout-sm-A_B { grid-template-areas: 'A' 'B'; }
+}
+</style>
+<section id="edc-test-report">
+<span id="anx-edc-report"></span><h1>EDC Test Report<a class="headerlink" href="#edc-test-report" title="Permalink to this heading"></a></h1>
+<p>This appendix is a test report of the EDC board. The purpose of this test is to characterize the main functionalities of the EDC module. The main information about the test is available below:</p>
+<ul class="simple">
+<li><p><strong>Date</strong>: From 2022/03/03 to 2022/03/14</p></li>
+<li><p><strong>Testers</strong>: Bruno Benedetti, Gabriel M. Marcelino, Laio O. Seman</p></li>
+</ul>
+<p>A picture of the boards used during the tests can be seen in <a class="reference internal" href="#fig-edc-boards-test"><span class="std std-numref">Fig. 79</span></a>.</p>
+<figure class="sphinx-subfigure align-center" id="fig-edc-boards-test">
+<div class="sphinx-subfigure-grid ss-layout-default-A_B ss-layout-sm-A_B outline" style="display: grid; gap: 8px; grid-gap: 8px;">
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: A;">
+<a class="reference internal image-reference" href="_images/edcs-top.jpg"><img alt="Top side." class="align-center" src="_images/edcs-top.jpg" style="width: 100%;" /></a>
+<span class="caption">Top side.</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: B;">
+<a class="reference internal image-reference" href="_images/edcs-bottom.jpg"><img alt="Bottom side." class="align-center" src="_images/edcs-bottom.jpg" style="width: 100%;" /></a>
+<span class="caption">Bottom side.</span>
+</div>
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Tested EDC boards.</span><a class="headerlink" href="#fig-edc-boards-test" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This test is divided into two parts: the command interface test and RF chain test. Both are described below.</p>
+<section id="command-interface-test">
+<h2>Command interface test<a class="headerlink" href="#command-interface-test" title="Permalink to this heading"></a></h2>
+<p>The command interface test aims to test the UART command interface available in the PC-104 bus of the module. All available commands were tested in this test.</p>
+<section id="used-material">
+<h3>Used material<a class="headerlink" href="#used-material" title="Permalink to this heading"></a></h3>
+<p>The used material is listed below:</p>
+<ul class="simple">
+<li><p>EDC boards</p></li>
+<li><p>USB-UART converter</p></li>
+<li><p>Saleae Logic Analyzer</p></li>
+<li><p>Protoboard</p></li>
+<li><p>Desktop computer</p></li>
+<li><p>Logic 2 software</p></li>
+<li><p>Cutecom software</p></li>
+<li><p>USB cables</p></li>
+<li><p>Pin header wires</p></li>
+<li><p>EDC documentation</p></li>
+</ul>
+</section>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h3>
+<p>The test setup can be seen in <a class="reference internal" href="#fig-edc-test-setup"><span class="std std-numref">Fig. 80</span></a>. As seen in the picture, the USB-UART converter connects the UART interface of the EDC directly to a computer. The EDC board is powered directly by its USB debug interface.</p>
+<figure class="align-center" id="id4">
+<span id="fig-edc-test-setup"></span><a class="reference internal image-reference" href="_images/cmd-test-setup.jpg"><img alt="EDC test setup" src="_images/cmd-test-setup.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Setup of the EDC’s command interface test.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To confirm and visualize the transmitted and received data, a logic analyzer is connected to the pins of the UART interface (TX and RX).</p>
+</section>
+<section id="results">
+<h3>Results<a class="headerlink" href="#results" title="Permalink to this heading"></a></h3>
+<p>During the first attempts to perform this test, no responses were received from both boards, considering all the available commands. After further investigation with the module developers (INPE-CRN), the issue was found. As can be seen in <a class="reference internal" href="#fig-edc-cmd-issue"><span class="std std-numref">Fig. 81</span></a>, the voltage of the RX pin when in a low state is higher than expected, making all bits be interpreted as ones.</p>
+<figure class="align-center" id="id5">
+<span id="fig-edc-cmd-issue"></span><a class="reference internal image-reference" href="_images/edc-cmd-issue.jpg"><img alt="EDC command interface issue" src="_images/edc-cmd-issue.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">Command interface issue.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The hypothesis for the cause of this problem is the RS-485 transceiver. As seen in <a class="reference internal" href="#fig-edc-bd-uart-if"><span class="std std-numref">Fig. 82</span></a>, the RS-485 transceiver and the UART interfaces share the same UART port of the microcontroller. This way, the RS-485 transceiver can cause interference on the RX pin of the UART interface, forcing its state to be high all the time.</p>
+<figure class="align-center" id="id6">
+<span id="fig-edc-bd-uart-if"></span><a class="reference internal image-reference" href="_images/edc-bd-uart-if.png"><img alt="EDC interfaces" src="_images/edc-bd-uart-if.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 82 </span><span class="caption-text">UART and RS-485 interfaces of the EDC.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>A solution to this problem is to disable the RS-485 transceiver by removing it from the board or putting the enable pin on a disabled state. As it would be difficult to remove this component from the boards safely, the second option was chosen. With a modification in the firmware, the RS-485 transceiver was disabled. After this modification, the UART command interface started to work as expected, as can be seen in <a class="reference internal" href="#fig-edc-echo-cmd"><span class="std std-numref">Fig. 83</span></a> (“echo” command).</p>
+<figure class="align-center" id="id7">
+<span id="fig-edc-echo-cmd"></span><a class="reference internal image-reference" href="_images/echo-cmd.png"><img alt="EDC echo command" src="_images/echo-cmd.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 83 </span><span class="caption-text">“Echo” command demonstration.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="rf-chain-test">
+<h2>RF chain test<a class="headerlink" href="#rf-chain-test" title="Permalink to this heading"></a></h2>
+<p>This test simulates a signal transmitted by a DCP directly to the RF input of the EDC module. To emulate the DCP signal, a GNURadio flow generates the packets, and an SDR transmitter transmits the packet to the EDC. This test is divided into two steps: in the first step, we check the transmitted signal by the USRP, and in the second step, the EDC reception and decoding are verified.</p>
+<section id="id1">
+<h3>Used material<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<p>The used material is listed below:</p>
+<ul class="simple">
+<li><p>EDC boards</p></li>
+<li><p>USB-UART converter</p></li>
+<li><p>Ettus USRP B210 SDR</p></li>
+<li><p>Desktop computer</p></li>
+<li><p>GNURadio v3.9</p></li>
+<li><p>Cutecom software</p></li>
+<li><p>USB cables</p></li>
+<li><p>Pin header wires</p></li>
+<li><p>SMA coaxial cable</p></li>
+<li><p>30 dB attenuator</p></li>
+<li><p>RTL-SDR v3</p></li>
+<li><p>EDC documentation</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Setup<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h3>
+<p>This test is divided in two steps. The setup of the first step can be seen in <a class="reference internal" href="#fig-edc-stimulus-test"><span class="std std-numref">Fig. 84</span></a>. As can be seen in the picture, the SDR transmitter is connected directly to an SDR receiver through a 30 dB attenuator.</p>
+<figure class="align-center" id="id8">
+<span id="fig-edc-stimulus-test"></span><a class="reference internal image-reference" href="_images/edc-stimulus-test.jpg"><img alt="EDC signal generator test" src="_images/edc-stimulus-test.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 84 </span><span class="caption-text">Setup of the signal generator test.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id9">
+<span id="fig-edc-rf-chain-test-setup"></span><a class="reference internal image-reference" href="_images/rf-chain-setup.jpg"><img alt="EDC RF chain test setup" src="_images/rf-chain-setup.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 85 </span><span class="caption-text">Setup of the EDC’s RF chain test.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<span id="fig-edc-rf-signal"></span><a class="reference internal image-reference" href="_images/edc-rf-test-signal.png"><img alt="EDC generated signal" src="_images/edc-rf-test-signal.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 86 </span><span class="caption-text">Generated signal used in the RF chain test.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h3>Results<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h3>
+<p>The transmitted signal by the USRP SDR can be seen in <a class="reference internal" href="#fig-edc-rf-signal-gqrx"><span class="std std-numref">Fig. 87</span></a>.</p>
+<figure class="align-center" id="id11">
+<span id="fig-edc-rf-signal-gqrx"></span><a class="reference internal image-reference" href="_images/edc-stimulus.png"><img alt="EDC received stimulus" src="_images/edc-stimulus.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 87 </span><span class="caption-text">Received signal from the EDC stimulus application.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The received and decoded packets by the EDC during the tests are available in <a class="reference internal" href="#fig-edc-pkts"><span class="std std-numref">Fig. 88</span></a>. Each color line is a different decoded packet. The last byte sequence indicates the number of available packets in the queue (zero in this case, after reading all packets).</p>
+<figure class="align-center" id="id12">
+<span id="fig-edc-pkts"></span><a class="reference internal image-reference" href="_images/ptt-pkg.png"><img alt="EDC received PTT" src="_images/ptt-pkg.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 88 </span><span class="caption-text">Received PTT packages (colorful lines).</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading"></a></h2>
+<p>As presented in this report, an issue with the UART interface was found. A temporary solution was achieved by modifying the current version of the firmware and disabling the RS-485 transceiver by software. However, a better solution should be considered for the flight version of the boards; for example, the RS-485 CI can be unconsidered from the board assembly or disabled by hardware (with a jumper).</p>
+<p>As for the RF chain test, no issues were identified so far, using the available stimulus signal, all packages are received and decoded as expected. The commands regarding the package reception also work as planned.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="packets.html" class="btn btn-neutral float-left" title="Telecommunication Packets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright The Catarina-A1 Contributors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

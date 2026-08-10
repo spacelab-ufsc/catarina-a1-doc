@@ -30,8 +30,9 @@
 
           
           
-          <a href="#" class="icon icon-home">
-            catarina-a1
+          <a href="#">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -41,12 +42,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -76,7 +88,12 @@
   <section id="catarina-a1-mission">
 <h1>Catarina-A1 Mission<a class="headerlink" href="#catarina-a1-mission" title="Permalink to this heading"></a></h1>
 <p>Welcome to the official documentation of the Catarina-A1 mission.</p>
+<p>This documentation presents the Critical Design Review for Catarina-A1, a 2U
+CubeSat developed by SpaceLab at the Federal University of Santa Catarina
+(UFSC). It describes the mission objectives, system design, subsystems, ground
+segment, technical budgets, and project management.</p>
 <div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#mission-description">Mission description</a><ul>
@@ -148,8 +165,147 @@
 <li class="toctree-l2"><a class="reference internal" href="conops.html#operational-phase-schedule">Operational phase schedule</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="budgets.html">Technical Budgets and Mission Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#mission-requirements">Mission requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#system-requirements">System Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html#orbit-parameters-and-analysis">Orbit parameters and analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#orbital-needs-for-communication-with-dcp-and-ground-station">Orbital needs for communication with DCP and ground station</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html#thermal-analysis">Thermal analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#thermal-numerical-models">Thermal numerical models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#orbital-and-thermal-parameters-analyzed">Orbital and thermal parameters analyzed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#results-total-incident-radiation-on-each-face">Results: Total incident radiation on each face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#results-temperature-distribution">Results: Temperature distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html#mass-budget">Mass budget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html#power-budget">Power Budget</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#input-power">Input Power</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#satellite-s-power-consumption">Satellite’s power consumption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#battery-sizing">Battery Sizing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="budgets.html#power-degradation-over-mission-life">Power Degradation Over Mission Life</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="budgets.html#link-budget">Link Budget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="design.html#general-diagrams">General Diagrams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="design.html#power-diagram">Power Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#data-path-diagram">Data Path Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#deployment-sequence">Deployment Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#beacon-operation">Beacon Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#obdh-operation">OBDH Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#eps-operation">EPS Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#interface-datasheet-ids">Interface Datasheet (IDS)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="design.html#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#form-factor">Form Factor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#telecommunication">Telecommunication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="design.html#authentication">Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="design.html#operation-licenses">Operation Licenses</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#on-boarding-data-handling">On-Boarding Data Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#telemetry-tracking-and-command-module">Telemetry, Tracking and Command Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#antenna-module">Antenna Module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#electrical-power-system">Electrical Power System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#battery-module">Battery Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#solar-panels">Solar Panels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#kill-switches-and-rbf">Kill-Switches and RBF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#attitude-control-system">Attitude Control System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#thermal-control">Thermal Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#mechanical-structure">Mechanical Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#interconnection-modules">Interconnection Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#pc-104-interconnection-boards">PC-104 Interconnection Boards</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#external-connection-boards">External Connection Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="subsystems.html#payloads">Payloads</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#environmental-data-collection">Environmental Data Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="subsystems.html#explora">ExpLoRa</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ground_segment.html#ufsc-ground-station">UFSC Ground Station</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ground_segment.html#hardware">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ground_segment.html#satellite-tracking">Satellite Tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ground_segment.html#packet-transmission">Packet Transmission</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ground_segment.html#packet-decoding">Packet Decoding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ground_segment.html#emmn-ground-station">EMMN Ground Station</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ground_segment.html#data-collection-platforms">Data Collection Platforms</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="link_budget.html#distance-to-satellite-at-horizon">Distance to Satellite at Horizon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="link_budget.html#free-space-path-loss">Free-Space Path Loss</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#downlink">Downlink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#uplink">Uplink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#uplink-payload">Uplink (Payload)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="link_budget.html#power-at-receiver">Power at Receiver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#id2">Downlink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#id3">Uplink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#id4">Uplink (Payload)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="link_budget.html#signal-to-noise-ratio">Signal-to-Noise-Ratio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#id5">Downlink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#id6">Uplink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="link_budget.html#id7">Uplink (Payload)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="link_budget.html#link-margin">Link Margin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="packets.html#beacon">Beacon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packets.html#downlink">Downlink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="packets.html#uplink">Uplink</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="edc_report.html#command-interface-test">Command interface test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edc_report.html#used-material">Used material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edc_report.html#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edc_report.html#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="edc_report.html#rf-chain-test">RF chain test</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="edc_report.html#id1">Used material</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edc_report.html#id2">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edc_report.html#id3">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="edc_report.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

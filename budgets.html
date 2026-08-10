@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Catarina-A1 Documentation</title>
+  <title>Technical Budgets and Mission Analysis &mdash; Catarina-A1 Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
 
@@ -16,10 +16,11 @@
       <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=4ec8a6bb"></script>
       <script src="_static/doctools.js?v=888ff710"></script>
       <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="design.html" />
+    <link rel="next" title="Service Module Overview" href="design.html" />
     <link rel="prev" title="Concept of Operations" href="conops.html" /> 
 </head>
 
@@ -31,8 +32,9 @@
 
           
           
-          <a href="index.html" class="icon icon-home">
-            catarina-a1
+          <a href="index.html">
+            
+              <img src="_static/catarina-mission-patch.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,12 +44,63 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="management.html">Mission management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conops.html">Concept of Operations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Budgets and Mission Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mission-requirements">Mission requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-requirements">System Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cubesat-design-specification-requirements">CubeSat Design Specification Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#primary-payload-system-requirements">Primary payload system requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#service-system-requirements">Service System Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#orbit-parameters-and-analysis">Orbit parameters and analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#orbital-needs-for-communication-with-dcp-and-ground-station">Orbital needs for communication with DCP and ground station</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operation-altitude">Operation altitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#orbit-inclination">Orbit inclination</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#number-of-communication-per-day-ss-dcp">Number of communication per day: SS - DCP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#number-of-communication-per-day-ss-emmn">Number of communication per day: SS - EMMN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transmission-time">Transmission time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#communication-time">Communication time</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#thermal-analysis">Thermal analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thermal-numerical-models">Thermal numerical models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orbital-and-thermal-parameters-analyzed">Orbital and thermal parameters analyzed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results-total-incident-radiation-on-each-face">Results: Total incident radiation on each face</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#results-temperature-distribution">Results: Temperature distribution</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mass-budget">Mass budget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#power-budget">Power Budget</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#input-power">Input Power</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#satellite-s-power-consumption">Satellite’s power consumption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#battery-sizing">Battery Sizing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-degradation-over-mission-life">Power Degradation Over Mission Life</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#link-budget">Link Budget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Service Module Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subsystems.html">Subsystems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ground_segment.html">Ground Segment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Nomenclature</a></li>
 <li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="link_budget.html">Link Budget Calculation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packets.html">Telecommunication Packets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="edc_report.html">EDC Test Report</a></li>
 </ul>
 
         </div>
@@ -64,7 +117,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="breadcrumb-item active">Technical Budgets and Mission Analysis</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/budgets.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -75,12 +128,1584 @@
            <div itemprop="articleBody">
              
   
+<style>
+  .ss-layout-default-A_B { grid-template-areas: 'A' 'B'; }
+@media (max-width: 576px) {
+  .ss-layout-sm-A_B { grid-template-areas: 'A' 'B'; }
+}
+</style>
+<section id="technical-budgets-and-mission-analysis">
+<span id="ch-budgets"></span><h1>Technical Budgets and Mission Analysis<a class="headerlink" href="#technical-budgets-and-mission-analysis" title="Permalink to this heading"></a></h1>
+<p>This chapter provides an in-depth examination of the Catarina-A1 mission, focusing on both its requirements and a detailed analysis. We examine some key mission-related elements such as: satellite’s orbit, estimated lifetime, and data exchange rate during satellite’s operation and more. Additionally, the chapter delves into the technical budgets that govern key engineering parameters, such as mass, power, and communication links. The overarching goal is to demonstrate the project’s alignment with mission objectives and its capacity to meet specified requirements effectively.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<p>This section describes the operational and functional technical requirements for the Catarina-A1. The applicable documents that justify the requirements presented in this document are <span id="id1">[<a class="reference internal" href="references.html#id62" title="Talita Sauter Possamai. CONST-CAT-FLTA-MNG-MDD-0001_A - Fleet A: Mission Definition Document. Federal University of Santa Catarina (UFSC); SENAI Institute of Innovation in Embedded Systems (ISI-SE), Joinville - SC, July 2022.">33</a>]</span> and <span id="id2">[<a class="reference internal" href="references.html#id63" title="Talita Sauter Possamai. CONST-CAT-FLTA-MNG-MA-0001_A - Fleet A: Mission Analysis. Federal University of Santa Catarina (UFSC); SENAI Institute of Innovation in Embedded Systems (ISI-SE), Joinville - SC, July 2022.">32</a>]</span>. The Mission Requirements and the System Requirements are presented according to the following nomenclature:</p>
+<ul class="simple">
+<li><p>REQ-MIS: Mission Requirements;</p></li>
+<li><p>REQ-CDS: CubeSat Design Specification Requirements;</p></li>
+<li><p>REQ-PAY: Primary Payload System Requirements;</p></li>
+<li><p>REQ-SER: Service System Requirement.</p></li>
+</ul>
+<p>Information about the user’s needs, mission goals and objectives, and mission conception are presented in <span id="id3">[<a class="reference internal" href="references.html#id62" title="Talita Sauter Possamai. CONST-CAT-FLTA-MNG-MDD-0001_A - Fleet A: Mission Definition Document. Federal University of Santa Catarina (UFSC); SENAI Institute of Innovation in Embedded Systems (ISI-SE), Joinville - SC, July 2022.">33</a>]</span>. A color code is applied to the requirements tables to indicate the current status of compliance based on the verification method indicated: green - compliant; red - not compliant; yellow - partial compliant; no color - verification method not yet applied. The justification for each status can be checked in each subsection related to the topic in this document.</p>
+<section id="mission-requirements">
+<h3>Mission requirements<a class="headerlink" href="#mission-requirements" title="Permalink to this heading"></a></h3>
+<p>The Mission Requirements are displayed in <a class="reference internal" href="#tab-mission-requirements"><span class="std std-numref">Table 12</span></a>, which presents its <a class="reference internal" href="glossary.html#term-ID"><span class="xref std std-term">ID</span></a>, description and verification method. The respective rationale, traceability, and verification method can be found in the Requirement Justification File <span id="id4">[<a class="reference internal" href="references.html#id44" title="Talita Sauter Possamai. UFSC-CAT-A1-ENG-RJF-0001_A - Catarina-A1: Requirements Justification File. Federal University of Santa Catarina (UFSC), Joinville - SC, July 2022.">34</a>]</span>.</p>
+<table class="docutils align-center" id="tab-mission-requirements">
+<caption><span class="caption-number">Table 12 </span><span class="caption-text">Mission Requirements for Catarina Constellation’s Fleet A.</span><a class="headerlink" href="#tab-mission-requirements" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 65.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Verification Method</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>REQ-MIS-1</p></td>
+<td><p>Catarina Constellation’s Fleet A must collect data transmitted by DCPs</p></td>
+<td><p>Demonstaration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-MIS-2</p></td>
+<td><p>The Space Segment from Catarina Constellation’s Fleet A must send the collected data to the EMMN</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-MIS-3</p></td>
+<td><p>The EMMN must control the Space Segment of Catarina Constellation’s Fleet A</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-MIS-4</p></td>
+<td><p>SINDA must be used to distribute the collected data by the Space Segment</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-MIS-5</p></td>
+<td><p>The linkage DCP-Space Segment must be able to receive not less than 32 bytes per access</p></td>
+<td><p>Analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-MIS-6</p></td>
+<td><p>The linkage of data collection must be compatible with ARGOS protocol</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-MIS-8</p></td>
+<td><p>The linkage EMMN-Space Segment must be able to transport not less than 32 bytes per access</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-MIS-9</p></td>
+<td><p>The mission data must be compatible with the data structure defined by the SBCD</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-MIS-10</p></td>
+<td><p>Two CubeSats must be successfully designed and integrated by the team</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-MIS-11</p></td>
+<td><p>The CubeSats must be able of operating in LEO at an altitude between 500 and 650 km and inclination between 20 to 100 degrees</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="system-requirements">
+<h3>System Requirements<a class="headerlink" href="#system-requirements" title="Permalink to this heading"></a></h3>
+<p>The System Requirements applicable to the Catarina-A1 and the Ground Segment are described herein. The System Requirements defined are indicated in the subsections below, divided into three sections: CubeSat Design Specification Requirements, Primary Payload System Requirements, and Service System Requirements. The respective rationale, traceability, and verification method can be found in the Requirement Justification File <span id="id5">[<a class="reference internal" href="references.html#id44" title="Talita Sauter Possamai. UFSC-CAT-A1-ENG-RJF-0001_A - Catarina-A1: Requirements Justification File. Federal University of Santa Catarina (UFSC), Joinville - SC, July 2022.">34</a>]</span>.</p>
+<section id="cubesat-design-specification-requirements">
+<span id="sec-cubesat-requirements"></span><h4>CubeSat Design Specification Requirements<a class="headerlink" href="#cubesat-design-specification-requirements" title="Permalink to this heading"></a></h4>
+<p>The requirements described in the <a class="reference internal" href="glossary.html#term-CDS"><span class="xref std std-term">CDS</span></a> <span id="id6">[<a class="reference internal" href="references.html#id7" title="The CubeSat Program. CubeSat Design Specification. California Polytechnic State University, San Luis Obispo, CA - EUA, rev 14 edition, July 2020. Available at: &lt;http://www.cubesat.org/&gt;.">39</a>]</span>, applicable to a 2U CubeSat, are indicated in <a class="reference internal" href="#tab-cubesat-requirements"><span class="std std-numref">Table 13</span></a>. All references in <a class="reference internal" href="#tab-cubesat-requirements"><span class="std std-numref">Table 13</span></a> are related to <span id="id7">[<a class="reference internal" href="references.html#id7" title="The CubeSat Program. CubeSat Design Specification. California Polytechnic State University, San Luis Obispo, CA - EUA, rev 14 edition, July 2020. Available at: &lt;http://www.cubesat.org/&gt;.">39</a>]</span>.</p>
+<table class="docutils align-center" id="tab-cubesat-requirements">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">CubeSat Design Specification Requirements for Catarina-A1.</span><a class="headerlink" href="#tab-cubesat-requirements" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 65.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Verification Method</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>REQ-CDS-1</p></td>
+<td><p>All parts shall remain attached to the CubeSats during launch, ejection and operation</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-2</p></td>
+<td><p>Pyrotechnics shall conform to AFSPCMAN 91-710, Volume 3.</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-3</p></td>
+<td><p>Any propulsion systems shall be designed, integrated, and tested in accordance with AFSPCMAN 91-710 Volume 3.</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-4</p></td>
+<td><p>Propulsion systems shall have at least 3 inhibits to activation</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-5</p></td>
+<td><p>CubeSat hazardous materials shall conform to AFSPCMAN 91-710, Volume 3.</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-6</p></td>
+<td><p>CubeSat materials shall satisfy low out-gassing criteria, as defined in 2.1.7.1 and 2.1.7.2, to prevent contamination of other spacecraft during integration, testing, and launch. A list of NASA approved low out-gassing materials can be found at: <a class="reference external" href="http://outgassing.nasa.gov">http://outgassing.nasa.gov</a></p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-7</p></td>
+<td><p>CubeSats materials shall have a TML of less than or equal to 1.0 %</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-8</p></td>
+<td><p>CubeSat materials shall have a CVCM of less than or equal to 0.1%</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-9</p></td>
+<td><p>The magnetic field of any passive magnets shall be limited to 0.5 Gauss above Earth’s magnetic field, outside the CubeSat static envelope</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-10</p></td>
+<td><p>The CubeSat shall be designed to accommodate ascent venting per ventable volume/area of less than 50.8 meters (2000 inches)</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-11</p></td>
+<td><p>The CubeSat shall use the coordinate system as defined in Appendix B. The origin of the CubeSat coordinate system is located at the geometric center of the CubeSat</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-12</p></td>
+<td><p>The CubeSat configuration and physical dimensions shall conform to the appropriate section of Appendix B</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-13</p></td>
+<td><p>The –Z face of the CubeSat will be inserted first into the dispenser</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-14</p></td>
+<td><p>No components on the yellow shaded sides (see Appendix B CDS drawings) shall protrude farther than 6.5 mm normal to the surface from the plane of the rail</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-15</p></td>
+<td><p>Deployables shall be constrained by the CubeSat, not the dispenser. This requirement originates from requirements of most launch providers</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-16</p></td>
+<td><p>Rails should have a surface roughness less than 1.6 µm</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-17</p></td>
+<td><p>The 1U, 1.5U, and 2U CubeSat separation spring must be centered on the end of the standoff on the CubeSat’s –Z face as per Figure 7</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-18</p></td>
+<td><p>At least 75% of the rail should be in contact with the dispenser rails. 25% of the rails may be recessed</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-19</p></td>
+<td><p>The CubeSat center of gravity shall fall within the ranges specified in Table 2</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-20</p></td>
+<td><p>The CubeSat structure should be made from aluminum alloy. Note: Typically, Aluminum 7075, 6061, 6082, 5005, and/or 5052 are used for both the main CubeSat structure and the rails. If materials other than aluminum are used, the CubeSat developer should contact the launch provider or dispenser manufacturer</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-21</p></td>
+<td><p>Any aluminum CubeSat external surfaces, such as rails and standoffs that are in contact with the dispenser rails, shall be hard anodized to prevent any cold welding within the dispenser</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-22</p></td>
+<td><p>If a CubeSat shares a dispenser with another CubeSat(s), each CubeSat shall employ a mechanism to encourage separation from neighboring CubeSats within the dispenser</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-23</p></td>
+<td><p>The separation mechanism shall not extend beyond the level of the standoff in a stowed configuration</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-24</p></td>
+<td><p>To prevent CubeSat from activating any powered functions, the CubeSat power system shall be at a power-off state from the time of delivery to the LV through on-orbit deployment</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-25</p></td>
+<td><p>The CubeSat shall have, at a minimum, one deployment switch, which is actuated while integrated in the dispenser</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-26</p></td>
+<td><p>In the actuated state, the CubeSat deployment switch shall electrically disconnect the power system from the powered functions</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-27</p></td>
+<td><p>The deployment switch shall be in the actuated state at all times while integrated in the dispenser</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-28</p></td>
+<td><p>In the actuated state, the CubeSat deployment switch should be at or below the level of any external surface that interfaces with the dispenser or neighboring CubeSat. This ensures that the switch will not damage or interfere with the contacting surface</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-29</p></td>
+<td><p>If the CubeSat deployment switch toggles from the actuated state and back, the satellite shall reset to a pre-launch state, including reset of transmission and deployable timers</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-30</p></td>
+<td><p>RTC may be permitted, if they satisfy requirements REQ-CDS-29 through REQ-CDS-31</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-31</p></td>
+<td><p>RTC circuits shall be isolated from the CubeSat’s main power system</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-32</p></td>
+<td><p>RTC frequencies shall be less than 320 kHz</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-33</p></td>
+<td><p>RTC circuits shall be current limited to less than 10 mA</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-34</p></td>
+<td><p>The RBF pin and all CubeSat umbilical connectors shall be within the designated access port locations if available on the CubeSat’s dispenser. Please contact the manufacturer for specific charging and diagnostic port locations and procedures</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-35</p></td>
+<td><p>The CubeSat shall include an RBF pin, which cuts all power to the satellite once it is inserted into the satellite</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-36</p></td>
+<td><p>Access to the CubeSat is not guaranteed during or after integration. The RBF pin shall be removed from the CubeSat before integration into the dispenser, if the dispenser does not have access ports</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-37</p></td>
+<td><p>The RBF pin shall protrude no more than 6.5 mm from the CubeSat rail surface when it is fully inserted into the satellite</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-38</p></td>
+<td><p>CubeSats shall incorporate battery circuit protection for charging/discharging to avoid unbalanced cell conditions. Additional manufacturer documentation and/or testing will be required for modified, customized, or non-UL-listed cells</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-39</p></td>
+<td><p>The CubeSat shall have at least three independent RF inhibits to prohibit inadvertent RF transmission</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-40</p></td>
+<td><p>The CubeSat shall have at least three independent inhibits to prohibit the inadvertent release of any deployable structures such as antennas or solar panels</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-41</p></td>
+<td><p>The CubeSat shall have at least three independent RF inhibits to prohibit inadvertent RF transmission</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-42</p></td>
+<td><p>CubeSats shall comply with their country’s radio license agreements and restrictions</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-43</p></td>
+<td><p>CubeSat mission design and hardware shall be in accordance with NPR 8715.6 to limit orbital debris</p></td>
+<td><p>Analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-44</p></td>
+<td><p>Any CubeSat component shall re-enter with energy less than 15 Joules</p></td>
+<td><p>Analysis</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-45</p></td>
+<td><p>Developers should be ready to provide orbital debris mitigation data if requested by the licensing agency or launch provider</p></td>
+<td><p>Analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-46</p></td>
+<td><p>All deployables such as booms, antennas, and solar panels shall wait to deploy a minimum of 30 minutes after the CubeSat’s deployment switch(es) are activated during dispenser ejection</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-47</p></td>
+<td><p>CubeSats shall not generate or transmit a signal earlier than 45 minutes after on-orbit deployment</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-48</p></td>
+<td><p>The dispenser developer will conduct a minimum of one fit check in which the CubeSat flight unit will be inspected and integrated into the dispenser or engineering dispenser to verify the fit. A final fit check will be conducted just prior to integration of the CubeSat flight unit to the dispenser</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-49</p></td>
+<td><p>Random vibration testing shall be performed to the levels and duration as defined by the launch provider</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-50</p></td>
+<td><p>Thermal vacuum bakeout shall be performed to ensure proper outgassing of components</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-51</p></td>
+<td><p>Shock testing must be performed as defined by the launch provider</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-52</p></td>
+<td><p>Visual inspection of the CubeSat and measurement of critical areas will be performed per the CIFP (cubesat.org) or as defined by the launch provider</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-53</p></td>
+<td><p>Qualification testing is performed on an engineering unit that is identical to the flight model CubeSat. Qualification levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining test levels and durations. The flight model will then be tested to acceptance levels on its own. The launch provider may also require a final acceptance/workmanship random vibration test on the CubeSat and flight dispenser after integration</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-CDS-54</p></td>
+<td><p>Protoflight testing is performed on the flight model CubeSat. Protoflight levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining test levels and durations. The flight model will be tested to protoflight levels on its own. The launch provider may also require a final acceptance/workmanship random vibration test on the CubeSat and flight dispenser after integration. The flight CubeSat shall not be disassembled or modified after protoflight testing. Disassembly of hardware after protoflight testing will require the developer to adhere to the waiver process prior to disassembly</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-CDS-55</p></td>
+<td><p>After delivery and integration of the CubeSat into the dispenser, additional testing may be performed on the integrated system. This test ensures proper integration of the CubeSat into the dispenser. Acceptance test levels will be determined by the launch provider. Both SMC-S-016 and GSFC-STD-7000A are used as guides in determining testing levels. The CubeSat shall not be deintegrated at this point. If a CubeSat failure is discovered, a decision to deintegrate the dispenser will be made by the launch provider based on mission safety concerns</p></td>
+<td><p>Testing</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="primary-payload-system-requirements">
+<span id="sec-primary-payload-system-requirements"></span><h4>Primary payload system requirements<a class="headerlink" href="#primary-payload-system-requirements" title="Permalink to this heading"></a></h4>
+<p>The Primary Payload System Requirements for the Catarina-A1 are described in <a class="reference internal" href="#tab-primary-payload"><span class="std std-numref">Table 14</span></a>.</p>
+<table class="docutils align-center" id="tab-primary-payload">
+<caption><span class="caption-number">Table 14 </span><span class="caption-text">Primary Payload System Requirements for Catarina-A1.</span><a class="headerlink" href="#tab-primary-payload" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 65.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Verification Method</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>REQ-PAY-01</p></td>
+<td><p>The primary payload shall be a communications system compatible with the DCP</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-PAY-02</p></td>
+<td><p>All data shall be capable of being traced to the date and time the data was taken</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-PAY-03</p></td>
+<td><p>The primary payload shall be compatible with ARGOS-2 protocol</p></td>
+<td><p>Inspection</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="service-system-requirements">
+<h4>Service System Requirements<a class="headerlink" href="#service-system-requirements" title="Permalink to this heading"></a></h4>
+<p>The Service System Requirements for the Catarina-A1 are described in <a class="reference internal" href="#tab-service-system"><span class="std std-numref">Table 15</span></a> and sub-divided into types, namely: functional, operational, interface, environmental, and design.</p>
+<table class="docutils align-center" id="tab-service-system">
+<caption><span class="caption-number">Table 15 </span><span class="caption-text">Service System Requirements for Catarina-A1.</span><a class="headerlink" href="#tab-service-system" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 55.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>ID</strong></p></th>
+<th class="head"><p><strong>Type</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Verification Method</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>REQ-SER-01</p></td>
+<td><p>Functional</p></td>
+<td><p>The Catarina-A1 must receive, store and transmit collected data from data collection plataforms</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-02</p></td>
+<td><p>Operational</p></td>
+<td><p>The target minimum operational service of the space system shall be 1 year, subjected to confirmation at CDR</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-03</p></td>
+<td><p>Interface</p></td>
+<td><p>The Catarina-A1 satellite shall dialogue with the Ground Segment using telemetry and telecommands</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-04</p></td>
+<td><p>Environmental</p></td>
+<td><p>The antenna systems of the Catarina-A1 shall operate within the temperature range of -20 to 60 ºC</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-05</p></td>
+<td><p>Environmental</p></td>
+<td><p>The solar panels module of the Catarina-A1 shall operate within the temperature range of -40 to 125 ºC</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-06</p></td>
+<td><p>Environmental</p></td>
+<td><p>The EPS module of the Catarina-A1 shall operate within the temperature range of -20 to 70 ºC</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-07</p></td>
+<td><p>Environmental</p></td>
+<td><p>The OBDH module of the Catarina-A1 shall operate within the temperature range of -25 to 65 ºC</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-08</p></td>
+<td><p>Environmental</p></td>
+<td><p>The communication systems of the Catarina-A1 shall operate within the temperature range of -20 to 60 ºC</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-09</p></td>
+<td><p>Environmental</p></td>
+<td><p>The structure of the Catarina-A1 shall operate within the temperature range of -40 to 80 ºC</p></td>
+<td><p>Demonstration</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-10</p></td>
+<td><p>Operational</p></td>
+<td><p>The satellite shall comply with the Brazil’s, ITU and IARU (for radioamateur, if applicable) radio license agreements and restrictions</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-11</p></td>
+<td><p>Operational</p></td>
+<td><p>The antenna systems of the Catarina-A1 shall be able to send signal at the frequency of 468 MHz</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-12</p></td>
+<td><p>Operational</p></td>
+<td><p>The antenna systems of the Catarina-A1 shall be able to receive signal at the frequency of 401-403 and 401,635 MHz</p></td>
+<td><p>Inspection</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-13</p></td>
+<td><p>Operational</p></td>
+<td><p>The CubeSat shall be able to transmit not less than 32 bytes per access with the Ground Station</p></td>
+<td><p>Analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-14</p></td>
+<td><p>Operational</p></td>
+<td><p>The Catarina-A1 shall be able to store not less than 32 MB</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-even"><td><p>REQ-SER-15</p></td>
+<td><p>Design - electrical</p></td>
+<td><p>The Catarina-A1 shall have an external interface to charge its batteries</p></td>
+<td><p>Testing</p></td>
+</tr>
+<tr class="row-odd"><td><p>REQ-SER-16</p></td>
+<td><p>Design - electrical</p></td>
+<td><p>Following flight assembly, engineers should be able to examine the status of the Catarina-A1 via bus</p></td>
+<td><p>Testing</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="orbit-parameters-and-analysis">
+<h2>Orbit parameters and analysis<a class="headerlink" href="#orbit-parameters-and-analysis" title="Permalink to this heading"></a></h2>
+<p>The following analyses were carried out using the GMAT tools, as well as orbit analysis software developed in-house.</p>
+<p><a class="reference internal" href="#fig-graphdecorbit"><span class="std std-numref">Fig. 19</span></a> shows the decay data resulting from simulations developed for different initial orbit altitudes and an inclination of <span class="math notranslate nohighlight">\(30^{\circ}\)</span>.</p>
+<figure class="align-center" id="id36">
+<span id="fig-graphdecorbit"></span><a class="reference internal image-reference" href="_images/decay_orbits2U3U.png"><img alt="Orbit decay analisys" src="_images/decay_orbits2U3U.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Fleet A’s space systems orbit decay analysis.</span><a class="headerlink" href="#id36" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>It is verified that once the chosen orbit is smaller than 650 km, the maximum possible lifetime requirement from the standard <span id="id8">[<a class="reference internal" href="references.html#id52" title="IADC Space Debris Mitigation Guidelines. IADC Steering Group and Working Group 4, June 2021. Available at &lt;https://iadc-home.org/documents_public/view/page/2/id/172&gt;.">12</a>]</span> will be met. For an orbit of 500 km a lifetime in orbit estimated for a 2U is 1.02 years while for a 3U is 1.3 years. Thus the lifetime of the Catarina-A1 for a 500 km orbit is estimated in 1.02 years.</p>
+<section id="orbital-needs-for-communication-with-dcp-and-ground-station">
+<h3>Orbital needs for communication with DCP and ground station<a class="headerlink" href="#orbital-needs-for-communication-with-dcp-and-ground-station" title="Permalink to this heading"></a></h3>
+<section id="operation-altitude">
+<h4>Operation altitude<a class="headerlink" href="#operation-altitude" title="Permalink to this heading"></a></h4>
+<p>Operating altitude is set to occur in <a class="reference internal" href="glossary.html#term-LEO"><span class="xref std std-term">LEO</span></a>. Within this scenario, the maximum and minimum operating altitudes of the Catarina-A1 estimated herein are 600 km and 500 km. The 600 km limit is to respect the Space Debris Mitigation Guidelines standard <span id="id9">[<a class="reference internal" href="references.html#id52" title="IADC Space Debris Mitigation Guidelines. IADC Steering Group and Working Group 4, June 2021. Available at &lt;https://iadc-home.org/documents_public/view/page/2/id/172&gt;.">12</a>]</span> to ensure the space system stays in orbit for less than 25 years while the 500 km limit is the expected orbit altitude for the possible launch being analized for Catarina-A1.</p>
+</section>
+<section id="orbit-inclination">
+<h4>Orbit inclination<a class="headerlink" href="#orbit-inclination" title="Permalink to this heading"></a></h4>
+<p>The inclination of the orbit has the limitation of allowing the Catarina-A1 nanosatellite to communicate with both the <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> installed in SC and the <a class="reference internal" href="glossary.html#term-EMMN"><span class="xref std std-term">EMMN</span></a> on a recurring basis during its operation. In this sense, the orbit range was limited between <span class="math notranslate nohighlight">\(20^{\circ}\)</span> and approximately <span class="math notranslate nohighlight">\(97^{\circ}\)</span> (Sun Syncronous Orbit). For orbit inclinations lower than <span class="math notranslate nohighlight">\(20^{\circ}\)</span> the communication between the space system and the <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> at Santa Catarina is not viable as can be seen in later sections of this document.</p>
+</section>
+<section id="number-of-communication-per-day-ss-dcp">
+<span id="sec-communication-perday-pcd"></span><h4>Number of communication per day: SS - DCP<a class="headerlink" href="#number-of-communication-per-day-ss-dcp" title="Permalink to this heading"></a></h4>
+<p>The number of times the Catarina-A1 has contact with the <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> at Santa Catarina is indicated below for the orbit inclination of <span class="math notranslate nohighlight">\(20^{\circ}\)</span>, <span class="math notranslate nohighlight">\(51^{\circ}\)</span> and <span class="math notranslate nohighlight">\(97^{\circ}\)</span>, for the altitudes of 500 and 600 km. Data is presented in different graphs for the minimum number of contacts per day in the month, average number of contacts per day in the month, and maximum number of contacts per day in the month. The average period of each contact is 312 seconds, with a minimum of 30 seconds and a maximum of 410 seconds for all cases analyzed here. Simulations were conducted for the period of 01/06/2023 to 31/05/2024. Since the estimated date for the launch is March 2025, simulations will be updated for the expected date however no significant variations in the presented data is expected.</p>
+<figure class="align-center" id="id37">
+<span id="fig-communication-perday-pcd"></span><a class="reference internal image-reference" href="_images/Communication_perday_PCD.png"><img alt="DCP simulation results" src="_images/Communication_perday_PCD.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text"><a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a>-SS communication number of times per day per month from 01/06/2023 to 31/05/2024 for altitudes of 500 km (left) and 600 km (right). From top to bottom: Minimum number, average number, and maximum number.</span><a class="headerlink" href="#id37" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As can be noted, the minimum number of contacts per day for all configurations is 1. As an example, for an altitude of 500 km and inclination of <span class="math notranslate nohighlight">\(97^{\circ}\)</span>, in May 2024 at least one day will have only one contact point between <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> and the space system. For the same inclinations, all other months will have at least 2 contacts per day. The average contact number is between 2 to 3 (for <span class="math notranslate nohighlight">\(97^{\circ}\)</span>), 3 to 4 (for <span class="math notranslate nohighlight">\(51^{\circ}\)</span>), and 3 to 4 (for <span class="math notranslate nohighlight">\(20^{\circ}\)</span>). All simulations were carried out with a contact angle of <span class="math notranslate nohighlight">\(10^{\circ}\)</span>.</p>
+</section>
+<section id="number-of-communication-per-day-ss-emmn">
+<span id="sec-communication-perday-emmn"></span><h4>Number of communication per day: SS - EMMN<a class="headerlink" href="#number-of-communication-per-day-ss-emmn" title="Permalink to this heading"></a></h4>
+<p>The same analysis is presented below for the contact point between the space system and the ground station at Natal. Here we can see that the inclination of <span class="math notranslate nohighlight">\(20^{\circ}\)</span> has a much higher number of contact points per day than the other inclinations. However, the minimum contact number for all inclinations and altitudes considered herein is still 1, at least one day in May 2024 and June 2023.</p>
+<figure class="align-center" id="id38">
+<span id="fig-communication-perday-emmn"></span><a class="reference internal image-reference" href="_images/Communication_perday_EMMN.png"><img alt="EMMN simulation results" src="_images/Communication_perday_EMMN.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">EMMN-SS communication number of times per day per month from 01/06/2023 to 31/05/2024 for altitudes of 500 km (left) and 600 km (right). From top to bottom: Minimum number, average number, and maximum number.</span><a class="headerlink" href="#id38" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="transmission-time">
+<span id="sec-transmission-time"></span><h4>Transmission time<a class="headerlink" href="#transmission-time" title="Permalink to this heading"></a></h4>
+<p>To evaluate the duration of the communication at each contact point between the space system and the ground station or space system and <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> the duration of the communication in each contact is presented below.</p>
+</section>
+<section id="communication-time">
+<span id="sec-communication-time"></span><h4>Communication time<a class="headerlink" href="#communication-time" title="Permalink to this heading"></a></h4>
+<p>The figure below plots the occurrence of each contact point for the altitudes of 500 km and 600 km for the three inclinations analyzed versus the duration of the contact point. On the top-left plot, we can see the duration and the total number of contact points for 500 km for each inclination between <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> and the space system. For example, for the inclination of <span class="math notranslate nohighlight">\(20^{\circ}\)</span>, a total of approximately 1440 contact points were estimated through the period of  02/06/2023 to 30/05/2024. Of these 1440 contacts, only 12 contacts had a duration under 50 seconds. Most contacts for all inclinations and altitudes analyzed are concentrated over 200 seconds.</p>
+<figure class="align-center" id="id39">
+<span id="fig-communication-time"></span><a class="reference internal image-reference" href="_images/CommunicationTime.png"><img alt="Communication time" src="_images/CommunicationTime.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Communication time from 02/06/2023 to 30/05/2024  for altitudes of 500 km (left) and 600 km (right).</span><a class="headerlink" href="#id39" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Results indicate that all three orbits analyzed herein can guarantee a minimum contact point between the space system and <a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> and ground station of at least 1  per day in the worst-case scenario, indicating that the orbit of <span class="math notranslate nohighlight">\(20^{\circ}\)</span>, <span class="math notranslate nohighlight">\(51^{\circ}\)</span>, and <span class="math notranslate nohighlight">\(97^{\circ}\)</span> can be used to complete the mission.</p>
+<p>However, it is interesting to notice that the orbit inclination of <span class="math notranslate nohighlight">\(20^{\circ}\)</span> has a much higher number of average contact points for both configurations (space system-<a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> and space system-GS) and would be a possible good choice for the baseline orbit, based on the parameters analyzed up to this point. Notice that the possible launch for Catarina-A1 is expected to be in a Sun Synchronous Orbit or <span class="math notranslate nohighlight">\(43^{\circ}\)</span>, both at 500 km. For this launch condition, communication contacts and time for the Ground Station-SS and SS-<a class="reference internal" href="glossary.html#term-DCP"><span class="xref std std-term">DCP</span></a> are expected to be similar to the ones presented for the <span class="math notranslate nohighlight">\(97^{\circ}\)</span> and the <span class="math notranslate nohighlight">\(51^{\circ}\)</span>.</p>
+<p>For the altitude, similar results for contact points and duration of contact were encountered except for the configuration of <span class="math notranslate nohighlight">\(20^{\circ}\)</span> and 600 km which resulted in an elevated number of total contact points for the space system and the ground station.</p>
+</section>
+</section>
+</section>
+<section id="thermal-analysis">
+<span id="sec-thermal-analysis"></span><h2>Thermal analysis<a class="headerlink" href="#thermal-analysis" title="Permalink to this heading"></a></h2>
+<p><span id="id10">[<a class="reference internal" href="references.html#id9" title="Rodrigo da Silva Cardozo, Damylle Cristina Xavier Donati, Talita Sauter Possamai, and Renato Oba. Thermal analysis of the impact of six months in a 1u cubesat in leo. In Proc. 27th International Congress of Mechanical Engineering. Florianópolis, Brazil, 2023. ABCM. doi:doi://10.26678/ABCM.COBEM2023.COB2023-0444.">28</a>]</span> and <span id="id11">[<a class="reference internal" href="references.html#id27" title="Caique S. M. Gomes, Edemar M. Filho, Laio O. Seman, Eduardo A. Bezerra, and Talita S. Possamai. Thermal simulation of the cubesat catarina-a1. In JOINT 3RD IAA LATIN AMERICAN SYMPOSIUM ON SMALL SATELLITES AND 5TH IAA LATIN AMERICAN CUBESAT WORKSHOP. 2022.">30</a>]</span> developed a thermal analysis numerical model to estimate the Catarina-A1 in-orbit temperatures for <a class="reference internal" href="glossary.html#term-LEO"><span class="xref std std-term">LEO</span></a>. The analyses were developed using an open-source thermal lumped model coupled to an orbital and incident radiation algorithm and commercial software, independently.</p>
+<p>Data presented in this section was estimated before the definition of the possible launch for Catarina-A1 and will be updated. However, similar altitudes and attitudes were considered for cold and hot cases for the idle condition of the space system.</p>
+<section id="thermal-numerical-models">
+<h3>Thermal numerical models<a class="headerlink" href="#thermal-numerical-models" title="Permalink to this heading"></a></h3>
+<p>The first model applied a classical lumped model based on the finite differences numerical approach with an explicit method for temporal discretization. The model accounts for thermal contact resistances between each surface of the satellite and the internal radiation heat exchanger. The second model applied the finite volume numerical method through the ANSYS CFX software. Both applied boundary conditions for the thermal irradiation from an orbital simulation code developed in-house. Details about the orbital and thermal models can be found in <span id="id12">[<a class="reference internal" href="references.html#id9" title="Rodrigo da Silva Cardozo, Damylle Cristina Xavier Donati, Talita Sauter Possamai, and Renato Oba. Thermal analysis of the impact of six months in a 1u cubesat in leo. In Proc. 27th International Congress of Mechanical Engineering. Florianópolis, Brazil, 2023. ABCM. doi:doi://10.26678/ABCM.COBEM2023.COB2023-0444.">28</a>]</span> and <span id="id13">[<a class="reference internal" href="references.html#id27" title="Caique S. M. Gomes, Edemar M. Filho, Laio O. Seman, Eduardo A. Bezerra, and Talita S. Possamai. Thermal simulation of the cubesat catarina-a1. In JOINT 3RD IAA LATIN AMERICAN SYMPOSIUM ON SMALL SATELLITES AND 5TH IAA LATIN AMERICAN CUBESAT WORKSHOP. 2022.">30</a>]</span>. The simplified geometric model is presented in <a class="reference internal" href="#fig-exploded-view-1u"><span class="std std-numref">Fig. 23</span></a>, composed of a 2U CubeSat with solar panels in all external faces, structures, and PCBs. Although <a class="reference internal" href="#fig-exploded-view-1u"><span class="std std-numref">Fig. 23</span></a> indicates two heat pipes and a battery, these components were not applied to the thermal simulation shown in this section.</p>
+<figure class="align-center" id="id40">
+<span id="fig-exploded-view-1u"></span><a class="reference internal image-reference" href="_images/modelo_termico.png"><img alt="Geometrical model for thermal analysis" src="_images/modelo_termico.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Geometrical model for thermal analysis</span><a class="headerlink" href="#id40" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="orbital-and-thermal-parameters-analyzed">
+<h3>Orbital and thermal parameters analyzed<a class="headerlink" href="#orbital-and-thermal-parameters-analyzed" title="Permalink to this heading"></a></h3>
+<p><a class="reference internal" href="#tab-thermal-parameters-2"><span class="std std-numref">Table 17</span></a> lists the thermal properties of the materials, such as emissivity (<span class="math notranslate nohighlight">\(\epsilon\)</span>), absorptivity (<span class="math notranslate nohighlight">\(\alpha\)</span>), thermal conductivity (<span class="math notranslate nohighlight">\(k\)</span>), density (<span class="math notranslate nohighlight">\(\rho\)</span>), and specific heat (<span class="math notranslate nohighlight">\(c_p\)</span>) for the model proposed by Cardozo et al. <span id="id14">[<a class="reference internal" href="references.html#id9" title="Rodrigo da Silva Cardozo, Damylle Cristina Xavier Donati, Talita Sauter Possamai, and Renato Oba. Thermal analysis of the impact of six months in a 1u cubesat in leo. In Proc. 27th International Congress of Mechanical Engineering. Florianópolis, Brazil, 2023. ABCM. doi:doi://10.26678/ABCM.COBEM2023.COB2023-0444.">28</a>]</span> while <a class="reference internal" href="#tab-thermal-parameters"><span class="std std-numref">Table 16</span></a> lists the thermal properties for the model in <span id="id15">[<a class="reference internal" href="references.html#id27" title="Caique S. M. Gomes, Edemar M. Filho, Laio O. Seman, Eduardo A. Bezerra, and Talita S. Possamai. Thermal simulation of the cubesat catarina-a1. In JOINT 3RD IAA LATIN AMERICAN SYMPOSIUM ON SMALL SATELLITES AND 5TH IAA LATIN AMERICAN CUBESAT WORKSHOP. 2022.">30</a>]</span>.</p>
+<table class="docutils align-center" id="tab-thermal-parameters">
+<caption><span class="caption-number">Table 16 </span><span class="caption-text">Thermal properties of the materials applied to the thermal lumped model of the CubeSat <span id="id16">[<a class="reference internal" href="references.html#id27" title="Caique S. M. Gomes, Edemar M. Filho, Laio O. Seman, Eduardo A. Bezerra, and Talita S. Possamai. Thermal simulation of the cubesat catarina-a1. In JOINT 3RD IAA LATIN AMERICAN SYMPOSIUM ON SMALL SATELLITES AND 5TH IAA LATIN AMERICAN CUBESAT WORKSHOP. 2022.">30</a>]</span>.</span><a class="headerlink" href="#tab-thermal-parameters" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Component</strong></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> [W/m.K]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\rho}\)</span> [kg/m³]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{c_p}\)</span> [W/kg.K]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Solar panel</p></td>
+<td><p>0.6</p></td>
+<td><p>0.68</p></td>
+<td><p>1.03</p></td>
+<td><p>1840</p></td>
+<td><p>712</p></td>
+</tr>
+<tr class="row-odd"><td><p>Structure</p></td>
+<td><p>0.08</p></td>
+<td><p>0.37</p></td>
+<td><p>130</p></td>
+<td><p>2810</p></td>
+<td><p>1100</p></td>
+</tr>
+<tr class="row-even"><td><p>PCB</p></td>
+<td><p>0.22</p></td>
+<td><p>0.07</p></td>
+<td><p>0.82</p></td>
+<td><p>0.25</p></td>
+<td><p>1840</p></td>
+</tr>
+<tr class="row-odd"><td><p>Battery</p></td>
+<td><p>0.7</p></td>
+<td></td>
+<td><p>121.2</p></td>
+<td><p>12.5</p></td>
+<td><p>2122</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="tab-thermal-parameters-2">
+<caption><span class="caption-number">Table 17 </span><span class="caption-text">Thermal properties of the materials applied to the thermal lumped model of the CubeSat <span id="id17">[<a class="reference internal" href="references.html#id9" title="Rodrigo da Silva Cardozo, Damylle Cristina Xavier Donati, Talita Sauter Possamai, and Renato Oba. Thermal analysis of the impact of six months in a 1u cubesat in leo. In Proc. 27th International Congress of Mechanical Engineering. Florianópolis, Brazil, 2023. ABCM. doi:doi://10.26678/ABCM.COBEM2023.COB2023-0444.">28</a>]</span>.</span><a class="headerlink" href="#tab-thermal-parameters-2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 12.0%" />
+<col style="width: 12.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 11.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Component</strong></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> [W/m.K]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\rho}\)</span> [kg/m³]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{c_p}\)</span> [W/kg.K]</p></th>
+<th class="head"><p><strong>Material</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Substrate</p></td>
+<td><p>0.557</p></td>
+<td><p>0.578</p></td>
+<td><p>148.9</p></td>
+<td><p>2330</p></td>
+<td><p>712</p></td>
+<td><p>Silicon</p></td>
+</tr>
+<tr class="row-odd"><td><p>Panel Base</p></td>
+<td><p>0.76</p></td>
+<td><p>0.70</p></td>
+<td><p>0.81</p></td>
+<td><p>1850</p></td>
+<td><p>1100</p></td>
+<td><p>FR-4.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Panel Base 2</p></td>
+<td><p>0.3</p></td>
+<td><p>0.13</p></td>
+<td><p>121.2</p></td>
+<td><p>2770</p></td>
+<td><p>961</p></td>
+<td><p>Aluminium 7075</p></td>
+</tr>
+<tr class="row-odd"><td><p>Upper/Bottom</p></td>
+<td><p>0.3</p></td>
+<td><p>0.13</p></td>
+<td><p>121.2</p></td>
+<td><p>2770</p></td>
+<td><p>961</p></td>
+<td><p>Aluminium 7075</p></td>
+</tr>
+<tr class="row-even"><td><p>PCB</p></td>
+<td><p>0.76</p></td>
+<td><p>0.07</p></td>
+<td><p>0.81</p></td>
+<td><p>1850</p></td>
+<td><p>1100</p></td>
+<td><p>FR-4.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Vertical Structure</p></td>
+<td><p>0.3</p></td>
+<td><p>0.13</p></td>
+<td><p>121.2</p></td>
+<td><p>2770</p></td>
+<td><p>961</p></td>
+<td><p>Aluminium 7075</p></td>
+</tr>
+<tr class="row-even"><td><p>Horizontal Structure</p></td>
+<td><p>0.3</p></td>
+<td><p>0.13</p></td>
+<td><p>121.2</p></td>
+<td><p>2770</p></td>
+<td><p>961</p></td>
+<td><p>Aluminium 7075</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bolts</p></td>
+<td><p>0.3</p></td>
+<td><p>0.13</p></td>
+<td><p>121.2</p></td>
+<td><p>2770</p></td>
+<td><p>961</p></td>
+<td><p>Aluminium 7075</p></td>
+</tr>
+</tbody>
+</table>
+<p>For results of incident radiation and temperature per orbit two, fixed orbits were considered. One with a Beta angle of <span class="math notranslate nohighlight">\(0^\circ\)</span> (cold case) and <span class="math notranslate nohighlight">\(72^\circ\)</span> (hot case). <a class="reference internal" href="#tab-orbital-parameters"><span class="std std-numref">Table 18</span></a> presents the orbital characteristics of each orbit. The thermal model is prescribed for an attitude of Nadir and altitudes of 500 km and 430 km.</p>
+<table class="docutils align-center" id="tab-orbital-parameters">
+<caption><span class="caption-number">Table 18 </span><span class="caption-text">Orbital parameters of the analyzed orbit for a beta angle of <span class="math notranslate nohighlight">\(0^{\circ}\)</span> and <span class="math notranslate nohighlight">\(72^{\circ}\)</span>.</span><a class="headerlink" href="#tab-orbital-parameters" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Date</strong></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{a}\)</span></p></th>
+<th class="head"><p><strong>i</strong></p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\boldsymbol{\beta}\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span id="id18">[<a class="reference internal" href="references.html#id9" title="Rodrigo da Silva Cardozo, Damylle Cristina Xavier Donati, Talita Sauter Possamai, and Renato Oba. Thermal analysis of the impact of six months in a 1u cubesat in leo. In Proc. 27th International Congress of Mechanical Engineering. Florianópolis, Brazil, 2023. ABCM. doi:doi://10.26678/ABCM.COBEM2023.COB2023-0444.">28</a>]</span></p></td>
+<td><p>500 [km]</p></td>
+<td><p>51.36°</p></td>
+<td><p>0.0° and 72.0°</p></td>
+</tr>
+<tr class="row-odd"><td><p><span id="id19">[<a class="reference internal" href="references.html#id27" title="Caique S. M. Gomes, Edemar M. Filho, Laio O. Seman, Eduardo A. Bezerra, and Talita S. Possamai. Thermal simulation of the cubesat catarina-a1. In JOINT 3RD IAA LATIN AMERICAN SYMPOSIUM ON SMALL SATELLITES AND 5TH IAA LATIN AMERICAN CUBESAT WORKSHOP. 2022.">30</a>]</span></p></td>
+<td><p>430 [km]</p></td>
+<td><p>51.63°</p></td>
+<td><p>0.0° and 72.0°</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="results-total-incident-radiation-on-each-face">
+<h3>Results: Total incident radiation on each face<a class="headerlink" href="#results-total-incident-radiation-on-each-face" title="Permalink to this heading"></a></h3>
+<p>The total radiation incident on each face for beta <span class="math notranslate nohighlight">\(0.0^{\circ}\)</span> is presented in <a class="reference internal" href="#fig-total-radiation-0-eachface"><span class="std std-numref">Fig. 24</span></a>. The line colors are equivalent to the face color presented in the schematic of the position of the satellite in orbit for each case. Here again, the eclipse region is visible on the value of the incident radiation on each face.</p>
+<p>For this Nadir attitude behavior, face 3 (Total 3) is the face always facing the Earth. As expected, faces 1, 2, and 4 (Total 1, Total 2, and Total 4) receive more radiation due to the direct solar radiation incident on these faces. The beta angle variation from <span class="math notranslate nohighlight">\(0.0^{\circ}\)</span> to <span class="math notranslate nohighlight">\(72.0^{\circ}\)</span> will impact the amount of total radiation incident on the satellite, characterizing here the cold and hot cases based on the incident radiation.</p>
+<p>For beta <span class="math notranslate nohighlight">\(72^{\circ}\)</span> (<a class="reference internal" href="#fig-total-radiation-72-eachface"><span class="std std-numref">Fig. 25</span></a>), a sun-synchronous orbit, there is no eclipse region, and all faces, except face 6, have lower incident radiation variation when compared to the beta <span class="math notranslate nohighlight">\(0^{\circ}\)</span> case. However, Face 6 has a greater incidence of radiation due to always facing the sun, which could cause elevated temperatures in this face.</p>
+<figure class="align-center" id="id41">
+<span id="fig-total-radiation-0-eachface"></span><a class="reference internal image-reference" href="_images/Thermal7_03.png"><img alt="Total incident radiation" src="_images/Thermal7_03.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Total incident radiation on each face of the satellite for a beta angle of <span class="math notranslate nohighlight">\(0.0^{\circ}\)</span>.</span><a class="headerlink" href="#id41" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id42">
+<span id="fig-total-radiation-72-eachface"></span><a class="reference internal image-reference" href="_images/Thermal8_2.png"><img alt="Total incident radiation" src="_images/Thermal8_2.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Total incident radiation on each face of the satellite for a beta angle of <span class="math notranslate nohighlight">\(72.0^{\circ}\)</span>.</span><a class="headerlink" href="#id42" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In <a class="reference internal" href="#fig-total-radiation-72-eachface"><span class="std std-numref">Fig. 25</span></a>, the values marked 1 and 2 represent the satellite behind Earth, and in front of it. As there is no eclipse, the amount of radiation on the upper face is constant, increasing slightly when it passes by 1, as solar radiation adds to the albedo.</p>
+</section>
+<section id="results-temperature-distribution">
+<h3>Results: Temperature distribution<a class="headerlink" href="#results-temperature-distribution" title="Permalink to this heading"></a></h3>
+<p>Temperature profiles for on-orbit for both models are presented in <a class="reference internal" href="#fig-temp-0"><span class="std std-numref">Fig. 26</span></a> and <a class="reference internal" href="#fig-pcbtemp-0"><span class="std std-numref">Fig. 27</span></a> for the cold idle case where can be seen that both models, overall have a good agreement. Since the models for in-orbit irradiance estimations and thermal models were developed independently and based on different models, these results indicate that both in-house developed models have consistent results.</p>
+<figure class="align-center" id="id43">
+<span id="fig-temp-0"></span><a class="reference internal image-reference" href="_images/Thermal9.png"><img alt="Solar panels temperatures" src="_images/Thermal9.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Solar panels temperatures for a beta angle of <span class="math notranslate nohighlight">\(0.0^{\circ}\)</span> - model from <span id="id20">[<a class="reference internal" href="references.html#id9" title="Rodrigo da Silva Cardozo, Damylle Cristina Xavier Donati, Talita Sauter Possamai, and Renato Oba. Thermal analysis of the impact of six months in a 1u cubesat in leo. In Proc. 27th International Congress of Mechanical Engineering. Florianópolis, Brazil, 2023. ABCM. doi:doi://10.26678/ABCM.COBEM2023.COB2023-0444.">28</a>]</span>.</span><a class="headerlink" href="#id43" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id44">
+<span id="fig-pcbtemp-0"></span><a class="reference internal image-reference" href="_images/Temperatura_caique.png"><img alt="Solar panels temperatures 2" src="_images/Temperatura_caique.png" style="width: 90%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Solar panels temperatures for beta angle of <span class="math notranslate nohighlight">\(0.0^{\circ}\)</span> - model from <span id="id21">[<a class="reference internal" href="references.html#id27" title="Caique S. M. Gomes, Edemar M. Filho, Laio O. Seman, Eduardo A. Bezerra, and Talita S. Possamai. Thermal simulation of the cubesat catarina-a1. In JOINT 3RD IAA LATIN AMERICAN SYMPOSIUM ON SMALL SATELLITES AND 5TH IAA LATIN AMERICAN CUBESAT WORKSHOP. 2022.">30</a>]</span>.</span><a class="headerlink" href="#id44" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Based on the data provided by the manufacturers of the subsystems used in the design of the Catarina-A1 nanosatellite, <a class="reference internal" href="#tab-minmax-temps"><span class="std std-numref">Table 19</span></a> indicates the maximum and minimum values for the operating temperature of these components.</p>
+<p><a class="reference internal" href="#fig-temperaturas-maximas-minimas"><span class="std std-numref">Fig. 28</span></a> indicates in gray the operational temperature range for the solar panels and for the most critical case of internal components and in green the maximum and minimum temperature predicted for the cold and hot cases by both thermal models.</p>
+<table class="docutils align-center" id="tab-minmax-temps">
+<caption><span class="caption-number">Table 19 </span><span class="caption-text">Minimum and maximum values of operation temperatures for the Catarina-A1 components.</span><a class="headerlink" href="#tab-minmax-temps" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 32.0%" />
+<col style="width: 33.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Component</strong></p></th>
+<th class="head"><p><strong>Min. Temp [°C]</strong></p></th>
+<th class="head"><p><strong>Max. Temp [°C]</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Solar Panels</p></td>
+<td><p>-80</p></td>
+<td><p>+80</p></td>
+</tr>
+<tr class="row-odd"><td><p>Antennas</p></td>
+<td><p>-20</p></td>
+<td><p>+60</p></td>
+</tr>
+<tr class="row-even"><td><p>Structure</p></td>
+<td><p>-40</p></td>
+<td><p>+40</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBDH</p></td>
+<td><p>-25</p></td>
+<td><p>+65</p></td>
+</tr>
+<tr class="row-even"><td><p>TTC</p></td>
+<td><p>-20</p></td>
+<td><p>+60</p></td>
+</tr>
+<tr class="row-odd"><td><p>EPS</p></td>
+<td><p>-20</p></td>
+<td><p>+70</p></td>
+</tr>
+<tr class="row-even"><td><p>ExpLoRa</p></td>
+<td><p>-20</p></td>
+<td><p>+85</p></td>
+</tr>
+</tbody>
+</table>
+<p>The temperature security margins for the solar panels are more than <span class="math notranslate nohighlight">\(30\ ^{\circ}C\)</span> while for the PCBs are very small for low temperatures. Based on this the assessment chosen by the project team is the addition of heaters near the batteries for thermal control.</p>
+<p>It is important to remember that the analyses were carried out for a geometric simplified model and an orbit different from the expected launch. New analyses will be carried out with the correct orbit and critical architecture of Catarina-A1 to confirm these conclusions. Also, TVAC tests at UFSC will be carried out for thermal model validation in the project’s next steps.</p>
+<p>However, in-orbit temperature measurements from other CubeSat missions in similar orbits and configurations indicate maximum and minimum temperatures consistent with the ones estimated by the thermal models. The comparison was made with the SwissCube, a 1U CubeSat (orbit inclination of <span class="math notranslate nohighlight">\(98^{\circ}\)</span> and 700 km) and MinXSS 3U Cubesat equipped with battery heaters, a small radiator, and a camera (ISS orbit parameters).</p>
+<figure class="align-center" id="id45">
+<span id="fig-temperaturas-maximas-minimas"></span><a class="reference internal image-reference" href="_images/temperaturas_max_min_CDR.png"><img alt="Predicted temperatures" src="_images/temperaturas_max_min_CDR.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Predicted temperatures range for preliminary cold and hot cases.</span><a class="headerlink" href="#id45" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-referencias-temperaturas">
+<caption><span class="caption-number">Table 20 </span><span class="caption-text">Minimum and maximum values of in-orbit measured temperatures for CubeSat missions.</span><a class="headerlink" href="#tab-referencias-temperaturas" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 40.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Component</strong></p></th>
+<th class="head"><p><strong>Temperature range measured in orbit [°C]</strong></p></th>
+<th class="head"><p><strong>reference</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Solar Panels</p></td>
+<td><p>-42 to +65</p></td>
+<td><p>MinXSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Solar Panels</p></td>
+<td><p>-40 to +50</p></td>
+<td><p>SwissCube</p></td>
+</tr>
+<tr class="row-even"><td><p>Internal components</p></td>
+<td><p>-4 to +58</p></td>
+<td><p>MinXSS</p></td>
+</tr>
+<tr class="row-odd"><td><p>Internal components</p></td>
+<td><p>-20 to +30</p></td>
+<td><p>SwissCube</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="mass-budget">
+<span id="sec-mass-budget"></span><h2>Mass budget<a class="headerlink" href="#mass-budget" title="Permalink to this heading"></a></h2>
+<p>As per the CubeSat standard <span id="id22">[<a class="reference internal" href="references.html#id7" title="The CubeSat Program. CubeSat Design Specification. California Polytechnic State University, San Luis Obispo, CA - EUA, rev 14 edition, July 2020. Available at: &lt;http://www.cubesat.org/&gt;.">39</a>]</span>, a 1U CubeSat’s weight limit is 2 kg. Since Catarina-A1 is a 2U CubeSat, its maximum allowable mass is 4 kg, based on the current <a class="reference internal" href="glossary.html#term-CDS"><span class="xref std std-term">CDS</span></a>. However, not all launchers promptly adhere to the <a class="reference internal" href="glossary.html#term-CDS"><span class="xref std std-term">CDS</span></a> standards. Therefore, considering the worst-case scenario where the previous regulations apply (stipulating a 1U CubeSat should not exceed 1.33 kg, and consequently, a 2U CubeSat should not surpass 2.66 kg) becomes imperative.</p>
+<p>Then, considering the individual weights of each subsystem and incorporating mass margins, the mass budget is detailed in <a class="reference internal" href="#tab-mass-budget"><span class="std std-numref">Table 21</span></a> for a comprehensive assessment. With the current total mass of the satellite (whether or not mass margins are considered), Catarina-A1 falls within the permissible limits, exhibiting a margin ranging from 4 to 15 %.</p>
+<table class="docutils align-center" id="tab-mass-budget">
+<caption><span class="caption-number">Table 21 </span><span class="caption-text">Mass budget of the Catarina-A1.</span><a class="headerlink" href="#tab-mass-budget" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 18.0%" />
+<col style="width: 12.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
+<col style="width: 15.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Subsystem</strong></p></th>
+<th class="head"><p><strong>Supplier</strong></p></th>
+<th class="head"><p><strong>Model</strong></p></th>
+<th class="head"><p><strong>Mass [g]</strong></p></th>
+<th class="head"><p><strong>Margin [%]</strong></p></th>
+<th class="head"><p><strong>Final mass [g]</strong> <a class="footnote-reference brackets" href="#id24" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OBDH</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>OBDH 2.0</p></td>
+<td><p>53</p></td>
+<td><p>5</p></td>
+<td><p>55.65</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTC</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>TTC 2.0</p></td>
+<td><p>73</p></td>
+<td><p>5</p></td>
+<td><p>76.65</p></td>
+</tr>
+<tr class="row-even"><td><p>EPS</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>EPS 2.0</p></td>
+<td><p>90</p></td>
+<td><p>5</p></td>
+<td><p>94.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>Battery board</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>BAT4C</p></td>
+<td><p>235</p></td>
+<td><p>15</p></td>
+<td><p>270.25</p></td>
+</tr>
+<tr class="row-even"><td><p>TTC’s antenna</p></td>
+<td><p>ISISpace</p></td>
+<td><p>AntS</p></td>
+<td><p>89</p></td>
+<td><p>5</p></td>
+<td><p>93.45</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACS</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>Passive ACS</p></td>
+<td><p>52</p></td>
+<td><p>15</p></td>
+<td><p>59.8</p></td>
+</tr>
+<tr class="row-even"><td><p>1st Payload</p></td>
+<td><p>INPE</p></td>
+<td><p>EDC</p></td>
+<td><p>75</p></td>
+<td><p>15</p></td>
+<td><p>86.25</p></td>
+</tr>
+<tr class="row-odd"><td><p>2nd Payload</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>ExpLoRa</p></td>
+<td><p>90</p></td>
+<td><p>15</p></td>
+<td><p>103.5</p></td>
+</tr>
+<tr class="row-even"><td><p>Payloads’ antenna</p></td>
+<td><p>ISISpace</p></td>
+<td><p>AntS</p></td>
+<td><p>89</p></td>
+<td><p>5</p></td>
+<td><p>93.45</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interface boards</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>Interface boards</p></td>
+<td><p>40</p></td>
+<td><p>5</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-even"><td><p>PC-104 adapters</p></td>
+<td><p>SpaceLab</p></td>
+<td><p>Adapter boards</p></td>
+<td><p>62</p></td>
+<td><p>5</p></td>
+<td><p>65.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Solar panels</p></td>
+<td><p>Orbital</p></td>
+<td><p>Solar panels</p></td>
+<td><p>266</p></td>
+<td><p>15</p></td>
+<td><p>305.9</p></td>
+</tr>
+<tr class="row-even"><td><p>Shields</p></td>
+<td><p>Usiped</p></td>
+<td><p>Aluminum sheets</p></td>
+<td><p>503</p></td>
+<td><p>15</p></td>
+<td><p>578.45</p></td>
+</tr>
+<tr class="row-odd"><td><p>Structure</p></td>
+<td><p>Usiped</p></td>
+<td><p>Structure</p></td>
+<td><p>206</p></td>
+<td><p>15</p></td>
+<td><p>236.9</p></td>
+</tr>
+<tr class="row-even"><td><p>Cables</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>200</p></td>
+<td><p>15</p></td>
+<td><p>230</p></td>
+</tr>
+<tr class="row-odd"><td><p>Others</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>100</p></td>
+<td><p>15</p></td>
+<td><p>115</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total</strong></p></td>
+<td></td>
+<td></td>
+<td><p><strong>2277</strong></p></td>
+<td></td>
+<td><p><strong>2552.05</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Maximum</strong></p></td>
+<td></td>
+<td></td>
+<td><p><strong>2666</strong></p></td>
+<td></td>
+<td><p><strong>2666</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Margin</strong></p></td>
+<td></td>
+<td></td>
+<td><p><strong>389</strong></p></td>
+<td></td>
+<td><p><strong>113.95</strong></p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">1</a><span class="fn-bracket">]</span></span>
+<p>Values obtained after considering the mass margins.</p>
+</aside>
+</aside>
+</section>
+<section id="power-budget">
+<span id="sec-power-budget"></span><h2>Power Budget<a class="headerlink" href="#power-budget" title="Permalink to this heading"></a></h2>
+<p>Following Section 10.3 of <span id="id25">[<a class="reference internal" href="references.html#id33" title="James R. Wertz Wiley J. Larson. Space Mission Analysis and Design. Volume of Space Technology Library. Microcosm, 3rd edition, 2005. ISBN 1881883108.">35</a>]</span>, determining the power budget for a satellite involves three key steps:</p>
+<ol class="arabic simple">
+<li><p>Estimate the satellite’s power generation capacity and consumption;</p></li>
+<li><p>Size the battery;</p></li>
+<li><p>Estimate the power degradation and performance of PV modules over the mission’s lifetime.</p></li>
+</ol>
+<p>Step 1) involves evaluating the power generation capacity and power consumption of the satellite. This assessment aims to ensure a technical surplus, confirming that the satellite generates more energy than it consumes. In step 2), the focus shifts to determining whether the selected battery has sufficient capacity for the application. If a battery has not been chosen yet, this is the stage where it is appropriately sized. Finally, in step 3), the satellite’s behavior as its lifetime approaches the end is analyzed. A comprehensive study, similar to the initial assessment, is conducted to anticipate any required adjustments or adaptations.</p>
+<section id="input-power">
+<h3>Input Power<a class="headerlink" href="#input-power" title="Permalink to this heading"></a></h3>
+<figure class="sphinx-subfigure align-center" id="fig-sp-sim-power">
+<div class="sphinx-subfigure-grid ss-layout-default-A_B ss-layout-sm-A_B outline" style="display: grid; gap: 8px; grid-gap: 8px;">
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: A;">
+<a class="reference internal image-reference" href="_images/GOLDS_com_eclipse.png"><img alt="Maximum eclipse." class="align-center" src="_images/GOLDS_com_eclipse.png" style="width: 70%;" /></a>
+<span class="caption">Maximum eclipse.</span>
+</div>
+<div class="sphinx-subfigure-area" style="display: flex; flex-direction: column; justify-content: center; align-items: center; grid-area: B;">
+<a class="reference internal image-reference" href="_images/GOLDS_sem_eclipse.png"><img alt="Without eclipse." class="align-center" src="_images/GOLDS_sem_eclipse.png" style="width: 70%;" /></a>
+<span class="caption">Without eclipse.</span>
+</div>
+</div>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Simulated input power of the solar panels.</span><a class="headerlink" href="#fig-sp-sim-power" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="docutils align-center" id="tab-power-simulations">
+<caption><span class="caption-number">Table 22 </span><span class="caption-text">Results for the power input.</span><a class="headerlink" href="#tab-power-simulations" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Maximum eclipse</strong></p></th>
+<th class="head"><p><strong>Without eclipse</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Peak power [mW]</p></td>
+<td><p><span class="math notranslate nohighlight">\(P_{peak}\)</span></p></td>
+<td><p>12282.7</p></td>
+<td><p>10217.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Orbit Average Power [mW]</p></td>
+<td><p><span class="math notranslate nohighlight">\(P_{OAP}\)</span></p></td>
+<td><p>6306.9</p></td>
+<td><p>8519.6</p></td>
+</tr>
+<tr class="row-even"><td><p>Sun-exposure Average Power [mW]</p></td>
+<td><p><span class="math notranslate nohighlight">\(P_{SAP}\)</span></p></td>
+<td><p>10051.8</p></td>
+<td><p>8519.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>Orbit period [s]</p></td>
+<td><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
+<td><p>5720</p></td>
+<td><p>5720</p></td>
+</tr>
+<tr class="row-even"><td><p>Sun-exposure period [s]</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{S}\)</span></p></td>
+<td><p>3590</p></td>
+<td><p>5720</p></td>
+</tr>
+<tr class="row-odd"><td><p>Eclipse period [s]</p></td>
+<td><p><span class="math notranslate nohighlight">\(T_{E}\)</span></p></td>
+<td><p>2130</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>The simulation results in <a class="reference internal" href="#fig-sp-sim-power"><span class="std std-numref">Fig. 29</span></a> depict solar panel power generation in two distinct orbits: one with a maximum eclipse and the other without eclipse. Refer to <a class="reference internal" href="#fig-sp-sim-power"><span class="std std-numref">Fig. 29</span></a> for a detailed breakdown of energy production on each side of the CubeSat, including total and average values.</p>
+<p>The simulation results provide average power values for the entire orbit and the orbit period, as well as the periods of sun exposure and eclipse. These values are instrumental in building the power budget, and you can find a comprehensive compilation in <a class="reference internal" href="#tab-power-simulations"><span class="std std-numref">Table 22</span></a>. It is essential to highlight that this study takes into account the worst-case scenario illustrated in <a class="reference internal" href="#fig-sp-sim-power"><span class="std std-numref">Fig. 29</span></a>.</p>
+</section>
+<section id="satellite-s-power-consumption">
+<h3>Satellite’s power consumption<a class="headerlink" href="#satellite-s-power-consumption" title="Permalink to this heading"></a></h3>
+<p>To begin with, it is essential to compile a list of typical operating voltages, currents, and power consumptions for each satellite’s subsystem, as presented in <a class="reference internal" href="#tab-power-requirements"><span class="std std-numref">Table 23</span></a>. With this information, <a class="reference internal" href="#tab-power-budget"><span class="std std-numref">Table 24</span></a> can be created, considering the operational period of each subsystem and payload, margins, and the maximum acceptable power consumption for each subsystem.</p>
+<table class="docutils align-center" id="tab-power-requirements">
+<caption><span class="caption-number">Table 23 </span><span class="caption-text">Typical operation of Catarina-A1’s subsystems and payloads.</span><a class="headerlink" href="#tab-power-requirements" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 35.0%" />
+<col style="width: 22.0%" />
+<col style="width: 22.0%" />
+<col style="width: 21.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Subsystem</strong></p></th>
+<th class="head"><p><strong>Typ. voltage operation [V]</strong></p></th>
+<th class="head"><p><strong>Typ. current operation [mA]</strong></p></th>
+<th class="head"><p><strong>Typ. power consumption [mW]</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OBDH 2.0</p></td>
+<td><p>3.3</p></td>
+<td><p>35</p></td>
+<td><p>115.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTC 2.0 (while not transmiting)</p></td>
+<td><p>3.3</p></td>
+<td><p><span class="math notranslate nohighlight">\(50 \cdot 2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(165 \cdot 2\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>TTC 2.0 (while transmiting)</p></td>
+<td><p>5</p></td>
+<td><p><span class="math notranslate nohighlight">\(650 \cdot 2\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(3250 \cdot 2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>EPS 2.0</p></td>
+<td><p>7.4</p></td>
+<td><p>50</p></td>
+<td><p>370</p></td>
+</tr>
+<tr class="row-even"><td><p>BAT4C (idle)</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>BAT4C (heater operating)</p></td>
+<td><p>7.4</p></td>
+<td><p>676</p></td>
+<td><p>5002.4</p></td>
+</tr>
+<tr class="row-even"><td><p>AntS (during deployment)</p></td>
+<td><p>3.3</p></td>
+<td><p>550</p></td>
+<td><p>1815</p></td>
+</tr>
+<tr class="row-odd"><td><p>AntS (after deployment)</p></td>
+<td><p>3.3</p></td>
+<td><p>60</p></td>
+<td><p>200</p></td>
+</tr>
+<tr class="row-even"><td><p>EDC</p></td>
+<td><p>5</p></td>
+<td><p>250</p></td>
+<td><p>1250</p></td>
+</tr>
+<tr class="row-odd"><td><p>ExpLoRa</p></td>
+<td><p>5</p></td>
+<td><p>250 (TBD)</p></td>
+<td><p>1250 (TBD)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Moreover, as presented in <a class="reference internal" href="#tab-power-budget"><span class="std std-numref">Table 24</span></a>, to ascertain the worst-case scenario certain assumptions were made:</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="glossary.html#term-EDC"><span class="xref std std-term">EDC</span></a> is assumed to be always on, despite its actual operation only occurring when the satellite passes over Brazil;</p></li>
+<li><p>ExpLoRa is assumed to be active 30 % of the time, even though its actual operational duration may be even less.</p></li>
+</ul>
+<p>To estimate the satellite’s maximum power consumption, each subsystem’s usage, accounting for operating time and margins, was calculated. The cumulative result, denoted as <span class="math notranslate nohighlight">\(P_{sat}\)</span>, was found to be <strong>3784.2 mW</strong>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-satellite-energy-consumption">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-satellite-energy-consumption" title="Permalink to this equation"></a></span>\[E_{sat} = P_{sat} \cdot T\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_{sat}\)</span> is the required energy by the satellite over a specific period of time.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{sat}\)</span> is the estimated power required by the satellite.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T\)</span> is the time frame of interest.</p></li>
+</ul>
+<table class="docutils align-center" id="tab-power-budget">
+<caption><span class="caption-number">Table 24 </span><span class="caption-text">Power budget of the Catarina-A1.</span><a class="headerlink" href="#tab-power-budget" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 25.0%" />
+<col style="width: 15.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Subsystem</strong></p></th>
+<th class="head"><p><strong>Duty cycle [%]</strong></p></th>
+<th class="head"><p><strong>Typ. power consumption [mW]</strong></p></th>
+<th class="head"><p><strong>Margin [%]</strong></p></th>
+<th class="head"><p><strong>Max. power consumption [mW]</strong> <a class="footnote-reference brackets" href="#id29" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OBDH 2.0</p></td>
+<td><p>100</p></td>
+<td><p>115.5</p></td>
+<td><p>5</p></td>
+<td><p>121.28</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTC 2.0 (while not transmiting)</p></td>
+<td><p>95</p></td>
+<td><p>330</p></td>
+<td><p>5</p></td>
+<td><p>329.18</p></td>
+</tr>
+<tr class="row-even"><td><p>TTC 2.0 (while transmiting)</p></td>
+<td><p>5</p></td>
+<td><p>6500</p></td>
+<td><p>5</p></td>
+<td><p>341.25</p></td>
+</tr>
+<tr class="row-odd"><td><p>EPS 2.0</p></td>
+<td><p>100</p></td>
+<td><p>370</p></td>
+<td><p>5</p></td>
+<td><p>388.5</p></td>
+</tr>
+<tr class="row-even"><td><p>BAT4C (idle)</p></td>
+<td><p>90</p></td>
+<td><p>0</p></td>
+<td><p>5</p></td>
+<td><p>0.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>BAT4C (heater operating)</p></td>
+<td><p>10</p></td>
+<td><p>5002.4</p></td>
+<td><p>5</p></td>
+<td><p>525.25</p></td>
+</tr>
+<tr class="row-even"><td><p>AntS (during deployment)</p></td>
+<td><p>0</p></td>
+<td><p>1815</p></td>
+<td><p>5</p></td>
+<td><p>0.00</p></td>
+</tr>
+<tr class="row-odd"><td><p>AntS (after deployment)</p></td>
+<td><p>100</p></td>
+<td><p>200</p></td>
+<td><p>5</p></td>
+<td><p>210</p></td>
+</tr>
+<tr class="row-even"><td><p>EDC</p></td>
+<td><p>100</p></td>
+<td><p>1250</p></td>
+<td><p>15</p></td>
+<td><p>1437.50</p></td>
+</tr>
+<tr class="row-odd"><td><p>ExpLoRa</p></td>
+<td><p>30</p></td>
+<td><p>1250</p></td>
+<td><p>15</p></td>
+<td><p>431.25</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><strong>3784.2</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total [mWh]</strong> <a class="footnote-reference brackets" href="#id30" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><strong>6013.1</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Maximum [mWh]</strong> <a class="footnote-reference brackets" href="#id31" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><strong>6743.35</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Margin [mWh]</strong></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><strong>730.25</strong></p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">2</a><span class="fn-bracket">]</span></span>
+<p>Values obtained after considering the margins (<span class="math notranslate nohighlight">\(m\)</span>) and duty cycle (<span class="math notranslate nohighlight">\(D\)</span>), through <span class="math notranslate nohighlight">\(P_{\text{max}} = (P_{\text{typ}} \cdot (1 + m)) \cdot D\)</span>.</p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">3</a><span class="fn-bracket">]</span></span>
+<p>Value obtained after considering the Equation <a class="reference internal" href="#equation-eq-satellite-energy-consumption">(1)</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">4</a><span class="fn-bracket">]</span></span>
+<p>Value obtained after considering the Equation <a class="reference internal" href="#equation-eq-oap-energy">(2)</a>.</p>
+</aside>
+</aside>
+<p>Subsequently, the energy consumed by the satellite over an entire orbit (<span class="math notranslate nohighlight">\(E_{sat}\)</span>) was calculated using Equation <a class="reference internal" href="#equation-eq-satellite-energy-consumption">(1)</a>, resulting in <strong>6013.1 mWh</strong>, as presented below:</p>
+<div class="math notranslate nohighlight">
+\[E_{sat} = 3784.2 \cdot (T_{E}+T_{S}) = 3784.2 \cdot (0.592+0.997)\]</div>
+<div class="math notranslate nohighlight">
+\[E_{sat} = 6013.1\ mWh\]</div>
+<p>The energy generated by the PV panels, over the entire orbit, was also calculated, considering the value of <span class="math notranslate nohighlight">\(P_{OAP}\)</span> obtained from the simulations.</p>
+<div class="math notranslate nohighlight" id="equation-eq-oap-energy">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-oap-energy" title="Permalink to this equation"></a></span>\[E_{OAP} = (P_{OAP} \cdot \eta) \cdot (T_{E}+T_{S})\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_{OAP}\)</span> is the energy generated by the PV panels over the entire orbit.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P_{OAP}\)</span> is the average power generated by the PV panels.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> is the efficiency of the EPS’ energy harvesting system.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{E}\)</span> is the eclipse period.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_{S}\)</span> is the sun-exposure period.</p></li>
+</ul>
+<p>The <a class="reference internal" href="#equation-eq-oap-energy">(2)</a> was used, obtaining <strong>8017.33 mWh</strong>. An efficiency of 80 % was considered, which is a worst-case scenario for the efficiency of the <a class="reference internal" href="glossary.html#term-EPS"><span class="xref std std-term">EPS</span></a>’ energy harvesting system. Finally, it is possible to see that there is a margin of 25 % in this first analysis (<strong>2004.23 mWh</strong>).</p>
+<div class="math notranslate nohighlight">
+\[E_{OAP} = (6306.9 \cdot 0.8) \cdot (0.592+0.997) = 8017.33\ mWh\]</div>
+</section>
+<section id="battery-sizing">
+<h3>Battery Sizing<a class="headerlink" href="#battery-sizing" title="Permalink to this heading"></a></h3>
+<p>As described in <span id="id32">[<a class="reference internal" href="references.html#id33" title="James R. Wertz Wiley J. Larson. Space Mission Analysis and Design. Volume of Space Technology Library. Microcosm, 3rd edition, 2005. ISBN 1881883108.">35</a>]</span>, the battery sizing of a satellite can be made by following the steps below:</p>
+<ol class="arabic simple">
+<li><p>Estimate the power required from the satellite;</p></li>
+<li><p>Define the discharge and charge cycles duration, as well as the numbers of charge-discharge cycles;</p></li>
+<li><p>Define a maximum ac{DoD};</p></li>
+<li><p>Define the charge rate;</p></li>
+<li><p>Compute battery recharge power.</p></li>
+</ol>
+<p>Then, first, the power required from the satellite was already calculated, which is <span class="math notranslate nohighlight">\(P_{sat}\)</span>. The discharge and charge cycles duration can be obtained from <a class="reference internal" href="#fig-sp-sim-power"><span class="std std-numref">Fig. 29</span></a>. The discharge period corresponds to the time the satellite is eclipsed (<span class="math notranslate nohighlight">\(T_{E}\)</span>), just as the charge period corresponds to the time when the satellite is exposed to sunlight (<span class="math notranslate nohighlight">\(T_{S}\)</span>). This is done by considering a single complete orbit.</p>
+<p>Now, for the <a class="reference internal" href="glossary.html#term-DoD"><span class="xref std std-term">DoD</span></a>, it is possible to calculate considering the <a class="reference internal" href="glossary.html#term-BAT4C"><span class="xref std std-term">BAT4C</span></a>, the battery board that was considered to be used in this mission. It is important to emphasize that it supports 4 batteries in a 2P-2S configuration, in which each individual battery has 3.6 V and 2500 mWh of capacity. Furthermore, considering Equation <a class="reference internal" href="#equation-eq-dod-equation">(3)</a>, it is important to define <span class="math notranslate nohighlight">\(D_{i}\)</span> (discharge rate) and <span class="math notranslate nohighlight">\(D_{t}\)</span> (discharge period), which are, respectively, equal to <span class="math notranslate nohighlight">\(P_{sat}\)</span> and <span class="math notranslate nohighlight">\(T_{E}\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-dod-equation">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-dod-equation" title="Permalink to this equation"></a></span>\[DoD = \frac{D_{i} \cdot D_{t}}{C} \cdot 100\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(DoD\)</span> is the calculated depth of discharge for the battery under specific conditions.</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_{i}\)</span> is the discharge rate.</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_{t}\)</span> is the discharge period.</p></li>
+<li><p><span class="math notranslate nohighlight">\(C\)</span> is the battery capacity in mWh.</p></li>
+</ul>
+<p>As the battery cells are already selected, as well as their configuration, its capacity is equal to 36000 mWh, and the current <a class="reference internal" href="glossary.html#term-DoD"><span class="xref std std-term">DoD</span></a> is computed as <strong>6.22 %</strong>. Considering that it is quite common to consider a <a class="reference internal" href="glossary.html#term-DoD"><span class="xref std std-term">DoD</span></a> of no more than 30 %, it can be seen that, for now, the battery is oversized, which is not a problem, as this excess capacity provides a safety margin, ensuring that even under heavy usage scenarios, the battery will not exceed the commonly accepted <a class="reference internal" href="glossary.html#term-DoD"><span class="xref std std-term">DoD</span></a> limit of 30 %.</p>
+<div class="math notranslate nohighlight">
+\[DoD = \frac{3784.2 \cdot 0.592}{(2 \cdot 3.6) \cdot (2 \cdot 2500)} \cdot 100 = 6.22\ \%\]</div>
+<p>The charge rate can be estimated from the power generated by the PV panels when the satellite is exposed to sunlight. As presented before, the simulation shows that an <span class="math notranslate nohighlight">\(P_{SAP}\)</span> equals 10051.8 mW. Considering the charge cycle duration as 0.997 h and an efficienfy of 80 % of the satellite’s energy harvesting system, there is a generation of 8017.33 mWh. From <a class="reference internal" href="#tab-power-budget"><span class="std std-numref">Table 24</span></a>, the power consumption of the satellite in sunlight is 3784.2 mW (or 3772.85 mWh considering the sunlight period). This way, energy input at sunlight is obtained in Equation <a class="reference internal" href="#equation-eq-energy-input-sun-light">(4)</a>.</p>
+<div class="math notranslate nohighlight" id="equation-eq-energy-input-sun-light">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq-energy-input-sun-light" title="Permalink to this equation"></a></span>\[8017.33 - 3772.85 = 4244.48\ mWh\]</div>
+<p>From the <a class="reference internal" href="glossary.html#term-DoD"><span class="xref std std-term">DoD</span></a> calculation, the energy consumption during the eclipse is 2240.25 mWh. In this way, the energy margin of the battery becomes positive (<span class="math notranslate nohighlight">\(4244.48 - 2240.25 = 2004.23\ mWh\)</span>), as expected from the previous power budget results. From the results, the battery sizing is well suited for the current satellite configuration and the planned behavior.</p>
+</section>
+<section id="power-degradation-over-mission-life">
+<h3>Power Degradation Over Mission Life<a class="headerlink" href="#power-degradation-over-mission-life" title="Permalink to this heading"></a></h3>
+<p>Two major events along the satellite operation should be considered in the power degradation analysis:</p>
+<ol class="arabic simple">
+<li><p>Solar panels degradation</p></li>
+<li><p>Battery degradation</p></li>
+</ol>
+<p>From <span id="id33">[<a class="reference internal" href="references.html#id33" title="James R. Wertz Wiley J. Larson. Space Mission Analysis and Design. Volume of Space Technology Library. Microcosm, 3rd edition, 2005. ISBN 1881883108.">35</a>]</span>, 5 % per year is a usual number for the solar panels’ degradation, in other words, the general efficiency of the solar panels decays at a rate of 5 % per year of operation. The Equation <a class="reference internal" href="#equation-eq-pv-aging">(5)</a> can be used to define the PV panels’ efficiency (<span class="math notranslate nohighlight">\(\eta_{EOL}\)</span>) after <span class="math notranslate nohighlight">\(N\)</span> years. Furthermore, it is possible to create the <a class="reference internal" href="#tab-pv-aging"><span class="std std-numref">Table 25</span></a> to visualize the energy dependence of the satellite over the years.</p>
+<div class="math notranslate nohighlight" id="equation-eq-pv-aging">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq-pv-aging" title="Permalink to this equation"></a></span>\[\eta_{EOL} = \eta_{BOL} \cdot (1 - \eta_{degradation})^{N}\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\eta_{EOL}\)</span> is the PV panels’ efficiency at the satellite’s end of life.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta_{BOL}\)</span> is the PV panels’ efficiency at the satellite’s begining of life.</p></li>
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is the number of years passed.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta_{degradation}\)</span> is the estimated efficiency degradation over the years.</p></li>
+</ul>
+<table class="docutils align-center" id="tab-pv-aging">
+<caption><span class="caption-number">Table 25 </span><span class="caption-text">Degradation of the Catarina-A1.</span><a class="headerlink" href="#tab-pv-aging" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+<col style="width: 13.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Parameter</strong></p></th>
+<th class="head"><p><strong>BOL</strong></p></th>
+<th class="head"><p><strong>1 year</strong></p></th>
+<th class="head"><p><strong>2 years</strong></p></th>
+<th class="head"><p><strong>3 years</strong></p></th>
+<th class="head"><p><strong>4 years</strong></p></th>
+<th class="head"><p><strong>5 years</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\eta_{EOL}\)</span> [%]</p></td>
+<td><p>30</p></td>
+<td><p>28.5</p></td>
+<td><p>25.72</p></td>
+<td><p>22.05</p></td>
+<td><p>17.96</p></td>
+<td><p>13.9</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(P_{OAP}\)</span> [mW]</p></td>
+<td><p>6306.90</p></td>
+<td><p>5991.55</p></td>
+<td><p>5407.38</p></td>
+<td><p>4636.15</p></td>
+<td><p>3776.17</p></td>
+<td><p>2921.94</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(E_{OAP}\)</span> [mWh]</p></td>
+<td><p>8017.33</p></td>
+<td><p>7616.46</p></td>
+<td><p>6873.86</p></td>
+<td><p>5893.48</p></td>
+<td><p>4800.27</p></td>
+<td><p>3714.36</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(E_{sat}\)</span> [mWh]</p></td>
+<td><p>6013.1</p></td>
+<td><p>6013.1</p></td>
+<td><p>6013.1</p></td>
+<td><p>6013.1</p></td>
+<td><p>6013.1</p></td>
+<td><p>6013.1</p></td>
+</tr>
+<tr class="row-even"><td><p>Margin [mWh]</p></td>
+<td><p>2004.23</p></td>
+<td><p>1602.36</p></td>
+<td><p>858.76</p></td>
+<td><p>-122.62</p></td>
+<td><p>-1216.83</p></td>
+<td><p>-2303.74</p></td>
+</tr>
+</tbody>
+</table>
+<p>Until the <span class="math notranslate nohighlight">\(3^{rd}\)</span> year, the satellite will generate more power than it consumes. From there, the satellite will start consuming more energy than it can generate, and eventually, it will cease to function. It is worth noting that some considerations have been taken into account, creating a rather pessimistic scenario.</p>
+</section>
+</section>
+<section id="link-budget">
+<h2>Link Budget<a class="headerlink" href="#link-budget" title="Permalink to this heading"></a></h2>
+<p>The link budget of all satellite radio links is available in <a class="reference internal" href="#tab-link-budget-results"><span class="std std-numref">Table 26</span></a>.</p>
+<table class="docutils align-center" id="tab-link-budget-results">
+<caption><span class="caption-number">Table 26 </span><span class="caption-text">Link budget results.</span><a class="headerlink" href="#tab-link-budget-results" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 17.0%" />
+<col style="width: 17.0%" />
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Variable</strong></p></th>
+<th class="head"><p><strong>Downlink</strong></p></th>
+<th class="head"><p><strong>Uplink</strong></p></th>
+<th class="head"><p><strong>Uplink (Payload)</strong></p></th>
+<th class="head"><p><strong>Unit</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Altitude</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+<td><p>500</p></td>
+<td><p>km</p></td>
+</tr>
+<tr class="row-odd"><td><p>Elevation</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>º</p></td>
+</tr>
+<tr class="row-even"><td><p>Frequency</p></td>
+<td><p>468</p></td>
+<td><p>401</p></td>
+<td><p>401.635</p></td>
+<td><p>MHz</p></td>
+</tr>
+<tr class="row-odd"><td><p>Modulation</p></td>
+<td><p>GMSK</p></td>
+<td><p>GMSK</p></td>
+<td><p>BPSK</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Protocol</p></td>
+<td><p>NGHam</p></td>
+<td><p>NGHam</p></td>
+<td><p>SBCD</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Transmit power</p></td>
+<td><p>30</p></td>
+<td><p>44</p></td>
+<td><p>30</p></td>
+<td><p>dBm</p></td>
+</tr>
+<tr class="row-even"><td><p>Transmitter antenna gain</p></td>
+<td><p>0</p></td>
+<td><p>12</p></td>
+<td><p>3</p></td>
+<td><p>dBi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Receiver antenna gain</p></td>
+<td><p>12</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>dBi</p></td>
+</tr>
+<tr class="row-even"><td><p>FSPL</p></td>
+<td><p>154.1</p></td>
+<td><p>138.5</p></td>
+<td><p>152.7</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-odd"><td><p>Power at receiver</p></td>
+<td><p>-117.1</p></td>
+<td><p>-101.7</p></td>
+<td><p>-124.7</p></td>
+<td><p>dBm</p></td>
+</tr>
+<tr class="row-even"><td><p>Receiver sensibility</p></td>
+<td><p>-134</p></td>
+<td><p>-126</p></td>
+<td><p>-128</p></td>
+<td><p>dBm</p></td>
+</tr>
+<tr class="row-odd"><td><p>System losses</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>5</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-even"><td><p>Receiver noise temp.</p></td>
+<td><p>361.7</p></td>
+<td><p>361.7</p></td>
+<td><p>361.7</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p>Antenna noise temp.</p></td>
+<td><p>300</p></td>
+<td><p>300</p></td>
+<td><p>300</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-even"><td><p>System noise temp.</p></td>
+<td><p>661.7</p></td>
+<td><p>661.7</p></td>
+<td><p>661.7</p></td>
+<td><p>K</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data rate</p></td>
+<td><p>4800</p></td>
+<td><p>4800</p></td>
+<td><p>400</p></td>
+<td><p>bps</p></td>
+</tr>
+<tr class="row-even"><td><p>Received SNR</p></td>
+<td><p>16.48</p></td>
+<td><p>31.88</p></td>
+<td><p>19.67</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-odd"><td><p>SNR required for <span class="math notranslate nohighlight">\(10^{-5}\)</span> BER <a class="footnote-reference brackets" href="#id35" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a></p></td>
+<td><p>9.6</p></td>
+<td><p>9.6</p></td>
+<td><p>9.6</p></td>
+<td><p>dB</p></td>
+</tr>
+<tr class="row-even"><td><p>Link margin</p></td>
+<td><p><span class="math notranslate nohighlight">\(\geq\)</span> 6.88</p></td>
+<td><p><span class="math notranslate nohighlight">\(\geq\)</span> 22.28</p></td>
+<td><p><span class="math notranslate nohighlight">\(\geq\)</span> 10.07</p></td>
+<td><p>dB</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id35" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id34">5</a><span class="fn-bracket">]</span></span>
+<p>Without <a class="reference internal" href="glossary.html#term-FEC"><span class="xref std std-term">FEC</span></a>.</p>
+</aside>
+</aside>
+<p>As can be seen, considering the worst case for the estimated orbit, that is, with the satellite on the horizon and with an elevation of zero degrees, the margin of all links is positive with a considerable balance.</p>
+<p>All equations and steps used to obtain the results of <a class="reference internal" href="#tab-link-budget-results"><span class="std std-numref">Table 26</span></a> are available in <a class="reference internal" href="link_budget.html"><span class="doc">Link Budget Calculation</span></a>.</p>
+</section>
+</section>
+
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="conops.html" class="btn btn-neutral float-left" title="Concept of Operations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="design.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="design.html" class="btn btn-neutral float-right" title="Service Module Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -28,9 +28,8 @@ Schedule definition
 
 Since the technical development teams are not entirely identical for both space systems, only the management team, there are date differences for reviews regarding the design, integration, and testing of each space system. The present general schedule is related to the deliverables from the space system Catarina-A1, the object of this revision.
 
-.. _fig:gantt-mdr:
-
 .. figure:: figures/Cronograma_macro_CDR.png
+   :name: fig:gantt-mdr
    :width: 100%
    :align: center
    :alt: Schedule
@@ -48,9 +47,9 @@ Schedule control
 
 :numref:`fig:gantt-srr-dependencies-critical` shows the dependency diagram for critical packages. The red arrows indicate the critical path, which corresponds to the group of dependent items that present greater criticality for the project since they do not allow for much margin for scheduling flexibility.
 
-.. _fig:gantt-srr-dependencies-critical:
 
 .. figure:: figures/Critical_items_CDR.png
+   :name: fig:gantt-srr-dependencies-critical
    :width: 100%
    :align: center
    :alt: Schedule
@@ -72,12 +71,11 @@ Procurement status
 
 :numref:`tabela_procurement_status` indicates the current status of the purchase of major items necessary to carry out the mission for the Catarina-A1 space system. Solar panels are already available at Florianópolis - SC for flight model integration. Other items listed are scheduled to initiate the procurement process in May 2024, except for the deployer which is scheduled to initiate its process at Juin or July 2024.
 
-.. _tab:tabela_procurement_status:
-
 .. list-table:: Procurement Status.
    :name: tabela_procurement_status
    :header-rows: 1
    :widths: 40 35 25
+   :align: center
 
    * - **Item**
      - **Estimated Lead time - weeks**
@@ -117,12 +115,11 @@ Frequency license coordination
 
 :numref:`tabela_status_frequencia` indicates the current status of frequency license coordination for the Catarina-A1 space system. The process is currently in progress and is estimated to be complete by September 2024.
 
-.. _tab:tabela_status_frequencia:
-
 .. list-table:: Frequency license coordination status.
    :name: tabela_status_frequencia
    :header-rows: 1
    :widths: 60 40
+   :align: center
 
    * - **Etapa**
      - **Status**
@@ -158,9 +155,8 @@ The categories indicated are: Direct human resources, Internal infrastructure, S
 
 In :numref:`fig:cbs-a1`, the boxes highlighted in blue indicate that such categories may undergo subsequent break-ups and the yellow boxes indicate categories and subcategories that potentially include indirect costs.
 
-.. _fig:cbs-a1:
-
 .. figure:: figures/cbs-cat-a1.png
+   :name: fig:cbs-a1
    :width: 90%
    :align: center
    :alt: CBS
@@ -205,12 +201,11 @@ To detail the categories shown in CBS (:ref:`sec:cbs`), the :term:`CBT` contains
 
 Operational costs are not accounted for due to the possibility of aggregating this cost into a future project. For clarification, the operational costs estimated are related only to human resources for 1 year responsible for the connection and download of data from the satellites during its passage over the EMMN.
 
-.. _tab:tabela_cost1:
-
 .. list-table:: Estimated costs to the project - Catarina-A1.
    :name: tabela_cost1
    :header-rows: 1
    :widths: 40 30 30
+   :align: center
 
    * - **Category**
      - **Value [R$]**
@@ -237,12 +232,11 @@ Operational costs are not accounted for due to the possibility of aggregating th
      - **1.700.116,00**
      - **100**
 
-.. _tab:tabela_cost2:
-
 .. list-table:: Estimated costs to the project - Services - Catarina-A1.
    :name: tabela_cost2
    :header-rows: 1
    :widths: 40 30 30
+   :align: center
 
    * - **Services**
      - **Available value [R$]**
@@ -257,12 +251,11 @@ Operational costs are not accounted for due to the possibility of aggregating th
      - 117.064,00
      - 5.580
 
-.. _tab:tabela_cost3:
-
 .. list-table:: Estimated costs to the project - consumable items.
    :name: tabela_cost3
    :header-rows: 1
    :widths: 30 25 25 20
+   :align: center
 
    * - **Material**
      - **Available value [R$]**
@@ -391,9 +384,8 @@ The product tree of the Catarina-A1 satellite is the project breakdown into succ
 
 .. nesse figura precisamos atualizar que na parte de ground tem o INPE tb, nessa que está parece haver só o GS da UFSC
 
-.. _fig:product-tree:
-
 .. figure:: figures/productTree_CatarinaA1.png
+   :name: fig:product-tree
    :width: 100%
    :align: center
    :alt: Product tree
@@ -402,11 +394,11 @@ The product tree of the Catarina-A1 satellite is the project breakdown into succ
 
 The supplier of each element of the product tree is available in :numref:`tab:product-tree-sup`.
 
-.. _tab:product-tree-sup:
-
 .. list-table:: Suppliers of the product tree's elements.
+   :name: tab:product-tree-sup
    :header-rows: 1
    :widths: 50 50
+   :align: center
 
    * - **Element**
      - **Supplier**
@@ -482,21 +474,19 @@ Work breakdown structure
 
 The Work Breakdown Structure (:term:`WBS`) is presented as a diagram in :numref:`fig:wbs`. The :term:`WBS` is divided into work packages (:term:`WP`) as can be seen in the diagram. The description of each :term:`WP` is detailed in :numref:`WPD-table`. In this table, the completed packages are highlighted in red and the ongoing packages are highlighted in blue.
 
-.. _fig:wbs:
-
 .. figure:: figures/WBS_A1_montagem.png
+   :name: fig:wbs
    :width: 100%
    :align: center
    :alt: WBS
 
    Catarina-A1's WBS diagram.
 
-.. _tab:WPD-table:
-
 .. list-table:: Work packages definition.
    :name: WPD-table
    :header-rows: 1
    :widths: 35 35 30
+   :align: center
 
    * - **Work Packages**
      - **Document Emission**
@@ -643,45 +633,40 @@ A total of five risks are indicated as high, all identified as technical ones. T
 
 .. atualizar riscos do A1 e missão - estão faltando vários e fazer o grafico de riscos classico e juntar todos lá
 
-.. _fig:riscos_programaticos:
-
 .. figure:: figures/Riscos_programaticos_CDR.png
+   :name: fig:riscos_programaticos
    :width: 90%
    :align: center
    :alt: Programatic risks
 
    Programatic risks - Catarina-A1.
 
-.. _fig:riscos_tecnicos_grafico1:
-
 .. figure:: figures/Riscos_tecnicos_CDR_grafico.png
+   :name: fig:riscos_tecnicos_grafico1
    :width: 90%
    :align: center
    :alt: Technical risks analysis
 
    Technical risks analysis - Catarina-A1.
 
-.. _fig:riscos_tecnicos_tabela1:
-
 .. figure:: figures/Riscos_tecnicos_CDR_tabela.png
+   :name: fig:riscos_tecnicos_tabela1
    :width: 90%
    :align: center
    :alt: Technical risks trends
 
    Technical risks trends - Catarina-A1.
 
-.. _fig:riscos_tecnicos_grafico2:
-
 .. figure:: figures/Riscos_externos_CDR_grafico.png
+   :name: fig:riscos_tecnicos_grafico2
    :width: 90%
    :align: center
    :alt: External risks analysis
 
    External risks analysis - Catarina-A1.
 
-.. _fig:riscos_tecnicos_tabela2:
-
 .. figure:: figures/Riscos_externos_CDR_tabela.png
+   :name: fig:riscos_tecnicos_tabela2
    :width: 90%
    :align: center
    :alt: External risks trends
@@ -699,11 +684,11 @@ The cooperation agreement provides a payload of 15 kg for :term:`AEB` to be used
 
 Two possible launch orbits are being analyzed: :term:`SSO` orbit with 500 km altitude and a :math:`43^{\circ}` inclination orbit with 500 km altitude. Calculations for communication time and decay are presented in a later section.
 
-.. _tab:tabela_mass_lancamento:
-
 .. list-table:: Estimated mass and composition of the proposed launch.
+   :name: tab:tabela_mass_lancamento
    :header-rows: 1
    :widths: 45 30 25
+   :align: center
 
    * - **Item**
      - **Estimated mass (kg)**
