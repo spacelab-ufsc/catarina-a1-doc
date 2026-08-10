@@ -249,6 +249,7 @@ Operational phase schedule
 .. list-table:: Steps of operation.
    :header-rows: 1
    :widths: 25 15 20 40
+   :align: center
 
    * - **Experiment**
      - **Start**

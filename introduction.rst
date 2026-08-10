@@ -66,7 +66,7 @@ Fleet A's Mission Definition
 
 The mission of Fleet A of the Catarina Constellation consists of launching two CubeSats as technological demonstrators for data collection and transmission. Catarina-A1 will be a 2U CubeSat designed by the team at :term:`UFSC`, while Catarina-A2 will be designed as a 3U CubeSat by :term:`ISI-SE`.
 
-The :numref:`fig:arq_FleetA` shows the official functional architecture of Fleet A. Its concepts of operation and further details on how the mission works can be found in :numref:`ch:conops`.
+The :numref:`fig:arq_FleetA` shows the official functional architecture of Fleet A. Its concepts of operation and further details on how the mission works can be found in :ref:`ch:conops`.
 
 .. _fig:arq_FleetA:
 
@@ -83,6 +83,8 @@ For the development of the mission, one of the needs raised was the preference f
 
 As a technological demonstrator, Fleet A works at the same time as a case study of both the functioning of the nanosatellite-based constellation and the data collection with national technology, adding to the :term:`EDC` flight inheritance.
 
+.. _sec:mission_objectives:
+
 Mission objectives
 ******************
 
@@ -91,7 +93,6 @@ The :numref:`tab:goals-objectives` describes the goals and objectives related to
 .. _tab:goals-objectives:
 
 .. list-table:: Goals and objectives of the Catarina Constellation's Fleet A mission.
-   :name: tab:goals-objectives
    :header-rows: 1
    :widths: 8 35 8 49
 
@@ -134,7 +135,6 @@ The project involves students, professors, and researchers from :term:`UFSC` and
 .. _tab:members:
 
 .. list-table:: Project members of the Catarina Constellation's Fleet A (2024/03/18).
-   :name: tab:members
    :header-rows: 1
    :widths: 20 35 15 30
 
@@ -268,7 +268,7 @@ Most of the modules and methods used in this project are based on past works, ma
 Mission patch
 =============
 
-The mission patch of the Catarina Constellation can be seen in \autoref{fig:mission-patch}.
+The mission patch of the Catarina Constellation can be seen in :numref:`fig:mission-patch`.
 
 .. _fig:mission-patch:
 
