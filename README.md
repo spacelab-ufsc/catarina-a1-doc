@@ -12,7 +12,10 @@
         <img alt="GitHub commits since latest release" src="https://img.shields.io/github/commits-since/spacelab-ufsc/catarina-a1-doc/latest?style=for-the-badge">
     </a>
     <a href="https://github.com/spacelab-ufsc/catarina-a1-doc/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/spacelab-ufsc/catarina-a1-doc?style=for-the-badge" alt="License">
+        <img src="https://img.shields.io/github/license/spacelab-ufsc/catarina-a1-doc?style=for-the-badge">
+    </a>
+    <a href="https://github.com/spacelab-ufsc/catarina-a1-doc/actions">
+        <img src="https://img.shields.io/github/actions/workflow/status/spacelab-ufsc/catarina-a1-doc/doc_build.yml?style=for-the-badge">
     </a>
 </p>
 
