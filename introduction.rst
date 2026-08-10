@@ -14,9 +14,8 @@ Introduction
 
 The Catarina Constellation's Fleet A project adheres to the ECSS-E-ST-10C, a standard that specifies the system engineering implementation for the development of space systems and space products :cite:`ECSS-E-ST-10C`. Both space systems within the project, namely Catarina-A1 and Catarina-A2, follow the standard's prescribed life cycle model. The culmination of phase C of the project is marked by the :term:`CDR` event, depicted in :numref:`fig:life_cycle`. This event signifies the project's maturity and the incorporation of initial engineering concepts, rooted in the system and technical requirements defined up to this point.
 
-.. _fig:life_cycle:
-
 .. figure:: figures/life_cycle_CDR.png
+   :name: fig:life_cycle
    :width: 90%
    :align: center
    :alt: Project life cycle
@@ -27,9 +26,8 @@ The purpose of :term:`CDR` is to relate the product's technical requirements to 
 
 .. information confirming compatibility with external interfaces, the final design of both the space system and Ground Segment, the final AIV plan, and the state of verification for the space system and Ground Segment requirements.
 
-.. _fig:cat-a1-render:
-
 .. figure:: figures/catarina-a1.jpg
+   :name: fig:cat-a1-render
    :width: 60%
    :align: center
    :alt: Catarina-A1 3D
@@ -68,9 +66,8 @@ The mission of Fleet A of the Catarina Constellation consists of launching two C
 
 The :numref:`fig:arq_FleetA` shows the official functional architecture of Fleet A. Its concepts of operation and further details on how the mission works can be found in :ref:`ch:conops`.
 
-.. _fig:arq_FleetA:
-
 .. figure:: figures/arq_func_eng.png
+   :name: fig:arq_FleetA
    :width: 70%
    :align: center
    :alt: Functional architecture
@@ -90,11 +87,11 @@ Mission objectives
 
 The :numref:`tab:goals-objectives` describes the goals and objectives related to the Catarina Constellation's Fleet A mission.
 
-.. _tab:goals-objectives:
-
 .. list-table:: Goals and objectives of the Catarina Constellation's Fleet A mission.
+   :name: tab:goals-objectives
    :header-rows: 1
    :widths: 8 35 8 49
+   :align: center
 
    * - **ID**
      - **Goal**
@@ -132,11 +129,11 @@ Project members
 
 The project involves students, professors, and researchers from :term:`UFSC` and :term:`INPE`. Additionally, the team responsible for conducting the activities of this phase within the Catarina Constellation's Fleet A comprised the members described in :numref:`tab:members`.
 
-.. _tab:members:
-
 .. list-table:: Project members of the Catarina Constellation's Fleet A (2024/03/18).
+   :name: tab:members
    :header-rows: 1
    :widths: 20 35 15 30
+   :align: center
 
    * - Name
      - Contribution
@@ -270,9 +267,8 @@ Mission patch
 
 The mission patch of the Catarina Constellation can be seen in :numref:`fig:mission-patch`.
 
-.. _fig:mission-patch:
-
 .. figure:: figures/catarina-mission-patch.png
+   :name: fig:mission-patch
    :width: 70%
    :align: center
    :alt: Functional architecture
