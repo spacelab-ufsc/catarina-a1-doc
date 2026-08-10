@@ -47,7 +47,6 @@ Schedule control
 
 :numref:`fig:gantt-srr-dependencies-critical` shows the dependency diagram for critical packages. The red arrows indicate the critical path, which corresponds to the group of dependent items that present greater criticality for the project since they do not allow for much margin for scheduling flexibility.
 
-
 .. figure:: figures/Critical_items_CDR.png
    :name: fig:gantt-srr-dependencies-critical
    :width: 100%
@@ -371,9 +370,8 @@ Product tree
 
 Since the two space systems in the fleet are architecturally distinct, each has its own Product Tree.
 
-.. _fig:PT_Geral:
-
 .. figure:: figures/PT_Geral2.png
+   :name: fig:PT_Geral
    :width: 100%
    :align: center
    :alt: Product tree

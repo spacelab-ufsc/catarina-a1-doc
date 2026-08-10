@@ -47,9 +47,8 @@ Mission structure
 
 Catarina Constellation's mission architecture, presented in :numref:`fig:mission_architecture`, is designed to achieve the objectives set for the mission as a whole. We will therefore discuss how the Catarina-A1 fits into this architecture, presenting its particularities.
 
-.. _fig:mission_architecture:
-
 .. figure:: figures/mission_architecture.*
+   :name: fig:mission_architecture
    :width: 100%
    :align: center
    :alt: Mission architecture
@@ -110,9 +109,8 @@ Mission operation modes
 
 To enhance the comprehension of the satellite's operational modes, refer to the diagram in :numref:`fig:modes_diagram`. The depicted modes include: :term:`DM`, :term:`IM`, :term:`NM`, :term:`SBM`, and :term:`CM`.
 
-.. _fig:modes_diagram:
-
 .. figure:: figures/modes_diagram.*
+   :name: fig:modes_diagram
    :width: 80%
    :align: center
    :alt: Project life cycle
@@ -138,9 +136,8 @@ Nominal mode (NM)
 
 This mode represents a power-negative state where the entire satellite is active. In this operational phase, both :term:`EDC` and ExpLoRa are functional – :term:`EDC` receives data from :term:`DCP`, while ExpLoRa receives information from a SpaceLab application. The activation and deactivation of this mode are controlled by GNSS information, ensuring that the satellite remains in :term:`NM` while within national territory.
 
-.. _fig:nm_operation:
-
 .. figure:: figures/nm_operation.*
+   :name: fig:nm_operation
    :width: 100%
    :align: center
    :alt: Nominal mode operations
@@ -244,9 +241,8 @@ In summary, :term:`UFSC` will have a central role in mission control, ensuring t
 Operational phase schedule
 ==========================
 
-.. _tab:conops-schedule:
-
 .. list-table:: Steps of operation.
+   :name: tab:conops-schedule
    :header-rows: 1
    :widths: 25 15 20 40
    :align: center
