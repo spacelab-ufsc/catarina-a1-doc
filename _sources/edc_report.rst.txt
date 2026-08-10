@@ -69,9 +69,8 @@ Setup
 
 The test setup can be seen in :numref:`fig:edc-test-setup`. As seen in the picture, the USB-UART converter connects the UART interface of the EDC directly to a computer. The EDC board is powered directly by its USB debug interface.
 
-.. _fig:edc-test-setup:
-
 .. figure:: figures/edc_report/cmd-test-setup.jpg
+   :name: fig:edc-test-setup
    :width: 100%
    :align: center
    :alt: EDC test setup
@@ -85,9 +84,8 @@ Results
 
 During the first attempts to perform this test, no responses were received from both boards, considering all the available commands. After further investigation with the module developers (INPE-CRN), the issue was found. As can be seen in :numref:`fig:edc-cmd-issue`, the voltage of the RX pin when in a low state is higher than expected, making all bits be interpreted as ones.
 
-.. _fig:edc-cmd-issue:
-
 .. figure:: figures/edc_report/edc-cmd-issue.jpg
+   :name: fig:edc-cmd-issue
    :width: 100%
    :align: center
    :alt: EDC command interface issue
@@ -96,9 +94,8 @@ During the first attempts to perform this test, no responses were received from 
 
 The hypothesis for the cause of this problem is the RS-485 transceiver. As seen in :numref:`fig:edc-bd-uart-if`, the RS-485 transceiver and the UART interfaces share the same UART port of the microcontroller. This way, the RS-485 transceiver can cause interference on the RX pin of the UART interface, forcing its state to be high all the time.
 
-.. _fig:edc-bd-uart-if:
-
 .. figure:: figures/edc_report/edc-bd-uart-if.png
+   :name: fig:edc-bd-uart-if
    :width: 60%
    :align: center
    :alt: EDC interfaces
@@ -107,9 +104,8 @@ The hypothesis for the cause of this problem is the RS-485 transceiver. As seen 
 
 A solution to this problem is to disable the RS-485 transceiver by removing it from the board or putting the enable pin on a disabled state. As it would be difficult to remove this component from the boards safely, the second option was chosen. With a modification in the firmware, the RS-485 transceiver was disabled. After this modification, the UART command interface started to work as expected, as can be seen in :numref:`fig:edc-echo-cmd` ("echo" command).
 
-.. _fig:edc-echo-cmd:
-
 .. figure:: figures/edc_report/echo-cmd.png
+   :name: fig:edc-echo-cmd
    :width: 100%
    :align: center
    :alt: EDC echo command
@@ -144,27 +140,24 @@ Setup
 
 This test is divided in two steps. The setup of the first step can be seen in :numref:`fig:edc-stimulus-test`. As can be seen in the picture, the SDR transmitter is connected directly to an SDR receiver through a 30 dB attenuator.
 
-.. _fig:edc-stimulus-test:
-
 .. figure:: figures/edc_report/edc-stimulus-test.jpg
+   :name: fig:edc-stimulus-test
    :width: 100%
    :align: center
    :alt: EDC signal generator test
 
    Setup of the signal generator test.
 
-.. _fig:edc-rf-chain-test-setup:
-
 .. figure:: figures/edc_report/rf-chain-setup.jpg
+   :name: fig:edc-rf-chain-test-setup
    :width: 100%
    :align: center
    :alt: EDC RF chain test setup
 
    Setup of the EDC's RF chain test.
 
-.. _fig:edc-rf-signal:
-
 .. figure:: figures/edc_report/edc-rf-test-signal.png
+   :name: fig:edc-rf-signal
    :width: 100%
    :align: center
    :alt: EDC generated signal
@@ -176,9 +169,8 @@ Results
 
 The transmitted signal by the USRP SDR can be seen in :numref:`fig:edc-rf-signal-gqrx`.
 
-.. _fig:edc-rf-signal-gqrx:
-
 .. figure:: figures/edc_report/edc-stimulus.png
+   :name: fig:edc-rf-signal-gqrx
    :width: 100%
    :align: center
    :alt: EDC received stimulus
@@ -187,9 +179,8 @@ The transmitted signal by the USRP SDR can be seen in :numref:`fig:edc-rf-signal
 
 The received and decoded packets by the EDC during the tests are available in :numref:`fig:edc-pkts`. Each color line is a different decoded packet. The last byte sequence indicates the number of available packets in the queue (zero in this case, after reading all packets).
 
-.. _fig:edc-pkts:
-
 .. figure:: figures/edc_report/ptt-pkg.png
+   :name: fig:edc-pkts
    :width: 80%
    :align: center
    :alt: EDC received PTT

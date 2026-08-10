@@ -504,9 +504,8 @@ The following analyses were carried out using the GMAT tools, as well as orbit a
 
 :numref:`fig:graphDecOrbit` shows the decay data resulting from simulations developed for different initial orbit altitudes and an inclination of :math:`30^{\circ}`.
 
-.. _fig:graphDecOrbit:
-
 .. figure:: figures/decay_orbits2U3U.png
+   :name: fig:graphDecOrbit
    :width: 100%
    :align: center
    :alt: Orbit decay analisys
@@ -541,9 +540,8 @@ Number of communication per day: SS - DCP
 
 The number of times the Catarina-A1 has contact with the :term:`DCP` at Santa Catarina is indicated below for the orbit inclination of :math:`20^{\circ}`, :math:`51^{\circ}` and :math:`97^{\circ}`, for the altitudes of 500 and 600 km. Data is presented in different graphs for the minimum number of contacts per day in the month, average number of contacts per day in the month, and maximum number of contacts per day in the month. The average period of each contact is 312 seconds, with a minimum of 30 seconds and a maximum of 410 seconds for all cases analyzed here. Simulations were conducted for the period of 01/06/2023 to 31/05/2024. Since the estimated date for the launch is March 2025, simulations will be updated for the expected date however no significant variations in the presented data is expected.
 
-.. _fig:Communication_perday_PCD:
-
 .. figure:: figures/Communication_perday_PCD.png
+   :name: fig:Communication_perday_PCD
    :width: 100%
    :align: center
    :alt: DCP simulation results
@@ -559,9 +557,8 @@ Number of communication per day: SS - EMMN
 
 The same analysis is presented below for the contact point between the space system and the ground station at Natal. Here we can see that the inclination of :math:`20^{\circ}` has a much higher number of contact points per day than the other inclinations. However, the minimum contact number for all inclinations and altitudes considered herein is still 1, at least one day in May 2024 and June 2023.
 
-.. _fig:Communication_perday_EMMN:
-
 .. figure:: figures/Communication_perday_EMMN.png
+   :name: fig:Communication_perday_EMMN
    :width: 100%
    :align: center
    :alt: EMMN simulation results
@@ -582,9 +579,8 @@ Communication time
 
 The figure below plots the occurrence of each contact point for the altitudes of 500 km and 600 km for the three inclinations analyzed versus the duration of the contact point. On the top-left plot, we can see the duration and the total number of contact points for 500 km for each inclination between :term:`DCP` and the space system. For example, for the inclination of :math:`20^{\circ}`, a total of approximately 1440 contact points were estimated through the period of  02/06/2023 to 30/05/2024. Of these 1440 contacts, only 12 contacts had a duration under 50 seconds. Most contacts for all inclinations and altitudes analyzed are concentrated over 200 seconds.
 
-.. _fig:Communication_TIME:
-
 .. figure:: figures/CommunicationTime.png
+   :name: fig:Communication_TIME
    :width: 100%
    :align: center
    :alt: Communication time
@@ -705,9 +701,8 @@ Thermal numerical models
 
 The first model applied a classical lumped model based on the finite differences numerical approach with an explicit method for temporal discretization. The model accounts for thermal contact resistances between each surface of the satellite and the internal radiation heat exchanger. The second model applied the finite volume numerical method through the ANSYS CFX software. Both applied boundary conditions for the thermal irradiation from an orbital simulation code developed in-house. Details about the orbital and thermal models can be found in :cite:`COBEM-Cardozo` and :cite:`gomes2022`. The simplified geometric model is presented in :numref:`fig:exploded_view_1U`, composed of a 2U CubeSat with solar panels in all external faces, structures, and PCBs. Although :numref:`fig:exploded_view_1U` indicates two heat pipes and a battery, these components were not applied to the thermal simulation shown in this section.
 
-.. _fig:exploded_view_1U:
-
 .. figure:: figures/modelo_termico.png
+   :name: fig:exploded_view_1U
    :width: 90%
    :align: center
    :alt: Geometrical model for thermal analysis
@@ -856,18 +851,16 @@ For this Nadir attitude behavior, face 3 (Total 3) is the face always facing the
 
 For beta :math:`72^{\circ}` (:numref:`fig:total-radiation_72-eachFace`), a sun-synchronous orbit, there is no eclipse region, and all faces, except face 6, have lower incident radiation variation when compared to the beta :math:`0^{\circ}` case. However, Face 6 has a greater incidence of radiation due to always facing the sun, which could cause elevated temperatures in this face.
 
-.. _fig:total-radiation_0-eachFace:
-
 .. figure:: figures/Thermal7_03.png
+   :name: fig:total-radiation_0-eachFace
    :width: 80%
    :align: center
    :alt: Total incident radiation
 
    Total incident radiation on each face of the satellite for a beta angle of :math:`0.0^{\circ}`.
 
-.. _fig:total-radiation_72-eachFace:
-
 .. figure:: figures/Thermal8_2.png
+   :name: fig:total-radiation_72-eachFace
    :width: 80%
    :align: center
    :alt: Total incident radiation
@@ -887,9 +880,8 @@ Temperature profiles for on-orbit for both models are presented in :numref:`fig:
 .. the following temperature ranges were found for the inner and outer parts of the satellite.
 .. It can be noted that in \autoref{fig:temp_0} the temperature distribution follows the same behavior as the radiation shown previously. It is also possible to note that for faces 1, 2, and 4 the maximum temperature increases between the peaks of each face, reaching a maximum of 313 K on face 4. This occurs because the satellite as a whole receives radiation from the 3 main sources, causing the temperature of all components to increase. For faces 3, 5, and 6 the temperatures are lower, as the radiation flux in them is considerably lower (up to 1000 W/m² lower).
 
-.. _fig:temp_0:
-
 .. figure:: figures/Thermal9.png
+   :name: fig:temp_0
    :width: 90%
    :align: center
    :alt: Solar panels temperatures
@@ -898,9 +890,8 @@ Temperature profiles for on-orbit for both models are presented in :numref:`fig:
 
 .. \autoref{fig:PCBtemp_0} shows the behavior of the satellite PCB temperatures. It can be noticed that the temperatures of PCBs 1 and 4 fluctuate more than 2 and 3. This is because PCBs 1 and 4 are in contact with the upper part, called the Top, and the lower part, called the Bottom, exchanging heat for each other. radiation and conduction. As the incident radiation on these two faces, Bottom and Top, are close in magnitude, the temperature behaves similarly, even so it is possible to notice a difference, resulting from the heat exchange by conduction of the other components of the satellite. For PCBs 2 and 3, the temperature variation is mainly due to the emission of radiation from the inside of the solar panels, and from the PCBs themselves, as well as the conduction of heat between the screws that hold the structure, making the temperature fluctuate less. It can also be seen that the internal temperatures follow the external temperatures, which in turn follow the incident radiation previously shown.
 
-.. _fig:PCBtemp_0:
-
 .. figure:: figures/Temperatura_caique.png
+   :name: fig:PCBtemp_0
    :width: 90%
    :align: center
    :alt: Solar panels temperatures 2
@@ -976,9 +967,8 @@ It is important to remember that the analyses were carried out for a geometric s
 
 However, in-orbit temperature measurements from other CubeSat missions in similar orbits and configurations indicate maximum and minimum temperatures consistent with the ones estimated by the thermal models. The comparison was made with the SwissCube, a 1U CubeSat (orbit inclination of :math:`98^{\circ}` and 700 km) and MinXSS 3U Cubesat equipped with battery heaters, a small radiator, and a camera (ISS orbit parameters).
 
-.. _fig:temperaturas_maximas_minimas:
-
 .. figure:: figures/temperaturas_max_min_CDR.png
+   :name: fig:temperaturas_maximas_minimas
    :width: 100%
    :align: center
    :alt: Predicted temperatures
